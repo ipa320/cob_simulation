@@ -1,0 +1,63 @@
+controller_platform_steerFL:
+  type: JointPositionController
+  joint: joint_platform_steerFL
+  pid:
+    p: 500
+    i: 100
+    d: 200
+
+controller_steerFL_wheelFL:
+  type: JointPositionController
+  joint: joint_steerFL_wheelFL
+  pid:
+    p: 500
+    i: 100
+    d: 200
+    
+controller_platform_steerFR:
+  type: JointPositionController
+  joint: joint_platform_steerFR
+  pid:
+    p: 500
+    i: 100
+    d: 200
+
+controller_steerFR_wheelFR:
+  type: JointPositionController
+  joint: joint_steerFR_wheelFR
+  pid:
+    p: 500
+    i: 100
+    d: 200
+
+controller_platform_steerRL:
+  type: JointPositionController
+  joint: joint_platform_steerRL
+  pid:
+    p: 500
+    i: 100
+    d: 200
+
+controller_steerRL_wheelRL:
+  type: JointPositionController
+  joint: joint_steerRL_wheelRL
+  pid:
+    p: 500
+    i: 100
+    d: 200
+    
+controller_platform_steerRR:
+  type: JointPositionController
+  joint: joint_platform_steerRR
+  pid:
+    p: 500
+    i: 100
+    d: 200
+
+controller_steerRR_wheelRR:
+  type: JointPositionController
+  joint: joint_steerRR_wheelRR
+  pid:
+    p: 500
+    i: 100
+    d: 200

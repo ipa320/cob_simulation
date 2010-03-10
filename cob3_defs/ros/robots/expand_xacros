@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# expands all xacro-files to urdf files
+
+for i in *.urdf.xacro;
+	do
+		`rosrun xacro xacro.py $i > $(basename $i .xacro)`;
+		 
+done

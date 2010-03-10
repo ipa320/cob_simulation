@@ -1,0 +1,18 @@
+<package>
+  <description brief="cob3_defs">
+
+     cob3_defs
+
+  </description>
+  <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.care-o-bot.org</url>
+
+  <depend package="urdf"/>
+  <depend package="ivcon"/>
+  <depend package="convex_decomposition"/>
+  <depend package="robot_mechanism_controllers"/>
+  <depend package="pr2_controller_manager"/>
+
+</package>

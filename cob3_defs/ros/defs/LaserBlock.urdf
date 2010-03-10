@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       name="LaserBlock">
+
+<!-- Joint to world. Simply change the name and parent link when attaching to own robot -->
+<joint name="base_world_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="world"/>
+      <child link="base_laser_front"/>
+    </joint>
+
+<!--			 Laser body. Neglegibe geometry 			-->
+<link name="base_laser_front">
+
+      <inertial>
+        <mass value="1.0" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0" />
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+        
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0" />
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision >
+      </link>
+      
+      
+<!--			Basic controller manager, need to write own to eliminate errors 	-->
+    <gazebo>
+    <controller:gazebo_ros_controller_manager name="gazebo_ros_controller_manager" plugin="libgazebo_ros_controller_manager.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1000.0</updateRate>
+      <interface:audio name="gazebo_ros_controller_manager_dummy_iface"/>
+    </controller:gazebo_ros_controller_manager>
+    </gazebo>
+
+<!-- 			Actual laser		 -->
+<gazebo reference="base_laser_block">    
+      <sensor:ray name="base_laser">
+        <rayCount>640</rayCount>
+        <rangeCount>640</rangeCount>
+        <laserCount>1</laserCount>
+
+        <origin>0.0 0.0 0.0</origin>
+        <displayRays>true</displayRays>
+
+        <minAngle>-80</minAngle>
+        <maxAngle> 80</maxAngle>
+
+        <minRange>0.05</minRange>
+        <maxRange>10.0</maxRange>
+        <resRange>0.01</resRange>
+        <updateRate>20.0</updateRate>
+        <controller:gazebo_ros_laser name="gazebo_ros_base_laser_controller" plugin="libgazebo_ros_laser.so">
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>20.0</updateRate>
+          <topicName>standard_scan</topicName>
+          <frameName>laser_block</frameName>
+          <interface:laser name="gazebo_ros_base_laser_iface"/>
+        </controller:gazebo_ros_laser>
+      </sensor:ray>
+</gazebo>
+ 
+</robot>
+

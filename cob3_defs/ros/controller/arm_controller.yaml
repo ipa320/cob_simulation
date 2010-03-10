@@ -1,0 +1,43 @@
+arm_controller:
+  type: "JointSplineTrajectoryController"
+  joints:
+    - joint_arm1
+    - joint_arm2
+    - joint_arm3
+    - joint_arm4
+    - joint_arm5
+    - joint_arm6
+    - joint_arm7
+  gains:
+    joint_arm1: {p: 1200.0, i: 120, d: 12.0}
+    joint_arm2: {p: 1200.0, i: 120, d: 12.0}
+    joint_arm3: {p: 1000.0, i: 100, d: 10.0}
+    joint_arm4: {p: 1000.0, i: 100, d: 10.0}
+    joint_arm5: {p: 800.0, i: 80, d: 8.0}
+    joint_arm6: {p: 800.0, i: 80, d: 8.0}
+    joint_arm7: {p: 600.0, i: 60, d: 6.0}
+  joint_trajectory_action_node:
+    joints:
+      - joint_arm1
+      - joint_arm2
+      - joint_arm3
+      - joint_arm4
+      - joint_arm5
+      - joint_arm6
+      - joint_arm7
+    constraints:
+      goal_time: 0.6
+      joint_arm1:
+        goal: 0.02
+      joint_arm2:
+        goal: 0.02
+      joint_arm3:
+        goal: 0.02
+      joint_arm4:
+        goal: 0.02
+      joint_arm5:
+        goal: 0.02
+      joint_arm6:
+        goal: 0.02
+      joint_arm7:
+        goal: 0.02

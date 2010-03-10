@@ -1,0 +1,20 @@
+<stack>
+  <description brief="cob3_simulation">
+
+     cob3_simulation
+
+  </description>
+  <author>Maintained by Florian Weisshardt, email: florian.weisshardt@ipa.fhg.de</author>
+  <license>BSD,LGPL</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://www.care-o-bot.org</url>
+  
+  <depend stack="pr2_controllers" /> <!-- joint_trajectory_action, robot_mechanism_controllers -->
+  <depend stack="pr2_mechanism" /> <!-- pr2_controller_manager -->
+  <depend stack="pr2_simulator" /> <!-- pr2_gazebo -->
+  <depend stack="robot_model" /> <!-- convex_decomposition, ivcon, urdf, robot_state_publisher -->
+  <depend stack="ros" />
+  <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
+  <depend stack="visualization_common" /> <!-- ogre_tools -->
+
+</stack>
