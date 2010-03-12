@@ -1,10 +1,10 @@
 <stack>
-  <description brief="cob3_simulation">
+  <description brief="cob_simulation">
 
-     cob3_simulation
+     The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.
 
   </description>
-  <author>Maintained by Florian Weisshardt, email: florian.weisshardt@ipa.fhg.de</author>
+  <author>Maintained by Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
   <license>BSD,LGPL</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
