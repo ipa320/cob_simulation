@@ -596,8 +596,8 @@
 		<parent link="link_platform"/>
 		<child link="link_neckZ"/>
 		<axis xyz="0 0 1" />
-	    <calibration reference_position="0.1"/>
-		<limit effort="100" lower="-0.1" upper="0.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+	    <calibration reference_position="-0.5149"/>
+		<limit effort="100" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_neckZ_neck" type="revolute">
@@ -605,8 +605,8 @@
 		<parent link="link_neckZ"/>
 		<child link="link_neck"/>
 		<axis xyz="0 1 0" />
-	    <calibration reference_position="0.1"/>
-		<limit effort="100" lower="-0.1" upper="0.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+	    <calibration reference_position="0.0344"/>
+		<limit effort="100" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 
 	<!-- head -->
@@ -615,8 +615,8 @@
 		<parent link="link_neck"/>
 		<child link="link_headZ"/>
 		<axis xyz="0 0 1" />
-	    <calibration reference_position="0.1"/>
-		<limit effort="100" lower="-1" upper="1" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+	    <calibration reference_position="0.0247"/>
+		<limit effort="100" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_headZ_head" type="revolute">
@@ -624,8 +624,8 @@
 		<parent link="link_headZ"/>
 		<child link="link_head"/>
 		<axis xyz="0 1 0" />
-	    <calibration reference_position="0.1"/>
-		<limit effort="100" lower="-1" upper="1" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+	    <calibration reference_position="0.022078"/>
+		<limit effort="100" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_headZ_head_cover" type="fixed">
