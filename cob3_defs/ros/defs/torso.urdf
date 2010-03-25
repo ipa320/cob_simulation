@@ -590,44 +590,45 @@
 		<limit effort="100" lower="0" upper="3.31612" velocity="5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
-	<!-- neck -->
+	<!-- neck Schunk PW90 -->
 	<joint name="joint_platform_neckZ" type="revolute">
-		<origin xyz="0.24627 0 0.7798" rpy="0 0 0" />
+		<origin xyz="0.155 0 0.7798" rpy="3.1415926 0 0" />
 		<parent link="link_platform"/>
 		<child link="link_neckZ"/>
 		<axis xyz="0 0 1" />
 	    <calibration reference_position="-0.5149"/>
-		<limit effort="100" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+		<limit effort="24" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_neckZ_neck" type="revolute">
-		<origin xyz="0 0 0.001" rpy="0 0 0" />
+		<origin xyz="0 0 -0.115" rpy="1.5708 0 0" />
 		<parent link="link_neckZ"/>
 		<child link="link_neck"/>
-		<axis xyz="0 1 0" />
+		<axis xyz="0 0 1" />
 	    <calibration reference_position="0.0344"/>
-		<limit effort="100" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+		<limit effort="46" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 
-	<!-- head -->
+	<!-- head Schunk PW70 -->
 	<joint name="joint_neck_headZ" type="revolute">
-		<origin xyz="-0.09039 0 0.30489" rpy="0 0 0" />
+		<origin xyz="0 -0.237 0.0" rpy="-1.5708 0 0" />
 		<parent link="link_neck"/>
 		<child link="link_headZ"/>
 		<axis xyz="0 0 1" />
 	    <calibration reference_position="0.0247"/>
-		<limit effort="100" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+		<limit effort="4" lower="-6.2831" upper="6.2831" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_headZ_head" type="revolute">
-		<origin xyz="0 0 0.001" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="1.5708 0 0" />
 		<parent link="link_headZ"/>
 		<child link="link_head"/>
-		<axis xyz="0 1 0" />
+		<axis xyz="0 0 1" />
 	    <calibration reference_position="0.022078"/>
-		<limit effort="100" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+		<limit effort="24" lower="-1.5" upper="1.5" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
+	<!-- head_cover -->
 	<joint name="joint_headZ_head_cover" type="fixed">
 		<origin xyz="0 0 0" rpy="0 0 0" />
 		<parent link="link_head"/>
@@ -636,12 +637,12 @@
 	
 	<!-- eyes -->
 	<joint name="joint_head_eyes" type="revolute">
-		<origin xyz="-0.1 0 0.2" rpy="0 0 0" />
+		<origin xyz="0 -0.1575 0" rpy="0 0 0" />
 		<parent link="link_head"/>
 		<child link="link_eyes"/>
-		<axis xyz="0 1 0" />
-	    <calibration reference_position="0.0"/>
-		<limit effort="100" lower="-1" upper="1" velocity="5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
+		<axis xyz="0 0 1" />
+	    <calibration reference_position="-3.14"/>
+		<limit effort="100" lower="-0.1745" upper="3.316" velocity="0.5"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 	</joint>
 	
 	<joint name="joint_eyes_colorcameraLeft" type="fixed">
