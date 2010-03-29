@@ -209,7 +209,7 @@
 	<!-- ################################################################################# -->
 	<!-- add joints, corresponding to powercubes PRL 120,120,100,100,80,80,60 -->
 	<joint name="joint_arm1" type="revolute">
-		<origin xyz="0 0 0.0569" rpy="0 0 0"/>
+		<origin xyz="0 0 -0.25" rpy="0 0 0"/>
 		<parent link="link_arm0"/>
 		<child link="link_arm1"/>
 		<axis xyz="0 0 1"/>
@@ -220,10 +220,10 @@
 	</joint>
 	
 	<joint name="joint_arm2" type="revolute">
-		<origin xyz="0 0 0.1931" rpy="0 0 0"/>
+		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<parent link="link_arm1"/>
 		<child link="link_arm2"/>
-		<axis xyz="0 1 0"/>
+		<axis xyz="0 0 1"/>
 	    <calibration reference_position="1.47881"/>
 		<limit effort="370" velocity="0.4363" lower="-2.0943951" upper="2.0943951"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
@@ -231,7 +231,7 @@
 	</joint>
 
 	<joint name="joint_arm3" type="revolute">
-		<origin xyz="0 0 0.110" rpy="0 0 0"/>
+		<origin xyz="0 -0.408 0" rpy="-1.5708 0 0"/>
 		<parent link="link_arm2"/>
 		<child link="link_arm3"/>
 		<axis xyz="0 0 1"/>
@@ -242,10 +242,10 @@
 	</joint>	
 
 	<joint name="joint_arm4" type="revolute">
-		<origin xyz="0 0 0.298" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="1.5708 0 0" />
 		<parent link="link_arm3"/>
 		<child link="link_arm4"/>
-		<axis xyz="0 1 0" />
+		<axis xyz="0 0 1" />
 	    <calibration reference_position="0.0192641"/>
 		<limit effort="176" velocity="0.4189" upper="2.0943951" lower="-2.0943951" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
@@ -253,7 +253,7 @@
 	</joint>
 
 	<joint name="joint_arm5" type="revolute">
-		<origin xyz="0 0 0.100" rpy="0 0 0" />
+		<origin xyz="0 -0.3165 0" rpy="-1.5708 0 0" />
 		<parent link="link_arm4"/>
 		<child link="link_arm5"/>
 		<axis xyz="0 0 1" />
@@ -264,10 +264,10 @@
 	</joint>
 	
 	<joint name="joint_arm6" type="revolute">
-		<origin xyz="0 0 0.2165" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="1.5708 0 0" />
 		<parent link="link_arm5"/>
 		<child link="link_arm6"/>
-		<axis xyz="0 1 0" />
+		<axis xyz="0 0 1" />
 	    <calibration reference_position="0.00414364"/>
 		<limit effort="20.1" velocity="0.4363" upper="2.0943951" lower="-2.0943951" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
@@ -275,7 +275,7 @@
 	</joint>
 	
 	<joint name="joint_arm7" type="revolute">
-		<origin xyz="0 0 0.080" rpy="0 0 0" />
+		<origin xyz="0 -0.1927 0" rpy="-1.5708 0 0" />
 		<parent link="link_arm6"/>
 		<child link="link_arm7"/>
 		<axis xyz="0 0 1" />

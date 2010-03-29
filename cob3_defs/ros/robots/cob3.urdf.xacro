@@ -24,7 +24,7 @@
 	<include filename="$(find cob3_defs)/ros/defs/arm.urdf" />
 
 	<joint name="joint_platform_arm0" type="fixed">
-		<origin xyz="0 0 0.8" rpy="0.5 0 -0.5" /> <!-- TODO: put in real transformation from platform to arm0-->
+		<origin xyz="0.040 -0.005 0.83637" rpy="3.1415926 0.7854 -1.8326" /> <!-- TODO: put in real transformation from platform to arm0-->
 		<parent link="link_platform"/>
 		<child link="link_arm0"/>
 	</joint>
@@ -33,7 +33,7 @@
 	<include filename="$(find cob3_defs)/ros/defs/sdh.urdf" />
 
   	<joint name="joint_arm7_palm" type="fixed">
-		<origin xyz="0 0 0.1126" rpy="0 0 0" />
+		<origin xyz="0 0 -0.1126" rpy="0 0 0" />
 		<parent link="link_arm7"/>
 		<child link="link_palm"/>
 	</joint>

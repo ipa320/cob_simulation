@@ -9,7 +9,7 @@
 
 	<!-- create joint to world -->
 	<joint name="joint_world_arm0" type="fixed">
-		<origin xyz="0 0 0" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="3.1415926 0 0" />
 		<parent link="world"/>
 		<child link="link_arm0"/>
 	</joint>
