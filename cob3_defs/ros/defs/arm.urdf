@@ -213,7 +213,7 @@
 		<parent link="link_arm0"/>
 		<child link="link_arm1"/>
 		<axis xyz="0 0 1"/>
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="1.42154"/>
 		<limit effort="370" velocity="0.4363" lower="-6.2831853" upper="6.2831853"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-6.2" soft_upper_limit="6.2"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -224,7 +224,7 @@
 		<parent link="link_arm1"/>
 		<child link="link_arm2"/>
 		<axis xyz="0 1 0"/>
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="1.47881"/>
 		<limit effort="370" velocity="0.4363" lower="-2.0943951" upper="2.0943951"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -235,7 +235,7 @@
 		<parent link="link_arm2"/>
 		<child link="link_arm3"/>
 		<axis xyz="0 0 1"/>
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="-6.28087"/>
 		<limit effort="176" velocity="0.4189" lower="-6.2831853" upper="6.2831853"/> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-6.2" soft_upper_limit="6.2"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -246,7 +246,7 @@
 		<parent link="link_arm3"/>
 		<child link="link_arm4"/>
 		<axis xyz="0 1 0" />
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="0.0192641"/>
 		<limit effort="176" velocity="0.4189" upper="2.0943951" lower="-2.0943951" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -257,7 +257,7 @@
 		<parent link="link_arm4"/>
 		<child link="link_arm5"/>
 		<axis xyz="0 0 1" />
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="-2.86457"/>
 		<limit effort="41.6" velocity="0.4363" upper="6.2831853" lower="-6.2831853" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-6.2" soft_upper_limit="6.2"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -268,7 +268,7 @@
 		<parent link="link_arm5"/>
 		<child link="link_arm6"/>
 		<axis xyz="0 1 0" />
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="0.00414364"/>
 		<limit effort="20.1" velocity="0.4363" upper="2.0943951" lower="-2.0943951" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-2.0" soft_upper_limit="2.0"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
@@ -279,7 +279,7 @@
 		<parent link="link_arm6"/>
 		<child link="link_arm7"/>
 		<axis xyz="0 0 1" />
-	    <calibration reference_position="0.0"/>
+	    <calibration reference_position="-0.000421242"/>
 		<limit effort="9.6" velocity="0.8727" upper="6.2831853" lower="-6.2831853" /> <!-- rads. effort is N-m applied force. vel is rad/s. -->
 		<!--safety_controller k_position="10" k_velocity="10" soft_lower_limit="-6.2" soft_upper_limit="6.2"/-->
 		<!--dynamics damping="10.0" friction="10.0"/-->
