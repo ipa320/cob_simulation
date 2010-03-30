@@ -14,8 +14,8 @@
   <depend package="gazebo_worlds"/>
   <depend package="gazebo_tools"/>
   <depend package="robot_state_publisher"/>
-  <depend package="cob3_defs"/>
-  <depend package="cob3_ogre"/>
+  <depend package="cob_defs"/>
+  <depend package="cob_ogre"/>
   <depend package="joint_trajectory_action"/>
   <depend package="pr2_gazebo"/>
 
