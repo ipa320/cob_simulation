@@ -9,9 +9,9 @@
   <node name="gazebo" pkg="gazebo" launch-prefix="gdb - -args" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" >
   <node name="gazebo" pkg="gazebo" launch-prefix="valgrind - -log-file=/tmp/val_gaz" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" >
   -->
-  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob3_gazebo)/common/worlds/cob3_sdh.world" respawn="false" >
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo)/common/worlds/cob3.world" respawn="false" >
     <env name="LD_LIBRARY_PATH" value="$(find gazebo_plugins)/lib:$(find pr2_gazebo_plugins)/lib:$(find gazebo)/gazebo/lib:$(optenv LD_LIBRARY_PATH)" />
-    <env name="GAZEBO_RESOURCE_PATH" value="$(find pr2_ogre):$(find pr2_defs):$(find cob3_ogre):$(find cob3_defs):$(find pr2_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />
+    <env name="GAZEBO_RESOURCE_PATH" value="$(find pr2_ogre):$(find cob_ogre):$(find cob_defs):$(find pr2_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />
     <env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
   </node>
 
