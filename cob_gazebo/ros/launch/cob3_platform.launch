@@ -5,7 +5,7 @@
 	<include file="$(find cob3_gazebo)/ros/launch/cob3_world.launch" />
 
 	<!-- send platform urdf to param server -->
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob3_defs)/ros/robots/cob3_platform.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_defs)/ros/robots/cob3_platform.urdf.xacro'" />
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
 	<node name="platform_urdf" pkg="gazebo_tools" type="gazebo_model" args="-z 1.051 -p robot_description spawn platform_model" respawn="false" />
@@ -17,7 +17,7 @@
 	</node>
 
 	<!-- Controllers -->
-	<include file="$(find cob3_defs)/ros/launch/platform_controller.launch" />
+	<include file="$(find cob_defs)/ros/launch/platform_controller.launch" />
 
 <!--	<node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" /> -->
 

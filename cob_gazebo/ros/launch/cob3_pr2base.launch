@@ -5,7 +5,7 @@
 	<include file="$(find cob3_gazebo)/ros/launch/cob3_world.launch" />
 
 	<!-- send cob3 urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find cob3_defs)/ros/robots/cob3_pr2base.urdf.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_defs)/ros/robots/cob3_pr2base.urdf.xacro'" />
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
 	<node name="cob3_urdf" pkg="gazebo_tools" type="gazebo_model" args="-z 0.5 -p robot_description spawn cob3_model" respawn="false" />
