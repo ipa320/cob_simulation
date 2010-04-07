@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
-	<include file="$(find cob3_gazebo)/ros/launch/reference_positions_torso.launch" />
-	<include file="$(find cob3_gazebo)/ros/launch/reference_positions_arm.launch" />
-	<include file="$(find cob3_gazebo)/ros/launch/reference_positions_sdh.launch" />
+	<include file="$(find cob_gazebo)/ros/launch/reference_positions_torso.launch" />
+	<include file="$(find cob_gazebo)/ros/launch/reference_positions_arm.launch" />
+	<include file="$(find cob_gazebo)/ros/launch/reference_positions_sdh.launch" />
 
 </launch>
 

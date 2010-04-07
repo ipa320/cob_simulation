@@ -2,14 +2,13 @@
 <launch>
 
 	<!-- launch empty world -->
-	<param name="/use_sim_time" value="true" />
-	<include file="$(find cob3_gazebo)/ros/launch/cob3_world.launch" />
+	<include file="$(find cob_gazebo)/ros/launch/cob_world_sdh.launch" />
 
-	<!-- send arm urdf to param server -->
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_defs)/ros/robots/cob3_arm.urdf.xacro'" />
+	<!-- send sdh urdf to param server -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_defs)/ros/robots/sdh.urdf.xacro'" />
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="arm_urdf" pkg="gazebo_tools" type="gazebo_model" args="-z 0.051 -p robot_description spawn arm_model" respawn="false" />
+	<node name="sdh_urdf" pkg="gazebo_tools" type="gazebo_model" args="-z 0.051 -p robot_description spawn sdh_model" respawn="false" />
 
 	<!-- Robot state publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
@@ -18,7 +17,7 @@
 	</node>
 
 	<!-- Controllers -->
-	<include file="$(find cob_defs)/ros/launch/arm_controller.launch" />
+	<include file="$(find cob_defs)/ros/launch/sdh_controller.launch" />
 
 <!--	<node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" /> -->
 
