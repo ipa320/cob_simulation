@@ -1,0 +1,20 @@
+base_odometry:
+  publish_tf: false
+  caster_names: fr_caster_rotation_link fl_caster_rotation_link bl_caster_rotation_link br_caster_rotation_link
+  type: Pr2Odometry
+  ils_max_iterations: 3
+  odom_frame: odom
+  base_footprint_frame: base_footprint
+  base_link_frame: base_link
+  x_stddev: 0.002
+  y_stddev: 0.002
+  rotation_stddev: 0.017
+  cov_xy: 0.0
+  cov_xrotation: 0.0
+  cov_yrotation: 0.0
+  verbose: false
+  wheel_radius_multiplier: 1.0
+  caster_calibration_multiplier: 1.0
+  odom_publish_rate: 100.0
+  state_publish_rate: 1.0
+  odometer_publish_rate: 1.0

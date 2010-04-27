@@ -1,0 +1,14 @@
+<package>
+  <description brief="cob_controller_configuration_gazebo">
+
+     cob_controller_configuration_gazebo
+
+  </description>
+  <author>cob</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_controller_configuration_gazebo</url>
+
+</package>
+
+

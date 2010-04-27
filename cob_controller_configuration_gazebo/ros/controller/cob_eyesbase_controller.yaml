@@ -1,0 +1,7 @@
+eyesbase_controller:
+  type: JointPositionController
+  joint: head_camera_axis_joint
+  pid:
+      p: 100
+      i: 120
+      d: 0.5
