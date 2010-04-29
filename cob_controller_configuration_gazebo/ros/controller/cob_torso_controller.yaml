@@ -38,8 +38,8 @@ torso_controller:
       torso_lower_neck_pan_joint:
         goal: 0.02
       torso_lower_neck_tilt_joint:
-        goal:0.02
+        goal: 0.02
       torso_upper_neck_pan_joint:
-        goal:0.02
+        goal: 0.02
       torso_upper_neck_tilt_joint:
-        goal:0.02
+        goal: 0.02
