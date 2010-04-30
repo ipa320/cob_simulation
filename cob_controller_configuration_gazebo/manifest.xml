@@ -1,11 +1,12 @@
 <package>
   <description brief="cob_controller_configuration_gazebo">
 
-     cob_controller_configuration_gazebo
+  This packages provides the controller configuration for simulating 
+  Care-O-bot in the gazebo simulator.
 
   </description>
-  <author>cob</author>
-  <license>BSD</license>
+  <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
+  <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_controller_configuration_gazebo</url>
 

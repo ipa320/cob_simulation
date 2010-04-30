@@ -1,22 +1,30 @@
 <package>
-  <description brief="cob3_gazebo">
+  <description brief="cob_gazebo">
 
-     cob3_gazebo
+  Launch scpipts for 3D of Care-O-bot in gazebo simulator.
 
   </description>
   <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
-  <url>http://www.care-o-bot.org</url>
+  <url>http://ros.org/wiki/cob_gazebo</url>
   
   <depend package="gazebo"/>
   <depend package="gazebo_plugins"/>
   <depend package="gazebo_worlds"/>
   <depend package="gazebo_tools"/>
+
   <depend package="robot_state_publisher"/>
-  <depend package="cob_defs"/>
-  <depend package="cob_ogre"/>
   <depend package="joint_trajectory_action"/>
+  <depend package="single_joint_position_action"/>
+
+  <depend package="cob_defs"/>
+  <depend package="cob_description"/>
+  <depend package="cob_ogre"/>
+  <depend package="cob_gazebo_worlds"/>
+  <depend package="cob_controller_configuration_gazebo"/>
+
   <depend package="pr2_gazebo"/>
+  <depend package="pr2_gazebo_plugins"/>
 
 </package>
