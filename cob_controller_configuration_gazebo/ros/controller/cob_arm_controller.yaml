@@ -10,32 +10,25 @@ arm_controller:
     - arm_7_joint
   gains:
     arm_1_joint:
-      p: 1200.0
-      i: 120.0
-      d: 12.0
+      p: 600.0
+      d: 6.0
     arm_2_joint:
-      p: 1200.0
-      i: 120.0
-      d: 12.0
+      p: 600.0
+      d: 6.0
     arm_3_joint: 
-      p: 1000.0
-      i: 100.0
-      d: 10.0
+      p: 100.0
+      d: 1.0
     arm_4_joint:
-      p: 1000.0
-      i: 100.0
-      d: 10.0
+      p: 100.0
+      d: 1.0
     arm_5_joint:
-      p: 800.0
-      i: 80.0
+      p: 80.0
       d: 8.0
     arm_6_joint:
       p: 800.0
-      i: 80.0
       d: 8.0
     arm_7_joint:
       p: 600.0
-      i: 60.0
       d: 6.0
 
   arm_joint_trajectory_action_node:
