@@ -25,7 +25,7 @@
   <!-- Controllers that come up started -->
   <node name="cob_default_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="--wait-for=/calibrated base_controller base_odometry torso_controller tray_controller arm_controller sdh_controller"/>
+        args="--wait-for=/calibrated base_controller base_odometry torso_controller tray_controller arm_controller sdh_controller head_camera_tilt_controller"/>
   
   <!-- Nodes on top of the controllers -->
   <group ns="torso_controller">
