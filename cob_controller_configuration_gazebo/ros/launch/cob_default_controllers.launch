@@ -8,19 +8,19 @@
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" />
 
   <!-- Torso -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_torso_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" />
 
   <!-- Tray -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_tray_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_controller.yaml" command="load" />
 
   <!-- Eyesbase -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_head_camera_tilt_controller.yaml" command="load" />
 
   <!-- Arm -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_arm_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller.yaml" command="load" />
 
   <!-- SDH -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_sdh_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller.yaml" command="load" />
 
   <!-- Controllers that come up started -->
   <node name="cob_default_controllers_spawner"
