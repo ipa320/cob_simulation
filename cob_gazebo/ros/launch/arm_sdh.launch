@@ -2,7 +2,7 @@
 <launch>
 
   <!-- send cob3 urdf to param server -->
-  <include file="$(find cob_description)/ros/robots/upload_arm.launch" />
+  <include file="$(find cob_description)/ros/robots/upload_arm_sdh.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="$(optenv ROBOT_INITIAL_POSE) -p robot_description spawn" respawn="false" output="screen" />
@@ -11,7 +11,8 @@
   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
 
   <!-- default bringup script -->
-  <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
+  <include file="$(find cob_gazebo)/ros/launch/cob3_bringup.launch" />
+
 
 
 </launch>

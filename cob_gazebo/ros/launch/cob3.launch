@@ -1,24 +1,11 @@
 <?xml version="1.0"?>
 <launch>
+	
+  <!-- startup cob3 without starting up any defaut controllers -->
+  <include file="$(find cob_gazebo)/ros/launch/cob3_no_controllers.launch" />
 
-	<!-- launch empty world -->
-	<include file="$(find cob_gazebo)/ros/launch/cob_world.launch" />
+  <!-- Default Controllers -->
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
 
-	<!-- send cob3 urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_defs)/ros/robots/cob3.urdf.xacro'" />
-
-	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="cob_urdf" pkg="gazebo_tools" type="gazebo_model" args="-z 0.5 -p robot_description spawn cob_model" respawn="false" />
-
-	<!-- Robot state publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-
-	<!-- Controllers -->
-	<include file="$(find cob_defs)/ros/launch/cob_controller.launch" />
-
-<!--	<node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" /> -->
 
 </launch>
