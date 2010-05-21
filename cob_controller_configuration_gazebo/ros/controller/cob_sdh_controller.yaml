@@ -11,37 +11,29 @@ sdh_controller:
     - sdh_thumb_3_joint
   gains:
     sdh_finger_11_joint:
-      p: 1200.0
-      i: 120.0
-      d: 12.0
+      p: 80.0
+      d: 1.0
     sdh_finger_21_joint:
-      p: 1200.0
-      i: 120.0
-      d: 12.0
+      p: 80.0
+      d: 1.0
     sdh_finger_12_joint: 
-      p: 1000.0
-      i: 100.0
-      d: 10.0
+      p: 60.0
+      d: 1.0
     sdh_finger_13_joint:
-      p: 800.0
-      i: 80.0
-      d: 8.0
+      p: 40.0
+      d: 1.0
     sdh_finger_22_joint:
-      p: 1000.0
-      i: 100.0
-      d: 10.0
+      p: 60.0
+      d: 1.0
     sdh_finger_23_joint:
-      p: 800.0
-      i: 80.0
-      d: 8.0
+      p: 40.0
+      d: 1.0
     sdh_thumb_2_joint:
-      p: 1000.0
-      i: 100.0
-      d: 10.0
+      p: 60.0
+      d: 1.0
     sdh_thumb_3_joint:
-      p: 800.0
-      i: 80.0
-      d: 8.0
+      p: 40.0
+      d: 1.0
 
   sdh_joint_trajectory_action_node:
     joints:

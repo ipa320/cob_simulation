@@ -7,23 +7,23 @@ torso_controller:
     - torso_upper_neck_tilt_joint
   gains:
     torso_lower_neck_pan_joint:
-      p: 100.0
-      i: 120.0
+      p: 800.0
+      i: 820.0
       d: 0.5
       i_clamp: 0.5 
     torso_lower_neck_tilt_joint:
-      p: 300.0
-      i: 320.0
+      p: 800.0
+      i: 820.0
       d: 0.5
       i_clamp: 0.5
     torso_upper_neck_pan_joint:
-      p: 200.0
-      i: 220.0
+      p: 500.0
+      i: 520.0
       d: 0.5
       i_clamp: 0.5
     torso_upper_neck_tilt_joint:
-      p: 300.0
-      i: 320.0
+      p: 500.0
+      i: 520.0
       d: 0.5
       i_clamp: 0.5 
  
@@ -36,10 +36,10 @@ torso_controller:
     constraints:
       goal_time: 0.6
       torso_lower_neck_pan_joint:
-        goal: 0.02
+        goal: 0.05
       torso_lower_neck_tilt_joint:
-        goal: 0.02
+        goal: 0.05
       torso_upper_neck_pan_joint:
-        goal: 0.02
+        goal: 0.05
       torso_upper_neck_tilt_joint:
-        goal: 0.02
+        goal: 0.05

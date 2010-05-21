@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<node pkg="rostopic" type="rostopic" name="reference_platform_tray" args="pub /controller_platform_tray/command std_msgs/Float64 3.1416" />
-
-</launch>
