@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- cob Base Control -->
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_base_controller.yaml" command="load" />
+
+  <!-- cob Odometry -->
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" />
+
+  <!-- Controllers that come up started -->
+  <node name="platform_controllers_spawner"
+        pkg="pr2_controller_manager" type="spawner" output="screen"
+        args="base_controller base_odometry"/>
+  
+</launch>
