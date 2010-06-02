@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+
   <!-- cob Base Control -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_base_controller.yaml" command="load" />
 

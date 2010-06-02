@@ -5,13 +5,13 @@
 
   </description>
   <author>Maintained by Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
-  <license>BSD,LGPL</license>  
+  <license>LGPL</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
-  <depend stack="cob_common" /> <!-- cob_defs -->
-  <depend stack="pr2_controllers" /> <!-- joint_trajectory_action -->
-  <depend stack="pr2_simulator" /> <!-- pr2_gazebo -->
-  <depend stack="robot_model" /> <!-- convex_decomposition, ivcon, robot_state_publisher -->
+  <depend stack="cob_common" /> <!-- cob_description -->
+  <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
+  <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
+  <depend stack="robot_model" /> <!-- convex_decomposition, robot_state_publisher, ivcon -->
   <depend stack="ros" />
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="visualization_common" /> <!-- ogre_tools -->

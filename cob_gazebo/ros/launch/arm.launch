@@ -13,5 +13,4 @@
   <!-- default bringup script -->
   <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
 
-
 </launch>

@@ -1,15 +1,15 @@
 <package>
-  <description brief="cob3_ogre">
+  <description brief="cob_ogre">
 
-     cob3_ogre
+    This package contains Care-O-bot Ogre mesh files used for visualization and collision.
 
   </description>
   <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
-  <url>http://www.care-o-bot.org</url>
+  <url>http://ros.org/wiki/cob_ogre</url>
   
-  <depend package="cob_defs"/>
+  <depend package="cob_description"/>
   <depend package="ogre_tools"/>
   <depend package="ivcon"/>
   <depend package="convex_decomposition"/>

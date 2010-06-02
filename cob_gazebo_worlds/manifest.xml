@@ -1,7 +1,7 @@
 <package>
   <description brief="cob_gazebo_worlds">
 
-     cob_gazebo_worlds
+     This package provides some worlds for gazebo simulation.
 
   </description>
   <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
@@ -10,5 +10,3 @@
   <url>http://ros.org/wiki/cob_gazebo_worlds</url>
 
 </package>
-
-

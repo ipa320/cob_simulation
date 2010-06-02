@@ -1,8 +1,7 @@
 <package>
   <description brief="cob_controller_configuration_gazebo">
 
-  This packages provides the controller configuration for simulating 
-  Care-O-bot in the gazebo simulator.
+    This packages provides the controller configuration for simulating Care-O-bot in the gazebo simulator.
 
   </description>
   <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>

@@ -7,5 +7,4 @@
   <!-- Default Controllers -->
   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
 
-
 </launch>
