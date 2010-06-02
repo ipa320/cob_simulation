@@ -2,7 +2,7 @@
 <launch>
 
   <!-- cob Tray -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_tray_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_controller.yaml" command="load" />
 
   <!-- Controllers that come up started -->
   <node name="cob_default_controllers_spawner"
