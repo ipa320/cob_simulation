@@ -1,0 +1,61 @@
+lbr_controller:
+  type: JointSplineTrajectoryController
+  joints:
+    - lbr_1_joint
+    - lbr_2_joint
+    - lbr_3_joint
+    - lbr_4_joint
+    - lbr_5_joint
+    - lbr_6_joint
+    - lbr_7_joint
+  gains:
+    lbr_1_joint:
+      p: 350.0
+      d: 1.0
+    lbr_2_joint:
+      p: 350.0
+      d: 1.0
+    lbr_3_joint: 
+      p: 300.0
+      d: 1.0
+    lbr_4_joint:
+      p: 300.0
+      d: 1.0
+    lbr_5_joint:
+      p: 180.0
+      d: 1.0
+    lbr_6_joint:
+      p: 180.0
+      d: 1.0
+    lbr_7_joint:
+      p: 180.0
+      d: 1.0
+
+  lbr_joint_trajectory_action_node:
+    joints:
+      - lbr_1_joint
+      - lbr_2_joint
+      - lbr_3_joint
+      - lbr_4_joint
+      - lbr_5_joint
+      - lbr_6_joint
+      - lbr_7_joint
+    constraints:
+      goal_time: 0.6
+      lbr_1_joint:
+        goal: 0.05
+      lbr_2_joint:
+        goal: 0.05
+      lbr_3_joint:
+        goal: 0.05
+      lbr_4_joint:
+        goal: 0.05
+      lbr_5_joint:
+        goal: 0.05
+      lbr_6_joint:
+        goal: 0.05
+      lbr_7_joint:
+        goal: 0.05
+
+
+

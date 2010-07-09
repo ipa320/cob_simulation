@@ -2,7 +2,7 @@
 <launch>
 
   <!-- send cob3 urdf to param server -->
-  <include file="$(find cob_description)/ros/robots/upload_cob3-sim.launch" />
+  <include file="$(find cob_description)/ros/robots/upload_cob3.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
