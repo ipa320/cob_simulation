@@ -9,6 +9,4 @@
     <env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
   </node>
 
-  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/common/worlds/ipa_kitchen.world" respawn="false" output="screen">
-
 </launch>

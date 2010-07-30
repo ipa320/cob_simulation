@@ -20,6 +20,9 @@
     <remap from="imu_data" to="torso_lift_imu/data" />
   </node>
   
+  <!-- send parameters to parameter server -->
+  <rosparam command="load" ns="arm_controller" file="$(find cob_arm)/ros/launch/$(env ROBOT).yaml"/>
+  
   <!-- start ik_solver for arm -->
   <node pkg="cob_arm" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
