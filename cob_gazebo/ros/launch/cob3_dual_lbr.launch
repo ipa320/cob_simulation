@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<launch>
+
+<!--<>group ns="cob3_1">-->
+	<param name="tf_prefix" value="cob3" />
+     <!-- send cob3 urdf to param server -->
+  <include file="$(find cob_description)/ros/robots/upload_cob3.launch" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
+	<!-- default bringup script -->
+	<!-- Controller manager parameters -->
+	  <param name="pr2_controller_manager/mechanism_statistics_publish_rate" value="1.0" />
+	  <param name="pr2_controller_manager/joint_state_publish_rate" value="100.0" />
+
+	<!-- Robot state publisher -->
+	  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+	    <param name="publish_frequency" type="double" value="50.0" />
+	    <param name="tf_prefix" type="string" value="cob3" />
+	  </node>
+
+	<!-- Diagnostics -->
+	  <node pkg="pr2_mechanism_diagnostics" type="pr2_mechanism_diagnostics" name="pr2_mechanism_diagnostics" />
+
+	  <!-- Fake Calibration -->
+  	<node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+        args="pub /calibrated std_msgs/Bool true" />
+
+	  <!-- Robot pose ekf -->
+	  <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" output="screen">
+	    <param name="freq" value="30.0"/>
+	    <param name="sensor_timeout" value="1.0"/>
+	    <param name="publish_tf" value="true"/>
+	    <param name="odom_used" value="true"/>
+	    <param name="imu_used" value="true"/>
+	    <param name="vo_used" value="false"/>
+	    <remap from="odom" to="base_odometry/odom" />
+	    <remap from="imu_data" to="torso_lift_imu/data" />
+	  </node>
+
+
+   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
+<!--</group>-->
+
+<group ns="lwr">
+	<!-- Send lbr urdf to param server -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/lbr_sdh.urdf.xacro'" />
+  	<!-- push robot_description to factory and spawn robot in gazebo -->
+	<node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-x -1.0 -z 0.1 -Y 3.14 -p robot_description spawn" respawn="false" output="screen" />
+	<!-- default bringup script -->
+	<!-- transform of tf as initialized in gazebo -->
+	<node name="global_transform_lwr" pkg="tf" type="static_transform_publisher" args="-1 0 0 3.14 0 0 /cob3/odom_combined /lwr/base_link 100" respawn="false" output="screen"/>	
+	<!-- Controller manager parameters -->
+	  <param name="pr2_controller_manager/mechanism_statistics_publish_rate" value="1.0" />
+	  <param name="pr2_controller_manager/joint_state_publish_rate" value="100.0" />
+
+	<!-- Robot state publisher -->
+	  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+	    <param name="publish_frequency" type="double" value="50.0" />
+	    <param name="tf_prefix" type="string" value="lwr" />
+	  </node>
+
+	<!-- Diagnostics -->
+	  <node pkg="pr2_mechanism_diagnostics" type="pr2_mechanism_diagnostics" name="pr2_mechanism_diagnostics" />
+
+	  <!-- Fake Calibration -->
+  	<node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+        args="pub /calibrated std_msgs/Bool true" />
+
+
+ 	<!-- Default Controllers -->
+  	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/lbr_controller.launch" />
+	<!-- sdh Controllers -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch" />
+
+
+
+</group>
+
+
+</launch>
