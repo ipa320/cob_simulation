@@ -19,5 +19,11 @@
     <remap from="odom" to="base_odometry/odom" />
     <remap from="imu_data" to="torso_lift_imu/data" />
   </node>
+  
+  <!-- start ik_solver for arm -->
+  <node pkg="cob_arm" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
+
+  <!-- start cartesian interface -->
+  <node pkg="cob_arm" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
 </launch>

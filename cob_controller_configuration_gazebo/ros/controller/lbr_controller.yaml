@@ -10,25 +10,25 @@ lbr_controller:
     - lbr_7_joint
   gains:
     lbr_1_joint:
-      p: 350.0
+      p: 550.0
       d: 1.0
     lbr_2_joint:
-      p: 350.0
+      p: 550.0
       d: 1.0
     lbr_3_joint: 
-      p: 300.0
+      p: 500.0
       d: 1.0
     lbr_4_joint:
-      p: 300.0
+      p: 500.0
       d: 1.0
     lbr_5_joint:
-      p: 180.0
+      p: 580.0
       d: 1.0
     lbr_6_joint:
-      p: 180.0
+      p: 580.0
       d: 1.0
     lbr_7_joint:
-      p: 180.0
+      p: 580.0
       d: 1.0
 
   lbr_joint_trajectory_action_node:
