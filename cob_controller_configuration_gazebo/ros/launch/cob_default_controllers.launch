@@ -13,14 +13,11 @@
   <!-- Tray -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_controller.yaml" command="load" />
 
-  <!-- Eyesbase -->
+  <!-- Head -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/cob_head_camera_tilt_controller.yaml" command="load" />
 
   <!-- Arm -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller.yaml" command="load" />
-
-  <!-- LBR -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/lbr_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller_$(env ROBOT).yaml" command="load" />
 
   <!-- SDH -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller.yaml" command="load" />
@@ -28,7 +25,7 @@
   <!-- Controllers that come up started -->
   <node name="cob_default_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="--wait-for=/calibrated base_controller base_odometry torso_controller tray_controller arm_controller lbr_controller sdh_controller head_camera_tilt_controller"/>
+        args="--wait-for=/calibrated base_controller base_odometry torso_controller tray_controller arm_controller sdh_controller head_camera_tilt_controller"/>
   
   <!-- Nodes on top of the controllers -->
   <group ns="torso_controller">
@@ -41,10 +38,6 @@
 
   <group ns="arm_controller">
 	<node name="arm_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-  </group>
-
-  <group ns="lbr_controller">
-	<node name="lbr_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
   </group>
 
   <group ns="sdh_controller">
