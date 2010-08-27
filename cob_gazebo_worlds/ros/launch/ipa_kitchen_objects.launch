@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- a cup -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/coffee_cup.launch" />
+	
+	<!-- table cup -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/table.launch" />
+
+</launch>
