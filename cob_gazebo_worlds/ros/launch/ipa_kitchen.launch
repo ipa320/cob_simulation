@@ -9,7 +9,4 @@
 		<env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
 	</node>
 
-	<!-- populate kitchen -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/ipa_kitchen_objects.launch" />
-
 </launch>
