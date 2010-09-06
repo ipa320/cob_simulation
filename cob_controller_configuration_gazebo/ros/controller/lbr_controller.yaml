@@ -1,5 +1,5 @@
 lbr_controller:
-  type: JointSplineTrajectoryController
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
     - lbr_1_joint
     - lbr_2_joint

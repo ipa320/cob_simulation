@@ -1,5 +1,5 @@
 arm_controller:
-  type: JointSplineTrajectoryController
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
     - arm_1_joint
     - arm_2_joint
