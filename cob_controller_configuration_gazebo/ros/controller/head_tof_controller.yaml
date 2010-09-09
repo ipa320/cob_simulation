@@ -1,6 +1,6 @@
 head_tof_controller:
   type: pr2_mechanism_controllers/LaserScannerTrajController
-  joint: head_tof_joint
+  joint: head_tof_tilt_joint
   gains:
     p: 8.0
     i: 0.1
