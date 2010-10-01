@@ -1,5 +1,5 @@
 sdh_controller:
-  type: JointSplineTrajectoryController
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
     - sdh_finger_11_joint
     - sdh_finger_21_joint

@@ -1,7 +1,7 @@
 base_controller:
   caster_names: fr_caster_rotation_link fl_caster_rotation_link bl_caster_rotation_link br_caster_rotation_link
 
-  type: Pr2BaseController
+  type: pr2_mechanism_controllers/Pr2BaseController
   publish_tf: false
 
   caster_velocity_pid_gains: &caster_velocity_pid_gains

@@ -1,19 +1,19 @@
-tray_controller:
+head_controller:
   type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
-    - torso_tray_joint 
+    - head_axis_joint 
   gains:
-    torso_tray_joint:
+    head_axis_joint:
       p: 10.0
       i: 12.0
       d: 0.5
       i_clamp: 0.5 
     
-  tray_joint_trajectory_action_node:
+  head_joint_trajectory_action_node:
     joints:
-    - torso_tray_joint 
+    - head_axis_joint 
     constraints:
       goal_time: 0.6
-      torso_tray_joint:
+      head_axis_joint:
         goal: 0.02
 
