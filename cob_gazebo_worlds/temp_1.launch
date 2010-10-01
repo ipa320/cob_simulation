@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- start gazebo with an empty plane -->
+  <param name="/use_sim_time" value="true" />
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="/home/fmw-hj/ros/ipa_empty.world" respawn="false" output="screen"/>
+
+  <!-- ipa walls-->
+  <param name="ipa_4th_floor_walls"      textfile="$(find cob_gazebo_worlds)/objects/ipa_4th_floor_walls.model" />
+  <node name="xml2factor_ipa_4th_floor_walls" pkg="gazebo" type="spawn_model" args="-gazebo -param ipa_4th_floor_walls -x -28.75 -y -22.75 -model ipa_4th_floor_walls" respawn="false" output="screen" />
+
+</launch>

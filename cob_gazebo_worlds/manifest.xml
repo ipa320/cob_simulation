@@ -9,4 +9,21 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_gazebo_worlds</url>
 
+  <depend package="xacro"/>
+  <depend package="convex_decomposition"/>
+  <depend package="ivcon"/>
+  <depend package="ogre_tools"/>
+  <depend package="gazebo"/>
+  <depend package="gazebo_tools"/>
+  <depend package="gazebo_plugins"/>
+
+  <platform os="ubuntu" version="9.04"/>
+  <platform os="ubuntu" version="9.10"/>
+  <platform os="ubuntu" version="10.04"/>
+
+  <export>
+    <gazebo gazebo_media_path="${prefix}" />
+  </export>
+
+
 </package>
