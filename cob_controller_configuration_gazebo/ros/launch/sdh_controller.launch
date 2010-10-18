@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!-- SDH -->
     <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller.yaml" command="load" />
 
-	<node name="spawn_sdh_controller" pkg="pr2_controller_manager" type="spawner" args="sdh_controller" respawn="false" output="screen" />
+	<node name="sdh_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="sdh_controller" />
 	
     <group ns="sdh_controller">
-      <node name="sdh_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+		<node name="sdh_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
     </group>
 
 </launch>
