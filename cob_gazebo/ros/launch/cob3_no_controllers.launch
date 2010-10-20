@@ -7,7 +7,4 @@
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
 
-  <!-- default bringup script -->
-  <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
-
 </launch>
