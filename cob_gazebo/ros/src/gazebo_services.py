@@ -111,15 +111,21 @@ class gazebo_services():
       self.arm_states=data
 
    def base_stop_cb(self, req):
-      self.base_euler = euler_from_quaternion((self.base_states[1], 'xyzs')
-      print self.base_euler
-      self.base_goal = []   # <- 3 double/int
-      self.base_goal.append(self.base_states[0][0])
-      self.base_goal.append(self.base_states[0][1])
-      self.base_goal.append(self.base_euler[2])
-      self.sss.move("base",self.base_goal)
       resp = TriggerResponse()
+      if len(self.base_states) != 0:
+         self.base_sxyz = (self.base_states[1][0],self.base_states[1][1],self.base_states[1][2],self.base_states[1][3])
+         self.base_euler = euler_from_quaternion(self.base_sxyz)
+         print self.base_euler
+         self.base_goal = []   # <- 3 double/int
+         self.base_goal.append(self.base_states[0][0])
+         self.base_goal.append(self.base_states[0][1])
+         self.base_goal.append(self.base_euler[2])
+         self.sss.move("base",self.base_goal)
+      else:
+         resp.success=1
+         resp.errorMessage="No transformation recieved yet"
       return resp
+
 
    def run(self):
       while not rospy.is_shutdown():
