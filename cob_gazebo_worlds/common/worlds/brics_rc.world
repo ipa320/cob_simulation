@@ -114,7 +114,7 @@
   </model:physical>
 
   <model:physical name="gfloor1">
-    <xyz>-0.46 -0.26 -0.02</xyz>
+    <xyz>-0.46 -0.26 0.02</xyz>
     <rpy>0 0 0</rpy>
     <static>true</static>
     <body:box name="wooden_floor_1">
@@ -132,7 +132,7 @@
 	
 
   <model:physical name="gfloor2">
-    <xyz>1.79 0.24 -0.02</xyz>
+    <xyz>1.79 0.24 0.02</xyz>
     <rpy>0 0 0</rpy>
     <static>true</static>
 	<body:box name="wooden_floor_2">
@@ -150,7 +150,7 @@
 
 
   <model:physical name="gfloor3">
-    <xyz>4.54 -0.01 -0.02</xyz>
+    <xyz>4.54 -0.01 0.02</xyz>
     <rpy>0 0 0</rpy>
     <static>true</static>
 	<body:box name="wooden_floor_3">
