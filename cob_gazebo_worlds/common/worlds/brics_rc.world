@@ -113,59 +113,6 @@
     </body:plane>
   </model:physical>
 
-  <model:physical name="gfloor1">
-    <xyz>-0.46 -0.26 0.02</xyz>
-    <rpy>0 0 0</rpy>
-    <static>true</static>
-    <body:box name="wooden_floor_1">
-      <geom:box name="wooden_floor_1">
-        <mesh>default</mesh>
-        <size>1.0 2.5 0.04</size>
-        <visual>
-          <size>1.0 2.5 0.04</size>
-          <material>Gazebo/Black</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-	
-
-  <model:physical name="gfloor2">
-    <xyz>1.79 0.24 0.02</xyz>
-    <rpy>0 0 0</rpy>
-    <static>true</static>
-	<body:box name="wooden_floor_2">
-      <geom:box name="wooden_floor_2">
-        <mesh>default</mesh>
-        <size>3.5 3.5 0.04</size>
-        <visual>
-          <size>3.5 3.5 0.04</size>
-          <material>Gazebo/Black</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
-
-  <model:physical name="gfloor3">
-    <xyz>4.54 -0.01 0.02</xyz>
-    <rpy>0 0 0</rpy>
-    <static>true</static>
-	<body:box name="wooden_floor_3">
-      <geom:box name="wooden_floor_3">
-        <mesh>default</mesh>
-        <size>2.0 3.0 0.04</size>
-        <visual>
-          <size>2.0 3.0 0.04</size>
-          <material>Gazebo/Black</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-  </model:physical>
-
   <model:physical name="wall_1_model">
     <xyz>-1.0 0.22 0.25</xyz>
     <rpy>0.0 0.0 0.0</rpy>
