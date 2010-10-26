@@ -29,7 +29,7 @@
                 <rpy>0 0 0</rpy>
                 <scale>1.4 0.45 0.06</scale>
                 <mesh>unit_box</mesh>
-                <material>Gazebo/Gray</material>
+                <material>Gazebo/Black</material>
             </visual>
         </geom:box>
         <geom:box name="left_leg_geom">
@@ -54,7 +54,7 @@
                 <rpy>0 0 0</rpy>
                 <scale>0.06 0.45 0.75</scale>
                 <mesh>unit_box</mesh>
-                <material>Gazebo/Gray</material>
+                <material>Gazebo/Black</material>
             </visual>
         </geom:box>
         <geom:box name="right_leg_geom">
@@ -79,7 +79,7 @@
                 <rpy>0 0 0</rpy>
                 <scale>0.75 0.45 0.06</scale>
                 <mesh>unit_box</mesh>
-                <material>Gazebo/Gray</material>
+                <material>Gazebo/Black</material>
             </visual>
         </geom:box>
     </body:box>
