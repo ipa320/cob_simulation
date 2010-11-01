@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send brics_rc_world urdf to param server -->
+	<param name="brics_rc_world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/common/worlds/brics_rc_world.urdf" />
+
+	<!-- push brics_rc_world_description to factory and spawn robot in gazebo -->
+	<node name="spawn_brics_rc_world" pkg="gazebo" type="spawn_model" args="-urdf -param brics_rc_world_description -x 0 -y 0 -z 0 -R 0.0 -P 0.0 -Y 0 -model brics_rc_world_model" respawn="false" output="screen" />
+
+</launch>
