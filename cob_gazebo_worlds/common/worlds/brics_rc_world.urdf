@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<robot name="brics_rc_world">
+  <link name="dummy_link">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_1_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 3.54 0.5" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 3.54 0.5" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_2_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2.40 0.1 0.5" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2.40 0.1 0.5" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_3_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="3.58 0.1 0.5" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="3.58 0.1 0.5" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_4_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 3.54 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.1 3.54 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_5_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="1.77 0.4 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="1.77 0.4 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_6_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="6.57 0.1 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="6.57 0.1 3.0" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wall_7_model">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.66 0.5 3.0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.66 0.5 3.0" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+ <joint name="my_joint1" type="fixed">
+    <origin xyz="-1.0 0.22 0.25" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_1_model"/>
+ </joint>
+ <joint name="my_joint2" type="fixed">
+    <origin xyz="0.19 -1.55 0.25" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_2_model"/>
+ </joint>
+ <joint name="my_joint3" type="fixed">
+    <origin xyz="3.75 -1.55 0.25" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_3_model"/>
+ </joint>
+ <joint name="my_joint4" type="fixed">
+    <origin xyz="5.54 .17 1.50" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_4_model"/>
+ </joint>
+ <joint name="my_joint5" type="fixed">
+    <origin xyz="4.7 1.8 1.5" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_5_model"/>
+ </joint>
+ <joint name="my_joint6" type="fixed">
+    <origin xyz="2.28 1.99 1.5" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_6_model"/>
+ </joint>
+ <joint name="my_joint7" type="fixed">
+    <origin xyz="-0.29 1.75 1.5" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_7_model"/>
+ </joint>
+
+
+  <gazebo reference="dummy_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_1_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_2_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_3_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_4_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_5_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_6_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wall_7_model">
+    <material>Gazebo/Green</material>
+  </gazebo>
+</robot>
