@@ -8,7 +8,7 @@
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" />
 
   <!-- Controllers that come up started -->
-  <node name="platform_controllers_spawner"
+  <node name="base_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"
         args="base_controller base_odometry"/>
   

@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- a cup -->
+	<!-- cup in kitchen -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/coffee_cup.launch" />
 	
-	<!-- table cup -->
+	<!-- cup on table -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/coffee_cup_table.launch" />
+	
+	<!-- table -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/table.launch" />
 
 </launch>

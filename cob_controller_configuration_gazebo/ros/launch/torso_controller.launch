@@ -1,19 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- cob Torso -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" />
+	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" />
 
-  <!-- Controllers that come up started -->
-  <node name="torso_controllers_spawner"
-        pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="torso_controller"/>
-  
-  <!-- Nodes on top of the controllers -->
-  <group ns="torso_controller">
-	<node name="torso_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action">
-          <!--remap from="/torso_controller/joint_trajectory_action/goal" to="/torso/JointTrajectory/goal"/-->
-        </node>
-  </group>
+	<node name="torso_controllers_spawner" pkg="pr2_controller_manager" type="spawner" args="torso_controller" />
+
+	<group ns="torso_controller">
+		<node name="torso_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+	</group>
 
 </launch>

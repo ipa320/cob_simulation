@@ -1,52 +1,22 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- cob Base Control -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_base_controller.yaml" command="load" />
-
-  <!-- cob Odometry -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" />
+  <!-- Base -->
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
 
   <!-- Torso -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" />
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller.launch"/>
 
   <!-- Tray -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_controller.yaml" command="load" />
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>
 
   <!-- Head -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/head_controller.yaml" command="load" />
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/head_tof_controller.yaml" command="load" />
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
 
   <!-- Arm -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller_$(env ROBOT).yaml" command="load" />
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch"/>
 
   <!-- SDH -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller.yaml" command="load" />
-
-  <!-- Controllers that come up started -->
-  <node name="cob_default_controllers_spawner"
-        pkg="pr2_controller_manager" type="spawner" output="screen"
-        args="--wait-for=/calibrated base_controller base_odometry torso_controller tray_controller arm_controller sdh_controller head_controller head_tof_controller"/>
-  
-  <!-- Nodes on top of the controllers -->
-  <group ns="torso_controller">
-	<node name="torso_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action"/>
-  </group>
-
-  <group ns="tray_controller">
-	<node name="tray_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-  </group>
-
-  <group ns="arm_controller">
-	<node name="arm_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-  </group>
-
-  <group ns="sdh_controller">
-	<node name="sdh_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-  </group>
-  
-  <group ns="head_controller">
-	<node name="head_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-  </group>
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
 
 </launch>

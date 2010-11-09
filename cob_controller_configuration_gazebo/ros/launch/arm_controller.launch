@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 <launch>
-        
-    <!-- Arm -->
+
 	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller_$(env ROBOT).yaml" command="load"/>
 
-	<node name="spawn_arm_controller" pkg="pr2_controller_manager" type="spawner" args="arm_controller" respawn="false" output="screen" />
+	<node name="arm_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="arm_controller" />
 	
 	<group ns="arm_controller">
-	      <node name="arm_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+		<node name="arm_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
 	</group>
 
 </launch>

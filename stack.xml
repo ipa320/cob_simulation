@@ -9,6 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
   <depend stack="cob_common" /> <!-- cob_description -->
+  <depend stack="common" /> <!-- xacro -->
   <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
   <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
   <depend stack="robot_model" /> <!-- convex_decomposition, robot_state_publisher, ivcon -->
