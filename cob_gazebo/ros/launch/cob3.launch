@@ -7,4 +7,7 @@
   <!-- Default Controllers -->
   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
 
+  <!-- services for simulation (e.g.: stop for simulation)-->
+  <node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+
 </launch>

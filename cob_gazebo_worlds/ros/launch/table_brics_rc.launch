@@ -1,0 +1,6 @@
+<launch>
+  <!-- add tables in appropriate places for wg walls -->
+  <param name="table_brics_model" textfile="$(find cob_gazebo_worlds)/objects/table_brics_rc.model" />
+  <node name="spawn_desk1" pkg="gazebo" type="spawn_model" args="-gazebo -param table_brics_model -x 2.7 -y 1.5 -model table_brics_model" respawn="false" output="screen" />
+</launch>
+

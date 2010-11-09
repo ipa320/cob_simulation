@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start gazebo with ipa kitchen -->
+	<param name="/use_sim_time" value="true" />
+	<node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen">
+		<env name="LD_LIBRARY_PATH" value="$(find ogre)/ogre/lib:$(find gazebo_plugins)/lib:$(find pr2_gazebo_plugins)/lib:$(find gazebo)/gazebo/lib:$(optenv LD_LIBRARY_PATH)" />
+		<env name="GAZEBO_RESOURCE_PATH" value="$(find cob_gazebo_worlds):$(find cob_description):$(find cob_ogre):$(find pr2_ogre):$(find pr2_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />
+		<env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
+	</node>
+	
+	<!-- ipa walls-->
+	<param name="ipa_4th_floor_walls" textfile="$(find cob_gazebo_worlds)/objects/ipa_4th_floor_walls.model" />
+	<node name="xml2factor_ipa_4th_floor_walls" pkg="gazebo" type="spawn_model" args="-gazebo -param ipa_4th_floor_walls -x -28.75 -y -22.75 -model ipa_4th_floor_walls" respawn="false" output="screen" />
+
+</launch>
