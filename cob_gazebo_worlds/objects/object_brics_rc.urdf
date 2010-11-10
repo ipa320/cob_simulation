@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <robot name="simple_box">
   <link name="my_box">
     <inertial>

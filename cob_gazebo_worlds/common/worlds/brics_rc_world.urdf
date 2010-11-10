@@ -22,7 +22,7 @@
   <link name="wall_1_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -41,7 +41,7 @@
   <link name="wall_2_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -60,7 +60,7 @@
   <link name="wall_3_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -79,7 +79,7 @@
   <link name="wall_4_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -98,7 +98,7 @@
   <link name="wall_5_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -117,7 +117,7 @@
   <link name="wall_6_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
@@ -136,7 +136,7 @@
   <link name="wall_7_model">
     <inertial>
       <origin xyz="0 0 0" /> 
-      <mass value="1.0" />
+      <mass value="10.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
