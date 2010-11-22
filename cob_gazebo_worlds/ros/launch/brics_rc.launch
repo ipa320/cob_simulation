@@ -7,6 +7,7 @@
 		<env name="LD_LIBRARY_PATH" value="$(find ogre)/ogre/lib:$(find gazebo_plugins)/lib:$(find pr2_gazebo_plugins)/lib:$(find gazebo)/gazebo/lib:$(optenv LD_LIBRARY_PATH)" />
 		<env name="GAZEBO_RESOURCE_PATH" value="$(find cob_gazebo_worlds):$(find cob_description):$(find cob_ogre):$(find pr2_ogre):$(find pr2_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />
 		<env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
+		<remap from="/base_odometry/odom" to="/base_controller/odometry" />
 	</node>
 
 </launch>
