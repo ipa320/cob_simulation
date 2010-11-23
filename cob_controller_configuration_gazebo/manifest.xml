@@ -10,5 +10,6 @@
   <url>http://ros.org/wiki/cob_controller_configuration_gazebo</url>
   
   <depend package="pr2_controller_manager"/>
+  <depend package="cob_sick_s300"/>
 
 </package>
