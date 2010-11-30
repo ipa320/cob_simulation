@@ -5,6 +5,6 @@
   <include file="$(find cob_description)/ros/robots/upload_cob3.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
+  <node name="cob3_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model cob3 -z 0.1 " respawn="false" output="screen" />
 
 </launch>
