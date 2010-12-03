@@ -4,7 +4,7 @@
     Launch scpipts for 3D simulation of Care-O-bot in gazebo simulator.
 
   </description>
-  <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
+  <author>Florian Weisshardt</author>
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_gazebo</url>
