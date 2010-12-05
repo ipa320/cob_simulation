@@ -45,7 +45,7 @@ class gazebo_services():
 
       #base
       rospy.loginfo("waiting for map...")
-      rospy.wait_for_service("/static_map")
+      rospy.wait_for_service("/static_map",10)
       self.base_states = ()
       self.base_stop_srv = rospy.Service('/base_controller/stop', Trigger, self.base_stop_cb)
 
