@@ -18,12 +18,15 @@
   <depend package="robot_state_publisher"/>
   <depend package="joint_trajectory_action"/>
   <depend package="single_joint_position_action"/>
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="move_base_msgs"/>
 
+  <depend package="cob_srvs"/>
   <depend package="cob_description"/>
   <depend package="cob_ogre"/>
   <depend package="cob_gazebo_worlds"/>
   <depend package="cob_controller_configuration_gazebo"/>
-  <depend package="cob_script_server"/>
 
   <depend package="pr2_gazebo"/>
   <depend package="pr2_gazebo_plugins"/>
