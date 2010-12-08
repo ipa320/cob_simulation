@@ -8,11 +8,12 @@
   <license>LGPL</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
-  <depend stack="cob_apps" /> <!-- cob_script_server -->
-  <depend stack="cob_common" /> <!-- cob_description -->
+  <depend stack="cob_common" /> <!-- cob_srvs, cob_description -->
   <depend stack="cob_driver" /> <!-- cob_sick_s300 -->
-  <depend stack="common" /> <!-- xacro -->
+  <depend stack="common" /> <!-- actionlib, xacro -->
+  <depend stack="common_msgs" /> <!-- actionlib_msgs -->
   <depend stack="geometry" /> <!-- tf -->
+  <depend stack="navigation" /> <!-- move_base_msgs -->
   <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
   <depend stack="pr2_mechanism" /> <!-- pr2_controller_manager -->
   <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
