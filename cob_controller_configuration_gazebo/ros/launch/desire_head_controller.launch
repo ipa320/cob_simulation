@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/desire_head_controller.yaml" command="load" />
+
+	<node name="head_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="head_controller"/>
+
+	<group ns="head_controller">
+		<node name="head_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+	</group>
+
+</launch>
