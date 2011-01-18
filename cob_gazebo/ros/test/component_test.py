@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('rostest_study')
+import roslib
+roslib.load_manifest('cob_gazebo')
+roslib.load_manifest('cob_script_server')
 
 import sys
 import time
@@ -35,9 +37,9 @@ class UnitTest(unittest.TestCase):
             command_topic = rospy.get_param('~command_topic')
             state_topic = rospy.get_param('~state_topic')
             # part of robot 
-            test_part = rospy.get_param('~test_part')
+            component = rospy.get_param('~component')
             # movement command
-            movement_command = rospy.get_param('~movement_command')
+            target = rospy.get_param('~target')
         except KeyError, e:
             self.fail('cobunit not initialized properly')
         print """
@@ -47,12 +49,12 @@ class UnitTest(unittest.TestCase):
               State: %s
               Test Duration: %s
               Error Range: %s
-              Wait Time: %s"""%(test_part, movement_command, command_topic, state_topic, test_duration, error_range, wait_time)
-        self._test_cob(test_part, command_topic, state_topic, test_duration, error_range, wait_time, movement_command)
+              Wait Time: %s"""%(component, target, command_topic, state_topic, test_duration, error_range, wait_time)
+        self._test_cob(component, command_topic, state_topic, test_duration, error_range, wait_time, target)
         
-    def _test_cob(self,test_part, command_topic, state_topic, test_duration, error_range, wait_time, movement_command): 
+    def _test_cob(self,component, command_topic, state_topic, test_duration, error_range, wait_time, target): 
         self.assert_(test_duration > 0.0, "bad parameter (test_duration)")
-        self.sss.init(test_part)
+        self.sss.init(component)
         
         # start actual test
         sub_command_topic = rospy.Subscriber(command_topic, JointTrajectory, self.cb_command) 
@@ -65,7 +67,7 @@ class UnitTest(unittest.TestCase):
             time.sleep(0.1)
           
         # send commands to cob
-        self.sss.move(test_part,movement_command)
+        self.sss.move(component,target)
              
         print "Starting measurement"
         timeout_t = rospy.get_time() + test_duration
