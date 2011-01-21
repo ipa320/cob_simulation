@@ -17,6 +17,12 @@
     <remap from="scan_filtered" to="scan_rear"/>
   </node>
 
+  <!-- gazebo test -->
+  <include file="$(find cob_sick_s300)/ros/launch/front.test"/>
+  <include file="$(find cob_sick_s300)/ros/launch/rear.test"/>
+  <include file="$(find cob_hokuyo)/ros/launch/hokuyo.test"/> 
+  
+
   <!-- Controllers that come up started -->
   <node name="base_controllers_spawner"
         pkg="pr2_controller_manager" type="spawner" output="screen"

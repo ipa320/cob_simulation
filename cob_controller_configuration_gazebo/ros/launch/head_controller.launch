@@ -5,6 +5,9 @@
 
 	<node name="head_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="head_controller"/>
 
+	<!-- gazebo test -->
+	<include file="$(find cob_head_axis)/ros/launch/head_axis.test" />
+
 	<group ns="head_controller">
 		<node name="head_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
 	</group>
