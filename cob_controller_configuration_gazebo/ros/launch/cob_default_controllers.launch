@@ -5,7 +5,7 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_base_controller.launch"/>
 
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller.launch"/>
