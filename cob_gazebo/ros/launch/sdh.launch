@@ -8,9 +8,7 @@
   <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
 
   <!-- Default Controllers -->
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch" />
-
-  <!-- default bringup script -->
-  <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
 
 </launch>
