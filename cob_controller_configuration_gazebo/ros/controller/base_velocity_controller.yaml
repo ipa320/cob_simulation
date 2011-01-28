@@ -1,0 +1,45 @@
+caster_velocity_pid_gains: &caster_velocity_pid_gains
+  p: 8.0
+  d: 0.0
+  i: 0.0
+  i_clamp: 4.0
+
+wheel_pid_gains: &wheel_pid_gains
+  p: 3.0
+  d: 0.0
+  i: 0.0
+  i_clamp: 2.0
+
+base_fr_caster_rotation_controller:
+  type: JointVelocityController
+  joint: fr_caster_rotation_joint
+  pid: *caster_velocity_pid_gains
+base_fl_caster_rotation_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: fl_caster_rotation_joint
+  pid: *caster_velocity_pid_gains
+base_br_caster_rotation_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: br_caster_rotation_joint
+  pid: *caster_velocity_pid_gains
+base_bl_caster_rotation_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: bl_caster_rotation_joint
+  pid: *caster_velocity_pid_gains
+base_fr_caster_r_wheel_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: fr_caster_r_wheel_joint
+  pid: *wheel_pid_gains
+base_fl_caster_r_wheel_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: fl_caster_r_wheel_joint
+  pid: *wheel_pid_gains
+base_br_caster_r_wheel_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: br_caster_r_wheel_joint
+  pid: *wheel_pid_gains
+base_bl_caster_r_wheel_controller:
+  type: robot_mechanism_controllers/JointVelocityController
+  joint: bl_caster_r_wheel_joint
+  pid: *wheel_pid_gains  
+
