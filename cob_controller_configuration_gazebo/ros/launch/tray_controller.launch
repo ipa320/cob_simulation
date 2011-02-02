@@ -5,6 +5,9 @@
 
 	<node name="tray_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="tray_controller" />
 
+	<!-- gazebo test -->
+	<include file="$(find cob_tray)/ros/launch/tray.test"/> 
+
 	<group ns="tray_controller">
 		<node name="tray_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
 	</group>
