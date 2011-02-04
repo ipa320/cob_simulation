@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <robot name="ipa_kitchen">
   <link name="dummy_link">
     <inertial>
@@ -351,7 +353,7 @@
     </collision>
   </link>
   <gazebo reference="box2">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
    <joint name="joint_box2" type="fixed">
     <origin xyz="-3.2 0.16 0.425" rpy="0 0 0"/>
