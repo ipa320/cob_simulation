@@ -1,0 +1,41 @@
+material IPA/Wave
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wave.png
+      }
+    }
+  }
+}
+
+material IPA/FraunhoferIPA
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture fraunhofer_ipa.png
+      }
+    }
+  }
+}
+
+material IPA/Care-O-bot
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture care-o-bot.png
+      }
+    }
+  }
+}

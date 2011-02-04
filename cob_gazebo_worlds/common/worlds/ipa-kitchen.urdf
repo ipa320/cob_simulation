@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       name="ipa-kitchen" >
+       
+  <include filename="$(find cob_gazebo_worlds)/common/objects/materials.urdf.xacro" />
 
-<robot name="ipa_kitchen">
+<xacro:macro name="ipa-kitchen" params="name">
   <link name="dummy_link">
     <inertial>
       <origin xyz="0 0 0" /> 
@@ -51,6 +58,33 @@
     <child link="wall_1"/>
  </joint>
   
+ <link name="wall_1_fraunhofer">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.45 0.553" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.45 0.553" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="wall_1_fraunhofer">
+    <material>IPA/Care-O-bot</material>
+  </gazebo>
+   <joint name="joint_wall_1_fraunhofer" type="fixed">
+    <origin xyz="-3.45 0 1.7" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="wall_1_fraunhofer"/>
+ </joint>
   
   <link name="wall_2">
     <inertial>
@@ -388,6 +422,8 @@
     <parent link="dummy_link"/>
     <child link="box3"/>
  </joint>
+</xacro:macro>
   
+  <xacro:ipa-kitchen name="ipa-kitchen"/>
   
 </robot>
