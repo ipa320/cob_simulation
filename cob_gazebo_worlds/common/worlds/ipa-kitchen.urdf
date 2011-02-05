@@ -530,7 +530,7 @@
     <material>IPA/Comic</material>
   </gazebo>
    <joint name="joint_comic" type="fixed">
-    <origin xyz="2.6 1.02 1.8" rpy="0 0 0"/>
+    <origin xyz="2.6 0.99 1.8" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="comic"/>
  </joint>
