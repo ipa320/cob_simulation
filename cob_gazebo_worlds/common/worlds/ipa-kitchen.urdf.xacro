@@ -4,8 +4,6 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="ipa-kitchen" >
-       
-  <include filename="$(find cob_gazebo_worlds)/common/objects/materials.urdf.xacro" />
 
 <xacro:macro name="ipa-kitchen" params="name">
   <link name="dummy_link">
