@@ -395,7 +395,7 @@
     <child link="box3"/>
  </joint>
  
-  <link name="picture_fraunhofer">
+  <link name="picture_cob">
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -414,11 +414,39 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="picture_fraunhofer">
+  <gazebo reference="picture_cob">
     <material>IPA/Care-O-bot</material>
   </gazebo>
+   <joint name="joint_picture_cob" type="fixed">
+    <origin xyz="-3.45 0.19 1.35" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="picture_cob"/>
+ </joint>
+ 
+  <link name="picture_fraunhofer">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.02 2.33 0.64" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.02 2.33 0.64" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="picture_fraunhofer">
+    <material>IPA/FraunhoferIPA</material>
+  </gazebo>
    <joint name="joint_picture_fraunhofer" type="fixed">
-    <origin xyz="-3.45 0 1.7" rpy="0 0 0"/>
+    <origin xyz="-3.45 0.15 2.1" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="picture_fraunhofer"/>
  </joint>
@@ -449,6 +477,62 @@
     <origin xyz="-2.0 2.31 2.5" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="picture_future"/>
+ </joint>
+ 
+ <link name="picture_brics">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.418 0.02 0.245" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.418 0.02 0.245" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="picture_brics">
+    <material>IPA/Brics</material>
+  </gazebo>
+   <joint name="joint_picture_brics" type="fixed">
+    <origin xyz="-3.1 2.31 2.69" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="picture_brics"/>
+ </joint> 
+ 
+  <link name="comic">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.02 0.566" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.8 0.02 0.566" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="comic">
+    <material>IPA/Comic</material>
+  </gazebo>
+   <joint name="joint_comic" type="fixed">
+    <origin xyz="2.6 1.02 1.8" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="comic"/>
  </joint>
  
 </xacro:macro>

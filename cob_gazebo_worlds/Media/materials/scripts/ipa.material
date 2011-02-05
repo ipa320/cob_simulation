@@ -1,17 +1,3 @@
-material IPA/Wave
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture wave.png
-      }
-    }
-  }
-}
-
 material IPA/FraunhoferIPA
 {
   technique
@@ -49,6 +35,34 @@ material IPA/Future
       texture_unit
       {
         texture future.png
+      }
+    }
+  }
+}
+
+material IPA/Comic
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture comic.png
+      }
+    }
+  }
+}
+
+material IPA/Brics
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture brics.png
       }
     }
   }
