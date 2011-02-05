@@ -39,3 +39,17 @@ material IPA/Care-O-bot
     }
   }
 }
+
+material IPA/Future
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture future.png
+      }
+    }
+  }
+}
