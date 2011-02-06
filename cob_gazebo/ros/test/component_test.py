@@ -13,64 +13,58 @@ from trajectory_msgs.msg import *
 from simple_script_server import *
 from pr2_controllers_msgs.msg import *
 
-NAME = 'cobunit'
 class UnitTest(unittest.TestCase):
     def __init__(self, *args):
         super(UnitTest, self).__init__(*args)
-        rospy.init_node(NAME)
+        rospy.init_node('component_test')
         self.message_received = False
         self.sss=simple_script_server()
         
     def setUp(self):
         self.errors = []
 
-    def test_unit(self):
-        # fetch parameters
+    def test_component(self):
+        # get parameters
         try:
-            # error range
-            if not rospy.has_param('~error_range'):
-                self.fail('parameter error_range does not exist on ROS Parameter Server')
-            error_range = rospy.get_param('~error_range')
-
-            # time to wait before
-            if not rospy.has_param('~wait_time'):
-                self.fail('parameter wait_time does not exist on ROS Parameter Server')
-            wait_time = rospy.get_param('~wait_time')
-            
-            # part of robot
+            # component
             if not rospy.has_param('~component'):
-                self.fail('parameter component does not exist on ROS Parameter Server')
+                self.fail('Parameter component does not exist on ROS Parameter Server')
             component = rospy.get_param('~component')
-            
-            # command topic
-            if not rospy.has_param('~command_topic'):
-                self.fail('parameter command_topic does not exist on ROS Parameter Server')
-            command_topic = rospy.get_param('~command_topic')
-            
-            # state topic
-            if not rospy.has_param('~state_topic'):
-                self.fail('parameter state_topic does not exist on ROS Parameter Server')
-            state_topic = rospy.get_param('~state_topic')
-            
+
             # movement command
             if not rospy.has_param('~target'):
-                self.fail('parameter target does not exist on ROS Parameter Server')
+                self.fail('Parameter target does not exist on ROS Parameter Server')
             target = rospy.get_param('~target')
+
+            # time to wait before
+            wait_time = rospy.get_param('~wait_time',5)
+
+            # error range
+            if not rospy.has_param('~error_range'):
+                self.fail('Parameter error_range does not exist on ROS Parameter Server')
+            error_range = rospy.get_param('~error_range')
+
         except KeyError, e:
             self.fail('Parameters not set properly')
+
         print """
-              Test: %s  
+              Component: %s  
               Target: %s
-              Command topic: %s
-              State topic: %s
-              Error Range: %s
-              Wait Time: %s"""%(component, target, command_topic, state_topic, error_range, wait_time)
+              Wait Time: %s
+              Error Range: %s"""%(component, target, wait_time, error_range)
         
         # check parameters
-        # \todo do parameter tests
-        #self.assert_(test_duration > 0.0, "bad parameter (test_duration)")
+        # \todo do more parameter tests
+        if error_range < 0.0:
+            error_msg = "Parameter error_range should be positive, but is " + error_range
+            self.fail(error_msg)
+        if wait_time < 0.0:
+            error_msg = "Parameter wait_time should be positive, but is " + wait_time
+            self.fail(error_msg)
         
         # init subscribers
+        command_topic = "/" + component + "_controller/command"
+        state_topic = "/" + component + "_controller/state"
         sub_command_topic = rospy.Subscriber(command_topic, JointTrajectory, self.cb_command) 
         sub_state_topic = rospy.Subscriber(state_topic, JointTrajectoryControllerState, self.cb_state) 
         
@@ -119,7 +113,7 @@ class UnitTest(unittest.TestCase):
          
 if __name__ == '__main__':
     try:
-        rostest.run('rostest', NAME, UnitTest, sys.argv)
+        rostest.run('rostest', 'component_test', UnitTest, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"
