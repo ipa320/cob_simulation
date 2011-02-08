@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-    <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller.yaml" command="load" />
+    <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/sdh_controller_$(env ROBOT).yaml" command="load" />
 
-	<node name="sdh_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="sdh_controller" />
+    <node name="sdh_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="sdh_controller" />
+
+    <!-- gazebo test -->
+    <include file="$(find cob_sdh)/ros/launch/sdh.test" />
 	
     <group ns="sdh_controller">
 		<node name="sdh_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />

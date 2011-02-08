@@ -18,7 +18,6 @@
   xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" >
 
-
   <verbosity>5</verbosity>
 
   <!-- cfm is 1e-5 for single precision -->
@@ -62,8 +61,9 @@
     </sky>
     <grid>false</grid>
     <maxUpdateRate>10</maxUpdateRate>
+    <!--shadowTechnique>none</shadowTechnique-->
+    <!--shadows>false</shadows-->
   </rendering:ogre>
-
 
   <!-- clock -->
   <model:physical name="clock">
@@ -95,6 +95,7 @@
     </controller:gazebo_ros_factory>
   </model:physical>
 
+  <!-- ground plane -->
   <model:physical name="gplane">
     <xyz>0 0 0</xyz>
     <rpy>0 0 0</rpy>
@@ -340,7 +341,7 @@
   <!-- White Directional light -->
   <model:renderable name="directional_white">
      <xyz>2 0.0 5</xyz>
-     <enableGravity>false</enableGravity>    
+     <enableGravity>false</enableGravity>   
      <light>
       <type>point</type>
       <direction>0.6 -0.5 -0.5</direction>

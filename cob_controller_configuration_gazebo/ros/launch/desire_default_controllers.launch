@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
+
+	<!-- Arm -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_desire.launch"/>
+
+	<!-- SDH -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller_desire.launch"/>
+
+</launch>

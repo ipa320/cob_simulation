@@ -1,0 +1,69 @@
+material IPA/FraunhoferIPA
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture fraunhofer_ipa.png
+      }
+    }
+  }
+}
+
+material IPA/Care-O-bot
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture care-o-bot.png
+      }
+    }
+  }
+}
+
+material IPA/Future
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture future.png
+      }
+    }
+  }
+}
+
+material IPA/Comic
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture comic.png
+      }
+    }
+  }
+}
+
+material IPA/Brics
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture brics.png
+      }
+    }
+  }
+}

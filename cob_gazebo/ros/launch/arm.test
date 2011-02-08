@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- load gazebo simulation -->
+	<include file="$(find cob_bringup)/ros/launch/sim.launch" />
+
+	<!-- upload script server parameter -->
+	<include file="$(find cob_script_server)/launch/script_server.launch" /> 
+
+	<!-- perform test -->
+	<param name="cob_arm/component"  value="arm" />
+	<param name="cob_arm/target" value="pregrasp" />
+	<param name="cob_arm/command_topic" value="/arm_controller/command" />
+	<param name="cob_arm/state_topic" value="/arm_controller/state" />
+	<param name="cob_arm/wait_time" value="5.0" />
+	<param name="cob_arm/error_range" value="0.1" />     
+	<test test-name="test_arm" pkg="cob_gazebo" type="component_test.py" name="cob_arm" />   
+
+</launch>
