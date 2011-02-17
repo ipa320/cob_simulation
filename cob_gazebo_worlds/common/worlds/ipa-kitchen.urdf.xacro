@@ -309,7 +309,7 @@
     <child link="sofa"/>
  </joint>
  
-  <link name="box1">
+   <link name="kitchen_right">
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -318,26 +318,25 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 0.6 1.4" />
+		<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_right.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="1.75 0.89 0.45" />
+        <box size="0.66 0.62 1.44" />
       </geometry>
     </collision>
   </link>
-  <gazebo reference="box1">
-    <material>Gazebo/Red</material>
+  <gazebo reference="kitchen_right">
   </gazebo>
-   <joint name="joint_box1" type="fixed">
-    <origin xyz="-3.2 1.36 0.7" rpy="0 0 0"/>
+   <joint name="joint_kitchen_right" type="fixed">
+    <origin xyz="-3.141 1.321 0.72" rpy="0 0 0"/>
     <parent link="dummy_link"/>
-    <child link="box1"/>
+    <child link="kitchen_right"/>
  </joint>
- 
-   <link name="box2">
+
+   <link name="kitchen_middle">
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -346,26 +345,25 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 1.8 0.85" />
+		<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_middle.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 1.8 0.85" />
+        <box size="0.66 1.8 0.9" />
       </geometry>
     </collision>
   </link>
-  <gazebo reference="box2">
-    <material>Gazebo/Blue</material>
+  <gazebo reference="kitchen_middle">
   </gazebo>
-   <joint name="joint_box2" type="fixed">
-    <origin xyz="-3.2 0.16 0.425" rpy="0 0 0"/>
+   <joint name="joint_kitchen_middle" type="fixed">
+    <origin xyz="-3.141 0.111 0.45" rpy="0 0 0"/>
     <parent link="dummy_link"/>
-    <child link="box2"/>
+    <child link="kitchen_middle"/>
  </joint>
- 
-   <link name="box3">
+
+  <link name="kitchen_left">
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -374,23 +372,22 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 0.6 1.4" />
+		<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_left.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 0.6 1.4" />
+        <box size="0.66 0.62 1.44" />
       </geometry>
     </collision>
   </link>
-  <gazebo reference="box3">
-    <material>Gazebo/Red</material>
+  <gazebo reference="kitchen_left">
   </gazebo>
-   <joint name="joint_box3" type="fixed">
-    <origin xyz="-3.2 -1.04 0.7" rpy="0 0 0"/>
+   <joint name="joint_kitchen_left" type="fixed">
+    <origin xyz="-3.141 -1.099 0.72" rpy="0 0 0"/>
     <parent link="dummy_link"/>
-    <child link="box3"/>
+    <child link="kitchen_left"/>
  </joint>
  
   <link name="picture_cob">
