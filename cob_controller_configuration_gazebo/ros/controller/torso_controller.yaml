@@ -36,10 +36,10 @@ torso_controller:
     constraints:
       goal_time: 0.6
       torso_lower_neck_pan_joint:
-        goal: 0.05
+        goal: 0.1
       torso_lower_neck_tilt_joint:
-        goal: 0.05
+        goal: 0.1
       torso_upper_neck_pan_joint:
-        goal: 0.05
+        goal: 0.1
       torso_upper_neck_tilt_joint:
-        goal: 0.05
+        goal: 0.1
