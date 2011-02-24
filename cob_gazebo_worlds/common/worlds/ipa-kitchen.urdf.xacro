@@ -423,7 +423,7 @@
     <material>Gazebo/Red</material>
   </gazebo>
    <joint name="joint_freezer_top" type="fixed">
-    <origin xyz="-3.2 1.36 1.4" rpy="0 0 0"/>
+    <origin xyz="-3.15 1.36 1.4" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="freezer_top"/>
  </joint>
@@ -573,6 +573,34 @@
  </joint>
  
  <!-- Start simulated freezer door -->
+	<link name="freezer_left">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="100.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.01 1.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.55 0.005 1.38" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="freezer_left">
+    <material>Gazebo/Red</material>
+  </gazebo>
+   <joint name="joint_freezer_lefft" type="fixed">
+    <origin xyz="-3.15 1.06 0.7" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="freezer_left"/>
+ </joint>
+
     <link name="freezer_right">
     <inertial>
       <origin xyz="0 0 0" /> 
@@ -588,7 +616,7 @@
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.6 0.01 1.4" />
+        <box size="0.55 0.005 1.38" />
       </geometry>
     </collision>
   </link>
@@ -596,7 +624,7 @@
     <material>Gazebo/Red</material>
   </gazebo>
    <joint name="joint_freezer_right" type="fixed">
-    <origin xyz="-3.2 1.66 0.7" rpy="0 0 0"/>
+    <origin xyz="-3.15 1.66 0.7" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="freezer_right"/>
  </joint>
@@ -638,7 +666,7 @@
     <collision >
       <origin xyz="0 -0.305 0" rpy="0 0 ${M_PI}" />
       <geometry name="door_collision_geom">
-        <box size="0.01 0.59 1.36" />
+        <box size="0.0 0 0" />
       </geometry>
     </collision>
   </link>
@@ -665,7 +693,7 @@
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.08 0.01 0.3" />
+        <box size="0.07 0.005 0.25" />
       </geometry>
     </collision>
   </link>
