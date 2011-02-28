@@ -14,9 +14,7 @@
         <size>0.06 0.095 0.2</size>
         <mass>1</mass>
         <visual>
-          <!--size>0.06 0.095 0.2</size-->
           <mesh>milk_box.dae</mesh>
-          <!--material>Ias/MilkBox</material-->
         </visual>
       </geom:box>
     </body:box>
