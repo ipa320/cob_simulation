@@ -2,14 +2,14 @@
 <COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
 	<asset>
 		<contributor>
-			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
-			<authoring_tool>Blender v:249 - Illusoft Collada Exporter v:0.3.162</authoring_tool>
+			<author>Daniel Meaki (taj-dm)</author>
+			<authoring_tool></authoring_tool>
 			<comments></comments>
 			<copyright></copyright>
 			<source_data>file://</source_data>
 		</contributor>
-		<created>2010-10-31T21:29:59.381116</created>
-		<modified>2010-10-31T21:29:59.381132</modified>
+		<created>2011-02-22</created>
+		<modified>2011-02-22</modified>
 		<unit meter="0.01" name="centimeter"/>
 		<up_axis>Z_UP</up_axis>
 	</asset>
