@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send cup to param server -->
+	<param name="tomaten_suppe" textfile="$(find cob_gazebo_worlds)/objects/tomaten_suppe.model" />
+
+	<!-- spawn model in gazebo -->
+	<node name="spawn_tomaten_suppe" pkg="gazebo" type="spawn_model" args="-gazebo -param tomaten_suppe -x -3.0 -y -0.1 -z 0.98 -R 0 -P 0 -Y 0 -model tomaten_suppe" respawn="false" output="screen" />
+
+</launch>
