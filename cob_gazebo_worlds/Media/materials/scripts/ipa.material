@@ -102,3 +102,17 @@ material IPA/Wall2
     }
 	}
 }
+
+material IPA/Cabinet_Wood
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_wood.jpg
+      }
+    }
+  }
+}

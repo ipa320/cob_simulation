@@ -16,7 +16,7 @@
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -35,12 +35,12 @@
 
 <!-- walls -->
 
-<!-- wall_00 -->
+	<!-- wall_00 -->
 	<link name="wall_00">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -51,7 +51,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="2.73 0.04 0.48" />
+				<box size="2.77 0.08 0.52" />
 			</geometry>
 		</collision>
 	</link>
@@ -66,12 +66,12 @@
 		<child link="wall_00" />
 	</joint>
 
-<!-- wall_01 -->
+	<!-- wall_01 -->
 	<link name="wall_01">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -82,7 +82,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.08 0.78 2.38" />
+				<box size="0.12 0.82 2.42" />
 			</geometry>
 		</collision>
 	</link>
@@ -97,12 +97,12 @@
 		<child link="wall_01" />
 	</joint>
 
-<!-- wall_02 -->
+	<!-- wall_02 -->
 	<link name="wall_02">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -113,7 +113,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="3.27 0.04 0.48" />
+				<box size="3.31 0.08 0.52" />
 			</geometry>
 		</collision>
 	</link>
@@ -128,12 +128,12 @@
 		<child link="wall_02" />
 	</joint>
 
-<!-- wall_03 -->
+	<!-- wall_03 -->
 	<link name="wall_03">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -144,7 +144,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.78 0.08 3.18" />
+				<box size="0.82 0.12 3.22" />
 			</geometry>
 		</collision>
 	</link>
@@ -159,12 +159,12 @@
 		<child link="wall_03" />
 	</joint>
 
-<!-- wall_04 -->
+	<!-- wall_04 -->
 	<link name="wall_04">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -175,7 +175,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 6.78 0.48" />
+				<box size="0.08 6.82 0.52" />
 			</geometry>
 		</collision>
 	</link>
@@ -190,12 +190,12 @@
 		<child link="wall_04" />
 	</joint>
 
-<!-- wall_05 -->
+	<!-- wall_05 -->
 	<link name="wall_05">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -206,7 +206,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.78 0.08 3.18" />
+				<box size="0.82 0.12 3.22" />
 			</geometry>
 		</collision>
 	</link>
@@ -221,12 +221,12 @@
 		<child link="wall_05" />
 	</joint>
 
-<!-- wall_06 -->
+	<!-- wall_06 -->
 	<link name="wall_06">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -237,7 +237,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="6.12 0.04 0.48" />
+				<box size="6.16 0.08 0.52" />
 			</geometry>
 		</collision>
 	</link>
@@ -252,12 +252,12 @@
 		<child link="wall_06" />
 	</joint>
 
-<!-- wall_07 -->
+	<!-- wall_07 -->
 	<link name="wall_07">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -268,7 +268,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 6.98 2.58" />
+				<box size="0.08 7.02 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -283,12 +283,12 @@
 		<child link="wall_07" />
 	</joint>
 
-<!-- wall_08 -->
+	<!-- wall_08 -->
 	<link name="wall_08">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -299,7 +299,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.67 0.04 2.04" />
+				<box size="1.71 0.08 2.08" />
 			</geometry>
 		</collision>
 	</link>
@@ -314,12 +314,12 @@
 		<child link="wall_08" />
 	</joint>
 
-<!-- wall_09 -->
+	<!-- wall_09 -->
 	<link name="wall_09">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -330,7 +330,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 1.28 2.04" />
+				<box size="0.08 1.32 2.08" />
 			</geometry>
 		</collision>
 	</link>
@@ -345,12 +345,12 @@
 		<child link="wall_09" />
 	</joint>
 
-<!-- wall_10 -->
+	<!-- wall_10 -->
 	<link name="wall_10">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -361,7 +361,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.73 0.08 3.18" />
+				<box size="1.77 0.08 3.22" />
 			</geometry>
 		</collision>
 	</link>
@@ -376,12 +376,12 @@
 		<child link="wall_10" />
 	</joint>
 
-<!-- wall_11 -->
+	<!-- wall_11 -->
 	<link name="wall_11">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -392,7 +392,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.73 0.04 2.58" />
+				<box size="0.77 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -407,12 +407,12 @@
 		<child link="wall_11" />
 	</joint>
 
-<!-- wall_12 -->
+	<!-- wall_12 -->
 	<link name="wall_12">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -423,7 +423,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.83 0.04 0.53" />
+				<box size="0.87 0.08 0.57" />
 			</geometry>
 		</collision>
 	</link>
@@ -438,12 +438,12 @@
 		<child link="wall_12" />
 	</joint>
 
-<!-- wall_13 -->
+	<!-- wall_13 -->
 	<link name="wall_13">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -454,7 +454,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.13 0.04 2.58" />
+				<box size="0.17 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -469,12 +469,12 @@
 		<child link="wall_13" />
 	</joint>
 
-<!-- wall_14 -->
+	<!-- wall_14 -->
 	<link name="wall_14">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -485,7 +485,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.52 0.73" />
+				<box size="0.08 0.56 0.77" />
 			</geometry>
 		</collision>
 	</link>
@@ -500,12 +500,12 @@
 		<child link="wall_14" />
 	</joint>
 
-<!-- wall_15 -->
+	<!-- wall_15 -->
 	<link name="wall_15">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -516,7 +516,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.52 0.53" />
+				<box size="0.08 0.56 0.57" />
 			</geometry>
 		</collision>
 	</link>
@@ -531,12 +531,12 @@
 		<child link="wall_15" />
 	</joint>
 
-<!-- wall_16 -->
+	<!-- wall_16 -->
 	<link name="wall_16">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -547,7 +547,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.04 2.58" />
+				<box size="0.08 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -562,12 +562,12 @@
 		<child link="wall_16" />
 	</joint>
 
-<!-- wall_17 -->
+	<!-- wall_17 -->
 	<link name="wall_17">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -578,7 +578,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.61 0.04 0.73" />
+				<box size="1.65 0.08 0.77" />
 			</geometry>
 		</collision>
 	</link>
@@ -593,12 +593,12 @@
 		<child link="wall_17" />
 	</joint>
 
-<!-- wall_18 -->
+	<!-- wall_18 -->
 	<link name="wall_18">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -609,7 +609,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.61 0.04 0.53" />
+				<box size="1.65 0.08 0.57" />
 			</geometry>
 		</collision>
 	</link>
@@ -624,12 +624,12 @@
 		<child link="wall_18" />
 	</joint>
 
-<!-- wall_19 -->
+	<!-- wall_19 -->
 	<link name="wall_19">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -640,7 +640,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.04 2.58" />
+				<box size="0.08 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -655,12 +655,12 @@
 		<child link="wall_19" />
 	</joint>
 
-<!-- wall_20 -->
+	<!-- wall_20 -->
 	<link name="wall_20">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -671,7 +671,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.52 0.73" />
+				<box size="0.08 0.56 0.77" />
 			</geometry>
 		</collision>
 	</link>
@@ -686,12 +686,12 @@
 		<child link="wall_20" />
 	</joint>
 
-<!-- wall_21 -->
+	<!-- wall_21 -->
 	<link name="wall_21">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -702,7 +702,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.52 0.53" />
+				<box size="0.08 0.56 0.57" />
 			</geometry>
 		</collision>
 	</link>
@@ -717,12 +717,12 @@
 		<child link="wall_21" />
 	</joint>
 
-<!-- wall_22 -->
+	<!-- wall_22 -->
 	<link name="wall_22">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -733,7 +733,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.04 2.58" />
+				<box size="0.08 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -748,12 +748,12 @@
 		<child link="wall_22" />
 	</joint>
 
-<!-- wall_23 -->
+	<!-- wall_23 -->
 	<link name="wall_23">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -764,7 +764,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.61 0.04 0.73" />
+				<box size="1.65 0.08 0.77" />
 			</geometry>
 		</collision>
 	</link>
@@ -779,12 +779,12 @@
 		<child link="wall_23" />
 	</joint>
 
-<!-- wall_24 -->
+	<!-- wall_24 -->
 	<link name="wall_24">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -795,7 +795,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="1.61 0.04 0.53" />
+				<box size="1.65 0.08 0.57" />
 			</geometry>
 		</collision>
 	</link>
@@ -810,12 +810,12 @@
 		<child link="wall_24" />
 	</joint>
 
-<!-- wall_25 -->
+	<!-- wall_25 -->
 	<link name="wall_25">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -826,7 +826,7 @@
 		<collision>
 			<origin xyz="0 0 0" />
 			<geometry>
-				<box size="0.04 0.04 2.58" />
+				<box size="0.08 0.08 2.62" />
 			</geometry>
 		</collision>
 	</link>
@@ -844,12 +844,12 @@
 
 <!-- kitchen -->
 
-<!-- kitchen_left -->
+	<!-- kitchen_left -->
 	<link name="kitchen_left">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -874,12 +874,12 @@
 		<child link="kitchen_left" />
 	</joint>
 
-<!-- kitchen_middle -->
+	<!-- kitchen_middle -->
 	<link name="kitchen_middle">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -904,12 +904,12 @@
 		<child link="kitchen_middle" />
 	</joint>
 
-<!-- kitchen_right -->
+	<!-- kitchen_right -->
 	<link name="kitchen_right">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
-			<inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" />
@@ -937,7 +937,529 @@
 
 <!-- couch -->
 
-<!-- will be add soon -->
+	<!-- left couch back -->
+	<link name="left_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_back.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_back">
+	</gazebo>
+
+	<joint name="joint_left_couch_back" type="fixed">
+		<origin xyz="1.999 0.931 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_back" />
+	</joint>
+
+	<!-- left couch side -->
+	<link name="left_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_left_side.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_side">
+	</gazebo>
+
+	<joint name="joint_left_couch_side" type="fixed">
+		<origin xyz="1.689 0.481 0.230" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_side" />
+	</joint>
+
+	<!-- left couch middle -->
+	<link name="left_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_middle.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_middle">
+	</gazebo>
+
+	<joint name="joint_left_couch_middle" type="fixed">
+		<origin xyz="2.139 0.481 0.150" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_middle" />
+	</joint>
+
+	<!-- right couch back -->
+	<link name="right_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_back.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_back">
+	</gazebo>
+
+	<joint name="joint_right_couch_back" type="fixed">
+		<origin xyz="2.899 0.931 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_back" />
+	</joint>
+
+	<!-- right couch side -->
+	<link name="right_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_right_side.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_side">
+	</gazebo>
+
+	<joint name="joint_right_couch_side" type="fixed">
+		<origin xyz="3.209 0.481 0.230" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_side" />
+	</joint>
+
+	<!-- right couch middle -->
+	<link name="right_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_middle.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_middle">
+	</gazebo>
+
+	<joint name="joint_right_couch_middle" type="fixed">
+		<origin xyz="2.759 0.481 0.150" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_middle" />
+	</joint>
+
+<!-- cabinet -->
+
+	<!-- cabinet_top -->
+	<link name="cabinet_top">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.78 0.41 0.02" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.78 0.41 0.02" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_top">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_top" type="fixed">
+		<origin xyz="1.159 1.416 0.850" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_top" />
+	</joint>
+
+	<!-- cabinet_middle1 -->
+	<link name="cabinet_middle1">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_middle1">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_middle1" type="fixed">
+		<origin xyz="1.159 1.416 0.585" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_middle1" />
+	</joint>
+
+	<!-- cabinet_middle2 -->
+	<link name="cabinet_middle2">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_middle2">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_middle2" type="fixed">
+		<origin xyz="1.159 1.416 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_middle2" />
+	</joint>
+
+	<!-- cabinet_bottom -->
+	<link name="cabinet_bottom">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.05" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.05" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_bottom">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_bottom" type="fixed">
+		<origin xyz="1.159 1.416 0.175" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_bottom" />
+	</joint>
+
+	<!-- cabinet_back -->
+	<link name="cabinet_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.02 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.02 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back" type="fixed">
+		<origin xyz="1.159 1.611 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back" />
+	</joint>
+
+	<!-- cabinet_right -->
+	<link name="cabinet_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.29 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.29 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_right">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_right" type="fixed">
+		<origin xyz="1.479 1.436 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_right" />
+	</joint>
+
+	<!-- cabinet_left -->
+	<link name="cabinet_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.29 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.29 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_left">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_left" type="fixed">
+		<origin xyz="0.839 1.436 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_left" />
+	</joint>
+
+	<!-- cabinet_front_right -->
+	<link name="cabinet_front_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_front_right">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_front_right" type="fixed">
+		<origin xyz="1.489 1.271 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_front_right" />
+	</joint>
+
+	<!-- cabinet_front_left -->
+	<link name="cabinet_front_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_front_left">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_front_left" type="fixed">
+		<origin xyz="0.829 1.271 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_front_left" />
+	</joint>
+
+	<!-- cabinet_back_right -->
+	<link name="cabinet_back_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back_right">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back_right" type="fixed">
+		<origin xyz="1.489 1.601 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back_right" />
+	</joint>
+
+	<!-- cabinet_back_left -->
+	<link name="cabinet_back_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back_left">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back_left" type="fixed">
+		<origin xyz="0.829 1.601 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back_left" />
+	</joint>
+
 
 </xacro:macro>  
 
