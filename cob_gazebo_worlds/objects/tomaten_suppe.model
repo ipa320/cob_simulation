@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
   
-  <model:physical name="milk_box"
+  <model:physical name="tomaten_suppe"
     xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" 
     xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" 
     xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"> 
@@ -11,10 +11,10 @@
     <body:box name="box_body">
       <geom:box name="box_geom">
         <xyz>0.0 0.0 0.1</xyz>
-        <size>0.06 0.095 0.2</size>
+        <size>0.093 0.032 0.126</size>
         <mass>1</mass>
         <visual>
-          <mesh>milk_box.dae</mesh>
+          <mesh>tomaten_suppe.dae</mesh>
         </visual>
       </geom:box>
     </body:box>
