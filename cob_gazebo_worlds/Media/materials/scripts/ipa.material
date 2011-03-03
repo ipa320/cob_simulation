@@ -103,6 +103,20 @@ material IPA/Wall2
 	}
 }
 
+material IPA/Wall3
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall3.jpg
+      }
+    }
+  }
+}
+
 material IPA/Cabinet_Wood
 {
   technique
