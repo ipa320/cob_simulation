@@ -4,7 +4,7 @@ tray_controller:
     - torso_tray_joint 
   gains:
     torso_tray_joint:
-      p: 10.0
+      p: 100.0
       i: 12.0
       d: 0.5
       i_clamp: 0.5 
@@ -15,5 +15,5 @@ tray_controller:
     constraints:
       goal_time: 0.6
       torso_tray_joint:
-        goal: 0.02
+        goal: 0.1
 
