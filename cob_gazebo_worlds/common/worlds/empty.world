@@ -97,7 +97,7 @@
 
   <!-- ground plane -->
   <model:physical name="gplane">
-    <xyz>0 0 0</xyz>
+    <xyz>-0.091 1.321 0.000</xyz>
     <rpy>0 0 0</rpy>
     <static>true</static>
 
@@ -107,16 +107,16 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>51.3 51.3</size>
+        <size>14.0 14.0</size>
         <!-- map3.png -->
-        <material>Gazebo/White</material>
+        <material>Gazebo/Eyes</material>
       </geom:plane>
     </body:plane>
   </model:physical>
 
   <!-- White Directional light -->
   <model:renderable name="directional_white">
-     <xyz>2 0.0 5</xyz>
+     <xyz>2.091 1.321 5</xyz>
      <enableGravity>false</enableGravity>   
      <light>
       <type>point</type>
@@ -128,7 +128,7 @@
     </light>
   </model:renderable>
   <model:renderable name="directional_white2">
-     <xyz>-2 0.0 5</xyz>
+     <xyz>-1.909 1.321 5</xyz>
      <enableGravity>false</enableGravity>   
      <light>
       <type>point</type>

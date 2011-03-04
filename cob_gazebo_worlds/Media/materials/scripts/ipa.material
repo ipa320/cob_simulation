@@ -6,7 +6,7 @@ material IPA/FraunhoferIPA
     {
       texture_unit
       {
-        texture fraunhofer_ipa.png
+        texture fraunhofer_ipa.jpg
       }
     }
   }
@@ -63,6 +63,34 @@ material IPA/Brics
       texture_unit
       {
         texture brics.png
+      }
+    }
+  }
+}
+
+material IPA/WiMiCare
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wimicare.png
+      }
+    }
+  }
+}
+
+material IPA/SRS
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture srs.png
       }
     }
   }
@@ -130,3 +158,18 @@ material IPA/Cabinet_Wood
     }
   }
 }
+
+material IPA/Cabinet_White
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_white.jpg
+      }
+    }
+  }
+}
+
