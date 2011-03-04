@@ -46,8 +46,8 @@
     <frames>
       <row height="100%">
         <camera width="100%">
-          <xyz>0 0 20</xyz>
-          <rpy>0 90 90</rpy>
+          <xyz>4 -2 4</xyz>
+          <rpy>0 30 140</rpy>
         </camera>
       </row>
     </frames>
@@ -107,16 +107,16 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>14.0 14.0</size>
+        <size>20.0 20.0</size>
         <!-- map3.png -->
-        <material>Gazebo/Eyes</material>
+        <material>IPA/Grey</material>
       </geom:plane>
     </body:plane>
   </model:physical>
 
   <!-- White Directional light -->
   <model:renderable name="directional_white">
-     <xyz>2.091 1.321 5</xyz>
+     <xyz>2.091 1.021 5</xyz>
      <enableGravity>false</enableGravity>   
      <light>
       <type>point</type>
@@ -127,6 +127,7 @@
       <range>10</range>
     </light>
   </model:renderable>
+<!--
   <model:renderable name="directional_white2">
      <xyz>-1.909 1.321 5</xyz>
      <enableGravity>false</enableGravity>   
@@ -139,5 +140,5 @@
       <range>10</range>
     </light>
   </model:renderable>
-
+-->
 </gazebo:world>

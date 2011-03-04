@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////
+// IPA materials
 material IPA/FraunhoferIPA
 {
   technique
@@ -133,6 +135,8 @@ material IPA/Wall2
 
 material IPA/Wall3
 {
+  receive_shadows off
+
   technique
   {
     pass
@@ -171,5 +175,19 @@ material IPA/Cabinet_White
       }
     }
   }
+}
+
+material IPA/Grey
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1 1
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
 }
 
