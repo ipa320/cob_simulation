@@ -19,7 +19,6 @@
   <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
   <depend stack="robot_model" /> <!-- convex_decomposition, robot_state_publisher, ivcon -->
   <depend stack="ros" />
-  <depend stack="ros_comm" /> <!-- pr2_controller_manager, pr2_gazebo_plugins, cob_srvs, actionlib, move_base_msgs, gazebo_plugins, tf, gazebo, actionlib_msgs -->
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="visualization_common" /> <!-- ogre_tools -->
 
