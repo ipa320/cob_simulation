@@ -5,12 +5,12 @@
   <include file="$(find cob_description)/ros/robots/upload_arm.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
+  <node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model arm -z 0.1 " respawn="false" output="screen" />
 
-  <!-- Default Controllers -->
+  <!-- controller manager -->  
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+  <!-- arm controllers -->
   <include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch" />
-
-  <!-- default bringup script -->
-  <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
 
 </launch>

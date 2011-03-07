@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	
+  <!-- startup cob3 without starting up any defaut controllers -->
+  <include file="$(find cob_gazebo)/ros/launch/no_controllers.launch" />
+
+  <!-- default controllers -->
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/$(env ROBOT)_default_controllers.launch" />
+
+  <!-- services for simulation (e.g.: stop for simulation)-->
+  <node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+
+</launch>

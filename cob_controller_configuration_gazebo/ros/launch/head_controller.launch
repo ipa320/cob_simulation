@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
-	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/head_controller.yaml" command="load" />
+	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/head_controller_$(env ROBOT).yaml" command="load" />
 
 	<node name="head_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="head_controller"/>
+
+	<!-- gazebo test -->
+	<include file="$(find cob_head_axis)/ros/launch/head_axis.test" />
+	<!--include file="$(find cob_camera_sensors)/ros/launch/left.test" /-->
+	<!--include file="$(find cob_camera_sensors)/ros/launch/right.test" /-->
 
 	<group ns="head_controller">
 		<node name="head_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />

@@ -1,0 +1,28 @@
+torso_controller:
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  joints:
+    - torso_pan_joint 
+    - torso_tilt_joint
+  gains:
+    torso_pan_joint:
+      p: 800.0
+      i: 820.0
+      d: 0.5
+      i_clamp: 0.5 
+    torso_tilt_joint:
+      p: 800.0
+      i: 820.0
+      d: 0.5
+      i_clamp: 0.5
+    
+  torso_joint_trajectory_action_node:
+    joints:
+    - torso_pan_joint 
+    - torso_tilt_joint
+    constraints:
+      goal_time: 0.6
+      torso_pan_joint:
+        goal: 0.05
+      torso_tilt_joint:
+        goal: 0.05
+

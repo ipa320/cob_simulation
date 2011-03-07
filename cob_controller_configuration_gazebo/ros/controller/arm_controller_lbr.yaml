@@ -1,0 +1,61 @@
+arm_controller:
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  joints:
+    - arm_1_joint
+    - arm_2_joint
+    - arm_3_joint
+    - arm_4_joint
+    - arm_5_joint
+    - arm_6_joint
+    - arm_7_joint
+  gains:
+    arm_1_joint:
+      p: 2000.0
+      d: 0.0
+    arm_2_joint:
+      p: 2000.0
+      d: 0.0
+    arm_3_joint: 
+      p: 2000.0
+      d: 0.0
+    arm_4_joint:
+      p: 2020.0
+      d: 0.0
+    arm_5_joint:
+      p: 2030.0
+      d: 0.0
+    arm_6_joint:
+      p: 2050.0
+      d: 0.0
+    arm_7_joint:
+      p: 2080.0
+      d: 0.0
+
+  arm_joint_trajectory_action_node:
+    joints:
+      - arm_1_joint
+      - arm_2_joint
+      - arm_3_joint
+      - arm_4_joint
+      - arm_5_joint
+      - arm_6_joint
+      - arm_7_joint
+    constraints:
+      goal_time: 0.6
+      arm_1_joint:
+        goal: 0.05
+      arm_2_joint:
+        goal: 0.05
+      arm_3_joint:
+        goal: 0.05
+      arm_4_joint:
+        goal: 0.05
+      arm_5_joint:
+        goal: 0.05
+      arm_6_joint:
+        goal: 0.05
+      arm_7_joint:
+        goal: 0.05
+
+
+

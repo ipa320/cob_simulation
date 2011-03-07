@@ -1,16 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
-  <!-- send cob3 urdf to param server -->
+  <!-- send lbr urdf to param server -->
   <include file="$(find cob_description)/ros/robots/upload_lbr.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="cob3_gazebo_model" pkg="gazebo_tools" type="gazebo_model" args="-z 0.1 -p robot_description spawn" respawn="false" output="screen" />
+  <node name="lbr_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model lbr -z 0.1 " respawn="false" output="screen" />
 
-  <!-- Default Controllers -->
-  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/lbr_controller.launch" />
-
-  <!-- default bringup script -->
-  <include file="$(find cob_gazebo)/ros/launch/cob_bringup.launch" />
+  <!-- Default Controllers --> 
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch" />
 
 </launch>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<!-- cabinet -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/cabinet.launch" />
+
+	<!-- jodsalz -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/jodsalz.launch" />
+
+	<!-- kraeuter -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/kraeuter.launch" />
+
+	<!-- milk_box -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/milk_box.launch" />
+
+	<!-- table -->
+	<!--include file="$(find cob_gazebo_worlds)/ros/launch/table.launch" /-->
+
+	<!-- tomate_suppe -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/tomaten_suppe.launch" />
+
+	<!-- zwieback -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/zwieback.launch" />
+
+</launch>
