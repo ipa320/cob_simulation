@@ -41,7 +41,7 @@
 							<texture texcoord="CHANNEL1" texture="jodsalz_tex_jpg-sampler"/>
 						</diffuse>
 						<specular>
-							<color>0.54220000 0.54220000 0.54220000 1</color>
+							<color>0.50000 0.50000 0.50000 1</color>
 						</specular>
 						<shininess>
 							<float>12.5</float>
@@ -141,9 +141,9 @@
 	<library_physics_materials>
 		<physics_material id="Cube-PhysicsMaterial" name="Cube-PhysicsMaterial">
 			<technique_common>
-				<dynamic_friction>0.5422</dynamic_friction>
+				<dynamic_friction>0.5</dynamic_friction>
 				<restitution>0.0</restitution>
-				<static_friction>0.5422</static_friction>
+				<static_friction>0.5</static_friction>
 			</technique_common>
 		</physics_material>
 	</library_physics_materials>
