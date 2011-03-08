@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send cabinet urdf to param server -->
+	<param name="cabinet_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/cabinet.urdf.xacro" />
+
+	<!-- push cabinet_description to factory and spawn robot in gazebo -->
+	<node name="spawn_cabinet" pkg="gazebo" type="spawn_model" args="-urdf -param cabinet_description -x 1.159 -y 1.416 -z 0.1 -model cabinet_model" respawn="false" output="screen" />
+
+</launch>
