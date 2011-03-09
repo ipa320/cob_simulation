@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////
+// IPA materials
 material IPA/FraunhoferIPA
 {
   technique
@@ -6,7 +8,7 @@ material IPA/FraunhoferIPA
     {
       texture_unit
       {
-        texture fraunhofer_ipa.png
+        texture fraunhofer_ipa.jpg
       }
     }
   }
@@ -68,6 +70,34 @@ material IPA/Brics
   }
 }
 
+material IPA/WiMiCare
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wimicare.png
+      }
+    }
+  }
+}
+
+material IPA/SRS
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture srs.png
+      }
+    }
+  }
+}
+
 material IPA/Wall
 {
   technique
@@ -102,3 +132,62 @@ material IPA/Wall2
     }
 	}
 }
+
+material IPA/Wall3
+{
+  receive_shadows off
+
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall3.jpg
+      }
+    }
+  }
+}
+
+material IPA/Cabinet_Wood
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_wood.jpg
+      }
+    }
+  }
+}
+
+material IPA/Cabinet_White
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_white.jpg
+      }
+    }
+  }
+}
+
+material IPA/Grey
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1 1
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
