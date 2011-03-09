@@ -5,6 +5,6 @@
 	<param name="zwieback" textfile="$(find cob_gazebo_worlds)/objects/zwieback.model" />
 
 	<!-- spawn model in gazebo -->
-	<node name="spawn_zwieback" pkg="gazebo" type="spawn_model" args="-gazebo -param zwieback -x -3.0 -y -0.25 -z 0.98 -R 0 -P 0 -Y 0 -model zwieback" respawn="false" output="screen" />
+	<node name="spawn_zwieback" pkg="gazebo" type="spawn_model" args="-gazebo -param zwieback -x -3.0 -y -0.25 -z 0.98 -R 0 -P 0 -Y -1 -model zwieback" respawn="false" output="screen" />
 
 </launch>
