@@ -50,7 +50,7 @@ material IPA/Comic
     {
       texture_unit
       {
-        texture comic.png
+        texture comic.jpg
       }
     }
   }
