@@ -150,7 +150,7 @@
 	</link>
 
 	<gazebo reference="wall_03">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_03" type="fixed">
@@ -243,7 +243,7 @@
 	</link>
 
 	<gazebo reference="wall_07">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_07" type="fixed">
@@ -274,7 +274,7 @@
 	</link>
 
 	<gazebo reference="wall_08">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_08" type="fixed">
@@ -305,7 +305,7 @@
 	</link>
 
 	<gazebo reference="wall_09">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_09" type="fixed">
@@ -336,7 +336,7 @@
 	</link>
 
 	<gazebo reference="wall_10">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_10" type="fixed">
@@ -367,7 +367,7 @@
 	</link>
 
 	<gazebo reference="wall_11">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_11" type="fixed">
@@ -398,7 +398,7 @@
 	</link>
 
 	<gazebo reference="wall_12">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_12" type="fixed">
@@ -429,7 +429,7 @@
 	</link>
 
 	<gazebo reference="wall_13">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_13" type="fixed">
@@ -460,7 +460,7 @@
 	</link>
 
 	<gazebo reference="wall_14">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_14" type="fixed">
@@ -491,7 +491,7 @@
 	</link>
 
 	<gazebo reference="wall_15">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_15" type="fixed">
@@ -522,7 +522,7 @@
 	</link>
 
 	<gazebo reference="wall_16">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_16" type="fixed">
@@ -553,7 +553,7 @@
 	</link>
 
 	<gazebo reference="wall_17">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_17" type="fixed">
@@ -584,7 +584,7 @@
 	</link>
 
 	<gazebo reference="wall_18">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_18" type="fixed">
@@ -615,7 +615,7 @@
 	</link>
 
 	<gazebo reference="wall_19">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_19" type="fixed">
@@ -646,7 +646,7 @@
 	</link>
 
 	<gazebo reference="wall_20">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_20" type="fixed">
@@ -677,7 +677,7 @@
 	</link>
 
 	<gazebo reference="wall_21">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_21" type="fixed">
@@ -708,7 +708,7 @@
 	</link>
 
 	<gazebo reference="wall_22">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_22" type="fixed">
@@ -739,7 +739,7 @@
 	</link>
 
 	<gazebo reference="wall_23">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_23" type="fixed">
@@ -770,7 +770,7 @@
 	</link>
 
 	<gazebo reference="wall_24">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_24" type="fixed">
@@ -801,7 +801,7 @@
 	</link>
 
 	<gazebo reference="wall_25">
-		<material>IPA/Wall</material>
+		<material>IPA/Grey</material>
 	</gazebo>
 
 	<joint name="joint_wall_25" type="fixed">
