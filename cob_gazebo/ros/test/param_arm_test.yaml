@@ -1,0 +1,7 @@
+component_test:
+  component: arm
+  target: home
+  command_topic: /arm_controller/command
+  state_topic: /arm_controller/state
+  wait_time: 10.0
+  error_range: 1.0
