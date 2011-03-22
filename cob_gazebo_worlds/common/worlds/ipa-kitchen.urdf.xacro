@@ -875,7 +875,7 @@
 		<child link="kitchen_middle" />
 	</joint>
 
-	<!-- kitchen_right -->
+	<!-- kitchen_right 
 	<link name="kitchen_right">
 		<inertial>
 			<origin xyz="0 0 0" />
@@ -903,7 +903,7 @@
 		<origin xyz="-3.201 1.265 0.720" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="kitchen_right" />
-	</joint>
+	</joint>-->
 
 
 <!-- couch -->
@@ -1307,6 +1307,170 @@
 		<parent link="dummy_link" />
 		<child link="picture_06" />
 	</joint>
+
+ <!-- Start simulated freezer door -->
+
+	<link name="freezer_left">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="100.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.01 1.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.55 0.005 1.38" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="freezer_left">
+    <material>Gazebo/White</material>
+  </gazebo>
+   <joint name="joint_freezer_lefft" type="fixed">
+    <origin xyz="-3.15 1.06 0.7" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="freezer_left"/>
+ </joint>
+
+    <link name="freezer_right">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="100.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.01 1.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.55 0.005 1.38" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="freezer_right">
+    <material>Gazebo/White</material>
+  </gazebo>
+   <joint name="joint_freezer_right" type="fixed">
+    <origin xyz="-3.15 1.66 0.7" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="freezer_right"/>
+ </joint>
+
+  <gazebo reference="door_link">
+    <latchJoint>handle_joint</latchJoint>
+    <latchAngle>-1.57</latchAngle>
+    <doorClosedAngle>0.0</doorClosedAngle>
+    <latchKp>200.0</latchKp>
+    <latchKd>0.0</latchKd>
+    <latchFMax>1000.0</latchFMax>
+  </gazebo>
+
+  <joint name="door_joint" type="revolute" >
+    <origin xyz="0.305 0 0.02" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="${-M_PI}" upper="${M_PI}" effort="1000" velocity="10" />
+    <safety_controller soft_lower_limit="${-M_PI+0.1}" soft_upper_limit="${M_PI-0.1}"
+           k_position="100.0" k_velocity="10.0" />
+    <dynamics damping="100" friction="0.0" />
+
+    <parent link="freezer_right" />
+    <child link="door_link" />
+  </joint>
+  <link name="door_link">
+    <inertial >
+      <mass value="30" />
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"
+                iyy="1.0" iyz="0.0"
+                izz="3.0" />
+    </inertial>
+    <visual >
+      <origin xyz="0 -0.305 0" rpy="0 0 ${M_PI}" />
+      <geometry name="sholder_roll_mesh_file">
+        <box size="0.01 0.59 1.36" />
+      </geometry>
+    </visual>
+    <collision >
+      <origin xyz="0 -0.305 0" rpy="0 0 ${M_PI}" />
+      <geometry name="door_collision_geom">
+        <box size="0.01 0.59 1.36" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="door_link">
+    <material>Gazebo/White</material>
+    <laserRetro>2000</laserRetro>
+    <turnGravityOff>true</turnGravityOff>
+    <selfCollide>false</selfCollide>
+    <dampingFactor>0.01</dampingFactor>
+  </gazebo>
+
+   <link name="handle">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.01 0.3" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.005 0.25" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="handle">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+   <joint name="joint_handle" type="fixed">
+    <origin xyz="0.051 -0.55  0.0" rpy="0 0 0"/>
+    <parent link="door_link"/>
+    <child link="handle"/>
+ </joint>
+
+
+
+  <gazebo>
+    <controller:gazebo_ros_p3d name="p3d_door_controller" plugin="libgazebo_ros_p3d.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100.0</updateRate>
+        <bodyName>door_link</bodyName>
+        <topicName>door_pose</topicName>
+        <frameName>/map</frameName>
+        <interface:position name="p3d_door_position"/>
+    </controller:gazebo_ros_p3d>
+
+    <controller:gazebo_ros_controller_manager name="door_controller_manager" plugin="libgazebo_ros_controller_manager.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1000.0</updateRate>
+      <robotParam>/world_description</robotParam>
+      <robotNamespace>/world</robotNamespace>
+      <interface:audio name="gazebo_ros_controller_manager_dummy_iface" />
+    </controller:gazebo_ros_controller_manager>
+  </gazebo>
+
+  <transmission type="pr2_mechanism_model/SimpleTransmission" name="door_trans">
+    <actuator name="door_motor" />
+    <joint name="door_joint" />
+    <mechanicalReduction>100</mechanicalReduction>
+  </transmission>
+
+
 
 
 </xacro:macro>
