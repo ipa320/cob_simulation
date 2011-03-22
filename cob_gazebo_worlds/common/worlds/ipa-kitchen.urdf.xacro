@@ -11,8 +11,6 @@
   <property name="M_PI" value="3.1415926535897931" />
 
 <xacro:macro name="ipa-kitchen" params="name">
-
-
 <!-- dummy_link -->
 	<link name="dummy_link">
 		<inertial>
@@ -875,7 +873,9 @@
 		<child link="kitchen_middle" />
 	</joint>
 
-	<!-- kitchen_right 
+
+	<!-- kitchen_right -->
+	<!-- 
 	<link name="kitchen_right">
 		<inertial>
 			<origin xyz="0 0 0" />
@@ -903,7 +903,37 @@
 		<origin xyz="-3.201 1.265 0.720" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="kitchen_right" />
+
 	</joint>-->
+
+  <link name="freezer_top">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.6 0.6 0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="freezer_top">
+    <material>Gazebo/Red</material>
+  </gazebo>
+   <joint name="joint_freezer_top" type="fixed">
+    <origin xyz="-3.2 1.36 1.4" rpy="0 0 0"/>
+    <parent link="dummy_link"/>
+    <child link="freezer_top"/>
+ </joint>
+>>>>>>> review-320
 
 
 <!-- couch -->
@@ -1430,7 +1460,7 @@
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.07 0.005 0.25" />
+        <box size="0.08 0.01 0.3" />
       </geometry>
     </collision>
   </link>
@@ -1469,9 +1499,6 @@
     <joint name="door_joint" />
     <mechanicalReduction>100</mechanicalReduction>
   </transmission>
-
-
-
 
 </xacro:macro>
 
