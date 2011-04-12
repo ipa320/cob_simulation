@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<robot name="platform"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+	xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+	xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+	xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics">
+
+	<property name="platform_radius" value="0.12" />
+	<property name="platform_height" value="0.001" />
+	<property name="tube_radius" value="0.07" />
+	<property name="height" value="0.20" />
+	<property name="box_width" value="0.001" />
+	<property name="box_depth" value="0.207846097" />
+	<property name="PI" value="3.1415926535897931" />
+
+	<link name="platform_link">
+		<child link="tube_joint" />
+		<inertial>
+			<mass value="1.0" />
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<cylinder radius="${platform_radius}" length="${platform_height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<cylinder radius="${platform_radius}" length="${platform_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="platform_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="box1_joint" type="fixed">
+		<parent link="platform_link" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<child link="box1_link" />
+	</joint>
+	<link name="box1_link">
+		<inertial>
+			<mass value="1.0" />
+			<origin xyz="-0.0 -0.06 ${-height/2-platform_height/2}" rpy="0 0 ${PI/2}" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="-0.0 -0.06 ${-height/2-platform_height/2}" rpy="0 0 ${PI/2}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="-0.0 -0.06 ${-height/2-platform_height/2}" rpy="0 0 ${PI/2}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="box1_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="box2_joint" type="fixed">
+		<parent link="platform_link" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<child link="box2_link" />
+	</joint>
+	<link name="box2_link">
+		<inertial>
+			<mass value="1.0" />
+			<origin xyz="0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${PI/6}" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${PI/6}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${PI/6}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="box2_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="box3_joint" type="fixed">
+		<parent link="platform_link" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<child link="box3_link" />
+	</joint>
+	<link name="box3_link">
+		<inertial>
+			<mass value="1.0" />
+			<origin xyz="-0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${-PI/6}" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="-0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${-PI/6}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="-0.051961524 0.03 ${-height/2-platform_height/2}" rpy="0 0 ${-PI/6}" />
+			<geometry>
+				<box size="${box_width} ${box_depth} ${height}" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="box3_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+</robot>
+
