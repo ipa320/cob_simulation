@@ -11,7 +11,7 @@ wheel_pid_gains: &wheel_pid_gains
   i_clamp: 2.0
 
 base_fr_caster_rotation_controller:
-  type: JointVelocityController
+  type: robot_mechanism_controllers/JointVelocityController
   joint: fr_caster_rotation_joint
   pid: *caster_velocity_pid_gains
 base_fl_caster_rotation_controller:

@@ -116,7 +116,7 @@
 
   <!-- White Directional light -->
   <model:renderable name="directional_white">
-     <xyz>2.091 0.521 5</xyz>
+     <xyz>2.091 1.021 5</xyz>
      <enableGravity>false</enableGravity>   
      <light>
       <type>point</type>
