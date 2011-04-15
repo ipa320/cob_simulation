@@ -152,7 +152,7 @@
 			<rigid_body name="Cube-RigidBody" sid="Cube-RigidBody">
 				<technique_common>
 					<dynamic>false</dynamic>
-					<mass>0</mass>
+					<mass>5</mass>
 					<instance_physics_material url="#Cube-PhysicsMaterial"/>
 					<shape>
 						<instance_geometry url="#Cube_001"/>
