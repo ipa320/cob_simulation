@@ -16,12 +16,12 @@
 <link name="person">
 		<visual>
 			<geometry>
-				<cylinder length="1.6" radius="0.2"/>
+				<cylinder length="1.2" radius="0.2"/>
 			</geometry>
 		</visual>
 		<collision>
 			<geometry>
-				<cylinder length="1.6" radius="0.2"/>
+				<cylinder length="1.2" radius="0.2"/>
 			</geometry>
 		</collision>
 		<inertial>
