@@ -30,5 +30,6 @@
 
   <depend package="pr2_gazebo"/>
   <depend package="pr2_gazebo_plugins"/>
+  <depend package="point_cloud_converter"/>
 
 </package>

@@ -376,6 +376,7 @@
 		<child link="wall_11" />
 	</joint>
 
+<!--
 	<link name="door">
 		<inertial>
 			<origin xyz="0 0 0" />
@@ -410,6 +411,7 @@
 		<parent link="wall_11" />
 		<child link="door" />
 	</joint>
+-->
 
 	<!-- wall_12 -->
 	<link name="wall_12">
