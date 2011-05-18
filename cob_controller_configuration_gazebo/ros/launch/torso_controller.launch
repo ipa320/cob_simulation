@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" />
+	<!--rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller.yaml" command="load" /-->
+
+	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/torso_controller_v1.yaml" command="load" />
 
 	<node name="torso_controllers_spawner" pkg="pr2_controller_manager" type="spawner" args="torso_controller" />
 
