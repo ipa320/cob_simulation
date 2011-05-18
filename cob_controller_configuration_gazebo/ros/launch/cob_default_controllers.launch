@@ -8,9 +8,6 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
 	<!--include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_base_controller.launch"/-->		<!-- new controller; not working yet -->
 
-	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller.launch"/>
-
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>
 
