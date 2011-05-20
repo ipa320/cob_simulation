@@ -8,6 +8,6 @@
   <node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model cob3 -z 0.1 " respawn="false" output="screen" />
 
   <!-- convert from PointCloud1 to PointCloud2 -->
-  <node name="point_cloud_converter_full_cloud" pkg="point_cloud_converter" type="point_cloud_converter" args="points_in:=/full_cloud points2_out:=/full_cloud2" respawn="false" output="screen" />
+  <node name="point_cloud_converter_full_cloud" pkg="point_cloud_converter" type="point_cloud_converter" args="points_in:=/full_cloud_fixed points2_out:=/full_cloud2" respawn="false" output="screen" />
 
 </launch>
