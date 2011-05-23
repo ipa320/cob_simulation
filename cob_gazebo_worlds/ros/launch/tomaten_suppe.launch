@@ -6,5 +6,7 @@
 
 	<!-- spawn model in gazebo -->
 	<node name="spawn_tomaten_suppe" pkg="gazebo" type="spawn_model" args="-gazebo -param tomaten_suppe -x -3.0 -y -0.1 -z 0.98 -R 0 -P 0 -Y 1 -model tomaten_suppe" respawn="false" output="screen" />
+	
+
 
 </launch>
