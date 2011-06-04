@@ -9,7 +9,9 @@
   <!--rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" /-->
 
   <!-- cob base controller -->
-  <include file="$(find cob_base)/ros/launch/sim.launch"/>
+  <include file="$(find cob_base)/ros/launch/base.launch">
+    <arg name="sim" value="true"/>
+  </include>
 
   <!-- scan filters -->
   <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" >
