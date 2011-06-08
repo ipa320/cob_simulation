@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send table urdf to param server -->
+	<param name="table_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/table.urdf.xacro" />
+	<!-- send person1 urdf to param server -->
+	<param name="person1_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/person.urdf.xacro" />
+	<!-- send person2 urdf to param server -->
+	<param name="person2_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/person.urdf.xacro" />
+	<!-- send person3 urdf to param server -->
+	<param name="person3_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/person.urdf.xacro" />
+
+	<!-- push table_description to factory -->
+	<node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -x 0.20 -y -1.50 -z 0.01 -model table_model" respawn="false" output="screen" />
+	<!-- push person1_description to factory -->
+	<node name="spawn_person1" pkg="gazebo" type="spawn_model" args="-urdf -param person1_description -x -0.55 -y -1.60 -z 0.61 -model person1_model" respawn="false" output="screen" />
+	<!-- push person2_description to factory -->
+	<!--node name="spawn_person2" pkg="gazebo" type="spawn_model" args="-urdf -param person2_description -x -1.05 -y -1.25 -z 0.61 -model person2_model" respawn="false" output="screen" /-->
+	<!-- push person3_description to factory -->
+	<!--node name="spawn_person3" pkg="gazebo" type="spawn_model" args="-urdf -param person3_description -x -0.45 -y -0.65 -z 0.61 -model person3_model" respawn="false" output="screen" /-->
+
+</launch>
