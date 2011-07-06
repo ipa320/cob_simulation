@@ -2,9 +2,17 @@
 <launch>
 
   <!-- cob Base Control -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/base_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/base_v1_controller.yaml" command="load" />
 
   <!-- Controllers that come up started -->
   <node pkg="pr2_controller_manager" type="spawner" args="base_fr_caster_rotation_controller base_fl_caster_rotation_controller base_br_caster_rotation_controller base_bl_caster_rotation_controller base_fr_caster_r_wheel_controller base_fl_caster_r_wheel_controller base_br_caster_r_wheel_controller base_bl_caster_r_wheel_controller" name="base_controller_spawner"/>
+  
+  <!-- cob base controller -->
+  <include file="$(find cob_base)/ros/launch/base.launch">
+    <arg name="sim" value="true"/>
+  </include>
+
+  <!-- gazebo test -->
+  <include file="$(find cob_base)/ros/launch/base.test"/>
 
 </launch>
