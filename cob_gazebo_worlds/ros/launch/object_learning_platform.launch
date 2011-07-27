@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send platform urdf to param server -->
+	<param name="platform_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/objects/object_learning_platform.urdf.xacro" />
+
+	<!-- push platform_description to factory and spawn robot in gazebo -->
+	<node name="spawn_platform" pkg="gazebo" type="spawn_model" args="-urdf -param platform_description -x -0.22 -y -0.32 -z 2.24 -model object_learning_platform" respawn="false" output="screen" />
+
+</launch>

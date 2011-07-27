@@ -50,7 +50,7 @@ material IPA/Comic
     {
       texture_unit
       {
-        texture comic.png
+        texture comic.jpg
       }
     }
   }
@@ -178,6 +178,20 @@ material IPA/Cabinet_White
 }
 
 material IPA/Grey
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.2 0.2 0.2 1
+			diffuse 0.2 0.2 0.2 1
+		}
+	}
+}
+
+material IPA/Grey2
 {
   receive_shadows on
 

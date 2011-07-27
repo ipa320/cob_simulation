@@ -5,11 +5,8 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
-	<!--include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_base_controller.launch"/-->		<!-- new controller; not working yet -->
-
-	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller.launch"/>
+	<!--include file="$(find cob_controller_configuration_gazebo)/ros/launch/p2_base_controller.launch"/-->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_v1_controller.launch"/>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>
@@ -22,5 +19,11 @@
 
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
+
+	<!-- additional gazebo test -->
+	<include file="$(find cob_sick_s300)/ros/launch/front.test"/>
+	<include file="$(find cob_sick_s300)/ros/launch/rear.test"/>
+	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.test"/> 
+
 
 </launch>

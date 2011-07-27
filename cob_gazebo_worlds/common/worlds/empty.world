@@ -109,7 +109,7 @@
         <normal>0 0 1</normal>
         <size>20.0 20.0</size>
         <!-- map3.png -->
-        <material>IPA/Grey</material>
+        <material>IPA/Grey2</material>
       </geom:plane>
     </body:plane>
   </model:physical>
