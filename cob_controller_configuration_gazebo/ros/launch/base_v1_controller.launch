@@ -13,6 +13,6 @@
   </include>
 
   <!-- gazebo test -->
-  <include file="$(find cob_base)/ros/launch/base.test"/>
+  <!-- include file="$(find cob_base)/ros/launch/base.test"/-->
 
 </launch>
