@@ -1,0 +1,7 @@
+component_test:
+  component: tray
+  target: down
+  command_topic: /tray_controller/command
+  state_topic: /tray_controller/state
+  wait_time: 10.0
+  error_range: 1.0

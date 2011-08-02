@@ -85,11 +85,11 @@ class UnitTest(unittest.TestCase):
             self.fail('No state message received within wait_time')
           
         # send commands to component
-        #move_handle = self.sss.move(component,target)
-        move_handle = self.sss.move("arm","folded")
+        move_handle = self.sss.move(component,target)
+        # move_handle = self.sss.move("arm","folded")
         if move_handle.get_error_code() != 0:
             error_msg = 'Could not move ' + component
-            self.fail(error_msg)
+            self.fail(error_msg + "; errorCode: " + str(move_handle.get_error_code()))
         
         # get last point out of trajectory
         traj_endpoint = self.command_traj.points[len(self.command_traj.points)-1]
