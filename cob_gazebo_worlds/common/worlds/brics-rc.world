@@ -18,7 +18,6 @@
   xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" >
 
-
   <verbosity>5</verbosity>
 
   <!-- cfm is 1e-5 for single precision -->
@@ -63,37 +62,6 @@
     <grid>false</grid>
     <maxUpdateRate>10</maxUpdateRate>
   </rendering:ogre>
-
-
-  <!-- clock -->
-  <model:physical name="clock">
-    <xyz>0 0 0</xyz>
-    <rpy>0 0 0</rpy>
-    <static>true</static>
-    <body:box name="clock_body">
-      <geom:box name="clock_geom">
-        <mesh>default</mesh>
-        <size>0 0 0</size>
-        <visual>
-          <size>0 0 0</size>
-          <material>Gazebo/White</material>
-          <mesh>unit_box</mesh>
-        </visual>
-      </geom:box>
-    </body:box>
-    <!-- broadcast ros /time with simTime -->
-    <controller:gazebo_ros_time name="gazebo_ros_time" plugin="libgazebo_ros_time.so">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>1000.0</updateRate>
-      <interface:audio name="dummy_gazebo_ros_time_iface_should_not_be_here"/>
-    </controller:gazebo_ros_time>
-    <!-- offer ROS services to spawn and delete models -->
-    <controller:gazebo_ros_factory name="gazebo_ros_factory" plugin="libgazebo_ros_factory.so">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>1.0</updateRate>
-      <interface:audio name="dummy_gazebo_ros_factory_iface_should_not_be_here"/>
-    </controller:gazebo_ros_factory>
-  </model:physical>
 
   <model:physical name="gplane">
     <xyz>0 0 0</xyz>
