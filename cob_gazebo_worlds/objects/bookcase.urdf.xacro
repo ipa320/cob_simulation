@@ -17,6 +17,9 @@
   <property name="bookcase_height" value="0.79" />
   <property name="bookcase_width" value="0.39" />
   <property name="bookcase_depth" value="1.49" />
+  <property name="bookcase_x" value="0.98" />
+  <property name="bookcase_y" value="0.0" />
+  <property name="bookcase_z" value="0.0" />
 
   <property name="bookcase_thickness_min" value="0.015"/>
   <property name="bookcase_thickness_max" value="0.05"/>

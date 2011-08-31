@@ -16,7 +16,9 @@
   <property name="table_height" value="0.74" />
   <property name="table_width" value="0.9" />
   <property name="table_depth" value="0.9" />
-
+  <property name="table_x" value="0.98" />
+  <property name="table_y" value="0.0" />
+  <property name="table_z" value="0.0" />
 
   <property name="table_top_thickness" value="0.04"/>
 

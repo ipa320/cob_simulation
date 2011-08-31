@@ -17,6 +17,9 @@
   <property name="cabinet_height" value="1.06" />
   <property name="cabinet_width" value="0.28" />
   <property name="cabinet_depth" value="0.40" />
+  <property name="cabinet_x" value="1.5" />
+  <property name="cabinet_y" value="0.0" />
+  <property name="cabinet_z" value="0.0" />
 
 
 <!-- dummy_link -->
