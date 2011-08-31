@@ -10,7 +10,4 @@
   <!-- services for simulation (e.g.: stop for simulation)-->
   <node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 
-  <!-- sdh simulated tactile sensors -->
-  <include file="$(find cob_simulated_tactile_sensors)/launch/gazebo_virtual_tactile_sensors.launch" />
-
 </launch>

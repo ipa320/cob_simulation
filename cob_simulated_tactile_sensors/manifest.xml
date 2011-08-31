@@ -47,11 +47,13 @@
 
   </description>
   <author>Sven Schneider</author>
-  <license>BSD</license>
+  <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulated_tactile_sensors</url>
+  
   <depend package="rospy"/>
   <depend package="cob_sdh"/>
   <depend package="gazebo_plugins"/>
+  <depend package="geometry_msgs"/>
 
 </package>

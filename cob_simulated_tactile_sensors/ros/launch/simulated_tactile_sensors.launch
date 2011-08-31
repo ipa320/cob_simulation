@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<node pkg="cob_simulated_tactile_sensors" type="gazebo_virtual_tactile_sensors.py" name="tactile_sensors" ns="sdh_controller" output="screen">
+	<node pkg="cob_simulated_tactile_sensors" type="simulated_tactile_sensors.py" name="simulated_tactile_sensors" ns="sdh_controller" output="screen">
 		<!-- The number of patches on the tactile sensor in the direction perpendicular to the finger -->
 		<param name="cells_x" value="6" />
 
