@@ -21,5 +21,7 @@
   <depend package="cob_tray"/>
   <depend package="cob_sdh"/>
   <depend package="cob_head_axis"/>
+  <depend package="image_proc"/>
+  <depend package="cob_simulated_tactile_sensors"/>
 
 </package>
