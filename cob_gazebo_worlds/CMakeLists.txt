@@ -16,9 +16,11 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
-
-# add project executable
-rosbuild_add_executable(fix_gazebo_pointcloud ros/src/fix_gazebo_pointcloud.cpp)
-
 # rostest
-rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+# worlds
+rosbuild_add_roslaunch_check(ros/launch/empty-world.launch ROBOT_ENV=empty-world)
+rosbuild_add_roslaunch_check(ros/launch/ipa-kitchen.launch ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(ros/launch/ipa-4th-floor.launch ROBOT_ENV=ipa-4th-floor)
+rosbuild_add_roslaunch_check(ros/launch/ipa-apartment.launch ROBOT_ENV=ipa-apartment)
+# objects
+rosbuild_add_roslaunch_check(ros/launch/populate_ipa-kitchen.launch ROBOT_ENV=ipa-kitchen)
