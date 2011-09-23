@@ -10,7 +10,7 @@
   <url>http://ros.org/wiki/cob_simulation</url>
   <depend stack="cob_common" /> <!-- cob_srvs, cob_description -->
   <depend stack="cob_driver" /> <!-- cob_sick_s300, cob_base, cob_hokuyo, cob_tray, cob_arm, cob_head_axis, cob_camera_sensors, cob_sdh, cob_torso -->
-  <depend stack="common" /> <!-- actionlib, xacro -->
+  <depend stack="common" /> <!-- actionlib -->
   <depend stack="common_msgs" /> <!-- actionlib_msgs -->
   <depend stack="geometry" /> <!-- tf -->
   <depend stack="navigation" /> <!-- move_base_msgs -->
@@ -22,5 +22,6 @@
   <depend stack="ros" />
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="visualization_common" /> <!-- ogre_tools -->
+  <depend stack="xacro" /> <!-- xacro -->
 
 </stack>
