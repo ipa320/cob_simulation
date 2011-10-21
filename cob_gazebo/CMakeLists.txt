@@ -18,4 +18,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 
 # add project executable
-rosbuild_add_executable(fix_gazebo_pointcloud ros/src/fix_gazebo_pointcloud.cpp)
+rosbuild_add_executable(create_colored_point_cloud ros/src/create_colored_point_cloud.cpp)

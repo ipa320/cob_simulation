@@ -7,11 +7,12 @@
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model cob3 -z 0.1 " respawn="false" output="screen" />
 
-  <node name="fix_gazebo_pointcloud" pkg="cob_gazebo" type="fix_gazebo_pointcloud" respawn="false" output="screen">
-    <remap from="full_cloud" to="cam3d/depth/points1"/>
-    <remap from="full_cloud_fixed" to="cam3d/depth/points1_fixed"/>
+  <node name="create_colored_point_cloud" pkg="cob_gazebo" type="create_colored_point_cloud" respawn="false" output="screen">
+    <remap from="image_color" to="cam3d/rgb/image_raw"/>
+    <remap from="point_cloud2" to="cam3d/depth/points"/>
+    <remap from="colored_point_cloud2" to="cam3d/depth_registered/points"/>
   </node>
-  <!-- convert from PointCloud1 to PointCloud2 -->
-  <node name="point_cloud_converter_full_cloud" pkg="point_cloud_converter" type="point_cloud_converter" args="points_in:=cam3d/depth/points1_fixed points2_out:=cam3d/depth/points" respawn="false" output="screen" />
+  <!-- convert from PointCloud2 to PointCloud1 -->
+  <node name="point_cloud_converter_full_cloud" pkg="point_cloud_converter" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" />
 
 </launch>

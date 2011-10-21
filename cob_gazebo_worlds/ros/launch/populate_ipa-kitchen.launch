@@ -2,7 +2,7 @@
 <launch>
 	
 	<!-- cabinet -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/cabinet.launch" />
+	<!--include file="$(find cob_gazebo_worlds)/ros/launch/cabinet.launch" /-->
 
 	<!-- jodsalz -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/jodsalz.launch" />
@@ -20,6 +20,6 @@
 	<include file="$(find cob_gazebo_worlds)/ros/launch/tomaten_suppe.launch" />
 
 	<!-- zwieback -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/zwieback.launch" />
+	<!--include file="$(find cob_gazebo_worlds)/ros/launch/zwieback.launch" /-->
 
 </launch>
