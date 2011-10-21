@@ -111,7 +111,7 @@ public:
   void initNode()
   {
     pc_sync_ = boost::shared_ptr<message_filters::Synchronizer<SyncPolicy> >(new message_filters::Synchronizer<SyncPolicy>(SyncPolicy(3)));
-    pc_pub_ = n_.advertise<sensor_msgs::PointCloud2>("point_cloud", 1);
+    pc_pub_ = n_.advertise<sensor_msgs::PointCloud2>("colored_point_cloud2", 1);
     color_image_sub_.subscribe(image_transport_,"image_color", 1);
     pc_sub_.subscribe(n_, "point_cloud2", 1);
 
