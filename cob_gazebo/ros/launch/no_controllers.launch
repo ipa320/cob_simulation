@@ -2,7 +2,7 @@
 <launch>
 
   <!-- send cob3 urdf to param server -->
-  <include file="$(find cob_config)/common/upload_robot.launch" />
+  <include file="$(find cob_hardware_config)/common/upload_robot.launch" />
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />

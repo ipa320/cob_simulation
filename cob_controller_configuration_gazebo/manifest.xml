@@ -12,15 +12,8 @@
   <depend package="rostopic"/>
   <depend package="joint_trajectory_action"/>
   <depend package="pr2_controller_manager"/>
+  <depend package="cob_bringup"/>
   <depend package="cob_sick_s300"/>
-  <depend package="cob_hokuyo"/>
-  <depend package="cob_camera_sensors"/>
-  <depend package="cob_base"/>
-  <depend package="cob_arm"/>
-  <depend package="cob_torso"/>
-  <depend package="cob_tray"/>
-  <depend package="cob_sdh"/>
-  <depend package="cob_head_axis"/>
   <depend package="image_proc"/>
   <depend package="cob_simulated_tactile_sensors"/>
 
