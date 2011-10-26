@@ -4,8 +4,8 @@
      cob_bringup_sim
 
   </description>
-  <author>fmw</author>
-  <license>BSD</license>
+  <author>Florian Weisshardt</author>
+  <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup_sim</url>
 
