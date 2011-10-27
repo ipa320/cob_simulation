@@ -2,7 +2,7 @@
 import roslib; roslib.load_manifest('cob_simulated_tactile_sensors')
 import rospy
 import math
-from cob_sdh.msg import *
+from schunk_sdh.msg import *
 from gazebo_plugins.msg import *
 from geometry_msgs.msg import *
 
@@ -154,7 +154,7 @@ class GazeboTactilePad():
 	tactile matrix and determines which pad produced the data.
 	
 	:param matrix_id: Integer
-	:return: cob_sdh.msg.TactileMatrix
+	:return: schunk_sdh.msg.TactileMatrix
 	'''
 	def tactile_matrix(self, matrix_id):
 		matrix = TactileMatrix()
@@ -197,7 +197,7 @@ class GazeboTactilePad():
 class GazeboVirtualTactileSensor():
 	'''
 	Constants that determine which indices the finger parts have in the
-	cob_sdh.msg.TactileSensor matrix.
+	schunk_sdh.msg.TactileSensor matrix.
 	'''
 	ID_FINGER_12 = 0
 	ID_FINGER_13 = 1

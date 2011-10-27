@@ -5,7 +5,7 @@
      Hand (SDH) which is mounted on the Care-O-bot arm. The node subscribes to
      the Gazebo bumper topics of the SDH. It transforms the Gazebo feedback to
      the "tactile_data" topic to provide the same tactile sensor interface as
-     the cob_sdh package.
+     the schunk_sdh package.
      
      The following parameters can be set:
      * cells_x: The number of patches on the tactile sensor in the direction
