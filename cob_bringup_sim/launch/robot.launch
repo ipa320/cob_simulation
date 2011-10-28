@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_machine)/sim.machine" />
+	
+	<!-- startup simulation -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
+	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
+
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
+</launch>
