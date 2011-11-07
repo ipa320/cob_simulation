@@ -3,7 +3,7 @@
 <launch>
 
 	<!-- load gazebo simulation -->
-	<include file="$(find cob_bringup)/ros/launch/sim.launch" />
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
 
 	<!-- upload script server parameter -->
 	<include file="$(find cob_script_server)/launch/script_server.launch" /> 
