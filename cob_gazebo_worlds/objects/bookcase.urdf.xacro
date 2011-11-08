@@ -70,7 +70,7 @@
 	</link>
 
 	<gazebo reference="bookcase_top_link">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_bookcase_top" type="fixed">
@@ -101,7 +101,7 @@
 	</link>
 
 	<gazebo reference="bookcase_bottom_link">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_bookcase_bottom" type="fixed">
@@ -132,7 +132,7 @@
 	</link>
 
 	<gazebo reference="bookcase_middle">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_bookcase_middle" type="fixed">
@@ -167,7 +167,7 @@
 	</link>
 
 	<gazebo reference="bookcase_right">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_bookcase_right" type="fixed">
@@ -198,7 +198,7 @@
 	</link>
 
 	<gazebo reference="bookcase_left">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_bookcase_left" type="fixed">

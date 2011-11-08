@@ -9,7 +9,7 @@
   <!--rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" /-->
 
   <!-- cob base controller -->
-  <include file="$(find cob_base)/ros/launch/base.launch">
+  <include file="$(find cob_bringup)/components/base.launch">
     <arg name="sim" value="true"/>
   </include>
 

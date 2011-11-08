@@ -30,4 +30,6 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest
-rosbuild_add_roslaunch_check(ros/launch/simulated_tactile_sensors.launch)
+#rosbuild_add_roslaunch_check(launch/robot.launch ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(launch/robot.launch ROBOT=cob3-2 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(launch/robot.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
