@@ -20,13 +20,4 @@
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
 
-	<!-- additional gazebo test -->
-	<include file="$(find cob_sick_s300)/ros/launch/front.test"/>
-	<include file="$(find cob_sick_s300)/ros/launch/rear.test"/>
-	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.test"/> 
-	
-	<include file="$(find cob_camera_sensors)/ros/launch/right.test"/>
-	<include file="$(find cob_camera_sensors)/ros/launch/left.test"/>
-	<include file="$(find cob_camera_sensors)/ros/launch/tof.test"/>
-
 </launch>

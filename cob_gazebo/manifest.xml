@@ -26,6 +26,7 @@
   <depend package="cob_description"/>
   <depend package="cob_ogre"/>
   <depend package="cob_gazebo_worlds"/>
+  <depend package="cob_hardware_config"/>
   <depend package="cob_controller_configuration_gazebo"/>
 
   <depend package="pr2_gazebo"/>

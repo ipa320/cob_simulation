@@ -41,6 +41,7 @@ class gazebo_services():
 		self.arm_stop_srv = rospy.Service('/arm_controller/stop', Trigger, self.arm_stop_cb)
 		self.arm_recover_srv = rospy.Service('/arm_controller/recover', Trigger, self.arm_recover_cb)
 		self.arm_set_operation_mode_srv = rospy.Service('/arm_controller/set_operation_mode', SetOperationMode, self.arm_set_operation_mode_cb)
+		self.arm_set_joint_stiffness_srv = rospy.Service('/arm_controller/set_joint_stiffness', SetJointStiffness, self.arm_set_joint_stiffness_cb)
 
 		#arm left
 		self.arm_left_client = actionlib.SimpleActionClient('/arm_left_controller/joint_trajectory_action', JointTrajectoryAction)
@@ -169,6 +170,11 @@ class gazebo_services():
 	
 	def arm_set_operation_mode_cb(self, req):
 		resp = SetOperationModeResponse()
+		resp.success.data = True
+		return resp
+
+	def arm_set_joint_stiffness_cb(self, req):
+		resp = SetJointStiffnessResponse()
 		resp.success.data = True
 		return resp
 		
