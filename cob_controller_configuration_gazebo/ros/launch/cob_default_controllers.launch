@@ -30,7 +30,5 @@
 		<remap from="scanner_rear_filter/scan" to="/scan_rear_raw"/>
 		<remap from="scanner_rear_filter/scan_filtered" to="/scan_rear"/>
 	</node>
-	
-	
 
 </launch>
