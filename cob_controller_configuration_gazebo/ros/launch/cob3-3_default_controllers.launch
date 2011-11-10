@@ -7,14 +7,4 @@
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_v1_controller.launch"/>
 
-	<!-- scan filters-->
-	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" >
-		<remap from="scanner_front_filter/scan" to="/scan_front_raw"/>
-		<remap from="scanner_front_filter/scan_filtered" to="/scan_front"/>
-	</node>
-	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_rear_filter" respawn="false" output="screen" >
-		<remap from="scanner_rear_filter/scan" to="/scan_rear_raw"/>
-		<remap from="scanner_rear_filter/scan_filtered" to="/scan_rear"/>
-	</node>
-
 </launch>
