@@ -14,6 +14,7 @@
   <depend package="pr2_controller_manager"/>
   <depend package="cob_bringup"/>
   <depend package="cob_sick_s300"/>
+  <depend package="cob_relayboard"/>
   <depend package="image_proc"/>
   <depend package="cob_simulated_tactile_sensors"/>
 
