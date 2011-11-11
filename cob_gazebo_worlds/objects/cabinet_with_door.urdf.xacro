@@ -68,7 +68,7 @@
 	</link>
 
 	<gazebo reference="cabinet_structure">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_structure" type="fixed">
@@ -101,7 +101,7 @@
 	</link>
 
 	<gazebo reference="cabinet_door">
-		<material>IPA/White</material>
+		<material>Gazebo/White</material>
 	</gazebo>
 
 	<joint name="joint_door" type="fixed">
@@ -132,7 +132,7 @@
 	</link>
 
 	<gazebo reference="knob1_link">
-		<material>IPA/Grey</material>
+		<material>Gazebo/Grey</material>
 	</gazebo>
 
 	<joint name="joint_knob1" type="fixed">
@@ -163,7 +163,7 @@
 	</link>
 
 	<gazebo reference="knob2_link">
-		<material>IPA/Grey</material>
+		<material>Gazebo/Grey</material>
 	</gazebo>
 
 	<joint name="joint_knob2" type="fixed">
@@ -194,7 +194,7 @@
 	</link>
 
 	<gazebo reference="knob3_link">
-		<material>IPA/Grey</material>
+		<material>Gazebo/Grey</material>
 	</gazebo>
 
 	<joint name="joint_knob3" type="fixed">
