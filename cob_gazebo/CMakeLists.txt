@@ -21,4 +21,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 rosbuild_add_executable(create_colored_point_cloud ros/src/create_colored_point_cloud.cpp)
 
 # rostest
-rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-3)
