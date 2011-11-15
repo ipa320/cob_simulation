@@ -9,7 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
   <depend stack="cob_common" /> <!-- cob_srvs, cob_description -->
-  <depend stack="cob_driver" /> <!-- cob_sound, cob_sick_s300 -->
+  <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sound, cob_sick_s300 -->
   <depend stack="cob_robots" /> <!-- cob_bringup, cob_machine, cob_hardware_config -->
   <depend stack="common" /> <!-- actionlib -->
   <depend stack="common_msgs" /> <!-- actionlib_msgs, geometry_msgs -->
