@@ -1,5 +1,5 @@
 arm_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
     - arm_1_joint
     - arm_2_joint
@@ -56,3 +56,6 @@ arm_controller:
         goal: 0.1
       arm_7_joint:
         goal: 0.1
+
+
+

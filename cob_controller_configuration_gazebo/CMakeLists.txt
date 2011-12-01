@@ -16,10 +16,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
-
-# add project executable
-rosbuild_add_executable(create_colored_point_cloud ros/src/create_colored_point_cloud.cpp)
-rosbuild_add_executable(point_cloud_converter ros/src/point_cloud_converter.cpp)
-
 # rostest
-rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(ros/launch/cob3-1_default_controllers.launch ROBOT=cob3-1)
+rosbuild_add_roslaunch_check(ros/launch/cob3-2_default_controllers.launch ROBOT=cob3-2)
+rosbuild_add_roslaunch_check(ros/launch/cob3-3_default_controllers.launch ROBOT=cob3-3)

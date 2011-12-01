@@ -12,7 +12,4 @@
     <!-- sdh simulated tactile sensors -->
     <include file="$(find cob_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
 
-    <!-- gazebo test -->
-    <include file="$(find cob_sdh)/ros/launch/sdh.test" />
-
 </launch>

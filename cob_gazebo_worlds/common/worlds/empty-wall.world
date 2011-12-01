@@ -17,7 +17,7 @@
   xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" 
   xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" >
-  <thread>4</thread>
+
   <verbosity>5</verbosity>
 
   <!-- cfm is 1e-5 for single precision -->
@@ -26,7 +26,7 @@
   <physics:ode>
     <stepTime>0.001</stepTime>
     <gravity>0 0 -9.8</gravity>
-    <cfm>0.0000000001</cfm>
+    <cfm>0.00001</cfm>
     <erp>0.2</erp>
     <quickStep>true</quickStep>
     <quickStepIters>10</quickStepIters>
@@ -77,11 +77,29 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>20.0 20.0</size>
+        <size>100.0 100.0</size>
         <!-- map3.png -->
         <material>IPA/Grey2</material>
       </geom:plane>
     </body:plane>
+  </model:physical>
+
+  <!-- wall -->
+  <model:physical name="wall_1_model">
+    <xyz>10 0 49</xyz>
+    <rpy>0.0 0.0 0.0</rpy>
+    <static>true</static>
+    <body:box name="wall_1_body">
+      <geom:box name="wall_1_geom">
+        <mesh>default</mesh>
+        <size>.02 200 100</size>
+        <visual>
+          <size>.02 200 100</size>
+          <material>IPA/Grey</material>
+          <mesh>unit_box</mesh>
+        </visual>
+      </geom:box>
+    </body:box>
   </model:physical>
 
   <!-- White Directional light -->
