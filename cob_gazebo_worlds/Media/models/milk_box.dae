@@ -121,9 +121,9 @@
 		<visual_scene id="Scene" name="Scene">
 			<node layer="L1" id="Cube" name="Cube">
 				<matrix>
-					1.0 0.0 0.0 0.0 
-					0.0 1.0 0.0 0.0 
-					0.0 0.0 1.0 0.0 
+					0 1 0.0 0.0 
+					-1 0 0.0 0.0 
+					0.0 0.0 1.0 0.1 
 					0.0 0.0 0.0 1.0 
 				</matrix>
 				<instance_geometry url="#Cube_001">
