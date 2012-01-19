@@ -17,6 +17,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 # rostest
-rosbuild_add_roslaunch_check(ros/launch/cob3-1_default_controllers.launch ROBOT=cob3-1)
-rosbuild_add_roslaunch_check(ros/launch/cob3-2_default_controllers.launch ROBOT=cob3-2)
+#rosbuild_add_roslaunch_check(ros/launch/cob3-1_default_controllers.launch ROBOT=cob3-1)
+#rosbuild_add_roslaunch_check(ros/launch/cob3-2_default_controllers.launch ROBOT=cob3-2)
 rosbuild_add_roslaunch_check(ros/launch/cob3-3_default_controllers.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(ros/launch/cob3-3_default_controllers.launch ROBOT=cob3-4)
