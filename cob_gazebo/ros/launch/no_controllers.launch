@@ -10,16 +10,10 @@
   <node name="create_colored_point_cloud" pkg="cob_gazebo" type="create_colored_point_cloud" respawn="false" output="screen">
     <remap from="image_color" to="cam3d/rgb/image_raw"/>
     <remap from="point_cloud2" to="cam3d/depth/points"/>
-<<<<<<< HEAD
-    <remap from="colored_point_cloud2" to="cam3d/depth_registered/points"/>
-  </node>
-  <!-- convert from PointCloud2 to PointCloud1 -->
-  <node name="point_cloud_converter_full_cloud" pkg="point_cloud_converter" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" />
-=======
     <remap from="colored_point_cloud2" to="cam3d/rgb/points"/>
   </node>
   <!-- convert from PointCloud2 to PointCloud1 -->
   <node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" />
->>>>>>> 0cc747c9b7db215e6cd7028f36694bbef6b7fb36
+
 
 </launch>

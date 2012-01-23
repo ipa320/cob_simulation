@@ -22,15 +22,6 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
 
 	<!-- scan filters-->
-<<<<<<< HEAD
-	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" >
-		<remap from="scanner_front_filter/scan" to="/scan_front_raw"/>
-		<remap from="scanner_front_filter/scan_filtered" to="/scan_front"/>
-	</node>
-	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_rear_filter" respawn="false" output="screen" >
-		<remap from="scanner_rear_filter/scan" to="/scan_rear_raw"/>
-		<remap from="scanner_rear_filter/scan_filtered" to="/scan_rear"/>
-=======
 	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/laser_front.yaml" ns="laser_front" />
 	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" ns="laser_front" >
 		<remap from="scan" to="/scan_front_raw"/>
@@ -40,7 +31,6 @@
 	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_rear_filter" respawn="false" output="screen" ns="laser_rear" >
 		<remap from="scan" to="/scan_rear_raw"/>
 		<remap from="scan_filtered" to="/scan_rear"/>
->>>>>>> 0cc747c9b7db215e6cd7028f36694bbef6b7fb36
 	</node>
 
 </launch>
