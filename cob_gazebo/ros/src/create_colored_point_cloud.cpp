@@ -97,12 +97,6 @@ private:
   // topics to publish
   ros::Publisher pc_pub_;
 
-<<<<<<< HEAD
-public:
-  // Constructor
-  CreateColoredPointCloud()
-  : image_transport_(n_)
-=======
   int num_subs;
 
 public:
@@ -110,7 +104,6 @@ public:
   CreateColoredPointCloud()
   : image_transport_(n_),
     num_subs(0)
->>>>>>> 0cc747c9b7db215e6cd7028f36694bbef6b7fb36
   {}
 
   // Destructor
@@ -121,15 +114,9 @@ public:
   void initNode()
   {
     pc_sync_ = boost::shared_ptr<message_filters::Synchronizer<SyncPolicy> >(new message_filters::Synchronizer<SyncPolicy>(SyncPolicy(3)));
-<<<<<<< HEAD
-    pc_pub_ = n_.advertise<sensor_msgs::PointCloud2>("colored_point_cloud2", 1);
-    color_image_sub_.subscribe(image_transport_,"image_color", 1);
-    pc_sub_.subscribe(n_, "point_cloud2", 1);
-=======
     pc_pub_ = n_.advertise<sensor_msgs::PointCloud2>("colored_point_cloud2", 1, boost::bind(&CreateColoredPointCloud::connectCb, this), boost::bind(&CreateColoredPointCloud::disconnectCb, this));
     //color_image_sub_.subscribe(image_transport_,"image_color", 1);
     //pc_sub_.subscribe(n_, "point_cloud2", 1);
->>>>>>> 0cc747c9b7db215e6cd7028f36694bbef6b7fb36
 
     pc_sync_->connectInput(color_image_sub_, pc_sub_);
     pc_sync_->registerCallback(boost::bind(&CreateColoredPointCloud::syncCallback, this, _1, _2));
@@ -143,8 +130,6 @@ public:
   }
 
 
-<<<<<<< HEAD
-=======
   void connectCb()
   {
     num_subs++;
@@ -166,7 +151,6 @@ public:
   }
 
 
->>>>>>> 0cc747c9b7db215e6cd7028f36694bbef6b7fb36
   // topic callback functions
   // function will be called when a new message arrives on a topic
   void syncCallback(const sensor_msgs::Image::ConstPtr& img_rgb, const sensor_msgs::PointCloud2::ConstPtr& pc)
