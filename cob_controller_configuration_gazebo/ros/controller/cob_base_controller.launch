@@ -2,7 +2,7 @@
 <launch>
 
   <!-- cob Base Control -->
-  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/base_velocity_controller.yaml" command="load" />
+  <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/base_v1_controller.yaml" command="load" />
 
   <!-- cob Odometry -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/pr2_odometry.yaml" command="load" />
