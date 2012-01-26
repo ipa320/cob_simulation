@@ -16,7 +16,7 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_$(env ROBOT).launch"/>
 
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
