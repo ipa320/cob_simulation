@@ -2,9 +2,9 @@
 <launch>
 
 	<!-- send cup to param server -->
-	<param name="milk" textfile="$(find cob_gazebo_worlds)/objects/milk_box.model" />
+	<param name="milk" textfile="$(find cob_gazebo_worlds)/objects/milk_box.urdf" />
 
 	<!-- spawn model in gazebo -->
-	<node name="spawn_milk_box" pkg="gazebo" type="spawn_model" args="-gazebo -param milk -x -2.95 -y 0.05 -z 1.02 -R 0 -P 0 -Y 0 -model milk" respawn="false" output="screen" />
+	<node name="spawn_milk_box" pkg="gazebo" type="spawn_model" args="-urdf -param milk -x -2.95 -y 0.05 -z 1.02 -R 0 -P 0 -Y 0 -model milk" respawn="false" output="screen" />
 
 </launch>
