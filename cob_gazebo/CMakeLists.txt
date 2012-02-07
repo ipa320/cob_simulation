@@ -23,3 +23,4 @@ rosbuild_add_executable(point_cloud_converter ros/src/point_cloud_converter.cpp)
 
 # rostest
 rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(ros/launch/robot.launch ROBOT=cob3-4)
