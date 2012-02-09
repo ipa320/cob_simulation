@@ -1,0 +1,24 @@
+<package>
+  <description brief="cob_gazebo_objects">
+
+     This package provides some objects and furniture for gazebo simulation.
+
+  </description>
+  <author>Nadia Hammoudeh</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_gazebo_objects</url>
+
+  <depend package="xacro"/>
+  <depend package="convex_decomposition"/>
+  <depend package="ivcon"/>
+  <depend package="ogre_tools"/>
+  <depend package="gazebo"/>
+  <depend package="gazebo_tools"/>
+  <depend package="gazebo_plugins"/>
+
+  <export>
+    <gazebo gazebo_media_path="${prefix}" />
+  </export>
+
+</package>

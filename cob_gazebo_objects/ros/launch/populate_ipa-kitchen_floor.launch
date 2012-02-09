@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="object" textfile="$(find gazebo_worlds)/objects/000.580.67.model" />
+  
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_object1" pkg="gazebo" type="spawn_model" args="-gazebo -param object -x -1 -model object1" respawn="false" output="screen" />
+  <node name="spawn_object2" pkg="gazebo" type="spawn_model" args="-gazebo -param object -x -1 -y -0.5 -model object2" respawn="false" output="screen" />
+  <node name="spawn_object3" pkg="gazebo" type="spawn_model" args="-gazebo -param object -x -1 -y 0.5 -model object3" respawn="false" output="screen" />
+
+</launch>
