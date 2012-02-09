@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start gazebo with ipa kitchen -->
+	<param name="/use_sim_time" value="true" />
+	<node name="gazebo" pkg="gazebo" type="gazebo" args="-s -1 $(find cob_gazebo_worlds)/common/worlds/empty.world" respawn="false" output="screen"/>
+
+</launch>

@@ -1,0 +1,207 @@
+////////////////////////////////////////////////////////////////////////////////
+// IPA materials
+material IPA/FraunhoferIPA
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture fraunhofer_ipa.jpg
+      }
+    }
+  }
+}
+
+material IPA/Care-O-bot
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture care-o-bot.png
+      }
+    }
+  }
+}
+
+material IPA/Future
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture future.png
+      }
+    }
+  }
+}
+
+material IPA/Comic
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture comic.jpg
+      }
+    }
+  }
+}
+
+material IPA/Brics
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture brics.png
+      }
+    }
+  }
+}
+
+material IPA/WiMiCare
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wimicare.png
+      }
+    }
+  }
+}
+
+material IPA/SRS
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture srs.png
+      }
+    }
+  }
+}
+
+material IPA/Wall
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall.jpg
+      }
+    }
+  }
+}
+
+material IPA/Wall2
+{
+	technique
+	{
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+      ambient 0.725 0.865 0.605
+      diffuse 0 1 0
+
+      texture_unit
+      {
+        colour_op_ex source1 src_current src_current 1.0 1.0 1.0
+        alpha_op_ex source1 src_manual src_current 0.5
+      }
+    }
+	}
+}
+
+material IPA/Wall3
+{
+  receive_shadows off
+
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall3.jpg
+      }
+    }
+  }
+}
+
+material IPA/Cabinet_Wood
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_wood.jpg
+      }
+    }
+  }
+}
+
+material IPA/Cabinet_White
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_white.jpg
+      }
+    }
+  }
+}
+
+material IPA/Grey
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.2 0.2 0.2 1
+			diffuse 0.2 0.2 0.2 1
+		}
+	}
+}
+
+material IPA/Grey2
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1 1
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+

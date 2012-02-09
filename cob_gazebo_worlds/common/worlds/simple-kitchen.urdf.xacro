@@ -1,0 +1,1502 @@
+<?xml version="1.0"?>
+
+<robot
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	name="ipa-kitchen"
+>
+
+<xacro:macro name="ipa-kitchen" params="name">
+
+
+<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+
+<!-- walls -->
+
+	<!-- wall_00 -->
+	<link name="wall_00">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="2.75 0.06 0.50" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="2.77 0.08 0.52" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_00">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_00" type="fixed">
+		<origin xyz="-2.156 4.791 0.250" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_00" />
+	</joint>
+
+
+	<!-- wall_01 -->
+	<link name="wall_01">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.10 0.80 2.40" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.12 0.82 2.42" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_01">
+		<material>gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_01" type="fixed">
+		<origin xyz="-0.731 4.421 1.200" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_01" />
+	</joint>
+	
+
+	<!-- wall_02 -->
+	<link name="wall_02">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="3.29 0.06 0.50" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="3.31 0.08 0.52" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_02">
+		<material>gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_02" type="fixed">
+		<origin xyz="0.964 4.791 0.250" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_02" />
+	</joint>
+
+
+	<!-- wall_03 -->
+	<link name="wall_03">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.80 0.10 3.20" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.82 0.12 3.22" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_03">
+		<material>gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_03" type="fixed">
+		<origin xyz="3.009 4.771 1.600" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_03" />
+	</joint>
+
+
+	<!-- wall_04 -->
+	<link name="wall_04">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 6.90 0.50" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 6.92 0.52" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_04">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_04" type="fixed">
+		<origin xyz="3.379 1.271 0.250" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_04" />
+	</joint>
+
+	<!-- wall_06 -->
+	<link name="wall_06">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="6.88 0.06 0.50" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="6.90 0.08 0.52" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_06">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_06" type="fixed">
+		<origin xyz="-0.091 -2.149 0.250" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_06" />
+	</joint>
+
+	<!-- wall_07 -->
+	<link name="wall_07">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 7.00 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 7.02 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_07">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_07" type="fixed">
+		<origin xyz="-3.561 1.321 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_07" />
+	</joint>
+
+	<!-- wall_08 -->
+	<link name="wall_08">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.69 0.06 2.06" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.71 0.08 2.08" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_08">
+		<material>gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_08" type="fixed">
+		<origin xyz="-2.686 3.641 1.030" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_08" />
+	</joint>
+
+
+	<!-- wall_09 -->
+	<link name="wall_09">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 1.30 2.06" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 1.32 2.08" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_09">
+		<material>gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="joint_wall_09" type="fixed">
+		<origin xyz="-1.811 3.021 1.030" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_09" />
+	</joint>
+
+
+	<!-- wall_10 -->
+	<link name="wall_10">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.75 0.10 3.20" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.77 0.08 3.22" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_10">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_10" type="fixed">
+		<origin xyz="-2.656 2.321 1.600" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_10" />
+	</joint>
+
+	<!-- wall_11 -->
+	<link name="wall_11">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.75 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.77 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_11">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_11" type="fixed">
+		<origin xyz="-1.406 2.301 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_11" />
+	</joint>
+
+	<!-- wall_12 -->
+	<link name="wall_12">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.85 0.06 0.55" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.87 0.08 0.57" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_12">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_12" type="fixed">
+		<origin xyz="-0.606 2.301 2.325" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_12" />
+	</joint>
+
+	<!-- wall_13 -->
+	<link name="wall_13">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.15 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.17 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_13">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_13" type="fixed">
+		<origin xyz="-0.106 2.301 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_13" />
+	</joint>
+
+	<!-- wall_14 -->
+	<link name="wall_14">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.54 0.75" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.56 0.77" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_14">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_14" type="fixed">
+		<origin xyz="-0.061 2.001 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_14" />
+	</joint>
+
+	<!-- wall_15 -->
+	<link name="wall_15">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.54 0.55" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.56 0.57" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_15">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_15" type="fixed">
+		<origin xyz="-0.061 2.001 2.325" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_15" />
+	</joint>
+
+	<!-- wall_16 -->
+	<link name="wall_16">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_16">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_16" type="fixed">
+		<origin xyz="-0.061 1.701 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_16" />
+	</joint>
+
+	<!-- wall_17 -->
+	<link name="wall_17">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.63 0.06 0.75" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.65 0.08 0.77" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_17">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_17" type="fixed">
+		<origin xyz="0.784 1.701 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_17" />
+	</joint>
+
+	<!-- wall_18 -->
+	<link name="wall_18">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.63 0.06 0.55" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.65 0.08 0.57" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_18">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_18" type="fixed">
+		<origin xyz="0.784 1.701 2.325" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_18" />
+	</joint>
+
+	<!-- wall_19 -->
+	<link name="wall_19">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_19">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_19" type="fixed">
+		<origin xyz="1.629 1.701 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_19" />
+	</joint>
+
+	<!-- wall_20 -->
+	<link name="wall_20">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.54 0.75" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.56 0.77" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_20">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_20" type="fixed">
+		<origin xyz="1.629 1.401 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_20" />
+	</joint>
+
+	<!-- wall_21 -->
+	<link name="wall_21">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.54 0.55" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.56 0.57" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_21">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_21" type="fixed">
+		<origin xyz="1.629 1.401 2.325" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_21" />
+	</joint>
+
+	<!-- wall_22 -->
+	<link name="wall_22">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_22">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_22" type="fixed">
+		<origin xyz="1.629 1.101 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_22" />
+	</joint>
+
+	<!-- wall_23 -->
+	<link name="wall_23">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.63 0.06 0.75" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.65 0.08 0.77" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_23">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_23" type="fixed">
+		<origin xyz="2.474 1.101 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_23" />
+	</joint>
+
+	<!-- wall_24 -->
+	<link name="wall_24">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.63 0.06 0.55" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.65 0.08 0.57" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_24">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_24" type="fixed">
+		<origin xyz="2.474 1.101 2.325" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_24" />
+	</joint>
+
+	<!-- wall_25 -->
+	<link name="wall_25">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.06 0.06 2.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.08 0.08 2.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_25">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<joint name="joint_wall_25" type="fixed">
+		<origin xyz="3.319 1.101 1.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_25" />
+	</joint>
+
+
+<!-- kitchen -->
+
+	<!-- kitchen_left -->
+	<link name="kitchen_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_left.dae" /-->
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_left">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_kitchen_left" type="fixed">
+		<origin xyz="-3.201 -1.155 0.720" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="kitchen_left" />
+	</joint>
+
+	<!-- kitchen_middle -->
+	<link name="kitchen_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_middle.dae" /-->
+				<box size="0.66 1.80 0.90" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 1.80 0.90" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_middle">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_kitchen_middle" type="fixed">
+		<origin xyz="-3.201 0.055 0.450" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="kitchen_middle" />
+	</joint>
+
+	<!-- kitchen_right -->
+	<link name="kitchen_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_right.dae" /-->
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_right">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_kitchen_right" type="fixed">
+		<origin xyz="-3.201 1.265 0.720" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="kitchen_right" />
+	</joint>
+
+
+<!-- couch -->
+
+	<!-- left couch back -->
+	<link name="left_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_back.dae" /-->
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_back">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_left_couch_back" type="fixed">
+		<origin xyz="1.999 0.931 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_back" />
+	</joint>
+
+	<!-- left couch side -->
+	<link name="left_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_left_side.dae" /-->
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_side">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_left_couch_side" type="fixed">
+		<origin xyz="1.689 0.481 0.230" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_side" />
+	</joint>
+
+	<!-- left couch middle -->
+	<link name="left_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_middle.dae" /-->
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_middle">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_left_couch_middle" type="fixed">
+		<origin xyz="2.139 0.481 0.150" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_middle" />
+	</joint>
+
+	<!-- right couch back -->
+	<link name="right_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_back.dae" /-->
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_back">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_right_couch_back" type="fixed">
+		<origin xyz="2.899 0.931 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_back" />
+	</joint>
+
+	<!-- right couch side -->
+	<link name="right_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_right_side.dae" /-->
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_side">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_right_couch_side" type="fixed">
+		<origin xyz="3.209 0.481 0.230" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_side" />
+	</joint>
+
+	<!-- right couch middle -->
+	<link name="right_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				<!--mesh filename="package://cob_gazebo_worlds/Media/materials/textures/couch_middle.dae" /-->
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_middle">
+		<material>Gazebo/Grey</material>
+	</gazebo>
+
+	<joint name="joint_right_couch_middle" type="fixed">
+		<origin xyz="2.759 0.481 0.150" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_middle" />
+	</joint>
+
+
+
+<!-- table -->
+	<!--link name="table1">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				
+				<box size="0.54 0.54 0.07" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.54 0.54 0.07" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="table1">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="table1" type="fixed">
+		<origin xyz="1.329 1.401 0.715" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="table1" />
+	</joint>
+
+	<link name="leg1">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="leg1">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="leg1" type="fixed">
+		<origin xyz="1.094 1.636 0.34" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="leg1" />
+	</joint>
+
+
+
+<link name="leg2">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="leg2">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="leg2" type="fixed">
+		<origin xyz="1.094 1.166 0.34" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="leg2" />
+	</joint>
+
+<link name="leg3">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="leg3">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="leg3" type="fixed">
+		<origin xyz="1.564 1.166 0.34" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="leg3" />
+	</joint>
+	<link name="leg4">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry> 
+				
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.07 0.07 0.68" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="leg4">
+		<material>Gazebo/Gray</material>
+	</gazebo>
+
+	<joint name="leg4" type="fixed">
+		<origin xyz="1.564 1.636 0.34" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="leg4" />
+	</joint-->
+<!-- pictures -->
+
+	<!-- picture_00 -->
+<!--	<link name="picture_00">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 2.33 0.64" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 2.33 0.64" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_00">
+		<material>IPA/FraunhoferIPA</material>
+	</gazebo>
+
+	<joint name="joint_picture_00" type="fixed">
+		<origin xyz="-3.521 0.055 2.130" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_00" />
+	</joint>
+-->
+
+	<!-- picture_01 -->
+<!--	<link name="picture_01">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.35 0.02 0.62" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.35 0.02 0.62" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_01">
+		<material>IPA/Future</material>
+	</gazebo>
+
+	<joint name="joint_picture_01" type="fixed">
+		<origin xyz="-2.656 2.261 2.740" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_01" />
+	</joint>
+-->
+
+	<!-- picture_02 -->
+<!--	<link name="picture_02">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.44 0.56" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.44 0.56" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_02">
+		<material>IPA/Care-O-bot</material>
+	</gazebo>
+
+	<joint name="joint_picture_02" type="fixed">
+		<origin xyz="-3.521 4.451 2.200" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_02" />
+	</joint>
+-->
+
+	<!-- picture_03 -->
+<!--	<link name="picture_03">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.44 0.02 0.26" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.44 0.02 0.26" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_03">
+		<material>IPA/Brics</material>
+	</gazebo>
+
+	<joint name="joint_picture_03" type="fixed">
+		<origin xyz="3.009 4.711 2.920" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_03" />
+	</joint>
+-->
+
+	<!-- picture_04 -->
+<!--	<link name="picture_04">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.32 0.02 0.32" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.32 0.02 0.32" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_04">
+		<material>IPA/WiMiCare</material>
+	</gazebo>
+
+	<joint name="joint_picture_04" type="fixed">
+		<origin xyz="3.009 4.711 2.480" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_04" />
+	</joint>
+-->	
+
+	<!-- picture_05 -->
+<!--	<link name="picture_05">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.25 0.02 0.30" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.25 0.02 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_05">
+		<material>IPA/SRS</material>
+	</gazebo>
+
+	<joint name="joint_picture_05" type="fixed">
+		<origin xyz="3.009 4.711 2.010" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_05" />
+	</joint>
+-->
+
+	<!-- picture_06 -->
+<!--	<link name="picture_06">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.56 0.02 0.40" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.56 0.02 0.40" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="picture_06">
+		<material>IPA/Comic</material>
+	</gazebo>
+
+	<joint name="joint_picture_06" type="fixed">
+		<origin xyz="3.009 4.711 1.100" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="picture_06" />
+	</joint>
+-->
+
+</xacro:macro>
+
+<xacro:ipa-kitchen name="ipa-kitchen" />
+
+</robot>
+

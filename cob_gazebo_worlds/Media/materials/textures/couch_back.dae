@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Daniel Meaki (taj-dm)</author>
+			<authoring_tool></authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file://</source_data>
+		</contributor>
+		<created>2011-02-28</created>
+		<modified>2011-02-28</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="couch_back_tex_jpg-fx" name="couch_back_tex_jpg-fx">
+			<profile_COMMON>
+				<newparam sid="couch_back_tex_jpg-surface">
+					<surface type="2D">
+						<init_from>couch_back_tex_jpg-img</init_from>
+						<format>A8R8G8B8</format>
+					</surface>
+				</newparam>
+				<newparam sid="couch_back_tex_jpg-sampler">
+					<sampler2D>
+						<source>couch_back_tex_jpg-surface</source>
+						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="blender">
+					<phong>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>1.0000 1.0000 1.0000 1</color>
+						</ambient>
+						<diffuse>
+							<texture texcoord="CHANNEL1" texture="couch_back_tex_jpg-sampler"/>
+						</diffuse>
+						<specular>
+							<color>0.50000 0.50000 0.50000 1</color>
+						</specular>
+						<shininess>
+							<float>12.5</float>
+						</shininess>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_images>
+		<image id="couch_back_tex_jpg-img" name="couch_back_tex_jpg-img">
+			<init_from>couch_back.jpg</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="couch_back_tex_jpg" name="couch_back_tex_jpg">
+			<instance_effect url="#couch_back_tex_jpg-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="Cube_001" name="Cube_001">
+			<mesh>
+				<source id="Cube_001-Position">
+					<float_array count="24" id="Cube_001-Position-array">-0.450 -0.140 -0.300 0.450 -0.140 -0.300 0.450 0.140 -0.300 -0.450 0.140 -0.300 -0.450 -0.140 0.300 0.450 -0.140 0.300 0.450 0.140 0.300 -0.450 0.140 0.300</float_array>
+					<technique_common>
+						<accessor count="8" source="#Cube_001-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cube_001-Normals">
+					<float_array count="18" id="Cube_001-Normals-array">0.0 0.0 -1.0 0.0 0.0 1.0 0.0 -1.0 0.0 1.0 0.0 0.0 -1.0 0.0 0.0 0.0 1.0 0.0</float_array>
+					<technique_common>
+						<accessor count="6" source="#Cube_001-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Cube_001-UV">
+					<float_array count="72" id="Cube_001-UV-array">0.0 0.0 0.2163 0.0 0.2163 0.4675 0.2163 0.4675 0.0 0.4675 0.0 0.0 0.2163 0.0 0.4327 0.0 0.4327 0.4675 0.4327 0.4675 0.2163 0.4675 0.2163 0.0 0.4327 0.0 0.6490 0.0 0.6490 1.0 0.6490 1.0 0.4327 1.0 0.4327 0.0 0.6490 0.0 0.7163 0.0 0.7163 1.0 0.7163 1.0 0.6490 1.0 0.6490 0.0 0.7163 0.0 0.7837 0.0 0.7837 1.0 0.7837 1.0 0.7163 1.0 0.7163 0.0 0.7837 0.0 1.0 0.0 1.0 1.0 1.0 1.0 0.7837 1.0 0.7837 0.0</float_array>
+					<technique_common>
+						<accessor count="36" source="#Cube_001-UV-array" stride="2">
+							<param type="float" name="S"></param>
+							<param type="float" name="T"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cube_001-Vertex">
+					<input semantic="POSITION" source="#Cube_001-Position"/>
+				</vertices>
+				<triangles count="12" material="couch_back_tex_jpg">
+					<input offset="0" semantic="VERTEX" source="#Cube_001-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Cube_001-Normals"/>
+					<input offset="2" semantic="TEXCOORD" source="#Cube_001-UV"/>
+					<p>3 0 0 2 0 1 1 0 2 1 0 3 0 0 4 3 0 5 4 1 6 5 1 7 6 1 8 6 1 9 7 1 10 4 1 11 0 2 12 1 2 13 5 2 14 5 2 15 4 2 16 0 2 17 1 3 18 2 3 19 6 3 20 6 3 21 5 3 22 1 3 23 3 4 24 0 4 25 4 4 26 4 4 27 7 4 28 3 4 29 2 5 30 3 5 31 7 5 32 7 5 33 6 5 34 2 5 35</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L1" id="Cube" name="Cube">
+				<matrix>
+					1.0 0.0 0.0 0.0 
+					0.0 1.0 0.0 0.0 
+					0.0 0.0 1.0 0.0 
+					0.0 0.0 0.0 1.0 
+				</matrix>
+				<instance_geometry url="#Cube_001">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="couch_back_tex_jpg" target="#couch_back_tex_jpg">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_physics_materials>
+		<physics_material id="Cube-PhysicsMaterial" name="Cube-PhysicsMaterial">
+			<technique_common>
+				<dynamic_friction>0.5</dynamic_friction>
+				<restitution>0.0</restitution>
+				<static_friction>0.5</static_friction>
+			</technique_common>
+		</physics_material>
+	</library_physics_materials>
+	<library_physics_models>
+		<physics_model id="Scene-PhysicsModel" name="Scene-PhysicsModel">
+			<rigid_body name="Cube-RigidBody" sid="Cube-RigidBody">
+				<technique_common>
+					<dynamic>false</dynamic>
+					<mass>0</mass>
+					<instance_physics_material url="#Cube-PhysicsMaterial"/>
+					<shape>
+						<instance_geometry url="#Cube_001"/>
+					</shape>
+				</technique_common>
+			</rigid_body>
+		</physics_model>
+	</library_physics_models>
+	<library_physics_scenes>
+		<physics_scene id="Scene-Physics" name="Scene-Physics">
+			<instance_physics_model url="#Scene-PhysicsModel">
+				<instance_rigid_body body="Cube-RigidBody" target="#Cube"/>
+			</instance_physics_model>
+		</physics_scene>
+	</library_physics_scenes>
+	<scene>
+		<instance_physics_scene url="#Scene-Physics"/>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>

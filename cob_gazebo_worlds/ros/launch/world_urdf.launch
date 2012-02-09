@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start gazebo with empty world -->
+	<include file="$(find cob_gazebo_worlds)/ros/launch/empty-world.launch" />
+
+	<!-- send world urdf to param server -->
+	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/common/worlds/$(env ROBOT_ENV)$(optenv ENV_MODE).urdf.xacro" />
+
+	<!-- push world_description to factory and spawn robot in gazebo -->
+	<node name="spawn_urdf_world" pkg="gazebo" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model urdf_world_model" respawn="false" output="screen" />
+
+</launch>
