@@ -24,6 +24,8 @@
 
   <depend package="cob_srvs"/>
   <depend package="cob_description"/>
+  <depend package="desire_description"/>
+  <depend package="icob_description"/>
   <depend package="cob_ogre"/>
   <depend package="cob_gazebo_worlds"/>
   <depend package="cob_hardware_config"/>
