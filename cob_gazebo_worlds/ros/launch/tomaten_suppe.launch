@@ -2,10 +2,10 @@
 <launch>
 
 	<!-- send cup to param server -->
-	<param name="tomaten_suppe" textfile="$(find cob_gazebo_worlds)/objects/tomaten_suppe.model" />
+	<param name="tomaten_suppe" textfile="$(find cob_gazebo_worlds)/objects/tomaten_suppe.urdf" />
 
 	<!-- spawn model in gazebo -->
-	<node name="spawn_tomaten_suppe" pkg="gazebo" type="spawn_model" args="-gazebo -param tomaten_suppe -x 0.83 -y 1.0 -z 0.68 -R 0 -P 0 -Y 1.57079633 -model tomaten_suppe" respawn="false" output="screen" />
+	<node name="spawn_tomaten_suppe" pkg="gazebo" type="spawn_model" args="-urdf -param tomaten_suppe -x 0.83 -y 1.0 -z 0.68 -R 0 -P 0 -Y 1.57079633 -model tomaten_suppe" respawn="false" output="screen" />
 	
 
 
