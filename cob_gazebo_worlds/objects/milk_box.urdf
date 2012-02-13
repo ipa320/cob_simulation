@@ -13,9 +13,10 @@
    </geometry>
   </visual>
   <collision>
-   <origin xyz="0 0 0.0" rpy="0 0 0 " />
+   <origin xyz="0 0 0.1" rpy="0 0 1.57" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/milk_box.dae"/>
+     <box size="0.06 0.095 0.2" />
+     <!--mesh filename="package://cob_gazebo_worlds/Media/models/milk_box.dae"/-->>
    </geometry>
   </collision>     
   </link>
