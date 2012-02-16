@@ -8,40 +8,40 @@ milk:
   orientation.y: 0
 
 jodsalz:
-  model_type: model
+  model_type: urdf
   position.x: -2.95
   position.y: 0.1
   position.z: 1
   orientation.r: 0
   orientation.p: 0
-  orientation.y: 0
+  orientation.y: 1.570796
 
 tomaten_suppe:
-  model_type: model
-  position.x: -2.95
-  position.y: -0.1
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 0
-
-zwieback:
-  model_type: model
-  position.x: -2.95
-  position.y: 0.2
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 0
-
-kraeuter:
-  model_type: model
+  model_type: urdf
   position.x: -2.95
   position.y: -0.2
   position.z: 1
   orientation.r: 0
   orientation.p: 0
-  orientation.y: 0
+  orientation.y: 1.570796
+
+zwieback:
+  model_type: urdf
+  position.x: -2.95
+  position.y: 0.25
+  position.z: 1
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: 1.570796
+
+kraeuter:
+  model_type: model
+  position.x: -3.1
+  position.y: -0.1
+  position.z: 1
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: 1.570796
 
 cb_4x3:
   model_type: model
@@ -91,12 +91,12 @@ chair:
 
 cabinet:
   model_type: urdf.xacro
-  position.x: 1.159
-  position.y: 1.416
+  position.x: 2.9
+  position.y: -1.85
   position.z: 0
   orientation.r: 0
   orientation.p: 0
-  orientation.y: 0
+  orientation.y: 3.14159
 
 cabinet_with_door:
   model_type: urdf.xacro
