@@ -43,6 +43,25 @@ kraeuter:
   orientation.p: 0
   orientation.y: 0
 
+cb_4x3:
+  model_type: model
+  position.x: -0.7
+  position.y: -0.1
+  position.z: 1
+  orientation.r: 1.56
+  orientation.p: 0
+  orientation.y: 1.56
+
+cb_9x6:
+  model_type: model
+  position.x: -0.7
+  position.y: -0.1
+  position.z: 1
+  orientation.r: 1.56
+  orientation.p: 0
+  orientation.y: 1.56
+
+
 table_ikea:
   model_type: urdf.xacro
   position.x: 1.1
