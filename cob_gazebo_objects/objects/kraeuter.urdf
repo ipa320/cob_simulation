@@ -9,14 +9,14 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/kraeuter.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/kraeuter.dae"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0.055" rpy="0 0 0" />
    <geometry>
      <box size="0.076 0.047 0.11" />
-     <!--mesh filename="package://cob_gazebo_worlds/Media/models/kraeuter.dae"/-->>
+     <!--mesh filename="package://cob_gazebo_objects/Media/models/kraeuter.dae"/-->>
    </geometry>
   </collision>     
   </link>

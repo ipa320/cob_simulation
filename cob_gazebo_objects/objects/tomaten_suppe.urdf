@@ -9,14 +9,14 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/tomaten_suppe.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/tomaten_suppe.dae"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0.063" rpy="0 0 0" />
    <geometry>
      <box size="0.093 0.032 0.126" />
-     <!--mesh filename="package://cob_gazebo_worlds/Media/models/tomaten_suppe.dae"/-->>
+     <!--mesh filename="package://cob_gazebo_objects/Media/models/tomaten_suppe.dae"/-->>
    </geometry>
   </collision>     
   </link>

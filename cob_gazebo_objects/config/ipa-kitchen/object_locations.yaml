@@ -35,7 +35,7 @@ zwieback:
   orientation.y: 1.570796
 
 kraeuter:
-  model_type: model
+  model_type: urdf
   position.x: -3.1
   position.y: -0.1
   position.z: 1

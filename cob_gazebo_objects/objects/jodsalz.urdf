@@ -9,14 +9,14 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/jodsalz.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/jodsalz.dae"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0.072" rpy="0 0 0" />
    <geometry>
      <box size="0.061 0.046 0.144" />
-     <!--mesh filename="package://cob_gazebo_worlds/Media/models/jodsalz.dae"/-->>
+     <!--mesh filename="package://cob_gazebo_objects/Media/models/jodsalz.dae"/-->>
    </geometry>
   </collision>     
   </link>
