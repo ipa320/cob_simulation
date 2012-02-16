@@ -1,6 +1,6 @@
 <?xml version="1.0" ?> 
-<robot name="milk_box">
-  <link name="base_link">
+<robot name="milk">
+  <link name="box_body">
   <inertial>
     <mass value="5.0" />
     <origin xyz="0 0 0.0" />

@@ -65,6 +65,7 @@ import os
 
 from gazebo.srv import *
 from geometry_msgs.msg import *
+import tf.transformations as tft
 
 if __name__ == "__main__":
 	if len(sys.argv) < 2:
@@ -74,35 +75,46 @@ if __name__ == "__main__":
         #TODO:can call with several arguments
 	# read object type (urdf or model) and pose from .yaml file (or parameter server? then upload .yaml before) .yaml file has to be separated for each ROBOT_ENV
 	model_type = rospy.get_param("/%s/model_type" % sys.argv[1])
+        # convert rpy to quaternion for Pose message
+	quaternion = tft.quaternion_from_euler(rospy.get_param("/%s/orientation.r" % sys.argv[1]),rospy.get_param("/%s/orientation.p" % sys.argv[1]),rospy.get_param("/%s/orientation.y" % sys.argv[1]))
+
+
 	object_pose = Pose()
 	object_pose.position.x = rospy.get_param("/%s/position.x" % sys.argv[1])
 	object_pose.position.y = rospy.get_param("/%s/position.y" % sys.argv[1])
 	object_pose.position.z = rospy.get_param("/%s/position.z" % sys.argv[1])
-	object_pose.orientation.x = rospy.get_param("/%s/orientation.x" % sys.argv[1])
-	object_pose.orientation.y = rospy.get_param("/%s/orientation.y" % sys.argv[1])
-	object_pose.orientation.z = rospy.get_param("/%s/orientation.z" % sys.argv[1])
-	object_pose.orientation.w = rospy.get_param("/%s/orientation.w" % sys.argv[1])
-	file_xml = open(roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+sys.argv[1]+'.'+rospy.get_param('/%s/model_type' % sys.argv[1]))
+	object_pose.orientation.x = quaternion[0]
+	object_pose.orientation.y = quaternion[1]
+	object_pose.orientation.z = quaternion[2]
+	object_pose.orientation.w = quaternion[3]
+
+	file_localition = roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+sys.argv[1]+'.'+rospy.get_param('/%s/model_type' % sys.argv[1])
 
 
 	# call gazebo service to spawn model (see http://ros.org/wiki/gazebo)
 	if model_type == "urdf":
 		srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
-	#TODO: model_type urdf.xacro calling xacro.py other solution is generate the xml file for all model_type urdf.xacro and save it in cob_gazebo_objects/objects/*.xml
-	#elif model_type == "urdf.xacro":
-		#xacro_cmd = roslib.packages.get_pkg_dir('xacro')+'/xacro.py' 
-		#file_xml = os.popen2('rosrun %s' % xacro_cmd + '%s' % roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+sys.argv[1]+'.'+rospy.get_param('/%s/model_type' % sys.argv[1]))
-		#file_xml = open('/home/nhg/table_ikea.xml')
-		#srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
+		file_xml = open(file_localition)
+		xml_string=file_xml.read()
+
+	elif model_type == "urdf.xacro":
+		p = os.popen("rosrun xacro xacro.py " + file_localition)
+		xml_string = p.read()
+		p.close()
+		srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
+
 	elif model_type == "model":
 		srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_gazebo_model', SpawnModel)
+		file_xml = open(file_localition)
+		xml_string=file_xml.read()
 	else:
 		print 'Error: Model type not know. model_type = ' + model_type
 		sys.exit()
 
+
 	req = SpawnModelRequest()
 	req.model_name = sys.argv[1] # model name from command line input
-	req.model_xml = file_xml.read()
+	req.model_xml = xml_string
 	req.initial_pose = object_pose
 
 	res = srv_spawn_model(req)

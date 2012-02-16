@@ -3,47 +3,87 @@ milk:
   position.x: -2.95
   position.y: 0.0
   position.z: 1.02
-  orientation.x: 0
+  orientation.r: 0
+  orientation.p: 0
   orientation.y: 0
-  orientation.z: 0
-  orientation.w: 0
 
 jodsalz:
   model_type: model
   position.x: -2.95
   position.y: 0.1
   position.z: 1
-  orientation.x: 0
+  orientation.r: 0
+  orientation.p: 0
   orientation.y: 0
-  orientation.z: 0
-  orientation.w: 0
 
 tomaten_suppe:
   model_type: model
   position.x: -2.95
   position.y: -0.1
   position.z: 1
-  orientation.x: 0
+  orientation.r: 0
+  orientation.p: 0
   orientation.y: 0
-  orientation.z: 0
-  orientation.w: 0
 
 zwieback:
   model_type: model
   position.x: -2.95
   position.y: 0.2
   position.z: 1
-  orientation.x: 0
+  orientation.r: 0
+  orientation.p: 0
   orientation.y: 0
-  orientation.z: 0
-  orientation.w: 0
 
 kraeuter:
   model_type: model
   position.x: -2.95
   position.y: -0.2
   position.z: 1
-  orientation.x: 0
+  orientation.r: 0
+  orientation.p: 0
   orientation.y: 0
-  orientation.z: 0
-  orientation.w: 0
+
+table_ikea:
+  model_type: urdf.xacro
+  position.x: 1.1
+  position.y: 1.2
+  position.z: 0
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: 0
+
+bookcase:
+  model_type: urdf.xacro
+  position.x: -1.2
+  position.y: -1.9
+  position.z: 0
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: -1.57079
+
+chair:
+  model_type: urdf.xacro
+  position.x: 1.1
+  position.y: 1.2
+  position.z: 0.1
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: 0
+
+cabinet:
+  model_type: urdf.xacro
+  position.x: 1.159
+  position.y: 1.416
+  position.z: 0
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: 0
+
+cabinet_with_door:
+  model_type: urdf.xacro
+  position.x: 2.2
+  position.y: -1.97
+  position.z: 0
+  orientation.r: 0
+  orientation.p: 0
+  orientation.y: -1.57079
