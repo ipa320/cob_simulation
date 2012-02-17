@@ -17,7 +17,7 @@ class gazebo_services():
 		# base
 		self.base_client = actionlib.SimpleActionClient('/move_base', MoveBaseAction)
 		#self.base_init_srv = rospy.Service('/base_controller/init', Trigger, self.base_init_cb)
-		#self.base_stop_srv = rospy.Service('/base_controller/stop', Trigger, self.base_stop_cb)
+		self.base_stop_srv = rospy.Service('/base_controller/stop', Trigger, self.base_stop_cb)
 		#self.base_recover_srv = rospy.Service('/base_controller/recover', Trigger, self.base_recover_cb)
 		#self.base_set_operation_mode_srv = rospy.Service('/base_controller/set_operation_mode', SetOperationMode, self.base_set_operation_mode_cb)
 
