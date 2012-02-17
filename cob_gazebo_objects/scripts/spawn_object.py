@@ -76,13 +76,14 @@ if __name__ == "__main__":
 	# read object type (urdf or model) and pose from .yaml file (or parameter server? then upload .yaml before) .yaml file has to be separated for each ROBOT_ENV
 	model_type = rospy.get_param("/%s/model_type" % sys.argv[1])
         # convert rpy to quaternion for Pose message
-	quaternion = tft.quaternion_from_euler(rospy.get_param("/%s/orientation.r" % sys.argv[1]),rospy.get_param("/%s/orientation.p" % sys.argv[1]),rospy.get_param("/%s/orientation.y" % sys.argv[1]))
-
+	orientation = rospy.get_param("/%s/orientation" % sys.argv[1])
+	quaternion = tft.quaternion_from_euler(orientation[0], orientation[1], orientation[2])
+	position = rospy.get_param("/%s/position" % sys.argv[1])
 
 	object_pose = Pose()
-	object_pose.position.x = rospy.get_param("/%s/position.x" % sys.argv[1])
-	object_pose.position.y = rospy.get_param("/%s/position.y" % sys.argv[1])
-	object_pose.position.z = rospy.get_param("/%s/position.z" % sys.argv[1])
+	object_pose.position.x = float(position[0])
+	object_pose.position.y = float(position[1])
+	object_pose.position.z = float(position[2])
 	object_pose.orientation.x = quaternion[0]
 	object_pose.orientation.y = quaternion[1]
 	object_pose.orientation.z = quaternion[2]
