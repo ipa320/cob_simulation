@@ -15,7 +15,7 @@
 	<mass>5</mass>
         <size>0.06 0.095 0.2</size>
         <visual>
-          <mesh>milk_box.dae</mesh>
+          <mesh>milk.dae</mesh>
         </visual>
       </geom:box>
     </body:box>

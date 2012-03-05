@@ -14,7 +14,7 @@
         <size>0.093 0.032 0.126</size>
         <mass>1</mass>
         <visual>
-          <mesh>tomaten_suppe.dae</mesh>
+          <mesh>tomato_soup.dae</mesh>
         </visual>
       </geom:box>
     </body:box>

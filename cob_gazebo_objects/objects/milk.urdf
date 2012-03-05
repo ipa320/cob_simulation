@@ -9,7 +9,7 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 1.570796327" />
    <geometry>
-     <mesh filename="package://cob_gazebo_objects/Media/models/milk_box.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/milk.dae"/>
    </geometry>
   </visual>
   <collision>

@@ -9,13 +9,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_gazebo_objects</url>
 
+  <depend package="urdf"/>
   <depend package="xacro"/>
-  <depend package="convex_decomposition"/>
-  <depend package="ivcon"/>
-  <depend package="ogre_tools"/>
-  <depend package="gazebo"/>
-  <depend package="gazebo_tools"/>
-  <depend package="gazebo_plugins"/>
 
   <export>
     <gazebo gazebo_media_path="${prefix}" />
