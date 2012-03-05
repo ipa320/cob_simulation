@@ -45,8 +45,8 @@ bookcase:
 
 chair:
   model_type: urdf.xacro
-  position: [1.1, 1.2, 0.1]
-  orientation: [0, 0, 0]
+  position: [0.7, 1.2, 0.1]
+  orientation: [0, 0, 1.5708]
 
 cabinet:
   model_type: urdf.xacro
