@@ -8,7 +8,7 @@ salt:
   position: [-2.95, 0.1, 1]
   orientation: [0, 0, 1.570796]
 
-tomaten_suppe:
+tomato_soup:
   model_type: urdf
   position: [-2.95, -0.2, 1]
   orientation: [0, 0, 1.570796]
@@ -18,7 +18,7 @@ zwieback:
   position: [-2.95, 0.25, 1]
   orientation: [0, 0, 1.570796]
 
-tomaten_sauce:
+tomato_sauce:
   model_type: urdf
   position: [-3.1, -0.1, 1]
   orientation: [0, 0, 1.570796]

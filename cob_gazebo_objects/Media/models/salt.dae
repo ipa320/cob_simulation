@@ -14,17 +14,17 @@
 		<up_axis>Z_UP</up_axis>
 	</asset>
 	<library_effects>
-		<effect id="jodsalz_tex_jpg-fx" name="jodsalz_tex_jpg-fx">
+		<effect id="salt_tex_jpg-fx" name="salt_tex_jpg-fx">
 			<profile_COMMON>
-				<newparam sid="jodsalz_tex_jpg-surface">
+				<newparam sid="salt_tex_jpg-surface">
 					<surface type="2D">
-						<init_from>jodsalz_tex_jpg-img</init_from>
+						<init_from>salt_tex_jpg-img</init_from>
 						<format>A8R8G8B8</format>
 					</surface>
 				</newparam>
-				<newparam sid="jodsalz_tex_jpg-sampler">
+				<newparam sid="salt_tex_jpg-sampler">
 					<sampler2D>
-						<source>jodsalz_tex_jpg-surface</source>
+						<source>salt_tex_jpg-surface</source>
 						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
 						<magfilter>LINEAR</magfilter>
 					</sampler2D>
@@ -38,7 +38,7 @@
 							<color>1.0000 1.0000 1.0000 1</color>
 						</ambient>
 						<diffuse>
-							<texture texcoord="CHANNEL1" texture="jodsalz_tex_jpg-sampler"/>
+							<texture texcoord="CHANNEL1" texture="salt_tex_jpg-sampler"/>
 						</diffuse>
 						<specular>
 							<color>0.50000 0.50000 0.50000 1</color>
@@ -64,13 +64,13 @@
 		</effect>
 	</library_effects>
 	<library_images>
-		<image id="jodsalz_tex_jpg-img" name="jodsalz_tex_jpg-img">
-			<init_from>jodsalz.jpg</init_from>
+		<image id="salt_tex_jpg-img" name="salt_tex_jpg-img">
+			<init_from>salt.jpg</init_from>
 		</image>
 	</library_images>
 	<library_materials>
-		<material id="jodsalz_tex_jpg" name="jodsalz_tex_jpg">
-			<instance_effect url="#jodsalz_tex_jpg-fx"/>
+		<material id="salt_tex_jpg" name="salt_tex_jpg">
+			<instance_effect url="#salt_tex_jpg-fx"/>
 		</material>
 	</library_materials>
 	<library_geometries>
@@ -108,7 +108,7 @@
 				<vertices id="Cube_001-Vertex">
 					<input semantic="POSITION" source="#Cube_001-Position"/>
 				</vertices>
-				<triangles count="12" material="jodsalz_tex_jpg">
+				<triangles count="12" material="salt_tex_jpg">
 					<input offset="0" semantic="VERTEX" source="#Cube_001-Vertex"/>
 					<input offset="1" semantic="NORMAL" source="#Cube_001-Normals"/>
 					<input offset="2" semantic="TEXCOORD" source="#Cube_001-UV"/>
@@ -129,7 +129,7 @@
 				<instance_geometry url="#Cube_001">
 					<bind_material>
 						<technique_common>
-							<instance_material symbol="jodsalz_tex_jpg" target="#jodsalz_tex_jpg">
+							<instance_material symbol="salt_tex_jpg" target="#salt_tex_jpg">
 								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
 							</instance_material>
 						</technique_common>
