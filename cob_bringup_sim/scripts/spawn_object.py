@@ -58,7 +58,7 @@
 #################################################################
 import sys
 import roslib
-roslib.load_manifest('cob_gazebo_objects')
+roslib.load_manifest('cob_bringup_sim')
 
 import rospy
 import os
