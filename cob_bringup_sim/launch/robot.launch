@@ -3,8 +3,13 @@
 
 	<include file="$(find cob_machine)/sim.machine" />
 	
-	<!-- startup simulation -->
+	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
+
+	<!-- upload objects -->
+	<rosparam command="load" file="$(find cob_gazebo_objects)/config/$(env ROBOT_ENV)/object_locations.yaml"/>
+
+	<!-- startup simulated robot -->
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
 
 	<!-- start additional components -->
