@@ -1,26 +1,26 @@
 milk:
   model_type: urdf
-  position: [-2.95, 0.0, 1.02]
+  position: [-1.5, -0.5, 1.02]
   orientation: [0, 0, 0]
 
 salt:
   model_type: urdf
-  position: [-2.95, 0.1, 1]
+  position: [ 3.9, -1.8, 1.02 ]
   orientation: [0, 0, 1.570796]
 
 tomato_soup:
   model_type: urdf
-  position: [-2.95, -0.2, 1]
+  position: [-1.5, -0.2, 1]
   orientation: [0, 0, 1.570796]
 
 zwieback:
   model_type: urdf
-  position: [-2.95, 0.25, 1]
+  position: [-1.5, 0.25, 1]
   orientation: [0, 0, 1.570796]
 
 tomato_sauce:
   model_type: urdf
-  position: [-3.1, -0.1, 1]
+  position: [-1.7, -0.1, 1]
   orientation: [0, 0, 1.570796]
 
 cb_4x3:
