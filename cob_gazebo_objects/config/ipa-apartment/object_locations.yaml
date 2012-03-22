@@ -35,13 +35,13 @@ cb_9x6:
 
 table_ikea:
   model_type: urdf.xacro
-  position: [1.1, 1.2, 0]
+  position: [1.5,-1.5, 0]
   orientation: [0, 0, 0]
 
 bookcase:
   model_type: urdf.xacro
-  position: [-1.2, -1.9, 0]
-  orientation: [0, 0, -1.57079]
+  position: [3.95, -1.8, 0]
+  orientation: [0, 0, 0]
 
 chair:
   model_type: urdf.xacro
@@ -50,11 +50,16 @@ chair:
 
 cabinet:
   model_type: urdf.xacro
-  position: [2.9, -1.85, 0]
-  orientation: [0, 0, 3.14159]
+  position: [0,1.35,0]
+  orientation: [0, 0, 0]
 
 cabinet_with_door:
   model_type: urdf.xacro
-  position: [2.2, -1.97, 0]
-  orientation: [0, 0, -1.57079]
+  position: [4.05, -2.8, 0]
+  orientation: [0, 0, 0]
+
+couch:
+  model_type: urdf.xacro
+  position: [3.6,0.6,0]
+  orientation: [0, 0,-1.57079]
 
