@@ -1,7 +1,7 @@
 <package>
   <description brief="cob_gazebo">
 
-    Launch scpipts for 3D simulation of Care-O-bot in gazebo simulator.
+    Launch files and tools for 3D simulation of Care-O-bot in gazebo simulator.
 
   </description>
   <author>Florian Weisshardt</author>
@@ -24,6 +24,8 @@
 
   <depend package="cob_srvs"/>
   <depend package="cob_description"/>
+  <depend package="desire_description"/>
+  <depend package="icob_description"/>
   <depend package="cob_ogre"/>
   <depend package="cob_gazebo_worlds"/>
   <depend package="cob_hardware_config"/>

@@ -15,4 +15,5 @@
   <!-- convert from PointCloud2 to PointCloud1 -->
   <node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" />
 
+
 </launch>

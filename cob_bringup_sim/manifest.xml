@@ -1,7 +1,7 @@
 <package>
   <description brief="cob_bringup_sim">
 
-     cob_bringup_sim
+     This package provides launch files for starting a simulated Care-O-bot.
 
   </description>
   <author>Florian Weisshardt</author>
@@ -10,6 +10,7 @@
   <url>http://ros.org/wiki/cob_bringup_sim</url>
 
   <depend package="cob_gazebo"/>
+  <depend package="gazebo"/>
   <depend package="cob_gazebo_worlds"/>
 
   <depend package="cob_machine"/>
