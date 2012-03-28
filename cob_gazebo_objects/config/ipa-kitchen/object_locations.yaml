@@ -1,108 +1,60 @@
 milk:
   model_type: urdf
-  position.x: -2.95
-  position.y: 0.0
-  position.z: 1.02
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 0
+  position: [-2.95, 0.0, 1.02]
+  orientation: [0, 0, 0]
 
-jodsalz:
+salt:
   model_type: urdf
-  position.x: -2.95
-  position.y: 0.1
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 1.570796
+  position: [-2.95, 0.1, 1]
+  orientation: [0, 0, 1.570796]
 
-tomaten_suppe:
+tomato_soup:
   model_type: urdf
-  position.x: -2.95
-  position.y: -0.2
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 1.570796
+  position: [-2.95, -0.2, 1]
+  orientation: [0, 0, 1.570796]
 
 zwieback:
   model_type: urdf
-  position.x: -2.95
-  position.y: 0.25
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 1.570796
+  position: [-2.95, 0.25, 1]
+  orientation: [0, 0, 1.570796]
 
-kraeuter:
+tomato_sauce:
   model_type: urdf
-  position.x: -3.1
-  position.y: -0.1
-  position.z: 1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 1.570796
+  position: [-3.1, -0.1, 1]
+  orientation: [0, 0, 1.570796]
 
 cb_4x3:
   model_type: model
-  position.x: -0.7
-  position.y: -0.1
-  position.z: 1
-  orientation.r: 1.56
-  orientation.p: 0
-  orientation.y: 1.56
+  position: [-0.7, -0.1, 1]
+  orientation: [1.56, 0, 1.56]
 
 cb_9x6:
   model_type: model
-  position.x: -0.7
-  position.y: -0.1
-  position.z: 1
-  orientation.r: 1.56
-  orientation.p: 0
-  orientation.y: 1.56
-
+  position: [-0.7, -0.1, 1]
+  orientation: [1.56, 0, 1.56]
 
 table_ikea:
   model_type: urdf.xacro
-  position.x: 1.1
-  position.y: 1.2
-  position.z: 0
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 0
+  position: [1.1, 1.2, 0]
+  orientation: [0, 0, 0]
 
 bookcase:
   model_type: urdf.xacro
-  position.x: -1.2
-  position.y: -1.9
-  position.z: 0
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: -1.57079
+  position: [-1.2, -1.9, 0]
+  orientation: [0, 0, -1.57079]
 
 chair:
   model_type: urdf.xacro
-  position.x: 1.1
-  position.y: 1.2
-  position.z: 0.1
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 0
+  position: [0.7, 1.2, 0.1]
+  orientation: [0, 0, 1.5708]
 
 cabinet:
   model_type: urdf.xacro
-  position.x: 2.9
-  position.y: -1.85
-  position.z: 0
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: 3.14159
+  position: [2.9, -1.85, 0]
+  orientation: [0, 0, 3.14159]
 
 cabinet_with_door:
   model_type: urdf.xacro
-  position.x: 2.2
-  position.y: -1.97
-  position.z: 0
-  orientation.r: 0
-  orientation.p: 0
-  orientation.y: -1.57079
+  position: [2.2, -1.97, 0]
+  orientation: [0, 0, -1.57079]
+

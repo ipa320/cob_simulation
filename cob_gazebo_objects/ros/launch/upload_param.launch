@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-        <!-- send parameters to parameter server -->
-        <rosparam command="load" file="$(find cob_gazebo_objects)/config/$(env ROBOT_ENV)/object_locations.yaml"/>
-
-</launch>
-
