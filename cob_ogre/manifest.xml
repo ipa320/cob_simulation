@@ -10,6 +10,8 @@
   <url>http://ros.org/wiki/cob_ogre</url>
   
   <depend package="cob_description"/>
+  <depend package="raw_description"/>
+  <depend package="schunk_description"/>
   <depend package="ogre_tools"/>
   <depend package="ivcon"/>
   <depend package="convex_decomposition"/>
