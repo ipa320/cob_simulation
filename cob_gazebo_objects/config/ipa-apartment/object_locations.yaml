@@ -1,0 +1,65 @@
+milk:
+  model_type: urdf
+  position: [-1.5, -0.5, 1.02]
+  orientation: [0, 0, 0]
+
+salt:
+  model_type: urdf
+  position: [ 3.9, -1.8, 1.02 ]
+  orientation: [0, 0, 1.570796]
+
+tomato_soup:
+  model_type: urdf
+  position: [-1.5, -0.2, 1]
+  orientation: [0, 0, 1.570796]
+
+zwieback:
+  model_type: urdf
+  position: [-1.5, 0.25, 1]
+  orientation: [0, 0, 1.570796]
+
+tomato_sauce:
+  model_type: urdf
+  position: [-1.7, -0.1, 1]
+  orientation: [0, 0, 1.570796]
+
+cb_4x3:
+  model_type: model
+  position: [-0.7, -0.1, 1]
+  orientation: [1.56, 0, 1.56]
+
+cb_9x6:
+  model_type: model
+  position: [-0.7, -0.1, 1]
+  orientation: [1.56, 0, 1.56]
+
+table_ikea:
+  model_type: urdf.xacro
+  position: [1.5,-1.5, 0]
+  orientation: [0, 0, 0]
+
+bookcase:
+  model_type: urdf.xacro
+  position: [3.95, -1.8, 0]
+  orientation: [0, 0, 0]
+
+chair:
+  model_type: urdf.xacro
+  position: [0.7, 1.2, 0.1]
+  orientation: [0, 0, 1.5708]
+
+cabinet:
+  model_type: urdf.xacro
+  position: [0,1.35,0]
+  orientation: [0, 0, 0]
+
+cabinet_with_door:
+  model_type: urdf.xacro
+  position: [4.05, -2.8, 0]
+  orientation: [0, 0, 0]
+
+couch:
+  model_type: urdf.xacro
+  position: [3.6,0.6,0]
+  orientation: [0, 0,-1.57079]
+
