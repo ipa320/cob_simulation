@@ -9,4 +9,8 @@
 	<!-- start gazebo world from .urdf file -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/world_urdf.launch" />
 
+	<!-- send objects location parameters to parameter server -->
+        <rosparam command="load" file="$(find cob_gazebo_objects)/config/ipa-apartment/object_locations.yaml"/>
+
+
 </launch>
