@@ -4,13 +4,17 @@ rosbuild_init()
 
 # find needed paths
 rosbuild_find_ros_package(cob_description)
+rosbuild_find_ros_package(raw_description)
+rosbuild_find_ros_package(schunk_description)
 rosbuild_find_ros_package(cob_ogre)
 rosbuild_find_ros_package(ogre)
 
 set(cob_gen_files "")
 
 # build the ogre mesh files from *.stl (and *.stlb from convex decomposition)
-file(GLOB_RECURSE cob_description_stl_files RELATIVE ${cob_description_PACKAGE_PATH}/meshes ${cob_description_PACKAGE_PATH}/meshes/*/*.stl ${cob_description_PACKAGE_PATH}/meshes/*/convex/*.stlb)
+file(GLOB_RECURSE cob_description_stl_files RELATIVE ${cob_description_PACKAGE_PATH}/meshes ${cob_description_PACKAGE_PATH}/meshes/*/*.stl ${cob_description_PACKAGE_PATH}/meshes/*/convex/*.stlb
+  ${raw_description_PACKAGE_PATH}/meshes ${raw_description_PACKAGE_PATH}/meshes/*/*.stl ${raw_description_PACKAGE_PATH}/meshes/*/convex/*.stlb
+  ${schunk_description_PACKAGE_PATH}/meshes ${schunk_description_PACKAGE_PATH}/meshes/*/*.stl ${schunk_description_PACKAGE_PATH}/meshes/*/convex/*.stlb)
 
 set(cob_description_out_path ${CMAKE_CURRENT_SOURCE_DIR}/common/files/models)
 
