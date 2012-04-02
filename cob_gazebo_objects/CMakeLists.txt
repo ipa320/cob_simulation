@@ -17,5 +17,4 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 # rostest
-# objects
-#rosbuild_add_roslaunch_check(ros/launch/populate_ipa-kitchen.launch ROBOT_ENV=ipa-kitchen)
+rosbuild_add_rostest(test/urdf_object.test)

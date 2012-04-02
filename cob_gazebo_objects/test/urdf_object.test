@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <test test-name="object1_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/bookcase.urdf.xacro"/>
+  <test test-name="object2_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/cabinet.urdf.xacro"/>
+  <test test-name="object3_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/cabinet_with_door.urdf.xacro"/>
+  <test test-name="object4_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/chair.urdf.xacro"/>
+  <test test-name="object5_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/couch.urdf.xacro"/>
+  <test test-name="object6_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/milk.urdf"/>
+  <test test-name="object7_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/salt.urdf"/>
+  <test test-name="object8_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/table_ikea.urdf.xacro"/>
+  <test test-name="object9_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/tomato_sauce.urdf"/>
+  <test test-name="object10_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/tomato_soup.urdf"/>
+  <test test-name="object11_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/zwieback.urdf"/>
+
+</launch> 
