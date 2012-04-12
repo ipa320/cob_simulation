@@ -36,6 +36,5 @@
   <depend package="pr2_gazebo"/>
   <depend package="pr2_gazebo_plugins"/>
 
-  <rosdep name="opencv2"/>
 
 </package>
