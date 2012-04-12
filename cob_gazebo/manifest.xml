@@ -11,6 +11,8 @@
   
   <depend package="gazebo"/>
   <depend package="gazebo_plugins"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
   <depend package="gazebo_worlds"/>
   <depend package="gazebo_tools"/>
 
@@ -25,7 +27,7 @@
   <depend package="cob_srvs"/>
   <depend package="cob_description"/>
   <depend package="desire_description"/>
-  <depend package="icob_description"/>
+  <depend package="raw_description"/>
   <depend package="cob_ogre"/>
   <depend package="cob_gazebo_worlds"/>
   <depend package="cob_hardware_config"/>
@@ -33,6 +35,7 @@
 
   <depend package="pr2_gazebo"/>
   <depend package="pr2_gazebo_plugins"/>
-  <depend package="point_cloud_converter"/>
+
+  <rosdep name="opencv2"/>
 
 </package>

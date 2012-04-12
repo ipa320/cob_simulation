@@ -17,7 +17,6 @@
   <depend stack="geometry" /> <!-- tf -->
   <depend stack="image_pipeline" /> <!-- image_proc -->
   <depend stack="navigation" /> <!-- move_base_msgs -->
-  <depend stack="point_cloud_perception" /> <!-- point_cloud_converter -->
   <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
   <depend stack="pr2_mechanism" /> <!-- pr2_controller_manager -->
   <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
