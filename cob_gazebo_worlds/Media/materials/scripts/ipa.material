@@ -199,8 +199,34 @@ material IPA/Grey2
 	{
 		pass
 		{
-			ambient 0.1 0.1 0.1 1
+			ambient 0.2 0.2 0.2 1
 			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
+material IPA/CabinetBlue
+{
+	technique
+	{
+		pass
+		{
+
+			ambient 0.624 0.698 0.858 1
+			diffuse 0 0 0 1
+		
+		}
+	}
+}
+
+material IPA/WallApartment
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.85 0.85 0.85 1
+			diffuse 0 0 0 1
 		}
 	}
 }

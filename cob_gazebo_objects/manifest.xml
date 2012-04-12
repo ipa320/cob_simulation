@@ -12,6 +12,8 @@
   <depend package="urdf"/>
   <depend package="xacro"/>
 
+  <depend package="cob_description"/> <!-- only needed for urdf test-->
+
   <export>
     <gazebo gazebo_media_path="${prefix}" />
   </export>
