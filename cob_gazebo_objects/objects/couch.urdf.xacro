@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+
+<robot
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	name="couch">
+
+
+
+
+<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+<!-- couch -->
+
+	<!-- left couch back -->
+	<link name="left_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_back.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_back">
+	</gazebo>
+
+	<joint name="joint_left_couch_back" type="fixed">
+		<origin xyz="-0.45 0.46 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_back" />
+	</joint>
+
+	<!-- left couch side -->
+	<link name="left_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_left_side.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_side">
+	</gazebo>
+
+	<joint name="joint_left_couch_side" type="fixed">
+		<origin xyz="-0.76 0 0.23" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="left_couch_side" />
+	</joint>
+
+	<!-- left couch middle -->
+	<link name="left_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_middle.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="left_couch_middle">
+	</gazebo>
+
+	<joint name="joint_left_couch_middle" type="fixed">
+		<origin xyz="-0.32 0 0.150" rpy="0 0 0" /> 
+		<parent link="dummy_link" />
+		<child link="left_couch_middle" />
+	</joint>
+
+	<!-- right couch back -->
+	<link name="right_couch_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_back.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.90 0.28 0.60" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_back">
+	</gazebo>
+
+	<joint name="joint_right_couch_back" type="fixed">
+		<origin xyz="0.45 0.46 0.300" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_back" />
+	</joint>
+
+	<!-- right couch side -->
+	<link name="right_couch_side">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_right_side.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.28 0.62 0.46" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_side">
+	</gazebo>
+
+	<joint name="joint_right_couch_side" type="fixed">
+		<origin xyz="0.76 0 0.230" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_side" />
+	</joint>
+
+	<!-- right couch middle -->
+	<link name="right_couch_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_objects/Media/materials/textures/couch_middle.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.62 0.30" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="right_couch_middle">
+	</gazebo>
+
+	<joint name="joint_right_couch_middle" type="fixed">
+		<origin xyz="0.32 0 0.150" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="right_couch_middle" />
+	</joint>
+
+</robot>

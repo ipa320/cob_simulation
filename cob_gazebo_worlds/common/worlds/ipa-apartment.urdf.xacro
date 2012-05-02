@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+
+<robot
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	name="ipa-apartment">
+
+<!--- Translation: [-1.577, 4.350, 0.000]
+- Rotation: in Quaternion [0.000, 0.000, -0.042, 0.999]
+            in RPY [0.000, 0.000, -0.084]
+
+Setting pose: 1.969 -4.262 0.087
+1.998 -4.081 0.030
+[1.969, -4.070, 0.000]-->
+
+  <property name="dist_axis_x" value="1.969" />
+  <property name="dist_axis_y" value="4.070" /> 
+
+  <property name="dist_axis_yall" value="0"/> <!--0.015-->
+
+  <property name="size_total_x" value="8.0" />
+  <property name="size_total_y" value="11.2" />
+
+  <property name="size_a" value="4.7" /> 
+  <property name="size_b" value="8.2" /> 
+  <property name="size_c" value="1.8" />
+  <property name="size_d" value="4.16" />
+
+  <property name="wall_depth" value="0.06" />
+  <property name="window_depth" value="0.15" />
+
+  <property name="size_z_wall1" value="2.8" />
+  <property name="size_z_wall2" value="0.92" />
+
+<xacro:macro name="ipa-apartment" params="name">
+
+
+
+<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+
+
+
+	<!-- wall_00 -->
+	<link name="wall_00">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_d} ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_d} ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_00">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_00" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${size_total_y/2-size_d/2+0.1-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_00" />
+	</joint>
+
+	<!-- wall_01 -->
+	<link name="wall_01">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size=" ${size_b} ${window_depth} ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${size_b} ${window_depth} ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_01">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_01" type="fixed">
+		<origin xyz="${dist_axis_x} ${size_total_y/2-dist_axis_y+window_depth} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_01" />
+	</joint>
+
+
+	<!-- wall_02 -->
+	<link name="wall_02">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_02">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_02" type="fixed">
+		<origin xyz="${size_total_x/2+dist_axis_x+wall_depth} ${size_total_y/2-size_a/2+0.15-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_02" />
+	</joint>
+
+	<!-- wall_03 -->
+	<link name="wall_03">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size=" ${window_depth} 1.6 ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${window_depth} 1.5 ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_03">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_03" type="fixed">
+		<origin xyz="${size_total_x/2+dist_axis_x+0.561+window_depth/2} ${0.5-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall+0.785398}" />
+		<parent link="dummy_link" />
+		<child link="wall_03" />
+	</joint>
+
+	<!-- wall_04 -->
+	<link name="wall_04">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${window_depth} 1.55 ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${window_depth} 1.5 ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_04">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_04" type="fixed">
+		<origin xyz="${size_total_x/2+dist_axis_x+0.561+window_depth/2} ${-0.5-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall-0.785398}" />
+		<parent link="dummy_link" />
+		<child link="wall_04" />
+	</joint>
+
+	<!-- wall_05 -->
+	<link name="wall_05">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_05">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_05" type="fixed">
+		<origin xyz="${size_total_x/2+dist_axis_x+wall_depth} ${-size_total_y/2+size_a/2-0.15-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_05" />
+	</joint>
+
+
+
+	<!-- wall_06 -->
+	<link name="wall_06">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size=" ${size_b} ${window_depth} ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${size_b} ${window_depth+0.02} ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_06">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_06" type="fixed">
+		<origin xyz="${+dist_axis_x-0.05} ${-size_total_y/2-dist_axis_y-window_depth} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_06" />
+	</joint>
+
+	<!-- wall_07 -->
+	<link name="wall_07">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} ${size_a} ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_07">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_07" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${-size_total_y/2+size_a/2-0.1-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_07" />
+	</joint>
+
+
+	<!-- wall_08 -->
+	<link name="wall_08">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} 1.9 ${size_z_wall2}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${wall_depth} 1.9 ${size_z_wall2}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_08">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_08" type="fixed">
+		<origin xyz="${size_total_x/2-1.8+dist_axis_x+wall_depth} ${size_total_y/2-3.6+0.1-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_08" />
+	</joint>
+
+
+	<!-- door_00 -->
+	<link name="door_00">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.62 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.62 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="door_00">
+		<material>IPA/Wall2</material>
+	</gazebo>
+
+	<joint name="joint_door_00" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${1.22-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="door_00" />
+	</joint>
+
+	<!-- door_01 -->
+	<link name="door_01">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.62 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.62 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="door_01">
+		<material>IPA/Wall2</material>
+	</gazebo>
+
+	<joint name="joint_door_01" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${-0.68-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="door_01" />
+	</joint>
+
+	<!-- cabinet1 -->
+	<link name="cabinet1">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</visual>
+
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet1">
+		<material>IPA/CabinetBlue</material>
+	</gazebo>
+
+	<joint name="joint_cabinet1" type="fixed">
+		<origin xyz="${size_total_x/2-1.125+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="cabinet1" />
+	</joint>
+
+
+	<link name="cabinet2">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</visual>
+
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet2">
+		<material>IPA/CabinetBlue</material>
+	</gazebo>
+
+	<joint name="joint_cabinet2" type="fixed">
+		<origin xyz="${size_total_x/2-4.865+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="cabinet2" />
+	</joint>
+
+	<link name="cabinet3">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</visual>
+
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="1.15 0.55 2.40" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet3">
+		<material>IPA/CabinetBlue</material>
+	</gazebo>
+
+	<joint name="joint_cabinet3" type="fixed">
+		<origin xyz="${size_total_x/2-7.205+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="cabinet3" />
+	</joint>
+
+	<link name="wall_ipa">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.77 0.10 2.40" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.77 0.10 2.40" />
+			</geometry>
+		</collision>
+
+
+	</link>
+
+	<gazebo reference="wall_ipa">
+		<material>IPA/Wall3</material>
+	</gazebo>
+
+	<joint name="joint_wall_ipa" type="fixed">
+		<origin xyz="${size_total_x/2-3.395+dist_axis_x} ${-size_total_y/2+size_a-0.375-dist_axis_y} 1.21" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="wall_ipa" />
+	</joint>
+
+	<link name="column">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.36 0.36 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.36 0.36 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="column">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_column" type="fixed">
+		<origin xyz="${size_total_x/2-3.96+dist_axis_x} ${-size_total_y/2+size_a-0.18-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="column" />
+	</joint>
+
+<!-- kitchen -->
+
+	<!-- kitchen_left -->
+	<link name="kitchen_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_right.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_left">
+	</gazebo>
+
+	<joint name="joint_kitchen_left" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4-0.455-dist_axis_y} 0.720" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="kitchen_left" />
+	</joint>
+
+	<!-- kitchen_middle -->
+	<link name="kitchen_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_middle.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 1.80 0.90" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_middle">
+	</gazebo>
+
+	<joint name="joint_kitchen_middle" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4+0.755-dist_axis_y} 0.450" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="kitchen_middle" />
+	</joint>
+
+	<!-- kitchen_right -->
+	<link name="kitchen_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/materials/textures/kitchen_left.dae" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.66 0.62 1.44" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="kitchen_right">
+	</gazebo>
+
+	<joint name="joint_kitchen_right" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4+1.965-dist_axis_y} 0.720" rpy="0 0 ${-dist_axis_yall}" />
+		<parent link="dummy_link" />
+		<child link="kitchen_right" />
+	</joint>
+
+
+
+
+
+</xacro:macro>
+
+<xacro:ipa-apartment name="ipa-apartment" />
+
+</robot>
+
