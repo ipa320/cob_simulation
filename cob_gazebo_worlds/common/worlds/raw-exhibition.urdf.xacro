@@ -185,11 +185,11 @@
 	</link>
 
 	<gazebo reference="regal_links">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_regal_links" type="fixed">
-		<origin xyz="-1.4 1.1 0.72" rpy="0 0 0.2" />
+		<origin xyz="-1.45 1.6 0.72" rpy="0 0 1.08" />
 		<parent link="dummy_link" />
 		<child link="regal_links" />
 	</joint>
@@ -215,7 +215,7 @@
 	</link>
 
 	<gazebo reference="regal_rechts">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_regal_rechts" type="fixed">
@@ -245,7 +245,7 @@
 	</link>
 
 	<gazebo reference="regal_fach1">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_regal_fach1" type="fixed">
@@ -275,7 +275,7 @@
 	</link>
 
 	<gazebo reference="regal_fach2">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_regal_fach2" type="fixed">
@@ -306,11 +306,11 @@
 	</link>
 
 	<gazebo reference="arbeitsplatz1">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_arbeitsplatz1" type="fixed">
-		<origin xyz="1.1 -1.1 0.72" rpy="0 0 0" />
+		<origin xyz="1.25 -1.1 0.72" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="arbeitsplatz1" />
 	</joint>
@@ -336,7 +336,7 @@
 	</link>
 
 	<gazebo reference="arbeitsplatz2">
-		<material>IPA/Wall2</material>
+		<material>IPA/Wall3</material>
 	</gazebo>
 
 	<joint name="joint_arbeitsplatz2" type="fixed">
