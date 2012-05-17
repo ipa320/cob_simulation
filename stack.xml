@@ -11,7 +11,7 @@
   <depend stack="cob_common" /> <!-- cob_srvs, raw_description, cob_description -->
   <depend stack="cob_driver" /> <!-- cob_sound -->
   <depend stack="cob_environments" /> <!-- cob_gazebo_worlds -->
-  <depend stack="cob_robots" /> <!-- cob_machine, cob_controller_configuration_gazebo, cob_hardware_config -->
+  <depend stack="cob_robots" /> <!-- cob_controller_configuration_gazebo, cob_hardware_config -->
   <depend stack="common" /> <!-- actionlib -->
   <depend stack="common_msgs" /> <!-- actionlib_msgs -->
   <depend stack="geometry" /> <!-- tf -->

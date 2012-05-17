@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	<include file="$(find cob_machine)/sim.machine" />
-	
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
 

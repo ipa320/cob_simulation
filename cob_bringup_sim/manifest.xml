@@ -13,7 +13,6 @@
   <depend package="gazebo"/>
   <depend package="cob_gazebo_worlds"/>
 
-  <depend package="cob_machine"/>
   <depend package="cob_sound"/>
 
 </package>
