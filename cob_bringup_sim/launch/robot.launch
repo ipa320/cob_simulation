@@ -7,7 +7,4 @@
 	<!-- startup simulated robot -->
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
 
-	<!-- start additional components -->
-	<include file="$(find cob_sound)/ros/launch/sound.launch" />
-
 </launch>
