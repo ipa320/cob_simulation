@@ -1,0 +1,7 @@
+<library path="ros/lib/libcolored_point_cloud">
+  <class name="cob_gazebo/CreateColoredPointCloud" type="CreateColoredPointCloud" base_class_type="nodelet::Nodelet">
+  <description>
+  Nodelet for colored point cloud
+  </description>
+  </class>
+</library>

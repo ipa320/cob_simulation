@@ -9,11 +9,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup_sim</url>
 
-  <depend package="cob_gazebo"/>
   <depend package="gazebo"/>
+  <depend package="cob_gazebo"/>
   <depend package="cob_gazebo_worlds"/>
-
-  <depend package="cob_machine"/>
-  <depend package="cob_sound"/>
 
 </package>
