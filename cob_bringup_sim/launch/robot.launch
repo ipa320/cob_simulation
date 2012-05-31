@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
+	<include file="$(find cob_default_env_config)/upload_param.launch"/>
+
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
 
