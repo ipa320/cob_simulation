@@ -78,8 +78,10 @@
         <kd>1.0</kd>
         <normal>0 0 1</normal>
         <size>30.0 30.0</size>
-        <!-- map3.png -->
-        <material>IPA/Grey2</material>
+        <visual>
+          <size>30.0 30.0</size>
+          <material>IPA/Grey2</material>
+        </visual>
       </geom:plane>
     </body:plane>
   </model:physical>
