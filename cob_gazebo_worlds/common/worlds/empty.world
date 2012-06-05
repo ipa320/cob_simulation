@@ -67,7 +67,7 @@
 
   <!-- ground plane -->
   <model:physical name="gplane">
-    <xyz>-0.091 1.321 0.000</xyz>
+    <xyz>-0.091 1.321 -0.01</xyz>
     <rpy>0 0 0</rpy>
     <static>true</static>
 
@@ -78,9 +78,11 @@
         <kd>1.0</kd>
         <normal>0 0 1</normal>
         <size>30.0 30.0</size>
+        <material>IPA/Grey2</material>
         <visual>
-          <size>30.0 30.0</size>
+          <size>30.0 30.0 0.01</size>
           <material>IPA/Grey2</material>
+          <mesh>unit_box</mesh>
         </visual>
       </geom:plane>
     </body:plane>
