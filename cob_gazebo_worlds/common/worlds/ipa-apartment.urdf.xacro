@@ -533,7 +533,10 @@ Setting pose: 1.969 -4.262 0.087
 		<child link="wall_ext4" />
 	</joint> 
 
+
+
 	<!--elevator buttons-->
+
 	<link name="elevator_button1">
 		<inertial>
 			<origin xyz="0 0 0" />
@@ -554,11 +557,35 @@ Setting pose: 1.969 -4.262 0.087
 		</collision>
 	</link>
 
-	<joint name="joint_elevator_button1" type="fixed">
+
+	<joint name="joint_elevator_button1" type="prismatic">
 		<origin xyz="${-0.025} ${0.025} ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
 		<parent link="wall_ext4" />
 		<child link="elevator_button1" />
+
+		<calibration rising="0.0"/>
+		<dynamics damping="0.0" friction="0.0"/>
+		<limit effort="100" velocity="1.0" lower="0" upper="0" />
+		<safety_controller k_velocity="10"/>
+
 	</joint> 
+
+                <gazebo reference="elevator_button1">
+                        <selfCollide>true</selfCollide>
+                        <sensor:contact name="elevator_button1_contact_sensor">
+                                <geom>elevator_button1_geom</geom>
+                                <updateRate>10</updateRate>
+                                <controller:gazebo_ros_bumper name="elevator_button1_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
+                                        <alwaysOn>true</alwaysOn>
+                                        <updateRate>10</updateRate>
+                                        <frameName>elevator_button1</frameName>
+                                        <bumperTopicName>elevator_button1_bumper</bumperTopicName>
+                                        <interface:bumper name="elevator_button1_bumper_iface" />
+                                </controller:gazebo_ros_bumper>
+                        </sensor:contact>
+                        <material>Gazebo/Red</material>
+                        <!--turnGravityOff>false</turnGravityOff-->
+                </gazebo>
 
 
 	<link name="elevator_button2">
@@ -582,38 +609,27 @@ Setting pose: 1.969 -4.262 0.087
 	</link>
 
 
-	<joint name="joint_elevator_button2" type="fixed">
+	<joint name="joint_elevator_button2" type="prismatic">
 		<origin xyz="${-0.025} ${0.025} ${-size_z_wall1/2+1.095}" rpy="0 0 0" />
 		<parent link="wall_ext4" />
 		<child link="elevator_button2" />
+
+		<calibration rising="0.0"/>
+		<dynamics damping="0.0" friction="0.0"/>
+		<limit effort="100" velocity="1.0" lower="0" upper="0" />
+		<safety_controller k_velocity="10"/>
 	</joint>
 
 
-                <gazebo reference="elevator_button1">
-                        <selfCollide>true</selfCollide>
-                        <sensor:contact name="elevator_button1_contact_sensor">
-                                <geom>elevator_button1_geom</geom>
-                                <updateRate>100.0</updateRate>
-                                <controller:gazebo_ros_bumper name="elevator_button1_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
-                                        <alwaysOn>true</alwaysOn>
-                                        <updateRate>100.0</updateRate>
-                                        <frameName>elevator_button1</frameName>
-                                        <bumperTopicName>elevator_button1_bumper</bumperTopicName>
-                                        <interface:bumper name="elevator_button1_bumper_iface" />
-                                </controller:gazebo_ros_bumper>
-                        </sensor:contact>
-                        <material>Gazebo/Red</material>
-                        <turnGravityOff>false</turnGravityOff>
-                </gazebo>
 
  		<gazebo reference="elevator_button2">
                         <selfCollide>true</selfCollide>
                         <sensor:contact name="elevator_button2_contact_sensor">
-                                <geom>elevator_button1_geom</geom>
-                                <updateRate>100.0</updateRate>
+                                <geom>elevator_button2_geom</geom>
+                                <updateRate>10</updateRate>
                                 <controller:gazebo_ros_bumper name="elevator_button2_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
                                         <alwaysOn>true</alwaysOn>
-                                        <updateRate>100.0</updateRate>
+                                        <updateRate>10</updateRate>
                                         <frameName>elevator_button2</frameName>
                                         <bumperTopicName>elevator_button2_bumper</bumperTopicName>
                                         <interface:bumper name="elevator_button2_bumper_iface" />
