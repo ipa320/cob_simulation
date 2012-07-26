@@ -19,7 +19,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 # rostest
 rosbuild_add_rostest(test/urdf_world.test)
 
-rosbuild_add_roslaunch_check(ros/launch/empty-world.launch ROBOT_ENV=empty-world)
-rosbuild_add_roslaunch_check(ros/launch/ipa-kitchen.launch ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(ros/launch/ipa-4th-floor.launch ROBOT_ENV=ipa-4th-floor)
-rosbuild_add_roslaunch_check(ros/launch/ipa-apartment.launch ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(launch/empty-world.launch ROBOT_ENV=empty-world)
+rosbuild_add_roslaunch_check(launch/ipa-kitchen.launch ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(launch/ipa-4th-floor.launch ROBOT_ENV=ipa-4th-floor)
+rosbuild_add_roslaunch_check(launch/ipa-apartment.launch ROBOT_ENV=ipa-apartment)
