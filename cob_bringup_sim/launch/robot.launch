@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- startup simulated world -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
+	<include file="$(find cob_gazebo_worlds)/launch/$(env ROBOT_ENV).launch" />
 
 	<!-- startup simulated robot -->
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
