@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+        <xacro:macro name="landing" params="name">
+
+
+	<!-- wall ext -->
+	<link name="wall_ext">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="4.6 0.04 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="4.6 0.04 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_ext">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_ext" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth-2.3} ${-0.68-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_ext" />
+	</joint> 
+
+
+	<!-- wall ext -->
+	<link name="wall_ext2">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="4.6 0.04 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="4.6 0.04 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_ext2">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_ext2" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth-2.3} ${-0.68-dist_axis_y+1.6} ${size_z_wall1/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="wall_ext2" />
+	</joint> 
+
+	<!-- wall ext3 -->
+	<link name="wall_ext3">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 1.9 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 1.9 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_ext3">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_ext3" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth-4.6-0.68} ${-0.68-dist_axis_y-0.65} ${size_z_wall1/2}" rpy="0 0 -0.7853" />
+		<parent link="dummy_link" />
+		<child link="wall_ext3" />
+	</joint> 
+
+	<!-- wall ext4 -->
+	<link name="wall_ext4">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.72 ${size_z_wall1}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.72 ${size_z_wall1}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="wall_ext4">
+		<material>IPA/WallApartment</material>
+	</gazebo>
+
+	<joint name="joint_wall_ext4" type="fixed">
+		<origin xyz="${-size_total_x/2+dist_axis_x-wall_depth-4.6-0.68-1.54} ${-0.68-dist_axis_y-0.65-1.54} ${size_z_wall1/2}" rpy="0 0 -0.7853" />
+		<parent link="dummy_link" />
+		<child link="wall_ext4" />
+	</joint> 
+
+
+
+        </xacro:macro>
+
+</robot>
