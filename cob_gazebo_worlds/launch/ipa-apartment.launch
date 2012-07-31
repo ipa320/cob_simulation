@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- start gazebo world from .urdf file -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/world_urdf.launch" />
+	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" />
 
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
 
