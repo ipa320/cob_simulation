@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start gazebo world from .urdf file -->
+	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" />
+
+	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
+
+</launch>
