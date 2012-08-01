@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
+	<!-- define arguments -->
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
@@ -8,10 +9,7 @@
 	<include file="$(arg pkg_robot_config)/upload_param.launch"/>
 	<include file="$(arg pkg_env_config)/upload_param.launch"/>
 
-	<!-- startup simulated world -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
-
-	<!-- startup simulated robot -->
-	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
+	<!-- include files -->
+	<include file="$(find cob_bringup)/robots/cob3-3.xml" />
 
 </launch>
