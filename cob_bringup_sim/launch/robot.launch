@@ -10,6 +10,6 @@
 	<include file="$(arg pkg_env_config)/upload_param.launch"/>
 
 	<!-- include files -->
-	<include file="$(find cob_bringup)/robots/cob3-3.xml" />
+	<include file="$(find cob_bringup_sim)/launch/robot.xml" />
 
 </launch>
