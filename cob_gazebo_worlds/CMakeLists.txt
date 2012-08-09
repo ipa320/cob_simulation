@@ -21,5 +21,9 @@ rosbuild_add_rostest(test/urdf_world.test)
 
 rosbuild_add_roslaunch_check(launch/empty-world.launch)
 rosbuild_add_roslaunch_check(launch/ipa-kitchen.launch)
-rosbuild_add_roslaunch_check(launch/ipa-4th-floor.launch)
 rosbuild_add_roslaunch_check(launch/ipa-apartment.launch)
+rosbuild_add_roslaunch_check(launch/ipa-4th-floor.launch)
+
+rosbuild_add_roslaunch_check(launch/world_urdf.launch robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(launch/world_urdf.launch robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(launch/world_png.launch robot_env:=ipa-4th-floor)
