@@ -12,5 +12,7 @@
   <depend package="gazebo"/>
   <depend package="cob_gazebo"/>
   <depend package="cob_gazebo_worlds"/>
+  <depend package="cob_default_robot_config"/>
+  <depend package="cob_default_env_config"/>
 
 </package>
