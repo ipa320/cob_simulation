@@ -75,6 +75,7 @@ if __name__ == "__main__":
 	num_objects=len(sys.argv)
 	for i in range (1,num_objects):
 
+		model = rospy.get_param("/objects/%s/model" % sys.argv[i])
 		model_type = rospy.get_param("/objects/%s/model_type" % sys.argv[i])
 		# convert rpy to quaternion for Pose message
 		orientation = rospy.get_param("/objects/%s/orientation" % sys.argv[i])
@@ -90,7 +91,7 @@ if __name__ == "__main__":
 		object_pose.orientation.z = quaternion[2]
 		object_pose.orientation.w = quaternion[3]
 
-		file_localition = roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+sys.argv[i]+'.'+rospy.get_param('/objects/%s/model_type' % sys.argv[i])
+		file_localition = roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+model+'.'+rospy.get_param('/objects/%s/model_type' % sys.argv[i])
 
 
 		# call gazebo service to spawn model (see http://ros.org/wiki/gazebo)
