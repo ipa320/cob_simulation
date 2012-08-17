@@ -15,8 +15,8 @@
   <collision>
    <origin xyz="0 0 0.063" rpy="0 0 0" />
    <geometry>
-     <box size="0.093 0.032 0.126" />
-     <!--mesh filename="package://cob_gazebo_objects/Media/models/tomaten_suppe.dae"/-->>
+     <!--box size="0.093 0.032 0.126" /-->
+     <mesh filename="package://cob_gazebo_objects/Media/models/tomato_soup.dae"/>
    </geometry>
   </collision>     
   </link>
