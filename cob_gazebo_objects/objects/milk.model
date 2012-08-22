@@ -12,7 +12,7 @@
     <body:box name="box_body">
       <geom:box name="box_geom">
         <xyz>0.0 0.0 0.1</xyz>
-	<mass>5</mass>
+	<mass>1</mass>
         <size>0.06 0.095 0.2</size>
         <visual>
           <mesh>milk.dae</mesh>

@@ -28,6 +28,20 @@ material IPA/Care-O-bot
   }
 }
 
+material IPA/QRCode
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture QRCode.png
+      }
+    }
+  }
+}
+
 material IPA/Future
 {
   technique

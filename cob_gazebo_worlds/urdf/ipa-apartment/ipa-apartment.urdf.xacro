@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<robot
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	name="ipa-apartment">
+
+	  <!-- apartment -->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
+
+	  <!-- landing-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/landing.urdf.xacro" />
+
+	  <!-- elevator-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/elevator.urdf.xacro" />
+
+	  <!-- cabinets-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/cabinets.urdf.xacro" />
+
+	  <!-- kitchen-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/kitchen.urdf.xacro" />
+
+	  <!-- wall_ipa-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/wall_ipa.urdf.xacro" />
+
+
+	  <!--Parameters-->
+
+	  <property name="dist_axis_x" value="1.969" />
+	  <property name="dist_axis_y" value="4.070" /> 
+
+
+	  <property name="size_total_x" value="8.0" />
+	  <property name="size_total_y" value="11.2" />
+
+	  <property name="size_a" value="4.7" /> 
+	  <property name="size_b" value="8.2" /> 
+	  <property name="size_c" value="1.8" />
+	  <property name="size_d" value="4.16" />
+
+	  <property name="wall_depth" value="0.06" />
+	  <property name="window_depth" value="0.15" />
+
+	  <property name="size_z_wall1" value="2.8" />
+	  <property name="size_z_wall2" value="0.92" />
+
+
+<xacro:macro name="ipa-apartment" params="name">
+
+	<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+	  <xacro:apartment name="apartment">
+	  </xacro:apartment>
+
+	  <xacro:landing name="landing">
+	  </xacro:landing>
+
+	  <xacro:elevator name="elevator">
+	  </xacro:elevator>
+
+	  <xacro:cabinets name="cabinets">
+	  </xacro:cabinets>
+
+	  <xacro:kitchen name="kitchen">
+	  </xacro:kitchen>
+
+	  <xacro:wall_ipa name="wall_ipa">
+	  </xacro:wall_ipa>
+
+
+</xacro:macro>
+
+<xacro:ipa-apartment name="ipa-apartment" />
+
+</robot>
+

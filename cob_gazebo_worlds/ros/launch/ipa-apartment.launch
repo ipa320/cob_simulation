@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<!-- start gazebo world from .urdf file -->
-	<include file="$(find cob_gazebo_worlds)/ros/launch/world_urdf.launch" />
-
-
-</launch>
