@@ -7,13 +7,19 @@ milk1:
 milk2:
   model: milk
   model_type: urdf
-  position: [ 3.9, -1.8, 1.02 ]
+  position: [-1.5, -1.8, 1.5 ]
+  orientation: [0, 0, 1.570796]
+
+milk3:
+  model: milk
+  model_type: urdf
+  position: [3.9, -1.8, 1.5 ]
   orientation: [0, 0, 1.570796]
 
 salt:
   model: salt
   model_type: urdf
-  position: [ 3.9, -1.8, 1.02 ]
+  position: [ -1.5, -1.0, 1.02 ]
   orientation: [0, 0, 1.570796]
 
 tomato_soup:
@@ -34,17 +40,17 @@ tomato_sauce:
   position: [-1.7, -0.1, 1]
   orientation: [0, 0, 1.570796]
 
-cb_4x3:
-  model: cb_4x3
-  model_type: model
-  position: [-0.7, -0.1, 1]
-  orientation: [1.56, 0, 1.56]
+#cb_4x3:
+#  model: cb_4x3
+#  model_type: model
+#  position: [-0.7, -0.1, 1]
+#  orientation: [1.56, 0, 1.56]
 
-cb_9x6:
-  model: cb_9x6
-  model_type: model
-  position: [-0.7, -0.1, 1]
-  orientation: [1.56, 0, 1.56]
+#cb_9x6:
+#  model: cb_9x6
+#  model_type: model
+#  position: [-0.7, -0.1, 1]
+#  orientation: [1.56, 0, 1.56]
 
 table_ikea:
   model: table_ikea
