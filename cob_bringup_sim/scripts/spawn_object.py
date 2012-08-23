@@ -71,16 +71,55 @@ if __name__ == "__main__":
 	if len(sys.argv) < 2:
 		print '[spawn_object.py] Please specify the names of the objects to be loaded'
 		sys.exit()
+	
+	rospy.init_node("object_spawner")
 
-	num_objects=len(sys.argv)
-	for i in range (1,num_objects):
+	# check for all objects on parameter server
+	if not rospy.has_param("/objects"):
+		rospy.logerr("No objects uploaded to /objects")
+		sys.exit()
+	all_object_names = rospy.get_param("/objects").keys()
 
-		model_type = rospy.get_param("/objects/%s/model_type" % sys.argv[i])
+	# if keyword all is in list of object names we'll load all models uploaded to parameter server
+	if "all" in sys.argv:
+		object_names = all_object_names
+	else:
+		object_names = sys.argv
+		object_names.pop(0) # remove first element of sys.argv which is file name
+
+	rospy.loginfo("Trying to spawn %s",object_names)
+	
+	for name in object_names:
+		# check for object on parameter server
+		if not rospy.has_param("/objects/%s" % name):
+			rospy.logerr("No description for " + name + " found at /objects/" + name)
+			continue
+		
+		# check for model
+		if not rospy.has_param("/objects/%s/model" % name):
+			rospy.logerr("No model for " + name + " found at /objects/" + name + "/model")
+			continue
+		model = rospy.get_param("/objects/%s/model" % name)
+		
+		# check for model_type
+		if not rospy.has_param("/objects/%s/model_type" % name):
+			rospy.logerr("No model_type for " + name + " found at /objects/" + name + "/model_type")
+			continue
+		model_type = rospy.get_param("/objects/%s/model_type" % name)
+		
+		# check for position
+		if not rospy.has_param("/objects/%s/position" % name):
+			rospy.logerr("No position for " + name + " found at /objects/" + name + "/position")
+			continue
+		position = rospy.get_param("/objects/%s/position" % name)
+
+		# check for orientation
+		if not rospy.has_param("/objects/%s/orientation" % name):
+			rospy.logerr("No orientation for " + name + " found at /objects/" + name + "/orientation")
+			continue
 		# convert rpy to quaternion for Pose message
-		orientation = rospy.get_param("/objects/%s/orientation" % sys.argv[i])
+		orientation = rospy.get_param("/objects/%s/orientation" % name)
 		quaternion = tft.quaternion_from_euler(orientation[0], orientation[1], orientation[2])
-		position = rospy.get_param("/objects/%s/position" % sys.argv[i])
-
 		object_pose = Pose()
 		object_pose.position.x = float(position[0])
 		object_pose.position.y = float(position[1])
@@ -90,8 +129,11 @@ if __name__ == "__main__":
 		object_pose.orientation.z = quaternion[2]
 		object_pose.orientation.w = quaternion[3]
 
-		file_localition = roslib.packages.get_pkg_dir('cob_gazebo_objects')+'/objects/'+sys.argv[i]+'.'+rospy.get_param('/objects/%s/model_type' % sys.argv[i])
-
+		try:
+			file_localition = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model + '.' + model_type
+		except:
+			print "File not found: cob_gazebo_objects" + "/objects/" + model + "." + model_type
+			continue
 
 		# call gazebo service to spawn model (see http://ros.org/wiki/gazebo)
 		if model_type == "urdf":
@@ -110,12 +152,27 @@ if __name__ == "__main__":
 			file_xml = open(file_localition)
 			xml_string=file_xml.read()
 		else:
-			print 'Error: Model type not know. model_type = ' + model_type
-			sys.exit()
+			rospy.logerr('Model type not know. model_type = ' + model_type)
+			continue
 
 
+		# check if object is already spawned
+		srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel)
+		req = DeleteModelRequest()
+		req.model_name = name
+		exists = True
+		try:
+			res = srv_delete_model(name)
+		except rospy.ServiceException, e:
+			exists = False
+			rospy.logdebug("Model %s does not exist in gazebo.", name)
+
+		if exists:
+			rospy.loginfo("Model %s already exists in gazebo. Model will be updated.", name)
+
+		# spawn new model
 		req = SpawnModelRequest()
-		req.model_name = sys.argv[i] # model name from command line input
+		req.model_name = name # model name from command line input
 		req.model_xml = xml_string
 		req.initial_pose = object_pose
 
@@ -123,7 +180,7 @@ if __name__ == "__main__":
 	
 		# evaluate response
 		if res.success == True:
-			print " %s model spawned succesfully. status message = "% sys.argv[i] + res.status_message 
+			rospy.loginfo(res.status_message + " " + name)
 		else:
-			print "Error: model %s not spawn. error message = "% sys.argv[i] + res.status_message
+			print "Error: model %s not spawn. error message = "% name + res.status_message
 
