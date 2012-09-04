@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+
+	<!-- send world urdf to param server -->
+	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />
+
+	<!-- push world_description to factory and spawn robot in gazebo -->
+	<node name="spawn_urdf_world" pkg="gazebo" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model urdf_world_model" respawn="false" output="screen" />
+
+</launch>
