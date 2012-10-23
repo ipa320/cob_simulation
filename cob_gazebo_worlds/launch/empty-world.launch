@@ -14,9 +14,10 @@
   <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
 
   <!-- start gui -->
-  <group if="$(arg gui)">
+  <!-- comment in for fuerte -->
+  <!-- group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
-  </group>
+  </group-->
 
 </launch>
 
