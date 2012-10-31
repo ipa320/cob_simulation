@@ -77,7 +77,7 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>30.0 30.0</size>
+        <size>50.0 50.0</size>
         <material>IPA/Grey2</material>
         <visual>
           <size>30.0 30.0 0.01</size>
