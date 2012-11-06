@@ -1,0 +1,23 @@
+elevator_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - elevator_left_joint
+    - elevator_right_joint
+  gains:
+    elevator_left_joint:
+      p: 80.0
+      d: 1.0
+    elevator_right_joint:
+      p: 60.0
+      d: 1.0
+
+  elevator_joint_trajectory_action_node:
+    joints:
+    - joint_elevator_left
+    - joint_elevator_right
+    constraints:
+      goal_time: 0.6
+      elevator_left_joint:
+        goal: 0.2
+      elevator_right_joint:
+        goal: 0.2
