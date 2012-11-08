@@ -8,4 +8,8 @@
 
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
 
+	<node name="tf_listener" pkg="cob_bringup_sim" type="tf_listener.py"  respawn="false" output="screen" />
+
+	<include file="$(find cob_gazebo_worlds)/launch/elevator_controller.launch" />
+
 </launch>
