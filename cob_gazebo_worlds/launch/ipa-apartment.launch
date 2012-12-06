@@ -7,6 +7,5 @@
 	</include>
 
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
-	<include file="$(find cob_gazebo_worlds)/launch/elevator_controller.launch" />
 
 </launch>

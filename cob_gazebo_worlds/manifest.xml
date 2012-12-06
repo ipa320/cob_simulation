@@ -16,9 +16,7 @@
   <depend package="gazebo"/>
   <depend package="gazebo_tools"/>
   <depend package="gazebo_plugins"/>
-  <depend package="pr2_controller_manager"/>
   <depend package="robot_state_publisher"/>
-  <depend package="joint_trajectory_action"/>
   <depend package="joint_state_publisher"/>
 
   <export>
