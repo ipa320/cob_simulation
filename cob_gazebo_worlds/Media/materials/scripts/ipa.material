@@ -275,7 +275,6 @@ material IPA/Orange
 
 material IPA/Black
 {
-  	receive_shadows on
 	technique
 	{
 		pass
@@ -286,5 +285,29 @@ material IPA/Black
 	}
 }
 
+material IPA/DarkGolden
+{
+  	receive_shadows on
+	technique
+	{
+		pass
+		{
+			ambient 0.72 0.5255 0.043  1.0
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
 
-
+material IPA/Torso
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture torso1.png
+      }
+    }
+  }
+}
