@@ -298,16 +298,4 @@ material IPA/DarkGolden
 	}
 }
 
-material IPA/Torso
-{
-  technique
-  {
-    pass
-    {
-      texture_unit
-      {
-        texture torso1.png
-      }
-    }
-  }
 }
