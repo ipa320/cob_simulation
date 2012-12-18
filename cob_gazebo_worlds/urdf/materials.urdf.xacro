@@ -25,34 +25,17 @@
 		<color rgba="1.0 1.0 1.0 1.0"/>
 	</material>
 
-	<material name="Black">
+	<material name="IPA/Black">
 		<color rgba="0.0 0.0 0.0 1.0"/>
 	</material>
 
-        <material name="Transparent">
-                <color rgba="0.81 0.81 0.81 0.0"/>
-        </material>
+    <material name="Transparent">
+        <color rgba="0.81 0.81 0.81 0.0"/>
+    </material>
 
-        <material name="LightBlue">
-                <color rgba="0.624 0.698 0.858 1"/>
-        </material>
+    <material name="LightBlue">
+           <color rgba="0.624 0.698 0.858 1"/>
+    </material>
 
-
-
-	<material name="Caster">
-		<texture filename="package://pr2_ogre/Media/materials/textures/pr2_caster_texture.png" />
-	</material>
-
-	<material name="Wheel_l">
-		<texture filename="package://pr2_ogre/Media/materials/textures/pr2_wheel_left.png" />
-	</material>
-
-	<material name="Wheel_r">
-		<texture filename="package://pr2_ogre/Media/materials/textures/pr2_wheel_right.png" />
-	</material>
-
-	<material name="RollLinks">
-		<texture filename="package://pr2_ogre/Media/materials/textures/pr2_wheel_left.png" />
-	</material>
 
 </robot>
