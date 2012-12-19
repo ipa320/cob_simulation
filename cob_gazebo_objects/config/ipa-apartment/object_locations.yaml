@@ -88,9 +88,9 @@ couch:
   position: [3.6,0.6,0]
   orientation: [0, 0,-1.57079]
 
-QRCode:
-  model: QRCode
-  model_type: urdf.xacro
-  position: [-1.34,-1.7,2]
-  orientation: [0,0,0]
+#QRCode:
+#  model: QRCode
+#  model_type: urdf.xacro
+#  position: [-1.34,-1.7,2]
+#  orientation: [0,0,0]
 
