@@ -17,6 +17,7 @@
 		<remap from="point_cloud2" to="cam3d/depth/points"/>
 		<remap from="colored_point_cloud2" to="cam3d/rgb/points"/>
 	</node>
+  <node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
 	<!-- convert from PointCloud2 to PointCloud1 -->
 	<!--node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" /-->
 
