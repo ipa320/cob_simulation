@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <robot>
 
-	<material name="Blue">
+	<material name="IPA/Blue">
 		<color rgba="0.0 0.0 0.8 1.0"/>
 	</material>
 
-	<material name="Green">
+	<material name="IPA/Green">
 		<color rgba="0.0 0.8 0.0 1.0"/>
 	</material>
 
-	<material name="Grey">
+	<material name="IPA/Grey">
 		<color rgba="0.7 0.7 0.7 1.0"/>
 	</material>
 
-	<material name="Grey2">
+	<material name="IPA/Grey2">
 		<color rgba="0.81 0.81 0.81 1.0"/>
 	</material>
 
-	<material name="Red">
+	<material name="IPA/Red">
 		<color rgba="0.8 0.0 0.0 1.0"/>
 	</material>
 
-	<material name="White">
+	<material name="IPA/White">
 		<color rgba="1.0 1.0 1.0 1.0"/>
 	</material>
 
@@ -29,11 +29,11 @@
 		<color rgba="0.0 0.0 0.0 1.0"/>
 	</material>
 
-    <material name="Transparent">
+    <material name="IPA/Transparent">
         <color rgba="0.81 0.81 0.81 0.0"/>
     </material>
 
-    <material name="LightBlue">
+    <material name="IPA/LightBlue">
            <color rgba="0.624 0.698 0.858 1"/>
     </material>
 
