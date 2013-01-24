@@ -19,7 +19,7 @@
 			<geometry>
 				<box size="1.15 0.55 2.40" />
 			</geometry>
-			<material name="LightBlue"/>
+			<material name="IPA/LightBlue"/>
 		</visual>
 
 		<collision>
@@ -52,7 +52,7 @@
 			<geometry>
 				<box size="1.15 0.55 2.40" />
 			</geometry>
-			<material name="LightBlue"/>
+			<material name="IPA/LightBlue"/>
 		</visual>
 
 		<collision>
@@ -84,7 +84,7 @@
 			<geometry>
 				<box size="1.15 0.55 2.40" />
 			</geometry>
-			<material name="LightBlue"/>
+			<material name="IPA/LightBlue"/>
 		</visual>
 
 		<collision>
@@ -116,7 +116,7 @@
 			<geometry>
 				<box size="0.36 0.36 ${size_z_wall1}" />
 			</geometry>
-			<material name="LightBlue"/>
+			<material name="IPA/LightBlue"/>
 		</visual>
 
 		<collision>
