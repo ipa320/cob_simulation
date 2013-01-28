@@ -967,14 +967,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 8.2 1.4"/>
+        <box size="0.06 8.2 0.92"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 8.2 1.4"/>
+        <box size="0.06 8.2 0.92"/>
       </geometry>
     </collision>
   </link>
@@ -982,7 +982,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_02" type="fixed">
-    <origin rpy="0 0 0" xyz="5.6 0 0.7"/>
+    <origin rpy="0 0 0" xyz="5.6 0 0.46"/>
     <parent link="origin_office"/>
     <child link="wall_office_02"/>
   </joint>
@@ -995,14 +995,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 8.2 1.4"/>
+        <box size="0.06 8.2 0.92"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 8.2 1.4"/>
+        <box size="0.06 8.2 0.92"/>
       </geometry>
     </collision>
   </link>
@@ -1010,7 +1010,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_03" type="fixed">
-    <origin rpy="0 0 0" xyz="-5.6 0 0.7"/>
+    <origin rpy="0 0 0" xyz="-5.6 0 0.46"/>
     <parent link="origin_office"/>
     <child link="wall_office_03"/>
   </joint>
@@ -1023,14 +1023,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="11.2 0.06 1.4"/>
+        <box size="11.2 0.06 0.92"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="11.2 0.06 1.4"/>
+        <box size="11.2 0.06 0.92"/>
       </geometry>
     </collision>
   </link>
@@ -1038,7 +1038,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_04" type="fixed">
-    <origin rpy="0 0 0" xyz="0 4 0.7"/>
+    <origin rpy="0 0 0" xyz="0 4 0.46"/>
     <parent link="origin_office"/>
     <child link="wall_office_04"/>
   </joint>
@@ -1051,14 +1051,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 4.51 1.4"/>
+        <box size="0.06 4.51 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 4.51 1.4"/>
+        <box size="0.06 4.51 2"/>
       </geometry>
     </collision>
   </link>
@@ -1066,7 +1066,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_05" type="fixed">
-    <origin rpy="0 0 0" xyz="1.09 -0.615 0.7"/>
+    <origin rpy="0 0 0" xyz="1.09 -0.615 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_05"/>
   </joint>
@@ -1079,14 +1079,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 1.23 1.4"/>
+        <box size="0.06 1.23 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 1.23 1.4"/>
+        <box size="0.06 1.23 2"/>
       </geometry>
     </collision>
   </link>
@@ -1094,7 +1094,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_06" type="fixed">
-    <origin rpy="0 0 0" xyz="1.09 3.385 0.7"/>
+    <origin rpy="0 0 0" xyz="1.09 3.385 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_06"/>
   </joint>
@@ -1107,14 +1107,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 4.01 1.4"/>
+        <box size="0.06 4.01 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 4.01 1.4"/>
+        <box size="0.06 4.01 2"/>
       </geometry>
     </collision>
   </link>
@@ -1122,7 +1122,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_07" type="fixed">
-    <origin rpy="0 0 0" xyz="-1.09 2 0.7"/>
+    <origin rpy="0 0 0" xyz="-1.09 2 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_07"/>
   </joint>
@@ -1135,14 +1135,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 1.73 1.4"/>
+        <box size="0.06 1.73 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="0.06 1.73 1.4"/>
+        <box size="0.06 1.73 2"/>
       </geometry>
     </collision>
   </link>
@@ -1150,7 +1150,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_08" type="fixed">
-    <origin rpy="0 0 0" xyz="-1.09 -2 0.7"/>
+    <origin rpy="0 0 0" xyz="-1.09 -2 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_08"/>
   </joint>
@@ -1163,14 +1163,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="4.5 0.06 1.4"/>
+        <box size="4.5 0.06 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="4.5 0.06 1.4"/>
+        <box size="4.5 0.06 2"/>
       </geometry>
     </collision>
   </link>
@@ -1178,7 +1178,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_09" type="fixed">
-    <origin rpy="0 0 0" xyz="3.35 1.64 0.7"/>
+    <origin rpy="0 0 0" xyz="3.35 1.64 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_09"/>
   </joint>
@@ -1191,14 +1191,14 @@
     <visual>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="4.5 0.06 1.4"/>
+        <box size="4.5 0.06 2"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
       <geometry>
-        <box size="4.5 0.06 1.4"/>
+        <box size="4.5 0.06 2"/>
       </geometry>
     </collision>
   </link>
@@ -1206,7 +1206,7 @@
     <material>IPA/WallApartment</material>
   </gazebo>
   <joint name="joint_wall_office_10" type="fixed">
-    <origin rpy="0 0 0" xyz="-3.35 -1.14 0.7"/>
+    <origin rpy="0 0 0" xyz="-3.35 -1.14 1.0"/>
     <parent link="origin_office"/>
     <child link="wall_office_10"/>
   </joint>
@@ -1245,7 +1245,7 @@
       <geometry>
         <box size="0.04 0.87 2"/>
       </geometry>
-      <material name="Grey"/>
+      <material name="LightBlue"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>
@@ -1367,6 +1367,7 @@
       <geometry>
         <box size="0.04 0.87 2"/>
       </geometry>
+      <material name="LightBlue"/>
     </visual>
     <collision>
       <origin xyz="0 0 0"/>

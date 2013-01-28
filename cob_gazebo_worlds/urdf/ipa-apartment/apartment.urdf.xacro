@@ -18,7 +18,7 @@
 			<geometry>
 				<box size="${wall_depth} ${size_d} ${size_z_wall1}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -50,7 +50,7 @@
 			<geometry>
 				<box size=" ${size_b} ${window_depth} ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -83,7 +83,7 @@
 			<geometry>
 				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -115,7 +115,7 @@
 			<geometry>
 				<box size=" ${window_depth} 1.6 ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -147,7 +147,7 @@
 			<geometry>
 				<box size="${window_depth} 1.55 ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -179,7 +179,7 @@
 			<geometry>
 				<box size="${wall_depth} ${size_a} ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -213,7 +213,7 @@
 			<geometry>
 				<box size=" ${size_b} ${window_depth} ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -245,7 +245,7 @@
 			<geometry>
 				<box size="${wall_depth} ${size_a} ${size_z_wall1}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -278,7 +278,7 @@
 			<geometry>
 				<box size="${wall_depth} 1.9 ${size_z_wall2}" />
 			</geometry>
-			<material name="Grey"/>
+			<material name="IPA/Grey"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -311,7 +311,7 @@
 			<geometry>
 				<box size="0.04 0.62 ${size_z_wall1}" />
 			</geometry>
-			<material name="Transparent"/>
+			<material name="IPA/Transparent"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
@@ -343,7 +343,7 @@
 			<geometry>
 				<box size="0.04 0.62 ${size_z_wall1}" />
 			</geometry>
-			<material name="Transparent"/>
+			<material name="IPA/Transparent"/>
 		</visual>
 		<collision>
 			<origin xyz="0 0 0" />
