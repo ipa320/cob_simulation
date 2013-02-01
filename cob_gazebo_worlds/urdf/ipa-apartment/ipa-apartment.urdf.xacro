@@ -6,10 +6,14 @@
 	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
 	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
 	name="ipa-apartment">
-
+  
+  	  <include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
 	  <!-- apartment -->
 	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
 
+	  <!-- office-->
+	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/office.urdf.xacro" />
+	  
 	  <!-- landing-->
 	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/landing.urdf.xacro" />
 
@@ -43,8 +47,9 @@
 	  <property name="wall_depth" value="0.06" />
 	  <property name="window_depth" value="0.15" />
 
-	  <property name="size_z_wall1" value="2.8" />
+	  <property name="size_z_wall1" value="2" />
 	  <property name="size_z_wall2" value="0.92" />
+	  <property name="size_z_wall3" value="1.4" />
 
 
 <xacro:macro name="ipa-apartment" params="name">
@@ -73,8 +78,12 @@
 	  <xacro:apartment name="apartment">
 	  </xacro:apartment>
 
-	  <xacro:landing name="landing">
+	  <xacro:landing name="landing" parent="dummy_link">
+		<origin xyz="${-13.9+dist_axis_x} ${-dist_axis_y} 0" rpy="0 0 0" />
 	  </xacro:landing>
+	  
+	  <xacro:office name="office">
+	  </xacro:office>
 
 	  <xacro:elevator name="elevator">
 	  </xacro:elevator>
@@ -87,7 +96,6 @@
 
 	  <xacro:wall_ipa name="wall_ipa">
 	  </xacro:wall_ipa>
-
 
 </xacro:macro>
 

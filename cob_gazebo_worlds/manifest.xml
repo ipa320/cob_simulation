@@ -16,6 +16,8 @@
   <depend package="gazebo"/>
   <depend package="gazebo_tools"/>
   <depend package="gazebo_plugins"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="joint_state_publisher"/>
 
   <export>
     <gazebo gazebo_media_path="${prefix}" />
