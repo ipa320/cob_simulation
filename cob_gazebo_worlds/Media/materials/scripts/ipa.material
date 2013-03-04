@@ -205,6 +205,21 @@ material IPA/Grey
 	}
 }
 
+material IPA/Grey1
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.96 0.96 0.96 1
+			diffuse 0.5 0.5 0.5 1
+			specular 0.8 0.8 0.8 1
+		}
+	}
+}
+
 material IPA/Grey2
 {
   receive_shadows on
@@ -245,3 +260,42 @@ material IPA/WallApartment
 	}
 }
 
+material IPA/Orange
+{
+	technique
+	{
+		pass
+		{
+			ambient 1.0 0.4 0.0 0
+			diffuse 0.2 0.2 0.2 1
+		}
+	}
+}
+
+
+material IPA/Black
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1 1.0
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
+material IPA/DarkGolden
+{
+  	receive_shadows on
+	technique
+	{
+		pass
+		{
+			ambient 0.72 0.5255 0.043  1.0
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
+}

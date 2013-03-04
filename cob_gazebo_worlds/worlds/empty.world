@@ -77,7 +77,7 @@
         <kp>1000000.0</kp>
         <kd>1.0</kd>
         <normal>0 0 1</normal>
-        <size>30.0 30.0</size>
+        <size>50.0 50.0</size>
         <material>IPA/Grey2</material>
         <visual>
           <size>30.0 30.0 0.01</size>
@@ -89,6 +89,20 @@
   </model:physical>
 
   <!-- White Directional light -->
+
+    <!--light type="directional" name="my_light" cast_shadows="false">
+      <origin pose="0 0 30 0 0 0"/>
+      <diffuse rgba=".9 .9 .9 1"/>
+      <specular rgba=".1 .1 .1 1"/>
+      <attenuation range="20"/>
+      <direction xyz="0 0 -1"/>
+    </light-->
+
+    <!--model:LightSource>
+      <id>light0</id>
+      <xyz>0.0 0.0 10.0</xyz>
+    </model:LightSource-->
+
   <model:renderable name="directional_white">
      <xyz>2.091 1.021 5</xyz>
      <enableGravity>false</enableGravity>   
