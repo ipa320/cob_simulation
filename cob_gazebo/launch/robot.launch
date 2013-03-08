@@ -15,10 +15,18 @@
 	<node name="create_colored_point_cloud" pkg="nodelet" type="nodelet" args="standalone cob_gazebo/CreateColoredPointCloud" respawn="false" output="screen">
 		<remap from="image_color" to="cam3d/rgb/image_raw"/>
 		<remap from="point_cloud2" to="cam3d/depth/points"/>
-		<remap from="colored_point_cloud2" to="cam3d/rgb/points"/>
+		<remap from="colored_point_cloud2" to="cam3d/depth_registered/points"/>
 	</node>
+  <node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
+  <include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+        <arg name="namespace" value="/cam3d" />
+        <arg name="rate" value="1.0" />
+        <arg name="start_manager" value="true"/>
+        <arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+  </include>
+
 	<!-- convert from PointCloud2 to PointCloud1 -->
-	<node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" />
+	<!--node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" /-->
 
 	<!-- start gazebo controllers -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_$(arg robot).launch" />
