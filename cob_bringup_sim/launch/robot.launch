@@ -2,8 +2,8 @@
 <launch>
 
 	<!-- define arguments -->
-	<arg name="robot" default="$(env ROBOT)"/>
-	<arg name="robot_env" default="$(env ROBOT_ENV)"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
