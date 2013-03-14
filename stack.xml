@@ -24,6 +24,6 @@
   <depend stack="schunk_modular_robotics" /> <!-- schunk_description -->
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="vision_opencv" /> <!-- cv_bridge -->
-  <depend stack="visualization_common" /> <!-- ogre_tools -->
+  <!--depend stack="visualization_common" /--> <!-- ogre_tools -->
 
 </stack>
