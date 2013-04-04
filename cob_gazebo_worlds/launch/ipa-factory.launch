@@ -2,14 +2,16 @@
 <launch>
 
 	<!-- start gazebo world from .world file -->
-	<!--include file="$(find cob_gazebo_worlds)/launch/world.launch" /-->
+	<include file="$(find cob_gazebo_worlds)/launch/world.launch" >
+		<arg name="robot_env" value="ipa-factory"/>
+	</include>
 
 	<!-- OR -->
 
 	<!-- start gazebo world from .urdf file -->
-	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
+	<!--include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
 		<arg name="robot_env" value="ipa-factory"/>
-	</include>
+	</include-->
 
 
 </launch>

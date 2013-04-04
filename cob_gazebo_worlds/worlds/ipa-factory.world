@@ -20,12 +20,12 @@
         <origin pose="-20 -50 0 0 0 0"/>
         <collision name="environment_model_collision">
           <geometry>
-            <mesh filename="Industriestrasse.dae" scale="0.0254 0.0254 0.0254"/>
+            <mesh filename="ipa-factory.dae" scale="0.0254 0.0254 0.0254"/>
           </geometry>
         </collision>
         <visual name="environment_model_visual" cast_shadows="false">
           <geometry>
-            <mesh filename="Industriestrasse.dae" scale="0.0254 0.0254 0.0254"/>
+            <mesh filename="ipa-factory.dae" scale="0.0254 0.0254 0.0254"/>
           </geometry>
         </visual>
       </link>

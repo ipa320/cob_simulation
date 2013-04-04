@@ -5,7 +5,7 @@
  <static>true</static>
  <body:map name="map_body">
    <geom:map name="map_geom">
-     <image>ipa-4th-floor.png</image>
+     <image>ipa-maze.png</image>
      <threshold>200</threshold>
      <granularity>1</granularity>
      <negative>false</negative>
