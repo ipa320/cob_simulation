@@ -260,3 +260,42 @@ material IPA/WallApartment
 	}
 }
 
+material IPA/Orange
+{
+	technique
+	{
+		pass
+		{
+			ambient 1.0 0.4 0.0 0
+			diffuse 0.2 0.2 0.2 1
+		}
+	}
+}
+
+
+material IPA/Black
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1 1.0
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
+material IPA/DarkGolden
+{
+  	receive_shadows on
+	technique
+	{
+		pass
+		{
+			ambient 0.72 0.5255 0.043  1.0
+			diffuse 0.1 0.1 0.1 1
+		}
+	}
+}
+
+}

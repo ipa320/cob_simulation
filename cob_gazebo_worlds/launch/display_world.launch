@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+
+	<!-- send world urdf to param server -->
+	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />
+
+	<node name="world_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+		<remap from="robot_description" to="world_description"/>
+	</node>
+	
+	<node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+           <remap from="robot_description" to="world_description"/>
+    </node>
+
+	<node name="world_tf_publisher" pkg="cob_gazebo_worlds" type="tf_publisher.py"  respawn="false" output="screen" />
+
+</launch>
