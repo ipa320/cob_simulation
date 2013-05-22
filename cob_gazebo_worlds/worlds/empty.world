@@ -1,4 +1,4 @@
- <?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <gazebo version="1.2">
     <world name="default">
         <scene>
@@ -24,25 +24,23 @@
             </ode>
         </physics>
         <!-- Ground Plane -->
-
-
         <model name="plane1_model">
             <link name="body">
 
-	<collision name="geom_1">
-          <geometry>
-            <plane normal="1 1 1"/>
-          </geometry>
-          <surface>
-            <friction>
-              <ode mu="10.0" mu2="10.0" fdir1="0 0 0" slip1="0" slip2="0"/>
-            </friction>
-            <bounce restitution_coefficient="0" threshold="1000000.0"/>
-            <contact>
-              <ode soft_cfm="0" soft_erp="0.2" kp="1e10" kd="1" max_vel="100.0" min_depth="0.0001"/>
-            </contact>
-          </surface>
-        </collision>
+			<collision name="geom_1">
+				  <geometry>
+					<plane normal="1 1 1"/>
+				  </geometry>
+				  <surface>
+					<friction>
+					  <ode mu="10.0" mu2="10.0" fdir1="0 0 0" slip1="0" slip2="0"/>
+					</friction>
+					<bounce restitution_coefficient="0" threshold="1000000.0"/>
+					<contact>
+					  <ode soft_cfm="0" soft_erp="0.2" kp="1e10" kd="1" max_vel="100.0" min_depth="0.0001"/>
+					</contact>
+				  </surface>
+				</collision>
                 <!--collision name="geom_1">
                     <geometry>
                     </geometry>

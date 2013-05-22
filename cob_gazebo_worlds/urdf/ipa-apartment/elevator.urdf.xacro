@@ -351,6 +351,12 @@
 
                 <gazebo reference="elevator_button1">
                         <selfCollide>true</selfCollide>
+                        <sensor name='elevator_button1_contact_sensor' type='contact'>
+							<contact>
+								<collision>elevator_button1_geom</collision>
+							</contact>
+						</sensor>
+<!--
                         <sensor:contact name="elevator_button1_contact_sensor">
                                 <geom>elevator_button1_geom</geom>
                                 <updateRate>10</updateRate>
@@ -362,6 +368,7 @@
                                         <interface:bumper name="elevator_button1_bumper_iface" />
                                 </controller:gazebo_ros_bumper>
                         </sensor:contact>
+-->
                         <material>Gazebo/Red</material>
                 </gazebo>
 
@@ -403,6 +410,12 @@
 
  		<gazebo reference="elevator_button2">
                         <selfCollide>true</selfCollide>
+                        <sensor name='elevator_button2_contact_sensor' type='contact'>
+							<contact>
+								<collision>elevator_button2_geom</collision>
+							</contact>
+						</sensor>
+<!--
                         <sensor:contact name="elevator_button2_contact_sensor">
                                 <geom>elevator_button2_geom</geom>
                                 <updateRate>10</updateRate>
@@ -414,6 +427,7 @@
                                         <interface:bumper name="elevator_button2_bumper_iface" />
                                 </controller:gazebo_ros_bumper>
                         </sensor:contact>
+-->
                         <material>Gazebo/Red</material>
                         <turnGravityOff>false</turnGravityOff>
                 </gazebo>
