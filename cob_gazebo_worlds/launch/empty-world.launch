@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="throttled" default="false"/>
@@ -13,22 +13,9 @@
 
 
   <!-- start empty world -->
-  <group if="$(arg paused)">
-    <group if="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find gazebo_worlds)/worlds/empty_throttled.world" respawn="false" output="screen"/>
-    </group>
-    <group unless="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
-    </group>
-  </group>
-  <group unless="$(arg paused)">
-    <group if="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty_throttled.world" respawn="false" output="screen"/>
-    </group>
-    <group unless="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
-    </group>
-  </group>
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+
 
   <!-- start gui -->
   <group if="$(arg gui)">
