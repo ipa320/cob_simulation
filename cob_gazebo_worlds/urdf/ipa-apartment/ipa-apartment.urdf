@@ -1503,7 +1503,7 @@
       <contact>
         <collision>elevator_button1_geom</collision>
       </contact>
-      <plugin name="elevator_button1_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
+      <plugin filename="libgazebo_ros_bumper.so" name="elevator_button1_gazebo_ros_bumper_controller">
         <alwaysOn>true</alwaysOn>
         <updateRate>10</updateRate>
         <frameName>elevator_button1</frameName>
@@ -1550,7 +1550,7 @@
       <contact>
         <collision>elevator_button2_geom</collision>
       </contact>
-      <plugin name="elevator_button2_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
+      <plugin filename="libgazebo_ros_bumper.so" name="elevator_button2_gazebo_ros_bumper_controller">
         <alwaysOn>true</alwaysOn>
         <updateRate>10</updateRate>
         <frameName>elevator_button2</frameName>
