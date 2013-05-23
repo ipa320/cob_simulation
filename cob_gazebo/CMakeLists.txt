@@ -19,11 +19,6 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 
 # add project executable
-rosbuild_add_executable(create_colored_point_cloud ros/src/create_colored_point_cloud.cpp)
-rosbuild_add_library(colored_point_cloud ros/src/create_colored_point_cloud.cpp)
-target_link_libraries(create_colored_point_cloud ${OpenCV_LIBS})
-target_link_libraries(colored_point_cloud ${OpenCV_LIBS})
-rosbuild_add_executable(point_cloud_converter ros/src/point_cloud_converter.cpp)
 
 # rostest
 # none (not possible because of arg used in include tags)
