@@ -11,12 +11,6 @@
 	<!-- push robot_description to factory and spawn robot in gazebo -->
 	<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -unpause -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
 
-	<!--node name="create_colored_point_cloud" pkg="cob_gazebo" type="create_colored_point_cloud" respawn="false" output="screen"-->
-	<node name="create_colored_point_cloud" pkg="nodelet" type="nodelet" args="standalone cob_gazebo/CreateColoredPointCloud" respawn="false" output="screen">
-		<remap from="image_color" to="cam3d/rgb/image_raw"/>
-		<remap from="point_cloud2" to="cam3d/depth/points"/>
-		<remap from="colored_point_cloud2" to="cam3d/depth_registered/points"/>
-	</node>
     <node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
     <include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
         <arg name="namespace" value="/cam3d" />
@@ -25,13 +19,10 @@
         <arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
     </include>
 
-	<!-- convert from PointCloud2 to PointCloud1 -->
-	<!--node name="point_cloud_converter_full_cloud" pkg="cob_gazebo" type="point_cloud_converter" args="points2_in:=cam3d/depth/points points_out:=cam3d/depth/points1" respawn="false" output="screen" /-->
-
-	<!-- start gazebo controllers -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_$(arg robot).launch" />
+    <!-- start gazebo controllers -->
+    <include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_$(arg robot).launch" />
 	
-	<!-- services for simulation (e.g.: stop for simulation)-->
-	<node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+    <!-- services for simulation (e.g.: stop for simulation)-->
+    <node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 
 </launch>

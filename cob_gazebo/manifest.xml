@@ -11,8 +11,6 @@
   
   <depend package="gazebo"/>
   <depend package="gazebo_plugins"/>
-  <depend package="cv_bridge"/>
-  <depend package="image_transport"/>
   <depend package="gazebo_worlds"/>
   <depend package="gazebo_tools"/>
 
@@ -34,11 +32,5 @@
 
   <depend package="pr2_gazebo"/>
   <depend package="pr2_gazebo_plugins"/>
-
-	<depend package="nodelet"/>
-
-	<export>
-		<nodelet plugin="${prefix}/nodelet_plugins.xml" />
-	</export>
 
 </package>
