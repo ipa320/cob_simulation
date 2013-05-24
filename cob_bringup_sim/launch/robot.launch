@@ -11,7 +11,7 @@
 	<include file="$(arg pkg_robot_config)/upload_param.launch">
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-	<include file="$(arg pkg_env_config)/upload_param.launch">
+	<include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
 
