@@ -11,9 +11,7 @@
     <param name="/use_sim_time" value="true" />
   </group>
 
-
-  <!-- start empty world -->
-
+  <!-- start world -->
   <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
 
 

@@ -1,4 +1,3 @@
-<?xml version="1.0" ?>
 <sdf version='1.3'>
   <world name='default'>
     <scene>
@@ -82,13 +81,51 @@
     <state world_name='default'>
       <sim_time>0 0</sim_time>
       <real_time>0 0</real_time>
-      <wall_time>1369380209 349894559</wall_time>
+      <wall_time>1369663780 710881308</wall_time>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>7.053940 -6.352470 2.691610 0.000000 0.275643 2.356190</pose>
+        <pose>5.302390 -9.318150 27.019300 0.000000 1.429790 -3.136820</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
+    <model name='environment_model'>
+      <static>1</static>
+      <link name='environment_model_link'>
+        <pose>-20.000000 -50.000000 0.000000 0.000000 0.000000 0.000000</pose>
+        <collision name='environment_model_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://ipa-factory/meshes/ipa-factory.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='environment_model_visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <mesh>
+              <uri>model://ipa-factory/meshes/ipa-factory.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0.000000</linear>
+          <angular>0.000000</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose>1.000000 0.000000 0.000000 0.000000 0.000000 0.000000</pose>
+    </model>
   </world>
 </sdf>
