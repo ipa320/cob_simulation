@@ -17,7 +17,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 # rostest
-rosbuild_add_roslaunch_check(launch/empty-world.launch)
+rosbuild_add_roslaunch_check(launch/empty.launch)
 
 # ipa-kitchen (urdf model)
 rosbuild_add_rostest(test/urdf_ipa-kitchen.test)
@@ -30,9 +30,4 @@ rosbuild_add_roslaunch_check(launch/world_urdf.launch robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(launch/ipa-apartment.launch)
 
 # ipa-factory (world model)
-rosbuild_add_roslaunch_check(launch/world.launch robot_env:=ipa-factory)
 rosbuild_add_roslaunch_check(launch/ipa-factory.launch)
-
-# ipa-maze (png model)
-rosbuild_add_roslaunch_check(launch/world_png.launch robot_env:=ipa-maze)
-rosbuild_add_roslaunch_check(launch/ipa-maze.launch)
