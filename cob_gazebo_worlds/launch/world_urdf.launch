@@ -4,7 +4,7 @@
 	<arg name="robot_env"/>
 
 	<!-- start gazebo with empty world -->
-	<include file="$(find cob_gazebo_worlds)/launch/empty-world.launch" />
+	<include file="$(find cob_gazebo_worlds)/launch/empty.launch" />
 
 	<!-- send world urdf to param server -->
 	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />

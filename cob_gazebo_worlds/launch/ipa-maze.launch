@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-	
-	<!-- start png world -->
-	<include file="$(find cob_gazebo_worlds)/launch/world_png.launch" >
-		<arg name="robot_env" value="ipa-maze" />
-	</include>
-
-</launch>
