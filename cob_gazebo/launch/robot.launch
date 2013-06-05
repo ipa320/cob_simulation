@@ -2,6 +2,7 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="paused" default="$(optenv PAUSE_GAZEBO !!NO_PAUSE_GAZEBO_SET!!)"/>
 
 	<!-- send robot urdf to param server -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -9,7 +10,12 @@
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -unpause -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
+	<group if="$(arg paused)">
+		<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
+	</group>
+	<group unless="$(arg paused)">
+		<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -unpause -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
+	</group>
 
     <node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
     <include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
