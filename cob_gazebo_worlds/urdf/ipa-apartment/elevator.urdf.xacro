@@ -4,7 +4,8 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro">
 
-        <xacro:macro name="elevator" params="name">
+
+	<xacro:macro name="elevator" params="name">
 
 	<link name="origin_elevator">
 		<inertial>
@@ -70,11 +71,11 @@
 		<!--safety_controller k_velocity="10"/-->
 	</joint> 
 
-         <transmission name="elevator_left_trans" type="pr2_mechanism_model/SimpleTransmission">
-                   <actuator name="elevator_left_motor"/>
-                   <joint name="elevator_left_joint"/>
-                   <mechanicalReduction>1</mechanicalReduction>
-         </transmission>
+	<transmission name="elevator_left_trans" type="pr2_mechanism_model/SimpleTransmission">
+		<actuator name="elevator_left_motor"/>
+		<joint name="elevator_left_joint"/>
+		<mechanicalReduction>1</mechanicalReduction>
+	</transmission>
 
 
 	<!-- wall elv5 -->
@@ -210,11 +211,11 @@
 		<safety_controller k_velocity="10"/>
 	</joint> 
 
-         <transmission name="elevator_right_trans" type="pr2_mechanism_model/SimpleTransmission">
-                   <actuator name="elevator_right_motor"/>
-                   <joint name="elevator_right_joint"/>
-                   <mechanicalReduction>1</mechanicalReduction>
-        </transmission>
+	<transmission name="elevator_right_trans" type="pr2_mechanism_model/SimpleTransmission">
+	   <actuator name="elevator_right_motor"/>
+	   <joint name="elevator_right_joint"/>
+	   <mechanicalReduction>1</mechanicalReduction>
+	</transmission>
 
 	<!-- wall elv7 -->
 	<link name="wall_elv7">
@@ -314,7 +315,6 @@
 
 
 	<!--elevator buttons-->
-
 	<link name="elevator_button1">
 		<inertial>
 			<origin xyz="0 0 0" />
@@ -349,21 +349,24 @@
 
 	</joint> 
 
-                <gazebo reference="elevator_button1">
-                        <selfCollide>true</selfCollide>
-                        <sensor:contact name="elevator_button1_contact_sensor">
-                                <geom>elevator_button1_geom</geom>
-                                <updateRate>10</updateRate>
-                                <controller:gazebo_ros_bumper name="elevator_button1_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
-                                        <alwaysOn>true</alwaysOn>
-                                        <updateRate>10</updateRate>
-                                        <frameName>elevator_button1</frameName>
-                                        <bumperTopicName>elevator_button1_bumper</bumperTopicName>
-                                        <interface:bumper name="elevator_button1_bumper_iface" />
-                                </controller:gazebo_ros_bumper>
-                        </sensor:contact>
-                        <material>Gazebo/Red</material>
-                </gazebo>
+	<gazebo reference="elevator_button1">
+		<selfCollide>true</selfCollide>
+        <sensor name='elevator_button1_contact_sensor' type='contact'>
+			<always_on>true</always_on>
+			<update_rate>10</update_rate>
+			<contact>
+				<collision>elevator_button1_geom</collision>
+			</contact>
+			<plugin name="elevator_button1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<alwaysOn>true</alwaysOn>
+				<updateRate>10</updateRate>
+				<frameName>elevator_button1</frameName>
+				<bumperTopicName>elevator_button1_bumper</bumperTopicName>				
+			</plugin>
+		</sensor>
+		<material>Gazebo/Red</material>
+		<turnGravityOff>false</turnGravityOff>
+	</gazebo>
 
 
 	<link name="elevator_button2">
@@ -401,24 +404,26 @@
 
 
 
- 		<gazebo reference="elevator_button2">
-                        <selfCollide>true</selfCollide>
-                        <sensor:contact name="elevator_button2_contact_sensor">
-                                <geom>elevator_button2_geom</geom>
-                                <updateRate>10</updateRate>
-                                <controller:gazebo_ros_bumper name="elevator_button2_gazebo_ros_bumper_controller" plugin="libgazebo_ros_bumper.so">
-                                        <alwaysOn>true</alwaysOn>
-                                        <updateRate>10</updateRate>
-                                        <frameName>elevator_button2</frameName>
-                                        <bumperTopicName>elevator_button2_bumper</bumperTopicName>
-                                        <interface:bumper name="elevator_button2_bumper_iface" />
-                                </controller:gazebo_ros_bumper>
-                        </sensor:contact>
-                        <material>Gazebo/Red</material>
-                        <turnGravityOff>false</turnGravityOff>
-                </gazebo>
+	<gazebo reference="elevator_button2">
+		<selfCollide>true</selfCollide>
+        <sensor name='elevator_button2_contact_sensor' type='contact'>
+			<always_on>true</always_on>
+			<update_rate>10</update_rate>
+			<contact>
+				<collision>elevator_button2_geom</collision>
+			</contact>
+			<plugin name="elevator_button2_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<alwaysOn>true</alwaysOn>
+				<updateRate>10</updateRate>
+				<frameName>elevator_button2</frameName>
+				<bumperTopicName>elevator_button2_bumper</bumperTopicName>				
+			</plugin>
+		</sensor>
+		<material>Gazebo/Red</material>
+		<turnGravityOff>false</turnGravityOff>
+	</gazebo>
 
-<link name="wall_ext18">
+	<link name="wall_ext18">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
@@ -450,7 +455,7 @@
 	</joint> 
 	
 
-        <link name="wall_ext19">
+	<link name="wall_ext19">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
@@ -482,7 +487,7 @@
 	</joint> 
 
 
-        <link name="wall_ext20">
+	<link name="wall_ext20">
 		<inertial>
 			<origin xyz="0 0 0" />
 			<mass value="5.0" />
@@ -512,6 +517,6 @@
 		<parent link="origin_elevator" />
 		<child link="wall_ext20" />
 	</joint> 
-        </xacro:macro>
+	</xacro:macro>
 
 </robot>

@@ -18,7 +18,7 @@
       <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find gazebo_worlds)/worlds/empty_throttled.world" respawn="false" output="screen"/>
     </group>
     <group unless="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
     </group>
   </group>
   <group unless="$(arg paused)">
@@ -26,7 +26,7 @@
       <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty_throttled.world" respawn="false" output="screen"/>
     </group>
     <group unless="$(arg throttled)">
-      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
     </group>
   </group>
 
@@ -36,3 +36,4 @@
   </group>
 
 </launch>
+

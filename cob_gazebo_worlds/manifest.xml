@@ -12,7 +12,6 @@
   <depend package="xacro"/>
   <depend package="convex_decomposition"/>
   <depend package="ivcon"/>
-  <depend package="ogre_tools"/>
   <depend package="gazebo"/>
   <depend package="gazebo_tools"/>
   <depend package="gazebo_plugins"/>
