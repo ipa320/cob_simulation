@@ -20,6 +20,9 @@
 	<include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
+	<include file="$(arg pkg_env_config)/upload_object_locations.launch">
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include>
 
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/launch/$(arg robot_env).launch">

@@ -9,8 +9,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_simulation</url>
   <depend stack="cob_common" /> <!-- cob_srvs, raw_description, desire_description, cob_description -->
-  <depend stack="cob_environments" /> <!-- cob_gazebo_worlds -->
-  <depend stack="cob_robots" /> <!-- cob_controller_configuration_gazebo, cob_hardware_config -->
+  <depend stack="cob_environments" /> <!-- cob_gazebo_worlds, cob_default_env_config -->
+  <depend stack="cob_robots" /> <!-- cob_controller_configuration_gazebo, cob_default_robot_config, cob_hardware_config -->
   <depend stack="common" /> <!-- actionlib -->
   <depend stack="common_msgs" /> <!-- actionlib_msgs -->
   <depend stack="geometry" /> <!-- tf -->
@@ -24,6 +24,5 @@
   <depend stack="schunk_modular_robotics" /> <!-- schunk_description -->
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="vision_opencv" /> <!-- cv_bridge -->
-  <!--depend stack="visualization_common" /--> <!-- ogre_tools -->
 
 </stack>
