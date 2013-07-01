@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-  <test test-name="ipa-factory_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-factory/ipa-factory.urdf.xacro"/>
-
-</launch> 

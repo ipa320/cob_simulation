@@ -1,10 +1,20 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="paused" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+	<arg name="throttled" default="false"/>
+
 	<arg name="robot_env"/>
 
 	<!-- start gazebo with empty world -->
-	<include file="$(find cob_gazebo_worlds)/launch/empty-world.launch" />
+	<include file="$(find cob_gazebo_worlds)/launch/empty.launch">
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="use_sim_time" value="$(arg use_sim_time)" />
+		<arg name="gui" value="$(arg gui)" />
+		<arg name="throttled" value="$(arg throttled)" />
+	</include>
 
 	<!-- send world urdf to param server -->
 	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />

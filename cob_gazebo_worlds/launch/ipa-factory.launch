@@ -1,17 +1,28 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- start gazebo world from .world file -->
-	<include file="$(find cob_gazebo_worlds)/launch/world.launch" >
-		<arg name="robot_env" value="ipa-factory"/>
-	</include>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="throttled" default="false"/>
 
-	<!-- OR -->
+  <!-- set use_sim_time flag -->
+  <group if="$(arg use_sim_time)">
+    <param name="/use_sim_time" value="true" />
+  </group>
 
-	<!-- start gazebo world from .urdf file -->
-	<!--include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
-		<arg name="robot_env" value="ipa-factory"/>
-	</include-->
+  <!-- start world -->
+  <group if="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/ipa-factory.world" respawn="false" output="screen"/>
+  </group>
+  <group unless="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/ipa-factory.world" respawn="false" output="screen"/>
+  </group>
 
+
+  <!-- start gui -->
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
+  </group>
 
 </launch>

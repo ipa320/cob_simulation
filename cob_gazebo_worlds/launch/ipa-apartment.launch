@@ -1,9 +1,17 @@
 <?xml version="1.0"?>
 <launch>
+	<arg name="paused" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+	<arg name="throttled" default="false"/>
 
 	<!-- start gazebo world from .urdf file -->
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
 		<arg name="robot_env" value="ipa-apartment"/>
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="use_sim_time" value="$(arg use_sim_time)" />
+		<arg name="gui" value="$(arg gui)" />
+		<arg name="throttled" value="$(arg throttled)" />
 	</include>
 
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
