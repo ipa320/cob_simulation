@@ -1,33 +1,39 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
+cmake_minimum_required(VERSION 2.8.3)
+project(cob_gazebo_worlds)
+# Load catkin and all dependencies required for this package
+# TODO: remove all from COMPONENTS that are not catkin packages.
+find_package(catkin REQUIRED COMPONENTS roslaunch)
 
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-#set(ROS_BUILD_TYPE RelWithDebInfo)
-
-rosbuild_init()
-
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 # rostest
-rosbuild_add_roslaunch_check(launch/empty.launch)
+#roslaunch_add_file_check(launch/empty.launch)
 
 # ipa-kitchen (urdf model)
-rosbuild_add_rostest(test/urdf_ipa-kitchen.test)
-rosbuild_add_roslaunch_check(launch/world_urdf.launch robot_env:=ipa-kitchen)
-rosbuild_add_roslaunch_check(launch/ipa-kitchen.launch)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_ipa-kitchen.test)
+#roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-kitchen)
+#roslaunch_add_file_check(launch/ipa-kitchen.launch)
 
 # ipa-apartment (urdf model)
-rosbuild_add_rostest(test/urdf_ipa-apartment.test)
-rosbuild_add_roslaunch_check(launch/world_urdf.launch robot_env:=ipa-apartment)
-rosbuild_add_roslaunch_check(launch/ipa-apartment.launch)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_ipa-apartment.test)
+#roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-apartment)
+#roslaunch_add_file_check(launch/ipa-apartment.launch)
 
 # ipa-factory (world model)
-rosbuild_add_roslaunch_check(launch/ipa-factory.launch)
+#roslaunch_add_file_check(launch/ipa-factory.launch)
+
+# TODO: fill in what other packages will need to use this package
+## DEPENDS: system dependencies of this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## INCLUDE_DIRS: 
+## LIBRARIES: libraries you create in this project that dependent projects also need
+catkin_package(
+    DEPENDS 
+    CATKIN_DEPENDS # TODO
+    INCLUDE_DIRS # TODO include
+    LIBRARIES # TODO
+)
