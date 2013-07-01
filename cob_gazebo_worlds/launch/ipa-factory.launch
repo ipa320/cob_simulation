@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="paused" default="true"/>
+  <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="throttled" default="false"/>
@@ -11,10 +11,13 @@
     <param name="/use_sim_time" value="true" />
   </group>
 
-
-  <!-- start empty world -->
-
-  <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+  <!-- start world -->
+  <group if="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/ipa-factory.world" respawn="false" output="screen"/>
+  </group>
+  <group unless="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/ipa-factory.world" respawn="false" output="screen"/>
+  </group>
 
 
   <!-- start gui -->

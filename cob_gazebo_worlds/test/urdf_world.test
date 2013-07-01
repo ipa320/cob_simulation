@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-  <test test-name="world1_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-kitchen/ipa-kitchen.urdf.xacro"/>
-  <test test-name="world2_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-apartment/ipa-apartment.urdf.xacro"/>
-
-</launch> 
