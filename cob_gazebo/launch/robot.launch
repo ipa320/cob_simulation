@@ -17,18 +17,7 @@
 		<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -unpause -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
 	</group>
 
-    <node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
-    <include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
-        <arg name="namespace" value="/cam3d" />
-        <arg name="rate" value="1.0" />
-        <arg name="start_manager" value="true"/>
-        <arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
-    </include>
-
     <!-- start gazebo controllers -->
     <include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_$(arg robot).launch" />
 	
-    <!-- services for simulation (e.g.: stop for simulation)-->
-    <node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
-
 </launch>
