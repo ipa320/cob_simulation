@@ -63,7 +63,7 @@ import rospy
 import random
 from math import *
 
-from gazebo.srv import *
+#from gazebo.srv import *
 from gazebo_msgs.srv import *
 from gazebo_msgs.msg import *
 
