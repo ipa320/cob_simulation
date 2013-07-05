@@ -1,0 +1,31 @@
+<package>
+  <name>cob_bringup_sim</name>
+  <version>0.5.0</version>
+  <description>This package provides launch files for starting a simulated Care-O-bot.</description>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_bringup_sim</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo</run_depend>
+  <run_depend>cob_gazebo</run_depend>
+  <run_depend>cob_gazebo_worlds</run_depend>
+  <run_depend>cob_default_robot_config</run_depend>
+  <run_depend>cob_default_env_config</run_depend>
+  <!-- <test_depend>gazebo</test_depend> -->
+  <!-- <test_depend>cob_gazebo</test_depend> -->
+  <!-- <test_depend>cob_gazebo_worlds</test_depend> -->
+  <!-- <test_depend>cob_default_robot_config</test_depend> -->
+  <!-- <test_depend>cob_default_env_config</test_depend> -->
+
+  <export>
+
+  </export>
+</package>
