@@ -19,8 +19,9 @@
   <depend stack="nodelet_core" /> <!-- nodelet -->
   <depend stack="pr2_controllers" /> <!-- single_joint_position_action, joint_trajectory_action -->
   <depend stack="pr2_simulator" /> <!-- pr2_gazebo_plugins, pr2_gazebo -->
-  <depend stack="robot_model" /> <!-- robot_state_publisher -->
+  <depend stack="robot_model" /> <!-- convex_decomposition, ivcon, robot_state_publisher -->
   <depend stack="ros" />
+  <depend stack="schunk_modular_robotics" /> <!-- schunk_description -->
   <depend stack="simulator_gazebo" /> <!-- gazebo_tools, gazebo, gazebo_plugins, gazebo_worlds -->
   <depend stack="vision_opencv" /> <!-- cv_bridge -->
 
