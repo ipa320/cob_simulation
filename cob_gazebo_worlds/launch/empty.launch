@@ -1,23 +1,22 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
+  <arg name="throttled" default="false"/>
 
   <!-- set use_sim_time flag -->
   <group if="$(arg use_sim_time)">
     <param name="/use_sim_time" value="true" />
   </group>
 
-
-  <!-- start empty world -->
+  <!--Start empty world-->
   <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
 
   <!-- start gui -->
-  <!-- comment in for fuerte -->
-  <!-- group if="$(arg gui)">
+  <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
-  </group-->
+  </group>
 
 </launch>
-
