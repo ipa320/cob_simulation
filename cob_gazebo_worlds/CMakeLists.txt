@@ -38,27 +38,14 @@ catkin_package(
     LIBRARIES # TODO
 )
 
-install(DIRECTORY Media
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  PATTERN ".svn" EXCLUDE
-)
-
 #foreach(dir materials models)
  #  install(DIRECTORY Media/${dir}/ 
   ##    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 #endforeach(dir)
 
 
-install(DIRECTORY launch/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-)
-
-install(DIRECTORY urdf/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
-)
-
-install(DIRECTORY worlds/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/worlds
+install(DIRECTORY Media worlds urdf launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/{PROJECT_NAME}
 )
 
 install(PROGRAMS src/elevator.py src/tf_publisher.py
