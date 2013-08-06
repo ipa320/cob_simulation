@@ -12,9 +12,9 @@
 # \note
 # Project name: Care-O-bot Research
 # \note
-# ROS stack name: cob_simulation
+# ROS stack name: cob_environments
 # \note
-# ROS package name: cob_bringup_sim
+# ROS package name: cob_gazebo_worlds
 #
 # \author
 # Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh-garcia@ipa.fhg.de
@@ -57,7 +57,7 @@
 #
 #################################################################  
 import roslib
-roslib.load_manifest('cob_bringup_sim')
+roslib.load_manifest('cob_gazebo_worlds')
 
 import rospy
 import tf
