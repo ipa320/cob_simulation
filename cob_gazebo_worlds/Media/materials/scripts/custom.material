@@ -1,0 +1,579 @@
+////////////////////////////////////////////////////////////////////////////////
+// Custom materials
+
+material transparent
+{
+  receive_shadows on
+
+	technique
+   {
+     pass
+     {
+       scene_blend alpha_blend
+       depth_write off
+ 
+       texture_unit
+       {
+         colour_op_ex source1 src_manual src_current 1 0 0
+         alpha_op_ex source1 src_manual src_current 0.0
+       }
+     }
+   }
+}
+
+material black
+{
+  receive_shadows on
+
+	technique
+   {
+     pass
+     {
+       scene_blend alpha_blend
+       depth_write off
+ 
+       texture_unit
+       {
+         colour_op_ex source1 src_manual src_current 0 0 0
+         alpha_op_ex source1 src_manual src_current 100.0
+       }
+     }
+   }
+}
+
+
+material testtextur
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture testtextur.jpg
+	scale 0.05 0.05
+      }
+    }
+  }
+}
+
+material floor_kitchen
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture floor_kitchen.jpg
+      }
+    }
+  }
+}
+
+material carpet
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture carpet.jpg
+	scale 0.3 0.3
+      }
+    }
+  }
+}
+
+
+material wall_bedroom1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_bedroom1.jpg
+      }
+    }
+  }
+}
+
+material wall_white
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_white.jpg
+      }
+    }
+  }
+}
+
+material livingroom_slidingdoor
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture livingroom_slidingdoor.jpg
+      }
+    }
+  }
+}
+
+material door_toilet_men
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_toilet_men.jpg
+      }
+    }
+  }
+}
+
+material wall_livingroom1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_livingroom1.jpg
+      }
+    }
+  }
+}
+
+material wall_livingroom2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_livingroom2.jpg
+      }
+    }
+  }
+}
+
+material bedroom_windows
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bedroom_windows.jpg
+      }
+    }
+  }
+}
+
+material kitchen_windows
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture kitchen_windows.jpg
+      }
+    }
+  }
+}
+
+material floor_window
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture floor_window.jpg
+      }
+    }
+  }
+}
+
+material livingroom_wall_lights
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture livingroom_wall_lights.jpg
+      }
+    }
+  }
+}
+
+material emergencyExit_window_left
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture emergencyExit_window_left.jpg
+      }
+    }
+  }
+}
+
+material emergencyExit_window_right
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture emergencyExit_window_right.jpg
+      }
+    }
+  }
+}
+
+material cabinet_blue
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture cabinet_blue.jpg
+      }
+    }
+  }
+}
+
+material door_E323
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_E323.jpg
+      }
+    }
+  }
+}
+
+material door_E322
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_E322.jpg
+      }
+    }
+  }
+}
+
+material door_E334
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_E334.jpg
+      }
+    }
+  }
+}
+
+material door_floor
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_floor.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_05
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_05.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_06
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_06.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_07
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_07.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_08
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_08.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_11
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_11.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_12
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_12.jpg
+      }
+    }
+  }
+}
+
+material wall_floor_15
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture wall_floor_15.jpg
+      }
+    }
+  }
+}
+
+material kitchen_wall_with_heating
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture kitchen_wall_with_heating.jpg
+      }
+    }
+  }
+}
+
+material kitchen_wall_with_windows
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture kitchen_wall_with_windows.jpg
+      }
+    }
+  }
+}
+
+material kitchen_window_board
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture kitchen_window_board.jpg
+      }
+    }
+  }
+}
+
+material bedroom_wall_with_heating
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bedroom_wall_with_heating.jpg
+      }
+    }
+  }
+}
+
+material bedroom_wall_with_windows
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bedroom_wall_with_windows.jpg
+      }
+    }
+  }
+}
+
+material bedroom_window_board
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bedroom_window_board.jpg
+      }
+    }
+  }
+}
+
+material polystyrene
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture polystyrene.jpg
+      }
+    }
+  }
+}
+
+material aluminium
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture aluminium.jpg
+      }
+    }
+  }
+}
+
+material door_opposite_of_men_toilet
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_opposite_of_men_toilet.jpg
+      }
+    }
+  }
+}
+
+material door_women_toilet
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture door_women_toilet.jpg
+      }
+    }
+  }
+}
+
+material kitchen_white
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture kitchen_white.jpg
+      }
+    }
+  }
+}
+

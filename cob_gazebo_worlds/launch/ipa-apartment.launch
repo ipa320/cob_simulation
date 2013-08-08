@@ -4,16 +4,37 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
+	<arg name="robot_env" default="ipa-apartment"/>
+	
+	<!-- set use_sim_time flag -->
+	<group if="$(arg use_sim_time)">
+		<param name="/use_sim_time" value="true" />
+	</group>
+	<!--Start empty world-->
+	<node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty_apartment.world" respawn="false" output="screen"/>
 
-	<!-- start gazebo world from .urdf file -->
-	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
-		<arg name="robot_env" value="ipa-apartment"/>
-		<arg name="paused" value="$(arg paused)" />
-		<arg name="use_sim_time" value="$(arg use_sim_time)" />
-		<arg name="gui" value="$(arg gui)" />
-		<arg name="throttled" value="$(arg throttled)" />
-	</include>
+	<!-- start gui -->
+	<group if="$(arg gui)">
+		<node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
+	</group>
 
+	<!-- send world urdf to param server -->
+	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />
+
+	<!-- push world_description to factory and spawn robot in gazebo -->
+	<node name="spawn_urdf_world" pkg="gazebo" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model urdf_world_model" respawn="false" output="screen" />
+
+	<node name="world_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+		<remap from="robot_description" to="world_description"/>
+	</node>
+
+	<node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<remap from="robot_description" to="world_description"/>
+		<remap from="/joint_states" to="/environment_joint_states"/>
+	</node>
+
+	<node name="world_tf_publisher" pkg="cob_gazebo_worlds" type="tf_publisher.py"  respawn="false" output="screen" />
+	
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
-
+	
 </launch>
