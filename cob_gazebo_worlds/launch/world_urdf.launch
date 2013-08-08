@@ -11,7 +11,7 @@
 	<!-- start gazebo with empty world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find rrbot_gazebo)/worlds/rrbot.world"/>
-    <arg name="debug" value="true" />
+    <arg name="debug" value="false" />
     <arg name="headless" value="false"/>
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
