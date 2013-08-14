@@ -97,9 +97,11 @@
 	  <xacro:wall_ipa name="wall_ipa">
 	  </xacro:wall_ipa>
 
+
 </xacro:macro>
 
 <xacro:ipa-apartment name="ipa-apartment" />
+
 
 </robot>
 
