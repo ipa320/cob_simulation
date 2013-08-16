@@ -28,7 +28,7 @@
 	
 	<joint name="joint_origin_office" type="fixed">
 		<origin xyz="0 14 0" rpy="0 0 0" />
-        <parent link="origin_landing"/>
+        	<parent link="origin_landing"/>
 		<child link="origin_office" />
 	</joint> 
 	
@@ -388,7 +388,34 @@
 		<parent link="origin_office" />
 		<child link="wall_office_10" />
 	</joint>
-    
+
+
+	<link name="boards_before_bedroom_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<mesh filename="package://cob_gazebo_worlds/Media/models/boards_before_bedroom.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0.03 0.11" />
+			<geometry>
+				<box size="1.8 0.55 0.22" />
+ 			</geometry>
+		</collision>     
+	</link>
+
+    	<joint name="joint_boards_before_bedroom" type="fixed">
+		<origin xyz="0 3.62 0.25" rpy="0 0 0" />
+		<parent link="origin_office" />
+		<child link="boards_before_bedroom_link" />
+	</joint>
+
     </xacro:macro>
 
 

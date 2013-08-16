@@ -39,7 +39,6 @@
 		<child link="wall_ipa" />
 	</joint>
 
-
         </xacro:macro>
 
 </robot>
