@@ -9,7 +9,7 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_objects/Media/models/medication_prospan.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/medicine_prospan.dae"/>
    </geometry>
   </visual>
   <collision>
