@@ -101,7 +101,7 @@
 	</link>
 
 	<gazebo reference="wall_elv5">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_elv5" type="fixed">
@@ -133,7 +133,7 @@
 	</link>
 
 	<gazebo reference="wall_elv6">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_elv6" type="fixed">
@@ -165,7 +165,7 @@
 	</link>
 
 	<gazebo reference="elevator_left2">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_elevator_left2" type="fixed">
@@ -240,7 +240,7 @@
 	</link>
 
 	<gazebo reference="wall_elv7">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_elv7" type="fixed">
@@ -272,7 +272,7 @@
 	</link>
 
 	<gazebo reference="wall_elv8">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_elv8" type="fixed">
@@ -304,7 +304,7 @@
 	</link>
 
 	<gazebo reference="elevator_right2">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_elevator_right2" type="fixed">
@@ -445,7 +445,7 @@
 	</link>
 
 	<gazebo reference="wall_ext18">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_ext18" type="fixed">
@@ -477,7 +477,7 @@
 	</link>
 
 	<gazebo reference="wall_ext19">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_ext19" type="fixed">
@@ -509,7 +509,7 @@
 	</link>
 
 	<gazebo reference="wall_ext20">
-		<material>IPA/WallApartment</material>
+		<material>wall_floor_07</material>
 	</gazebo>
 
 	<joint name="joint_wall_ext20" type="fixed">
@@ -518,5 +518,4 @@
 		<child link="wall_ext20" />
 	</joint> 
 	</xacro:macro>
-
 </robot>
