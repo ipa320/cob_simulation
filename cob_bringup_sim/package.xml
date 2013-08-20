@@ -14,7 +14,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_ros</run_depend>
   <run_depend>cob_gazebo</run_depend>
   <run_depend>cob_gazebo_worlds</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
