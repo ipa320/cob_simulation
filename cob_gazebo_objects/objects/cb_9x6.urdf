@@ -1,0 +1,23 @@
+<?xml version="1.0" ?> 
+<robot name="cb_9x6">
+  <link name="base_link">
+  <inertial>
+    <mass value="0.01" />
+    <origin xyz="0 0 0.0" />
+    <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+  </inertial>
+  <visual>
+   <origin xyz="0 0 0.0" rpy="0 0 0" />
+   <geometry>
+     <mesh filename="package://cob_gazebo_objects/Media/models/cb_9x6.dae" scale="0.0254 0.0254 0.0254"/>
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="0 0 0.072" rpy="0 0 0" />
+   <geometry>
+     <box size="0.2 0.2 0.005" />
+     <!--mesh filename="package://cob_gazebo_objects/Media/models/cb_9x6.dae"/-->>
+   </geometry>
+  </collision>     
+  </link>
+</robot>
