@@ -44,12 +44,12 @@
 	  <property name="size_c" value="1.8" />
 	  <property name="size_d" value="4.16" />
 
-	  <property name="wall_depth" value="0.06" />
+	  <property name="wall_depth" value="0.1" />
 	  <property name="window_depth" value="0.15" />
 
-	  <property name="size_z_wall1" value="2" />
-	  <property name="size_z_wall2" value="0.92" />
-	  <property name="size_z_wall3" value="1.4" />
+	  <property name="size_z_wall1" value="2.7" />
+	  <property name="size_z_wall2" value="2.7" />
+	  <property name="size_z_wall3" value="2.7" />
 
 
 <xacro:macro name="ipa-apartment" params="name">
@@ -97,9 +97,11 @@
 	  <xacro:wall_ipa name="wall_ipa">
 	  </xacro:wall_ipa>
 
+
 </xacro:macro>
 
 <xacro:ipa-apartment name="ipa-apartment" />
+
 
 </robot>
 

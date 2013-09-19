@@ -5,14 +5,14 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 
-	<arg name="robot_env"/>
 
 	<!-- start gazebo with empty world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find rrbot_gazebo)/worlds/rrbot.world"/>
-    <arg name="debug" value="true" />
-    <arg name="headless" value="false"/>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="worlds/empty_ipa.world"/>
+		<arg name="debug" value="true" />
+		<arg name="headless" value="false"/>
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="gui" value="$(arg gui)" />

@@ -24,7 +24,7 @@
   <!-- <run_depend>xacro</run_depend> -->
   <!-- <run_depend>convex_decomposition</run_depend> -->
   <!-- <run_depend>ivcon</run_depend> -->
-  <!-- <run_depend>gazebo</run_depend> -->
+  <run_depend>gazebo_ros</run_depend>
   <!-- <run_depend>gazebo_tools</run_depend> -->
   <!-- <run_depend>gazebo_plugins</run_depend> -->
   <!-- <run_depend>robot_state_publisher</run_depend> -->
@@ -42,6 +42,6 @@
   <!-- <test_depend>joint_state_publisher</test_depend> -->
 
   <export>
-    <gazebo gazebo_media_path="${prefix}"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
   </export>
 </package>

@@ -4,16 +4,36 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-
-	<!-- start gazebo world from .urdf file -->
-	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch" >
-		<arg name="robot_env" value="ipa-apartment"/>
+	<arg name="robot_env" default="ipa-apartment"/>
+	
+	<!-- start gazebo with empty world -->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="worlds/empty_apartment.world"/>
+		<arg name="debug" value="true" />
+		<arg name="headless" value="false"/>
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="gui" value="$(arg gui)" />
-		<arg name="throttled" value="$(arg throttled)" />
+		<!--arg name="throttled" value="$(arg throttled)" /-->
 	</include>
 
-	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
 
+	<!-- send world urdf to param server -->
+	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />
+
+	<!-- push world_description to factory and spawn robot in gazebo -->
+	<node name="spawn_urdf_world" pkg="gazebo_ros" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model urdf_world_model" respawn="false" output="screen" />
+
+	<node name="world_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+	<remap from="robot_description" to="world_description"/>
+	</node>
+
+	<node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<remap from="robot_description" to="world_description"/>
+		<remap from="/joint_states" to="/environment_joint_states"/>
+	</node>
+
+	
+	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
+	
 </launch>
