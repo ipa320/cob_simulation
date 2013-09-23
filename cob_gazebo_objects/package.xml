@@ -20,6 +20,6 @@
   <run_depend>cob_description</run_depend>
   
   <export>
-    <gazebo gazebo_media_path="${prefix}"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
   </export>
 </package>
