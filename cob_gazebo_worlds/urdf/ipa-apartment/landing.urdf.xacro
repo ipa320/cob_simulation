@@ -28,7 +28,7 @@
 	
 	<joint name="joint_origin_landing" type="fixed">
 		<insert_block name="origin" />
-        <parent link="${parent}"/>
+        	<parent link="${parent}"/>
 		<child link="origin_landing" />
 	</joint> 
 
@@ -800,7 +800,5 @@
 	</joint>
 
 </xacro:macro>
-<!--gazebo>
-	<static>true</static>
-</gazebo-->
+
 </robot>

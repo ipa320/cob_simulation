@@ -518,5 +518,4 @@
 		<child link="wall_ext20" />
 	</joint> 
 	</xacro:macro>
-
 </robot>

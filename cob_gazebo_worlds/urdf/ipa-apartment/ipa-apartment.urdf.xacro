@@ -7,27 +7,27 @@
 	xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
 	name="ipa-apartment">
   
-  	  <include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
+  	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
 	  <!-- apartment -->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
 
 	  <!-- office-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/office.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/office.urdf.xacro" />
 	  
 	  <!-- landing-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/landing.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/landing.urdf.xacro" />
 
 	  <!-- elevator-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/elevator.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/elevator.urdf.xacro" />
 
 	  <!-- cabinets-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/cabinets.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/cabinets.urdf.xacro" />
 
 	  <!-- kitchen-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/kitchen.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/kitchen.urdf.xacro" />
 
 	  <!-- wall_ipa-->
-	  <include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/wall_ipa.urdf.xacro" />
+	  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/wall_ipa.urdf.xacro" />
 
 
 	  <!--Parameters-->
@@ -97,9 +97,11 @@
 	  <xacro:wall_ipa name="wall_ipa">
 	  </xacro:wall_ipa>
 
+
 </xacro:macro>
 
 <xacro:ipa-apartment name="ipa-apartment" />
+
 
 </robot>
 

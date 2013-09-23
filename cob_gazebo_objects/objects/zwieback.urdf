@@ -20,4 +20,7 @@
    </geometry>
   </collision>     
   </link>
+<gazebo>
+	<static>true</static>
+</gazebo>
 </robot>

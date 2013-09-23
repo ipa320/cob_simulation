@@ -168,16 +168,14 @@
       <direction>0.000000 0.000000 -1.000000</direction>
       <cast_shadows>0</cast_shadows>
     </light>
-    <plugin name='joint_trajectory_plugin' filename='libgazebo_ros_joint_trajectory.so'/>
     <state world_name='default'>
       <sim_time>0 0</sim_time>
       <real_time>0 0</real_time>
       <wall_time>1369380209 349894559</wall_time>
     </state>
-
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>7.053940 -6.352470 2.691610 0.000000 0.275643 2.356190</pose>
+        <pose>12 -3 12 0 0.7 3.14</pose>
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
