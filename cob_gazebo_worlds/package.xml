@@ -32,6 +32,8 @@
   <build_depend>urdf</build_depend>
   <run_depend>kdl_parser</run_depend>
   <run_depend>urdf</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+
   <!-- <test_depend>xacro</test_depend> -->
   <!-- <test_depend>convex_decomposition</test_depend> -->
   <!-- <test_depend>ivcon</test_depend> -->
