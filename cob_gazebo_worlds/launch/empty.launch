@@ -12,7 +12,12 @@
   </group>
 
   <!--Start empty world-->
-  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+  <group if="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+  </group>
+  <group unless="$(arg paused)">
+      <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find cob_gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+  </group>
 
   <!-- start gui -->
   <group if="$(arg gui)">
