@@ -36,7 +36,7 @@
   </joint>
 
   <!-- wall_01 -->
-  <link name="wall_01">
+  <link name="wall_01_part1">
     <inertial>
       <origin xyz="0 0 0" />
       <mass value="5.0" />
@@ -57,14 +57,14 @@
     </collision>
   </link>
 
-  <gazebo reference="wall_01">
+  <gazebo reference="wall_01_part1">
     <material>kitchen_wall_with_heating</material>
   </gazebo>
 
-  <joint name="joint_wall_01" type="fixed">
+  <joint name="joint_wall_01_part1" type="fixed">
     <origin xyz="${dist_axis_x} ${size_total_y/2-dist_axis_y+window_depth+0.02} 0.45" rpy="0 0 0" />
     <parent link="dummy_link" />
-    <child link="wall_01" />
+    <child link="wall_01_part1" />
   </joint>
 
   <!-- wall_01_part2 -->
