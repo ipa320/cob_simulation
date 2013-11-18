@@ -117,6 +117,11 @@
         </visual>
       </link>
     </model>
+    <gui>
+		  <camera name='user_camera'>
+		      <pose>12 -3 12 0 0.7 3.14</pose>
+			</camera>
+		</gui>
 
   </world>
 </sdf>
