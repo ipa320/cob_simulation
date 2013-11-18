@@ -1,10 +1,37 @@
 <?xml version="1.0" ?>
 <sdf version='1.4'>
   <world name='default'>
-    <!-- A global light source -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
+    <!-- global light source -->
+    
+  <light type="directional" name="sun">
+    <cast_shadows>false</cast_shadows>
+
+    <pose>0 1 10 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+
+    <direction>-0.5 0.5 -1.0</direction>
+  </light>
+
+    <light name='my_light' type='directional'>
+      <pose>0.000000 0.000000 30.000000 0.000000 0.000000 0.000000</pose>
+      <diffuse>0.900000 0.900000 0.900000 1.000000</diffuse>
+      <specular>0.100000 0.100000 0.100000 1.000000</specular>
+      <attenuation>
+        <range>20.000000</range>
+      </attenuation>
+      <direction>0.000000 0.000000 -1.000000</direction>
+      <cast_shadows>0</cast_shadows>
+    </light>
+  
+
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
