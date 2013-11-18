@@ -64,7 +64,7 @@
 
 
   <!-- wall ext -->
-  <link name="wall_ext2">
+  <link name="door_E334">
     <inertial>
       <origin xyz="0 0 0" />
       <mass value="5.0" />
@@ -85,14 +85,14 @@
     </collision>
   </link>
 
-  <gazebo reference="wall_ext2">
+  <gazebo reference="door_E334">
     <material>door_E334</material>
   </gazebo>
 
-  <joint name="joint_wall_ext2" type="fixed">
+  <joint name="joint_door_E334" type="fixed">
     <origin xyz="8.70 -1.565 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
-    <child link="wall_ext2" />
+    <child link="door_E334" />
   </joint> 
   
   <!-- wall ext -->
