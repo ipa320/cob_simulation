@@ -19,7 +19,7 @@
   <run_depend>cob_gazebo_worlds</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
   <run_depend>cob_default_env_config</run_depend>
-  <!-- <test_depend>gazebo</test_depend> -->
+  <!-- <test_depend>gazebo_ros</test_depend> -->
   <!-- <test_depend>cob_gazebo</test_depend> -->
   <!-- <test_depend>cob_gazebo_worlds</test_depend> -->
   <!-- <test_depend>cob_default_robot_config</test_depend> -->
