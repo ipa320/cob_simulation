@@ -14,7 +14,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_ros</run_depend>
   <run_depend>gazebo_plugins</run_depend>
   <run_depend>gazebo_worlds</run_depend>
   <run_depend>gazebo_tools</run_depend>
@@ -34,7 +34,7 @@
   <run_depend>cob_controller_configuration_gazebo</run_depend>
   <run_depend>pr2_gazebo</run_depend>
   <run_depend>pr2_gazebo_plugins</run_depend>
-  <!-- <test_depend>gazebo</test_depend> -->
+  <!-- <test_depend>gazebo_ros</test_depend> -->
   <!-- <test_depend>gazebo_plugins</test_depend> -->
   <!-- <test_depend>gazebo_worlds</test_depend> -->
   <!-- <test_depend>gazebo_tools</test_depend> -->
