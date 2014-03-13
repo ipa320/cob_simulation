@@ -18,7 +18,7 @@
 	</group>
 
 	<!-- start gazebo controllers -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_$(arg robot).launch" >
+	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
