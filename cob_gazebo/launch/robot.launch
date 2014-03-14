@@ -2,7 +2,7 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="paused" default="$(optenv PAUSE_GAZEBO !!NO_PAUSE_GAZEBO_SET!!)"/>
+	<arg name="paused" default="false"/>
 
 	<!-- send robot urdf to param server -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
