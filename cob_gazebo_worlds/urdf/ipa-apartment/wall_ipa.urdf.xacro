@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="wall_ipa" params="name">
+
+  <link name="wall_ipa">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.77 0.10 2.40" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.77 0.10 2.40" />
+      </geometry>
+    </collision>
+
+
+  </link>
+
+  <gazebo reference="wall_ipa">
+    <material>IPA/Wall3</material>
+  </gazebo>
+
+  <joint name="joint_wall_ipa" type="fixed">
+    <origin xyz="${size_total_x/2-3.395+dist_axis_x} ${-size_total_y/2+size_a-0.375-dist_axis_y} 1.21" rpy="0 0 0" />
+    <parent link="dummy_link" />
+    <child link="wall_ipa" />
+  </joint>
+
+  </xacro:macro>
+
+</robot>

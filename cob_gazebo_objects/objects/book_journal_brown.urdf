@@ -1,0 +1,27 @@
+<?xml version="1.0" ?> 
+<robot name="my_object" static="true">
+  <link name="base_link">
+  <inertial>
+    <mass value="3.007" />
+    <origin xyz="0 0 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="0 0 0.0" rpy="0 0 0" />
+   <geometry>
+     <mesh filename="package://cob_gazebo_objects/Media/models/book_journal_brown.dae"/>
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="0 0 0" rpy="0 0 0" />
+   <geometry>
+     <box size="0.06 0.205 0.28" />
+   </geometry>
+  </collision>     
+  </link>
+
+<gazebo>
+	<static>true</static>
+</gazebo>
+</robot>
+

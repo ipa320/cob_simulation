@@ -10,17 +10,11 @@
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<group if="$(arg paused)">
-		<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />
-	</group>
-	<group unless="$(arg paused)">
-		<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-ros_namespace /gazebo -unpause -urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />  
-	</group>
+	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />
 
 	<!-- start gazebo controllers -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-
 	
 </launch>

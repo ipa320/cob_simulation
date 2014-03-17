@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <world name='default'>
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <model name='environment_model'>
+      <static>1</static>
+      <link name='environment_model_link'>
+        <pose>-20.000000 -50.000000 0.000000 0.000000 0.000000 0.000000</pose>
+        <collision name='environment_model_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://ipa-factory/meshes/ipa-factory.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='environment_model_visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <mesh>
+              <uri>model://ipa-factory/meshes/ipa-factory.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <pose>1.000000 0.000000 0.000000 0.000000 0.000000 0.000000</pose>
+    </model>
+  </world>
+</sdf>
