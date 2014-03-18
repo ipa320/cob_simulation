@@ -44,8 +44,20 @@ catkin_package(
 #endforeach(dir)
 
 
-install(DIRECTORY Media worlds urdf launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/{PROJECT_NAME}
+install(DIRECTORY Media/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/Media
+)
+
+install(DIRECTORY worlds/ 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/worlds
+)
+
+install(DIRECTORY urdf/ 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+)
+
+install(DIRECTORY launch/ 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
 install(PROGRAMS src/elevator.py src/tf_publisher.py
