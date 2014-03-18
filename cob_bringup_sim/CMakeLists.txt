@@ -22,3 +22,6 @@ install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
   PATTERN ".svn" EXCLUDE
 )
+
+# rostest
+# none (not possible because of arg used in include tags)
