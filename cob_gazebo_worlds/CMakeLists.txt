@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_worlds)
 # Load catkin and all dependencies required for this package
 # TODO: remove all from COMPONENTS that are not catkin packages.
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+#find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 
 # rostest
@@ -32,10 +32,7 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    DEPENDS 
-    CATKIN_DEPENDS # TODO
-    INCLUDE_DIRS # TODO include
-    LIBRARIES # TODO
+    DEPENDS gazebo_ros urdf kdl_parser urdf gazebo_ros tf rostopic
 )
 
 #foreach(dir materials models)
@@ -61,5 +58,5 @@ install(DIRECTORY launch/
 )
 
 install(PROGRAMS src/elevator.py src/tf_publisher.py
-  DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
