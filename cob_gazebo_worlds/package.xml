@@ -16,7 +16,7 @@
 
 
   <!-- <build_depend>ivcon</build_depend> -->
-  <!-- <build_depend>gazebo_ros</build_depend> -->
+  <build_depend>tf</build_depend>
   <!-- <build_depend>gazebo_tools</build_depend> -->
   <!-- <build_depend>gazebo_plugins</build_depend> -->
   <!-- <build_depend>robot_state_publisher</build_depend> -->
