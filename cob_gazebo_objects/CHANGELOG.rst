@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2014-03-21)
+------------------
 * changes for textures
 * fix test for ikea table
 * cb_9x6 fixed

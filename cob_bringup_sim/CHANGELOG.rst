@@ -2,8 +2,8 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2014-03-21)
+------------------
 * merge with groovy_dev
 * setup tests
 * Merge branch 'hydro_dev' of github.com:ipa-nhg/cob_simulation into hydro_dev
