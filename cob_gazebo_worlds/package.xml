@@ -17,7 +17,6 @@
 
   <!-- <build_depend>ivcon</build_depend> -->
   <build_depend>tf</build_depend>
-  <!-- <build_depend>gazebo_tools</build_depend> -->
   <!-- <build_depend>gazebo_plugins</build_depend> -->
   <!-- <build_depend>robot_state_publisher</build_depend> -->
   <!-- <build_depend>joint_state_publisher</build_depend> -->
@@ -25,7 +24,6 @@
   <!-- <run_depend>convex_decomposition</run_depend> -->
   <!-- <run_depend>ivcon</run_depend> -->
   <run_depend>gazebo_ros</run_depend>
-  <!-- <run_depend>gazebo_tools</run_depend> -->
   <!-- <run_depend>gazebo_plugins</run_depend> -->
   <!-- <run_depend>robot_state_publisher</run_depend> -->
   <!-- <run_depend>joint_state_publisher</run_depend> -->
@@ -38,7 +36,6 @@
   <!-- <test_depend>convex_decomposition</test_depend> -->
   <!-- <test_depend>ivcon</test_depend> -->
   <!-- <test_depend>gazebo_ros</test_depend> -->
-  <!-- <test_depend>gazebo_tools</test_depend> -->
   <!-- <test_depend>gazebo_plugins</test_depend> -->
   <!-- <test_depend>robot_state_publisher</test_depend> -->
   <!-- <test_depend>joint_state_publisher</test_depend> -->
