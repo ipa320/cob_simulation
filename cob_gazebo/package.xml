@@ -16,7 +16,6 @@
 
   <run_depend>gazebo_ros</run_depend>
   <run_depend>gazebo_plugins</run_depend>
-  <run_depend>gazebo_worlds</run_depend>
   <run_depend>gazebo_tools</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>robot_state_publisher</run_depend>
@@ -36,7 +35,6 @@
   <run_depend>pr2_gazebo_plugins</run_depend>
   <!-- <test_depend>gazebo_ros</test_depend> -->
   <!-- <test_depend>gazebo_plugins</test_depend> -->
-  <!-- <test_depend>gazebo_worlds</test_depend> -->
   <!-- <test_depend>gazebo_tools</test_depend> -->
   <!-- <test_depend>tf</test_depend> -->
   <!-- <test_depend>robot_state_publisher</test_depend> -->
