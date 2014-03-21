@@ -25,8 +25,17 @@ install(DIRECTORY launch/
   PATTERN ".svn" EXCLUDE
 )
 
+install(PROGRAMS ros/test/components_test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(FILES ros/test/param_arm_test.yaml ros/test/param_tray_test.yaml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/test
+)
+
+
 # rostest for robots
-SET(robotlist
+set(robotlist
 cob3-1
 cob3-2
 cob3-3
@@ -34,6 +43,7 @@ cob3-4
 cob3-5
 cob3-6
 cob3-7
+cob4-1
 raw3-1
 raw3-2
 raw3-3
@@ -44,8 +54,8 @@ desire
 )
 
 # loop through list of robots for testing
-FOREACH(robot ${robotlist})
-	MESSAGE("testing for robot: ${robot}")
+foreach(robot ${robotlist})
+	message("testing for robot: ${robot}")
 	#rosbuild_add_roslaunch_check(launch robot:=${robot})
 	#rosbuild_add_roslaunch_check(launch ROBOT=${robot})
-ENDFOREACH(robot)
+endforeach(robot)

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_worlds)
 # Load catkin and all dependencies required for this package
 # TODO: remove all from COMPONENTS that are not catkin packages.
-#find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED)
 
 
 # rostest
@@ -55,6 +55,10 @@ install(DIRECTORY urdf/
 
 install(DIRECTORY launch/ 
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+
+install(DIRECTORY test/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/test
 )
 
 install(PROGRAMS src/elevator.py src/tf_publisher.py

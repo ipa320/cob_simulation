@@ -23,5 +23,10 @@ install(DIRECTORY launch/
   PATTERN ".svn" EXCLUDE
 )
 
+install(PROGRAMS scripts/remove_object.py scripts/spawn_object.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
 # rostest
 # none (not possible because of arg used in include tags)
