@@ -25,7 +25,7 @@ install(DIRECTORY launch/
   PATTERN ".svn" EXCLUDE
 )
 
-install(PROGRAMS ros/test/components_test.py
+install(PROGRAMS ros/test/component_test.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
