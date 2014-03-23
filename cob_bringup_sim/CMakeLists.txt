@@ -11,8 +11,8 @@ find_package(catkin REQUIRED COMPONENTS)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    DEPENDS gazebo cob_gazebo cob_gazebo_worlds cob_default_robot_config cob_default_env_config
-    CATKIN_DEPENDS # TODO
+    CATKIN_DEPENDS gazebo_ros cob_gazebo cob_gazebo_worlds cob_default_robot_config cob_default_env_config
+    DEPENDS # TODO
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO
 )
