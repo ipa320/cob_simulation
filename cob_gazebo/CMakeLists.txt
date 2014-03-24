@@ -19,10 +19,8 @@ catkin_package(
     LIBRARIES # TODO
 )
 
-## Mark cpp header files for installation
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-  PATTERN ".svn" EXCLUDE
+install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(PROGRAMS ros/test/component_test.py
