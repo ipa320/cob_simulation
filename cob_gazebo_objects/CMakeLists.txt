@@ -13,8 +13,8 @@ find_package(catkin REQUIRED COMPONENTS urdf cob_description)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    DEPENDS urdf cob_description
-    CATKIN_DEPENDS # TODO
+    CATKIN_DEPENDS urdf cob_description
+    DEPENDS # TODO
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO
 )
