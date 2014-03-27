@@ -62,5 +62,5 @@ install(DIRECTORY test
 )
 
 install(PROGRAMS src/elevator.py src/tf_publisher.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
 )

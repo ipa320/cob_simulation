@@ -22,7 +22,7 @@ install(DIRECTORY launch
 )
 
 install(PROGRAMS scripts/remove_object.py scripts/spawn_object.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
 )
 
 
