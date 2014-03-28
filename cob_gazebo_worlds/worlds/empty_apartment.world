@@ -2,6 +2,23 @@
 <sdf version='1.4'>
   <world name='default'>
     <!-- global light source -->
+
+    <physics type="ode">
+      <max_step_size>0.005</max_step_size>
+      <ode>
+        <solver>    
+          <type>quick</type>
+          <iters>10</iters>
+          <sor>1.300000</sor>
+        </solver>
+        <constraints>
+          <cfm>0.000000</cfm>
+          <erp>0.200000</erp>
+          <contact_max_correcting_vel>100.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.001000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
     
   <light type="directional" name="sun">
     <cast_shadows>false</cast_shadows>
