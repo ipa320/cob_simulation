@@ -4,8 +4,6 @@ project(cob_gazebo)
 
 find_package(catkin REQUIRED COMPONENTS)
 
-find_package(OpenCV REQUIRED)
-
 
 # TODO: fill in what other packages will need to use this package
 ## DEPENDS: system dependencies of this project that dependent projects also need
