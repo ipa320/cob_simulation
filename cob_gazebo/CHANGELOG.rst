@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.2 (2014-03-31)
+------------------
 * no OpenCV required in cob_gazebo
 * Contributors: ipa-fxm
 
