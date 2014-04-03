@@ -1,6 +1,6 @@
 <package>
   <name>cob_gazebo</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Launch files and tools for 3D simulation of Care-O-bot in gazebo simulator.</description>
   
   <license>LGPL</license>
@@ -16,8 +16,6 @@
 
   <run_depend>gazebo_ros</run_depend>
   <run_depend>gazebo_plugins</run_depend>
-  <run_depend>gazebo_worlds</run_depend>
-  <run_depend>gazebo_tools</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>joint_trajectory_action</run_depend>
@@ -32,12 +30,8 @@
   <run_depend>cob_gazebo_worlds</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_controller_configuration_gazebo</run_depend>
-  <run_depend>pr2_gazebo</run_depend>
-  <run_depend>pr2_gazebo_plugins</run_depend>
   <!-- <test_depend>gazebo_ros</test_depend> -->
   <!-- <test_depend>gazebo_plugins</test_depend> -->
-  <!-- <test_depend>gazebo_worlds</test_depend> -->
-  <!-- <test_depend>gazebo_tools</test_depend> -->
   <!-- <test_depend>tf</test_depend> -->
   <!-- <test_depend>robot_state_publisher</test_depend> -->
   <!-- <test_depend>joint_trajectory_action</test_depend> -->
@@ -52,8 +46,6 @@
   <!-- <test_depend>cob_gazebo_worlds</test_depend> -->
   <!-- <test_depend>cob_hardware_config</test_depend> -->
   <!-- <test_depend>cob_controller_configuration_gazebo</test_depend> -->
-  <!-- <test_depend>pr2_gazebo</test_depend> -->
-  <!-- <test_depend>pr2_gazebo_plugins</test_depend> -->
 
   <export>
 

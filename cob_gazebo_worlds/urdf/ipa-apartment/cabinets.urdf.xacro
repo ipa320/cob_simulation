@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="cabinets" params="name">
+
+
+  <!-- cabinet1 -->
+  <link name="cabinet1">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="cabinet1">
+    <material>IPA/CabinetBlue</material>
+  </gazebo>
+
+  <joint name="joint_cabinet1" type="fixed">
+    <origin xyz="${size_total_x/2-1.125+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
+    <parent link="dummy_link" />
+    <child link="cabinet1" />
+  </joint>
+
+
+  <link name="cabinet2">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="cabinet2">
+    <material>IPA/CabinetBlue</material>
+  </gazebo>
+
+  <joint name="joint_cabinet2" type="fixed">
+    <origin xyz="${size_total_x/2-4.865+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
+    <parent link="dummy_link" />
+    <child link="cabinet2" />
+  </joint>
+
+  <link name="cabinet3">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="1.15 0.55 2.40" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="cabinet3">
+    <material>IPA/CabinetBlue</material>
+  </gazebo>
+
+  <joint name="joint_cabinet3" type="fixed">
+    <origin xyz="${size_total_x/2-7.205+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
+    <parent link="dummy_link" />
+    <child link="cabinet3" />
+  </joint>
+
+  <link name="column">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.36 0.36 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.36 0.36 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="column">
+    <material>IPA/WallApartment</material>
+  </gazebo>
+
+  <joint name="joint_column" type="fixed">
+    <origin xyz="${size_total_x/2-3.96+dist_axis_x} ${-size_total_y/2+size_a-0.18-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
+    <parent link="dummy_link" />
+    <child link="column" />
+  </joint>
+
+
+  </xacro:macro>
+
+</robot>

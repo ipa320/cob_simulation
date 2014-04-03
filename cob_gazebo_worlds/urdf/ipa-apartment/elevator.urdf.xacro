@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="elevator" params="name">
+
+  <link name="origin_elevator">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0 0 0" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0 0 0" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="joint_origin_elevator" type="fixed">
+    <origin xyz="3.15 -3.15 ${size_z_wall1/2}" rpy="0 0 -0.7853981" />
+        <parent link="origin_landing"/>
+    <child link="origin_elevator" />
+  </joint> 
+    
+  <!-- elevator 1 -->
+  <link name="elevator_left">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="elevator_left">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="elevator_left_joint" type="prismatic">
+    <origin xyz="0 1.085 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_left" />
+    
+    <axis xyz = "0 1 0"/>
+    <calibration rising="0.0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
+    <!--safety_controller k_velocity="10"/-->
+  </joint> 
+
+  <transmission name="elevator_left_trans" type="pr2_mechanism_model/SimpleTransmission">
+    <actuator name="elevator_left_motor"/>
+    <joint name="elevator_left_joint"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+
+  <!-- wall elv5 -->
+  <link name="wall_elv5">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_elv5">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_elv5" type="fixed">
+    <origin xyz="1.2 1.52 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_elv5" />
+  </joint>
+
+  <!-- wall elv6 -->
+  <link name="wall_elv6">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_elv6">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_elv6" type="fixed">
+    <origin xyz="1.2 0.65 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_elv6" />
+  </joint>
+
+  <!-- elevator_left2  -->
+  <link name="elevator_left2">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="elevator_left2">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_elevator_left2" type="fixed">
+    <origin xyz="2.4 1.085 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_left2" />
+  </joint> 
+
+  <!-- elevator 2 -->
+  <link name="elevator_right">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/LightBlue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="elevator_right">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="elevator_right_joint" type="prismatic">
+    <axis xyz = "0 -1 0"/>
+    <origin xyz="0 -1.085 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_right" />
+    <calibration rising="0.0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
+    <safety_controller k_velocity="10"/>
+  </joint> 
+
+  <transmission name="elevator_right_trans" type="pr2_mechanism_model/SimpleTransmission">
+     <actuator name="elevator_right_motor"/>
+     <joint name="elevator_right_joint"/>
+     <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <!-- wall elv7 -->
+  <link name="wall_elv7">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_elv7">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_elv7" type="fixed">
+    <origin xyz="1.2 -0.65 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_elv7" />
+  </joint>
+
+  <!-- wall elv8 -->
+  <link name="wall_elv8">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="2.4 0.04 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_elv8">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_elv8" type="fixed">
+    <origin xyz="1.2 -1.52 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_elv8" />
+  </joint>
+
+  <!-- elevator 22 -->
+  <link name="elevator_right2">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 0.87 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="elevator_right2">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_elevator_right2" type="fixed">
+    <origin xyz="2.4 -1.085 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_right2" />
+  </joint> 
+
+
+  <!--elevator buttons-->
+  <link name="elevator_button1">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.01 0.05 0.05" />
+      </geometry>
+      <material name="IPA/Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.01 0.05 0.05" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="joint_elevator_button1" type="prismatic">
+    <origin xyz="-0.04 0 ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_button1" />
+
+    <calibration rising="0.0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0" />
+    <safety_controller k_velocity="10"/>
+
+  </joint> 
+
+  <gazebo reference="elevator_button1">
+    <selfCollide>true</selfCollide>
+        <sensor name='elevator_button1_contact_sensor' type='contact'>
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <contact>
+        <collision>elevator_button1_geom</collision>
+      </contact>
+      <plugin name="elevator_button1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10</updateRate>
+        <frameName>elevator_button1</frameName>
+        <bumperTopicName>elevator_button1_bumper</bumperTopicName>        
+      </plugin>
+    </sensor>
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <link name="elevator_button2">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="1.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.01 0.05 0.05" />
+      </geometry>
+      <material name="IPA/Red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.01 0.05 0.05" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="joint_elevator_button2" type="prismatic">
+    <origin xyz="-0.04 0 ${-size_z_wall1/2+1.095}" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="elevator_button2" />
+
+    <calibration rising="0.0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0" />
+    <safety_controller k_velocity="10"/>
+  </joint>
+
+
+
+  <gazebo reference="elevator_button2">
+    <selfCollide>true</selfCollide>
+        <sensor name='elevator_button2_contact_sensor' type='contact'>
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <contact>
+        <collision>elevator_button2_geom</collision>
+      </contact>
+      <plugin name="elevator_button2_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10</updateRate>
+        <frameName>elevator_button2</frameName>
+        <bumperTopicName>elevator_button2_bumper</bumperTopicName>        
+      </plugin>
+    </sensor>
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <link name="wall_ext18">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.74 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.74 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_ext18">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_ext18" type="fixed">
+    <origin xyz="0 2.39 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_ext18" />
+  </joint> 
+  
+
+  <link name="wall_ext19">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.74 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.74 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_ext19">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_ext19" type="fixed">
+    <origin xyz="0 -2.39 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_ext19" />
+  </joint> 
+
+
+  <link name="wall_ext20">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.3 ${size_z_wall1}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.04 1.3 ${size_z_wall1}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_ext20">
+    <material>wall_floor_07</material>
+  </gazebo>
+
+  <joint name="joint_wall_ext20" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="origin_elevator" />
+    <child link="wall_ext20" />
+  </joint> 
+  </xacro:macro>
+</robot>

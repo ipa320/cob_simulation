@@ -1,0 +1,109 @@
+<?xml version="1.0" ?> 
+<robot name="my_object" static="true">
+  <link name="base_link">
+  <inertial>
+    <mass value="0.530" />
+    <origin xyz="0 -0.4 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="0 0 0.0" rpy="0 0 0" />
+   <geometry>
+     <mesh filename="package://cob_gazebo_objects/Media/models/dust_mop.dae"/>
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="0.003 -0.525 -0.02" rpy="0 0 0" />
+   <geometry>
+	<box size="0.095 0.38 0.01" />
+   </geometry>
+  </collision>     
+  </link>
+
+  <link name="stick">
+  <inertial>
+    <mass value="0" />
+    <origin xyz="0 -0.4 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="-0.005 0.090 0.005" rpy="1.570796 0 0" />
+   <geometry>
+     <cylinder length="0" radius="0" />
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="-0.005 0.090 0.005" rpy="1.570796 0 0" />
+   <geometry>
+	<cylinder length="1.355" radius="0.013" />
+   </geometry>
+  </collision>     
+  </link>
+
+<joint name="base_to_stick" type="fixed">
+    <parent link="base_link"/>
+    <child link="stick"/>
+</joint>
+
+  <link name="base_addition">
+  <inertial>
+    <mass value="0" />
+    <origin xyz="0 0 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="-0.044 -0.73 -0.02" rpy="0 0 1.570796" />
+   <geometry>
+     <box size="0 0 0" />
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="-0.044 -0.73 -0.02" rpy="0 0 1.570796" />
+   <geometry>
+     <box size="0.05 0.001 0.010" />
+   </geometry>
+  </collision>    
+  </link>
+
+<joint name="base_to_base_addition" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_addition"/>
+</joint>
+
+  <link name="base_addition2">
+  <inertial>
+    <mass value="0" />
+    <origin xyz="0 0 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="0.004 -0.734 -0.02" rpy="0 0 0.40" />
+   <geometry>
+     <box size="0 0 0" />
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="0.004 -0.734 -0.02" rpy="0 0 0.40" />
+   <geometry>
+     <box size="0.103 0.0013 0.010" />
+   </geometry>
+  </collision>    
+  </link>
+
+<joint name="base_to_base_addition2" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_addition2"/>
+</joint>
+
+<gazebo>
+	<static>true</static>
+</gazebo>
+
+<gazebo reference="base_link">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>1000000.0</kp>
+  <kd>1.0</kd>
+</gazebo>
+</robot>
+

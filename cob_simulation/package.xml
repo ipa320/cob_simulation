@@ -1,6 +1,6 @@
 <package>
   <name>cob_simulation</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.</description>
   <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
@@ -14,6 +14,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>cob_gazebo</run_depend>
   <run_depend>cob_bringup_sim</run_depend>
+  <run_depend>cob_gazebo_objects</run_depend>
+  <run_depend>cob_gazebo_worlds</run_depend>
 
 
 

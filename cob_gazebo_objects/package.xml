@@ -1,0 +1,26 @@
+<package>
+  <name>cob_gazebo_objects</name>
+  <version>0.5.1</version>
+  <description>This package provides some objects and furniture for gazebo simulation.</description>
+  
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_gazebo_objects</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh</maintainer>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <build_depend>urdf</build_depend>
+  <build_depend>cob_description</build_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>cob_description</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>

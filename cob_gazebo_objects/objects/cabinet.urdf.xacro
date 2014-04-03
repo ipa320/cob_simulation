@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<robot name="cabinet"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+	xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+	xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+	xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+>
+
+
+<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+
+<!-- cabinet -->
+
+	<!-- cabinet_top -->
+	<link name="cabinet_top">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.78 0.41 0.02" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.78 0.41 0.02" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_top">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_top" type="fixed">
+		<origin xyz="0.000 0.000 0.850" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_top" />
+	</joint>
+
+	<!-- cabinet_middle1 -->
+	<link name="cabinet_middle1">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_middle1">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_middle1" type="fixed">
+		<origin xyz="0.000 0.000 0.585" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_middle1" />
+	</joint>
+
+	<!-- cabinet_middle2 -->
+	<link name="cabinet_middle2">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.01" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_middle2">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_middle2" type="fixed">
+		<origin xyz="0.000 0.000 0.375" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_middle2" />
+	</joint>
+
+	<!-- cabinet_bottom -->
+	<link name="cabinet_bottom">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.05" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.37 0.05" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_bottom">
+		<material>IPA/Cabinet_Wood</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_bottom" type="fixed">
+		<origin xyz="0.000 0.000 0.175" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_bottom" />
+	</joint>
+
+	<!-- cabinet_back -->
+	<link name="cabinet_back">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.02 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.62 0.02 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back" type="fixed">
+		<origin xyz="0.000 0.195 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back"/>
+	</joint>
+
+	<!-- cabinet_right -->
+	<link name="cabinet_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.31 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.31 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_right">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_right" type="fixed">
+		<origin xyz="0.320 0.010 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_right" />
+	</joint>
+
+	<!-- cabinet_left -->
+	<link name="cabinet_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.31 0.69" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.02 0.31 0.69" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_left">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_left" type="fixed">
+		<origin xyz="-0.320 0.010 0.495" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_left" />
+	</joint>
+
+	<!-- cabinet_front_right -->
+	<link name="cabinet_front_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_front_right">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_front_right" type="fixed">
+		<origin xyz="0.330 -0.165 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_front_right" />
+	</joint>
+
+	<!-- cabinet_front_left -->
+	<link name="cabinet_front_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_front_left">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_front_left" type="fixed">
+		<origin xyz="-0.330 -0.165 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_front_left" />
+	</joint>
+
+	<!-- cabinet_back_right -->
+	<link name="cabinet_back_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back_right">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back_right" type="fixed">
+		<origin xyz="0.330 0.185 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back_right" />
+	</joint>
+
+	<!-- cabinet_back_left -->
+	<link name="cabinet_back_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.04 0.04 0.84" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="cabinet_back_left">
+		<material>IPA/Cabinet_White</material>
+	</gazebo>
+
+	<joint name="joint_cabinet_back_left" type="fixed">
+		<origin xyz="-0.330 0.185 0.420" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="cabinet_back_left" />
+	</joint>
+
+</robot>

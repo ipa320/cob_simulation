@@ -1,0 +1,36 @@
+<package>
+  <name>cob_gazebo_worlds</name>
+  <version>0.5.1</version>
+  <description>This package provides some worlds for gazebo simulation.</description>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_gazebo_worlds</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- <run_depend>xacro</run_depend> -->
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>tf</run_depend>
+  <!-- <run_depend>gazebo_plugins</run_depend> -->
+  <!-- <run_depend>robot_state_publisher</run_depend> -->
+  <!-- <run_depend>joint_state_publisher</run_depend> -->
+  <run_depend>kdl_parser</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+  <!-- <test_depend>xacro</test_depend> -->
+  <!-- <test_depend>convex_decomposition</test_depend> -->
+  <!-- <test_depend>ivcon</test_depend> -->
+  <!-- <test_depend>gazebo_ros</test_depend> -->
+  <!-- <test_depend>gazebo_plugins</test_depend> -->
+  <!-- <test_depend>robot_state_publisher</test_depend> -->
+  <!-- <test_depend>joint_state_publisher</test_depend> -->
+
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>

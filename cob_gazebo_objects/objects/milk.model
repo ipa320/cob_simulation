@@ -1,0 +1,22 @@
+<?xml version="1.0"?> 
+ 
+  <model:physical name="milk_box"
+    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+    xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom">
+
+    <xyz>0 0 0.1</xyz>
+    <rpy>0 0 0</rpy>
+
+
+    <body:box name="box_body">
+      <geom:box name="box_geom">
+        <xyz>0.0 0.0 0.1</xyz>
+	<mass>1</mass>
+        <size>0.06 0.095 0.2</size>
+        <visual>
+          <mesh>milk.dae</mesh>
+        </visual>
+      </geom:box>
+    </body:box>
+  </model:physical>
