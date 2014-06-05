@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_objects)
 # Load catkin and all dependencies required for this package
 # TODO: remove all from COMPONENTS that are not catkin packages.
-find_package(catkin REQUIRED COMPONENTS urdf cob_description)
+find_package(catkin REQUIRED COMPONENTS )
 
 
 
@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS urdf cob_description)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    CATKIN_DEPENDS urdf cob_description
+    CATKIN_DEPENDS
     DEPENDS # TODO
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO

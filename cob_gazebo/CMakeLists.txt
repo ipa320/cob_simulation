@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    CATKIN_DEPENDS gazebo_plugins tf robot_state_publisher joint_trajectory_action single_joint_position_action actionlib actionlib_msgs move_base_msgs cob_srvs cob_description desire_description raw_description cob_gazebo_worlds cob_hardware_config cob_controller_configuration_gazebo
+    CATKIN_DEPENDS gazebo_ros gazebo_plugins cob_hardware_config cob_controller_configuration_gazebo rospy rostest cob_script_server trajectory_msgs control_msgs
     DEPENDS # TODO
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO
