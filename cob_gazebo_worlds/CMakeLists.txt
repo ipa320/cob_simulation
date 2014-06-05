@@ -32,7 +32,7 @@ find_package(catkin REQUIRED)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    CATKIN_DEPENDS gazebo_ros urdf kdl_parser urdf gazebo_ros tf
+    CATKIN_DEPENDS gazebo_ros kdl_parser tf
 )
 
 #foreach(dir materials models)

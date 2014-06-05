@@ -16,36 +16,13 @@
 
   <run_depend>gazebo_ros</run_depend>
   <run_depend>gazebo_plugins</run_depend>
-  <run_depend>tf</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>joint_trajectory_action</run_depend>
-  <run_depend>single_joint_position_action</run_depend>
-  <run_depend>actionlib</run_depend>
-  <run_depend>actionlib_msgs</run_depend>
-  <run_depend>move_base_msgs</run_depend>
-  <run_depend>cob_srvs</run_depend>
-  <run_depend>cob_description</run_depend>
-  <run_depend>desire_description</run_depend>
-  <run_depend>raw_description</run_depend>
-  <run_depend>cob_gazebo_worlds</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_controller_configuration_gazebo</run_depend>
-  <!-- <test_depend>gazebo_ros</test_depend> -->
-  <!-- <test_depend>gazebo_plugins</test_depend> -->
-  <!-- <test_depend>tf</test_depend> -->
-  <!-- <test_depend>robot_state_publisher</test_depend> -->
-  <!-- <test_depend>joint_trajectory_action</test_depend> -->
-  <!-- <test_depend>single_joint_position_action</test_depend> -->
-  <!-- <test_depend>actionlib</test_depend> -->
-  <!-- <test_depend>actionlib_msgs</test_depend> -->
-  <!-- <test_depend>move_base_msgs</test_depend> -->
-  <!-- <test_depend>cob_srvs</test_depend> -->
-  <!-- <test_depend>cob_description</test_depend> -->
-  <!-- <test_depend>desire_description</test_depend> -->
-  <!-- <test_depend>raw_description</test_depend> -->
-  <!-- <test_depend>cob_gazebo_worlds</test_depend> -->
-  <!-- <test_depend>cob_hardware_config</test_depend> -->
-  <!-- <test_depend>cob_controller_configuration_gazebo</test_depend> -->
+  <run_depend>rospy</run_depend>
+  <run_depend>rostest</run_depend>
+  <run_depend>cob_script_server</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
 
   <export>
 

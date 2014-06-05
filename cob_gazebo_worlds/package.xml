@@ -12,23 +12,14 @@
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <!-- <run_depend>xacro</run_depend> -->
+  <run_depend>rospy</run_depend>
   <run_depend>gazebo_ros</run_depend>
+  <run_depend>gazebo_msgs</run_depend>
   <run_depend>tf</run_depend>
-  <!-- <run_depend>gazebo_plugins</run_depend> -->
-  <!-- <run_depend>robot_state_publisher</run_depend> -->
-  <!-- <run_depend>joint_state_publisher</run_depend> -->
+  <run_depend>xacro</run_depend>
   <run_depend>kdl_parser</run_depend>
-  <run_depend>urdf</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-
-  <!-- <test_depend>xacro</test_depend> -->
-  <!-- <test_depend>convex_decomposition</test_depend> -->
-  <!-- <test_depend>ivcon</test_depend> -->
-  <!-- <test_depend>gazebo_ros</test_depend> -->
-  <!-- <test_depend>gazebo_plugins</test_depend> -->
-  <!-- <test_depend>robot_state_publisher</test_depend> -->
-  <!-- <test_depend>joint_state_publisher</test_depend> -->
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
 
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>
