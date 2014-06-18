@@ -14,7 +14,7 @@
 
     <!-- elevator-->
     <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/elevator.urdf.xacro" />
-
+    
     <!-- cabinets-->
     <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/cabinets.urdf.xacro" />
 

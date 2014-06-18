@@ -345,7 +345,7 @@
 
   </joint> 
 
-  <gazebo reference="elevator_button1">
+  <!--gazebo reference="elevator_button1">
     <selfCollide>true</selfCollide>
         <sensor name='elevator_button1_contact_sensor' type='contact'>
       <always_on>true</always_on>
@@ -362,7 +362,7 @@
     </sensor>
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
-  </gazebo>
+  </gazebo-->
 
 
   <link name="elevator_button2">
@@ -400,7 +400,7 @@
 
 
 
-  <gazebo reference="elevator_button2">
+  <!--gazebo reference="elevator_button2">
     <selfCollide>true</selfCollide>
         <sensor name='elevator_button2_contact_sensor' type='contact'>
       <always_on>true</always_on>
@@ -417,7 +417,7 @@
     </sensor>
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
-  </gazebo>
+  </gazebo-->
 
   <link name="wall_ext18">
     <inertial>
