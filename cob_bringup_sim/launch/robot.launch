@@ -23,7 +23,9 @@
 	<include file="$(arg pkg_env_config)/upload_object_locations.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
-
+	
+	<env name="GAZEBO_MODEL_PATH" value="$(find cob_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
+	
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/launch/$(arg robot_env).launch">
 		<arg name="paused" value="$(arg paused)" />
