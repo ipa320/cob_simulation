@@ -67,10 +67,14 @@
     <!--safety_controller k_velocity="10"/-->
   </joint> 
 
-  <transmission name="elevator_left_trans" type="pr2_mechanism_model/SimpleTransmission">
-    <actuator name="elevator_left_motor"/>
-    <joint name="elevator_left_joint"/>
-    <mechanicalReduction>1</mechanicalReduction>
+  <transmission name="elevator_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_left_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_left_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
   </transmission>
 
 
@@ -207,10 +211,14 @@
     <safety_controller k_velocity="10"/>
   </joint> 
 
-  <transmission name="elevator_right_trans" type="pr2_mechanism_model/SimpleTransmission">
-     <actuator name="elevator_right_motor"/>
-     <joint name="elevator_right_joint"/>
-     <mechanicalReduction>1</mechanicalReduction>
+  <transmission name="elevator_right_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_right_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_right_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
   </transmission>
 
   <!-- wall elv7 -->
