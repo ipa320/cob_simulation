@@ -67,10 +67,14 @@
     <!--safety_controller k_velocity="10"/-->
   </joint> 
 
-  <transmission name="elevator_left_trans" type="pr2_mechanism_model/SimpleTransmission">
-    <actuator name="elevator_left_motor"/>
-    <joint name="elevator_left_joint"/>
-    <mechanicalReduction>1</mechanicalReduction>
+  <transmission name="elevator_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_left_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_left_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
   </transmission>
 
 
@@ -207,10 +211,14 @@
     <safety_controller k_velocity="10"/>
   </joint> 
 
-  <transmission name="elevator_right_trans" type="pr2_mechanism_model/SimpleTransmission">
-     <actuator name="elevator_right_motor"/>
-     <joint name="elevator_right_joint"/>
-     <mechanicalReduction>1</mechanicalReduction>
+  <transmission name="elevator_right_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_right_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_right_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
   </transmission>
 
   <!-- wall elv7 -->
@@ -345,7 +353,7 @@
 
   </joint> 
 
-  <gazebo reference="elevator_button1">
+  <!--gazebo reference="elevator_button1">
     <selfCollide>true</selfCollide>
         <sensor name='elevator_button1_contact_sensor' type='contact'>
       <always_on>true</always_on>
@@ -362,7 +370,7 @@
     </sensor>
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
-  </gazebo>
+  </gazebo-->
 
 
   <link name="elevator_button2">
@@ -400,7 +408,7 @@
 
 
 
-  <gazebo reference="elevator_button2">
+  <!--gazebo reference="elevator_button2">
     <selfCollide>true</selfCollide>
         <sensor name='elevator_button2_contact_sensor' type='contact'>
       <always_on>true</always_on>
@@ -417,7 +425,7 @@
     </sensor>
     <material>Gazebo/Red</material>
     <turnGravityOff>false</turnGravityOff>
-  </gazebo>
+  </gazebo-->
 
   <link name="wall_ext18">
     <inertial>
