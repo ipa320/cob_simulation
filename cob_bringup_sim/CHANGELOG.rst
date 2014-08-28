@@ -2,6 +2,12 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* cleaning up
+* New maintainer
+* Contributors: ipa-fxm, ipa-nhg
+
 0.5.1 (2014-03-21)
 ------------------
 * merge with groovy_dev
