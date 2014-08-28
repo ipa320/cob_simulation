@@ -1,6 +1,6 @@
 <package>
   <name>cob_gazebo</name>
-  <version>0.5.1</version>
+  <version>0.5.2</version>
   <description>Launch files and tools for 3D simulation of Care-O-bot in gazebo simulator.</description>
   
   <license>LGPL</license>

@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.2 (2014-08-28)
+------------------
 * change to latest transmission format
 * removed physics and added floor collisions
 * Set GAZEBO_MODEL_PATH
