@@ -2,6 +2,11 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.2 (2014-03-31)
+------------------
+* no OpenCV required in cob_gazebo
+* Contributors: ipa-fxm
+
 0.5.1 (2014-03-21)
 ------------------
 * merge with groovy_dev
