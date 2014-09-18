@@ -63,7 +63,7 @@ roslib.load_manifest('cob_bringup_sim')
 import rospy
 import os
 
-from gazebo.srv import *
+from gazebo_msgs.srv import *
 from geometry_msgs.msg import *
 import tf.transformations as tft
 
@@ -97,6 +97,7 @@ if __name__ == "__main__":
 		req.model_name = name
 		exists = True
 		try:
+			rospy.wait_for_service('/gazebo/delete_model')
 			res = srv_delete_model(name)
 		except rospy.ServiceException, e:
 			exists = False
