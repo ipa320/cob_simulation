@@ -2,6 +2,16 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#65 <https://github.com/ipa320/cob_simulation/issues/65>`_ from ipa320/hydro_dev
+  bringin updates from hydro_dev
+* Merge pull request `#64 <https://github.com/ipa320/cob_simulation/issues/64>`_ from ipa320/hydro_release_candidate
+  Hydro release candidate
+* 0.5.2
+* update changelog
+* Contributors: Florian Weisshardt
+
 0.5.2 (2014-08-28)
 ------------------
 * cleaning up
