@@ -350,27 +350,25 @@
     <dynamics damping="0.0" friction="0.0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0" />
     <safety_controller k_velocity="10"/>
-
   </joint> 
 
-  <!--gazebo reference="elevator_button1">
-    <selfCollide>true</selfCollide>
-        <sensor name='elevator_button1_contact_sensor' type='contact'>
+  <gazebo reference="elevator_button1">
+    <gravity>true</gravity>
+    <self_collide>false</self_collide>
+    <material>Gazebo/Red</material>
+    <sensor name='elevator_button1_contact_sensor' type='contact'>
       <always_on>true</always_on>
       <update_rate>10</update_rate>
       <contact>
-        <collision>elevator_button1_geom</collision>
+        <collision>elevator_button1_collision</collision>
+        <topic>elevator_button1_bumper</topic>
       </contact>
       <plugin name="elevator_button1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>10</updateRate>
         <frameName>elevator_button1</frameName>
-        <bumperTopicName>elevator_button1_bumper</bumperTopicName>        
+        <bumperTopicName>elevator_button1_bumper</bumperTopicName>   
       </plugin>
     </sensor>
-    <material>Gazebo/Red</material>
-    <turnGravityOff>false</turnGravityOff>
-  </gazebo-->
+  </gazebo>
 
 
   <link name="elevator_button2">
@@ -408,24 +406,23 @@
 
 
 
-  <!--gazebo reference="elevator_button2">
-    <selfCollide>true</selfCollide>
-        <sensor name='elevator_button2_contact_sensor' type='contact'>
+  <gazebo reference="elevator_button2">
+    <gravity>true</gravity>
+    <self_collide>false</self_collide>
+    <material>Gazebo/Red</material>
+    <sensor name='elevator_button2_contact_sensor' type='contact'>
       <always_on>true</always_on>
       <update_rate>10</update_rate>
       <contact>
-        <collision>elevator_button2_geom</collision>
+        <collision>elevator_button2_collision</collision>
+        <topic>elevator_button2_bumper</topic>
       </contact>
       <plugin name="elevator_button2_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>10</updateRate>
         <frameName>elevator_button2</frameName>
-        <bumperTopicName>elevator_button2_bumper</bumperTopicName>        
+        <bumperTopicName>elevator_button2_bumper</bumperTopicName>   
       </plugin>
     </sensor>
-    <material>Gazebo/Red</material>
-    <turnGravityOff>false</turnGravityOff>
-  </gazebo-->
+  </gazebo>
 
   <link name="wall_ext18">
     <inertial>
