@@ -1,6 +1,6 @@
 <package>
   <name>cob_gazebo_worlds</name>
-  <version>0.6.0</version>
+  <version>0.6.1</version>
   <description>This package provides some worlds for gazebo simulation.</description>
 
   <license>LGPL</license>

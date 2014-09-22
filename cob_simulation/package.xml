@@ -1,6 +1,6 @@
 <package>
   <name>cob_simulation</name>
-  <version>0.6.0</version>
+  <version>0.6.1</version>
   <description>The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.</description>
   
   <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>

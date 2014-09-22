@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.1 (2014-09-22)
+------------------
 * 1 = true
 * fix bumper plugin
 * Contributors: ipa-fxm
