@@ -6,6 +6,7 @@
 	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+	<arg name="initial_config" default=""/>
 	
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
@@ -36,6 +37,7 @@
 	<include file="$(find cob_gazebo)/launch/robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="paused" value="$(arg paused)" />
+		<arg name="initial_config" value="$(arg initial_config)"/>
 	</include>
 
 </launch>

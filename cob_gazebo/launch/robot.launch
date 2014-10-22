@@ -3,6 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="paused" default="false"/>
+	<arg name="initial_config" default=""/>
 
 	<!-- send robot urdf to param server -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -10,7 +11,7 @@
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />
+	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 $(arg initial_config)" respawn="false" output="screen" />
 
 	<!-- start gazebo controllers -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
