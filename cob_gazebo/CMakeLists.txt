@@ -41,7 +41,6 @@ raw3-3
 raw3-4
 raw3-5
 raw3-6
-desire
 )
 
 # loop through list of robots for testing
