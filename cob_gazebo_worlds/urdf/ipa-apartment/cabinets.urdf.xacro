@@ -3,14 +3,11 @@
 
   <xacro:macro name="cabinets" params="name">
 
-
   <!-- cabinet1 -->
   <link name="cabinet1">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.15" y="0.55" z="2.40" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -18,7 +15,6 @@
       </geometry>
       <material name="IPA/LightBlue"/>
     </visual>
-
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
@@ -33,17 +29,14 @@
 
   <joint name="joint_cabinet1" type="fixed">
     <origin xyz="${size_total_x/2-1.125+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="cabinet1" />
   </joint>
 
-
   <link name="cabinet2">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.15" y="0.55" z="2.40" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -51,7 +44,6 @@
       </geometry>
       <material name="IPA/LightBlue"/>
     </visual>
-
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
@@ -66,16 +58,14 @@
 
   <joint name="joint_cabinet2" type="fixed">
     <origin xyz="${size_total_x/2-4.865+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="cabinet2" />
   </joint>
 
   <link name="cabinet3">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.15" y="0.55" z="2.40" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -83,7 +73,6 @@
       </geometry>
       <material name="IPA/LightBlue"/>
     </visual>
-
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
@@ -98,16 +87,14 @@
 
   <joint name="joint_cabinet3" type="fixed">
     <origin xyz="${size_total_x/2-7.205+dist_axis_x} ${-size_total_y/2+size_a-0.275-dist_axis_y} 1.2" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="cabinet3" />
   </joint>
 
   <link name="column">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.36" y="0.36" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -115,7 +102,6 @@
       </geometry>
       <material name="IPA/LightBlue"/>
     </visual>
-
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
@@ -130,10 +116,9 @@
 
   <joint name="joint_column" type="fixed">
     <origin xyz="${size_total_x/2-3.96+dist_axis_x} ${-size_total_y/2+size_a-0.18-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="column" />
   </joint>
-
 
   </xacro:macro>
 
