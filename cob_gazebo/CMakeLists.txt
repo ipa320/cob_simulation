@@ -33,7 +33,6 @@ install(FILES ros/test/param_arm_test.yaml ros/test/param_tray_test.yaml
 # rostest for robots
 set(robotlist
 cob3-3
-cob3-4
 cob3-5
 cob3-6
 cob3-7
