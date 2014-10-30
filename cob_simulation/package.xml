@@ -1,0 +1,29 @@
+<package>
+  <name>cob_simulation</name>
+  <version>0.5.2</version>
+  <description>The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.</description>
+  
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_simulation</url>
+  <!-- <url type="bugtracker"></url> -->
+
+ 
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>cob_gazebo</run_depend>
+  <run_depend>cob_bringup_sim</run_depend>
+  <run_depend>cob_gazebo_objects</run_depend>
+  <run_depend>cob_gazebo_worlds</run_depend>
+
+
+
+
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

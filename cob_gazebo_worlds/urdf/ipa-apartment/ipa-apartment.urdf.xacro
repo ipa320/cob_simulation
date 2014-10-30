@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="ipa-apartment">
+  
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
+    <!-- apartment -->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
+
+    <!-- office-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/office.urdf.xacro" />
+    
+    <!-- landing-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/landing.urdf.xacro" />
+
+    <!-- elevator-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/elevator.urdf.xacro" />
+    
+    <!-- cabinets-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/cabinets.urdf.xacro" />
+
+    <!-- kitchen-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/kitchen.urdf.xacro" />
+
+    <!-- wall_ipa-->
+    <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/wall_ipa.urdf.xacro" />
+
+
+    <!--Parameters-->
+
+    <property name="dist_axis_x" value="1.969" />
+    <property name="dist_axis_y" value="4.070" /> 
+
+
+    <property name="size_total_x" value="8.0" />
+    <property name="size_total_y" value="11.2" />
+
+    <property name="size_a" value="4.7" /> 
+    <property name="size_b" value="8.2" /> 
+    <property name="size_c" value="1.8" />
+    <property name="size_d" value="4.16" />
+
+    <property name="wall_depth" value="0.1" />
+    <property name="window_depth" value="0.15" />
+
+    <property name="size_z_wall1" value="2.7" />
+    <property name="size_z_wall2" value="2.7" />
+    <property name="size_z_wall3" value="2.7" />
+
+
+<xacro:macro name="ipa-apartment" params="name">
+
+  <!-- dummy_link -->
+  <link name="dummy_link">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5.0" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.00 0.00 0.00" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.00 0.00 0.00" />
+      </geometry>
+    </collision>
+  </link>
+
+    <xacro:apartment name="apartment">
+    </xacro:apartment>
+
+    <xacro:landing name="landing" parent="dummy_link">
+    <origin xyz="${-13.9+dist_axis_x} ${-dist_axis_y} 0" rpy="0 0 0" />
+    </xacro:landing>
+    
+    <xacro:office name="office">
+    </xacro:office>
+
+    <xacro:elevator name="elevator">
+    </xacro:elevator>
+
+    <xacro:cabinets name="cabinets">
+    </xacro:cabinets>
+
+    <xacro:kitchen name="kitchen">
+    </xacro:kitchen>
+
+    <xacro:wall_ipa name="wall_ipa">
+    </xacro:wall_ipa>
+
+
+</xacro:macro>
+
+<xacro:ipa-apartment name="ipa-apartment" />
+
+
+</robot>
+

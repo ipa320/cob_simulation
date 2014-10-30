@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>Google SketchUp 8.0.14345</authoring_tool>
+        </contributor>
+        <created>2013-01-23T15:55:38Z</created>
+        <modified>2013-01-23T15:55:38Z</modified>
+        <unit meter="1.0" name="centimeter"/>
+        <up_axis>Z_UP</up_axis>
+    </asset>
+    <library_visual_scenes>
+        <visual_scene id="ID1">
+            <node name="SketchUp">
+                <instance_geometry url="#ID2">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material2" target="#ID13">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0" />
+                            </instance_material>
+                            <instance_material symbol="Material3" target="#ID3">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0" />
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <library_geometries>
+        <geometry id="ID2">
+            <mesh>
+                <source id="ID8">
+                    <float_array id="ID14" count="144">0.0300271 0.7994530 0.0000000 -0.0302249 -0.7402752 0.0000000 -0.0302249 0.7994530 0.0000000 0.0300271 -0.7402752 0.0000000 0.0300271 -0.7402752 0.0000000 0.0300271 0.7994530 0.0000000 -0.0302249 -0.7402752 0.0000000 -0.0302249 0.7994530 0.0000000 0.0300271 -0.7402752 0.0095512 -0.0302249 -0.7402752 0.0000000 0.0300271 -0.7402752 0.0000000 -0.0302249 -0.7402752 0.0095512 -0.0302249 -0.7402752 0.0095512 0.0300271 -0.7402752 0.0095512 -0.0302249 -0.7402752 0.0000000 0.0300271 -0.7402752 0.0000000 -0.0302249 0.7994530 0.0095512 -0.0302249 -0.7402752 0.0000000 -0.0302249 -0.7402752 0.0095512 -0.0302249 0.7994530 0.0000000 -0.0302249 0.7994530 0.0000000 -0.0302249 0.7994530 0.0095512 -0.0302249 -0.7402752 0.0000000 -0.0302249 -0.7402752 0.0095512 -0.0302249 0.7994530 0.0095512 0.0300271 0.7994530 0.0000000 -0.0302249 0.7994530 0.0000000 0.0300271 0.7994530 0.0095512 0.0300271 0.7994530 0.0095512 -0.0302249 0.7994530 0.0095512 0.0300271 0.7994530 0.0000000 -0.0302249 0.7994530 0.0000000 0.0300271 0.7994530 0.0000000 0.0300271 -0.7402752 0.0095512 0.0300271 -0.7402752 0.0000000 0.0300271 0.7994530 0.0095512 0.0300271 0.7994530 0.0095512 0.0300271 0.7994530 0.0000000 0.0300271 -0.7402752 0.0095512 0.0300271 -0.7402752 0.0000000 0.0300271 -0.7402752 0.0095512 -0.0302249 0.7994530 0.0095512 -0.0302249 -0.7402752 0.0095512 0.0300271 0.7994530 0.0095512 0.0300271 0.7994530 0.0095512 0.0300271 -0.7402752 0.0095512 -0.0302249 0.7994530 0.0095512 -0.0302249 -0.7402752 0.0095512</float_array>
+                    <technique_common>
+                        <accessor count="48" source="#ID14" stride="3">
+                            <param name="X" type="float" />
+                            <param name="Y" type="float" />
+                            <param name="Z" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID9">
+                    <float_array id="ID15" count="144">0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 -0.0000000 -0.0000000 1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000 0.0000000 0.0000000 -1.0000000</float_array>
+                    <technique_common>
+                        <accessor count="48" source="#ID15" stride="3">
+                            <param name="X" type="float" />
+                            <param name="Y" type="float" />
+                            <param name="Z" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID11">
+                    <float_array id="ID16" count="44">0.0031783 1.0000000 0.9712566 0.0373904 0.9712566 1.0000000 0.0031783 0.0373904 0.9680783 -0.0000000 0.0000000 -0.0059712 0.9680783 -0.0059712 0.0000000 -0.0000000 0.0000000 1.0000000 -0.1534604 0.0373904 0.0000000 0.0373904 -0.1534604 1.0000000 -0.0000000 1.0000000 0.9680783 1.0059712 -0.0000000 1.0059712 0.9680783 1.0000000 1.1215387 1.0000000 0.9680783 0.0373904 1.1215387 0.0373904 0.9680783 1.0000000 0.9680783 0.0373904 0.9680783 1.0000000</float_array>
+                    <technique_common>
+                        <accessor count="22" source="#ID16" stride="2">
+                            <param name="S" type="float" />
+                            <param name="T" type="float" />
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID10">
+                    <input semantic="POSITION" source="#ID8" />
+                    <input semantic="NORMAL" source="#ID9" />
+                </vertices>
+                <triangles count="12" material="Material3">
+                    <input offset="0" semantic="VERTEX" source="#ID10" />
+                    <input offset="1" semantic="TEXCOORD" source="#ID11" />
+                    <p>0 0 1 1 2 2 1 1 0 0 3 3 8 4 9 5 10 6 9 5 8 4 11 7 16 8 17 9 18 10 17 9 16 8 19 11 24 12 25 13 26 14 25 13 24 12 27 15 32 16 33 17 34 18 33 17 32 16 35 19 40 20 41 8 42 10 41 8 40 20 43 21</p>
+                </triangles>
+                <triangles count="12" material="Material2">
+                    <input offset="0" semantic="VERTEX" source="#ID10" />
+                    <p>4 5 6 7 6 5 12 13 14 15 14 13 20 21 22 23 22 21 28 29 30 31 30 29 36 37 38 39 38 37 44 45 46 47 46 45</p>
+                </triangles>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_materials>
+        <material id="ID3" name="kitchen_plank_metal_Kopie">
+            <instance_effect url="#ID4" />
+        </material>
+        <material id="ID13" name="material">
+            <instance_effect url="#ID12" />
+        </material>
+    </library_materials>
+    <library_effects>
+        <effect id="ID4">
+            <profile_COMMON>
+                <newparam sid="ID6">
+                    <surface type="2D">
+                        <init_from>ID5</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID7">
+                    <sampler2D>
+                        <source>ID6</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <lambert>
+                        <diffuse>
+                            <texture texture="ID7" texcoord="UVSET0" />
+                        </diffuse>
+                    </lambert>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="ID12">
+            <profile_COMMON>
+                <technique sid="COMMON">
+                    <lambert>
+                        <diffuse>
+                            <color>1.0000000 1.0000000 1.0000000 1.0000000</color>
+                        </diffuse>
+                    </lambert>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_images>
+        <image id="ID5">
+            <init_from>door_sill/kitchen_plank_metal_Kopie.jpg</init_from>
+        </image>
+    </library_images>
+    <scene>
+        <instance_visual_scene url="#ID1" />
+    </scene>
+</COLLADA>

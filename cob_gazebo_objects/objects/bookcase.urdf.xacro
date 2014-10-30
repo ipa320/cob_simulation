@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<robot name="bookcase"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+	xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+	xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+	xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+>
+
+  <property name="bookcase_height" value="0.79" />
+  <property name="bookcase_width" value="0.39" />
+  <property name="bookcase_depth" value="1.49" />
+  <property name="bookcase_x" value="0.98" />
+  <property name="bookcase_y" value="0.0" />
+  <property name="bookcase_z" value="0.0" />
+
+  <property name="bookcase_thickness_min" value="0.015"/>
+  <property name="bookcase_thickness_max" value="0.05"/>
+
+<!-- dummy_link -->
+	<link name="dummy_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="0.00 0.00 0.00" />
+			</geometry>
+		</collision>
+	</link>
+
+
+<!-- bookcase -->
+
+	<!-- bookcase_top -->
+	<link name="bookcase_top_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_max}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_max}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="bookcase_top_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="joint_bookcase_top" type="fixed">
+		<origin xyz="0.000 0.000 ${bookcase_height-bookcase_thickness_max/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="bookcase_top_link" />
+	</joint>
+
+	<!-- bookcase_bottom -->
+	<link name="bookcase_bottom_link">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_max}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_max}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="bookcase_bottom_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="joint_bookcase_bottom" type="fixed">
+		<origin xyz="0.000 0.000 ${bookcase_thickness_max/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="bookcase_bottom_link" />
+	</joint>  
+
+	<!-- bookcase_middle -->
+	<link name="bookcase_middle">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_min}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_depth-2*bookcase_thickness_max} ${bookcase_thickness_min}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="bookcase_middle">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="joint_bookcase_middle" type="fixed">
+		<origin xyz="0.000 0.000 ${bookcase_height/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="bookcase_middle" />
+	</joint> 
+
+
+
+
+
+	<!-- bookcase_right -->
+	<link name="bookcase_right">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_thickness_max} ${bookcase_height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_thickness_max} ${bookcase_height}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="bookcase_right">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="joint_bookcase_right" type="fixed">
+		<origin xyz="0.0 ${bookcase_depth/2-bookcase_thickness_max/2} ${bookcase_height/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="bookcase_right" />
+	</joint> 
+
+	<!-- bookcase_left -->
+	<link name="bookcase_left">
+		<inertial>
+			<origin xyz="0 0 0" />
+			<mass value="5.0" />
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_thickness_max} ${bookcase_height}" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" />
+			<geometry>
+				<box size="${bookcase_width} ${bookcase_thickness_max} ${bookcase_height}" />
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="bookcase_left">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	<joint name="joint_bookcase_left" type="fixed">
+		<origin xyz="0.0 ${-bookcase_depth/2+bookcase_thickness_max/2} ${bookcase_height/2}" rpy="0 0 0" />
+		<parent link="dummy_link" />
+		<child link="bookcase_left" />
+	</joint> 
+
+	<!--Separations-->
+
+    <macro name="separations" params="suffix parent pos">
+
+        
+        <link name="separation_${suffix}_link">
+            <inertial>
+		<origin xyz="0 0 0" />
+                <mass value="0.5" />
+                <inertia  ixx="0" ixy="0" ixz="0"
+                          iyy="0" iyz="0"
+                          izz="0" />
+            </inertial>
+            
+            <visual>
+                <origin xyz="0 0 0" />
+                <geometry>
+			<box size="${bookcase_width} ${bookcase_thickness_min} 0.3375" />
+                </geometry>
+            </visual>
+            
+            <collision>
+                <origin xyz="0 0 0" />
+                <geometry>
+			<box size="${bookcase_width} ${bookcase_thickness_min} 0.33" />
+                </geometry>
+            </collision>
+        </link>
+	 
+	<gazebo reference="separations">
+		<material>Gazebo/White</material>
+		<turnGravityOff>false</turnGravityOff>
+	</gazebo>
+      <joint name="separation_${suffix}_joint" type="fixed" >
+    	<parent link="${parent}" />
+    	<origin xyz="${pos}" rpy="0 0 0" />
+        <child link="separation_${suffix}_link" />
+      </joint> 
+
+
+  </macro>
+	<separations suffix="1" parent="bookcase_top_link" pos="0 -${bookcase_thickness_min/2+0.3375} -${bookcase_thickness_max/2+0.3375/2}"/>
+	<separations suffix="2" parent="bookcase_top_link" pos="0 0 -${bookcase_thickness_max/2+0.3375/2}"/>
+	<separations suffix="3" parent="bookcase_top_link" pos="0 ${bookcase_thickness_min/2+0.3375} -${bookcase_thickness_max/2+0.3375/2}"/>
+        <separations suffix="4" parent="bookcase_bottom_link"  pos="0 -${bookcase_thickness_min/2+0.3375} ${bookcase_thickness_max/2+0.3375/2}"/>
+        <separations suffix="5" parent="bookcase_bottom_link"  pos="0 0 ${bookcase_thickness_max/2+0.3375/2}"/>
+        <separations suffix="6" parent="bookcase_bottom_link"  pos="0 ${bookcase_thickness_min/2+0.3375} ${bookcase_thickness_max/2+0.3375/2}"/>
+
+
+
+</robot>
