@@ -16,7 +16,7 @@
 	<!-- The joint_state_publisher simply publishs FAKE /joint_state (from the GUI or 0.0). It's not connected to Gazebo -->	
 	<!--node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
 		<remap from="robot_description" to="world_description"/>
-		<remap from="/joint_states" to="/environment_joint_states"/>
+		<remap from="/joint_states" to="/world/joint_states"/>
 		<param name="use_gui" value="true"/>
 	</node-->
 	
