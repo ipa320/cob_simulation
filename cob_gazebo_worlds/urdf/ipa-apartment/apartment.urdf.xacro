@@ -5,11 +5,9 @@
 
   <!-- wall_00 -->
   <link name="wall_00">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="${size_d+0.18+0.35}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -31,17 +29,15 @@
 
   <joint name="joint_wall_00" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${(size_total_y/2-size_d/2+0.1-dist_axis_y)+0.175} ${size_z_wall1/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_00" />
   </joint>
 
   <!-- wall_01 -->
   <link name="wall_01_part1">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${size_b}" y="0.001" z="0.90" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -63,17 +59,15 @@
 
   <joint name="joint_wall_01_part1" type="fixed">
     <origin xyz="${dist_axis_x} ${size_total_y/2-dist_axis_y+window_depth+0.02} 0.45" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_01_part1" />
   </joint>
 
   <!-- wall_01_part2 -->
   <link name="wall_01_part2">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${size_b}" y="0.35" z="0.90" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -95,17 +89,15 @@
 
   <joint name="joint_wall_01_part2" type="fixed">
     <origin xyz="${dist_axis_x} ${size_total_y/2-dist_axis_y+window_depth+0.195} 0.45" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_01_part2" />
   </joint>
 
   <!-- wall_01_little_glas -->
   <link name="wall_01_little_glas">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.02" y="0.35" z="2.70" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -127,18 +119,15 @@
 
   <joint name="joint_wall_01_little_glas" type="fixed">
     <origin xyz="3.5 ${size_total_y/2-dist_axis_y+window_depth+0.195} 1.35" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_01_little_glas" />
   </joint>
 
-
-<!-- wall_01_part3 -->
+  <!-- wall_01_part3 -->
   <link name="wall_01_part3">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${size_b}" y="${window_depth}" z="1.80" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -160,18 +149,15 @@
 
   <joint name="joint_wall_01_part3" type="fixed">
     <origin xyz="${dist_axis_x} ${size_total_y/2-dist_axis_y+window_depth+0.44} 1.80" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_01_part3" />
   </joint>
 
-
   <!-- wall_02 -->
   <link name="wall_02">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="${size_a+0.35}" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -193,17 +179,15 @@
 
   <joint name="joint_wall_02" type="fixed">
     <origin xyz="${size_total_x/2+dist_axis_x+wall_depth} ${(size_total_y/2-size_a/2+0.15-dist_axis_y)+0.175} ${size_z_wall2/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_02" />
   </joint>
 
   <!-- wall_03 -->
   <link name="wall_03">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${window_depth}" y="1.55" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -225,17 +209,15 @@
 
   <joint name="joint_wall_03" type="fixed">
     <origin xyz="${size_total_x/2+dist_axis_x+0.55+window_depth/2} ${0.6-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 0.785398" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_03" />
   </joint>
 
   <!-- wall_04 -->
   <link name="wall_04">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${window_depth}" y="1.6" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -257,17 +239,15 @@
 
   <joint name="joint_wall_04" type="fixed">
     <origin xyz="${size_total_x/2+dist_axis_x+0.61+window_depth/2} ${-0.54-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 -0.785398" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_04" />
   </joint>
 
   <!-- wall_05 -->
   <link name="wall_05">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="${size_a}" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -289,19 +269,15 @@
 
   <joint name="joint_wall_05" type="fixed">
     <origin xyz="${size_total_x/2+dist_axis_x+wall_depth} ${-size_total_y/2+size_a/2-0.15-dist_axis_y} ${size_z_wall2/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_05" />
   </joint>
-
-
-
+  
   <!-- wall_06 -->
   <link name="wall_06">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${size_b}" y="${window_depth}" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -323,17 +299,15 @@
 
   <joint name="joint_wall_06" type="fixed">
     <origin xyz="${+dist_axis_x-0.05} ${-size_total_y/2-dist_axis_y-window_depth} ${size_z_wall2/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_06" />
   </joint>
 
   <!-- wall_07 -->
   <link name="wall_07">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="${size_a}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -355,17 +329,15 @@
 
   <joint name="joint_wall_07" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${-size_total_y/2+size_a/2-0.1-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="wall_07" />
   </joint>
 
   <!-- door_00 -->
   <link name="door_00">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="0.62" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -387,17 +359,15 @@
 
   <joint name="joint_door_00" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${1.22-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="door_00" />
   </joint>
 
   <!-- door_01 -->
   <link name="door_01">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="0.62" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -412,13 +382,14 @@
       </geometry>
     </collision>
   </link>
+  
   <gazebo reference="door_01">
     <material>IPA/Wall2</material>
   </gazebo>
 
   <joint name="joint_door_01" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x-wall_depth} ${-0.68-dist_axis_y} ${size_z_wall1/2}" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="door_01" />
   </joint>
 

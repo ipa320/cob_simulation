@@ -1,17 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- kitchen -->
   <xacro:macro name="kitchen" params="name">
-
-<!-- kitchen -->
 
   <!-- kitchen_left -->
   <link name="kitchen_left">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.66" y="0.62" z="1.44" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -26,22 +23,17 @@
     </collision>
   </link>
 
-  <gazebo reference="kitchen_left">
-  </gazebo>
-
   <joint name="joint_kitchen_left" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4-0.455-dist_axis_y} 0.720" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="kitchen_left" />
   </joint>
 
   <!-- kitchen_middle -->
   <link name="kitchen_middle">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.66" y="1.80" z="0.90" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -56,22 +48,17 @@
     </collision>
   </link>
 
-  <gazebo reference="kitchen_middle">
-  </gazebo>
-
   <joint name="joint_kitchen_middle" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4+0.755-dist_axis_y} 0.450" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="kitchen_middle" />
   </joint>
 
   <!-- kitchen_right -->
   <link name="kitchen_right">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.66" y="0.62" z="1.44" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -86,22 +73,16 @@
     </collision>
   </link>
 
-  <gazebo reference="kitchen_right">
-  </gazebo>
-
   <joint name="joint_kitchen_right" type="fixed">
     <origin xyz="${-size_total_x/2+dist_axis_x+wall_depth+0.28} ${size_total_y/4+1.965-dist_axis_y} 0.720" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="kitchen_right" />
   </joint>
 
-
   <link name="planck_link">
-    <inertial>
-      <mass value="1.0" />
-      <origin xyz="0 0 0.0" />
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-    </inertial>
+    <xacro:box_inertial x="0.31" y="1.79" z="0.04" mass="5.0">
+      <origin xyz="0 0.118 0.02" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0" />
       <geometry>
@@ -109,18 +90,19 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.02" rpy="0 0 0" />
+      <origin xyz="0 0.118 0.02" />
       <geometry>
-        <mesh filename="package://cob_gazebo_worlds/Media/models/kitchen_plank.dae"/>
+        <box size="0.31 1.79 0.04" />
       </geometry>
-    </collision>     
+    </collision> 
   </link>
 
   <joint name="joint_planck_link" type="fixed">
     <origin xyz="-1.8 -0.64 1.40" rpy="0 0 0" />
-    <parent link="dummy_link" />
+    <parent link="world" />
     <child link="planck_link" />
   </joint>
 
-        </xacro:macro>
+  </xacro:macro>
+
 </robot>
