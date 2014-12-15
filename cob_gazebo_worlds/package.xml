@@ -21,6 +21,7 @@
   <run_depend>kdl_parser</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>joint_state_publisher</run_depend>
+  <run_depend>controller_manager</run_depend>
 
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>
