@@ -6,16 +6,24 @@
 	<param name="world_description" command="$(find xacro)/xacro.py $(find cob_gazebo_worlds)/urdf/$(arg robot_env)/$(arg robot_env).urdf.xacro" />
 	
 	<!-- push world_description to factory and spawn robot in gazebo -->
-	<node name="spawn_urdf_world" pkg="gazebo_ros" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model urdf_world_model" respawn="false" output="screen" />
+	<node name="spawn_urdf_world" pkg="gazebo_ros" type="spawn_model" args="-urdf -param world_description -x 0 -y 0 -z 0.01 -R 0.0 -P 0.0 -Y 0 -model $(arg robot_env)" respawn="false" output="screen" />
 	
 	<node name="world_state_publisher" pkg="robot_state_publisher" type="state_publisher">
-	<remap from="robot_description" to="world_description"/>
+		<remap from="robot_description" to="world_description"/>
+		<remap from="/joint_states" to="/world/joint_states"/>
 	</node>
 	
-	<node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+	<!-- The joint_state_publisher simply publishs FAKE /joint_state (from the GUI or 0.0). It's not connected to Gazebo -->	
+	<!--node name="world_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
 		<remap from="robot_description" to="world_description"/>
-		<remap from="/joint_states" to="/environment_joint_states"/>
-	</node>
+		<remap from="/joint_states" to="/world/joint_states"/>
+		<param name="use_gui" value="true"/>
+	</node-->
+	
+	<!-- For real joint_state information for non-fixed joints from the environment,
+	 a gazebo_ros_control_plugin needs to be added ogether with an additional joint_state_controller -->
+	<include ns="world" file="$(find cob_gazebo_worlds)/launch/world_joint_state_publisher.launch"/>
+	
 	
 	<node name="world_tf_publisher" pkg="cob_gazebo_worlds" type="tf_publisher.py"  respawn="false" output="screen" />
 

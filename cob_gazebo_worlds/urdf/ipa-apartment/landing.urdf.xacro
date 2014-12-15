@@ -4,38 +4,20 @@
   <xacro:macro name="landing" params="name parent *origin">
 
   <link name="origin_landing">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="0.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <box size="0 0 0" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <box size="0 0 0" />
-      </geometry>
-    </collision>
+    <xacro:default_inertial/>
   </link>
   
   <joint name="joint_origin_landing" type="fixed">
     <insert_block name="origin" />
-          <parent link="${parent}"/>
+    <parent link="${parent}"/>
     <child link="origin_landing" />
   </joint> 
 
   <!-- wall ext -->
   <!--link name="wall_ext1">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="2.1" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -61,15 +43,11 @@
     <child link="wall_ext1" />
   </joint--> 
 
-
-
   <!-- wall ext -->
   <link name="door_E334">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="2.2" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -97,11 +75,9 @@
   
   <!-- wall ext -->
   <link name="wall_ext3">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="1.73" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -129,11 +105,9 @@
 
   <!-- wall ext -->
   <link name="wall_ext4">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="1.93" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -160,11 +134,9 @@
   </joint> 
 
   <link name="wall_ext5">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="2.24" y="0.04" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -175,7 +147,7 @@
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="2.24 ${wall_depth} ${size_z_wall1}" />
+        <box size="2.24 0.04 ${size_z_wall1}" />
       </geometry>
     </collision>
   </link>
@@ -191,11 +163,9 @@
   </joint> 
 
   <link name="wall_ext6">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="2.24" y="0.04" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -221,15 +191,11 @@
     <child link="wall_ext6" />
   </joint> 
   
-  
   <!--office landing-->
-  
-    <!--link name="wall_ext7">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+  <!--link name="wall_ext7">
+    <xacro:box_inertial x="${wall_depth}" y="2.1" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -255,15 +221,11 @@
     <child link="wall_ext7" />
   </joint--> 
 
-
-
   <!-- wall ext -->
   <link name="wall_ext8">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="2.3" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -291,11 +253,9 @@
   
   <!-- wall ext -->
   <link name="wall_ext9">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.73" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -323,11 +283,9 @@
 
   <!-- wall ext -->
   <link name="wall_ext10">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.96" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -354,11 +312,9 @@
   </joint> 
 
   <link name="wall_ext11">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="2.24" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -385,11 +341,9 @@
   </joint> 
 
   <link name="wall_ext12">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="2.24" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -416,11 +370,9 @@
   </joint> 
 
   <link name="wall_ext13">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="6.6" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -444,15 +396,12 @@
     <origin xyz="3.15 3.15 ${size_z_wall1/2}" rpy="0 0 0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext13" />
-  </joint> 
-
+  </joint>
 
   <link name="wall_ext14">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="6.6" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -478,13 +427,10 @@
     <child link="wall_ext14" />
   </joint> 
 
-
   <link name="wall_ext15">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="6.6" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -510,13 +456,10 @@
     <child link="wall_ext15" />
   </joint> 
   
-  
   <link name="wall_ext16">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.04" y="1.8" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -542,13 +485,10 @@
     <child link="wall_ext16" />
   </joint> 
   
-  
-    <link name="wall_ext17">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+  <link name="wall_ext17">
+    <xacro:box_inertial x="1.8" y="0.04" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -574,12 +514,10 @@
     <child link="wall_ext17" />
   </joint> 
   
-      <link name="wall_ext21">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+  <link name="wall_ext21">
+    <xacro:box_inertial x="${wall_depth}" y="6.75" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -605,13 +543,10 @@
     <child link="wall_ext21" />
   </joint> 
   
-  
   <link name="wall_ext22">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.06" y="6.00" z="${size_z_wall2}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -638,11 +573,9 @@
   </joint> 
   
   <link name="wall_ext23">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.2" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -669,11 +602,9 @@
   </joint> 
 
   <link name="wall_ext24">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="1.99" y="0.06" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -701,11 +632,9 @@
 
   <!-- wall ext25 -->
   <link name="wall_ext25">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="1.1" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -733,11 +662,9 @@
 
   <!-- wall ext26 -->
   <link name="wall_ext26">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="${wall_depth}" y="0.23" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -765,11 +692,9 @@
 
   <!-- pillar ext01 -->
   <link name="pillar_ext01">
-    <inertial>
-      <origin xyz="0 0 0" />
-      <mass value="5.0" />
-      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0" />
-    </inertial>
+    <xacro:box_inertial x="0.35" y="0.35" z="${size_z_wall1}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -795,6 +720,6 @@
     <child link="pillar_ext01" />
   </joint>
 
-</xacro:macro>
+  </xacro:macro>
 
 </robot>
