@@ -2,10 +2,38 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.5.2 (2014-03-31)
+0.6.2 (2014-12-15)
 ------------------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* missing dependencies for control plugins
+* delete desire
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* introduce launchfile argument for -J option of spawn_model
+* Contributors: Florian Weisshardt, ipa-fxm
+
+0.6.1 (2014-09-22)
+------------------
+
+0.6.0 (2014-09-18)
+------------------
+* Merge pull request `#65 <https://github.com/ipa320/cob_simulation/issues/65>`_ from ipa320/hydro_dev
+  bringin updates from hydro_dev
+* Merge pull request `#64 <https://github.com/ipa320/cob_simulation/issues/64>`_ from ipa320/hydro_release_candidate
+  Hydro release candidate
+* 0.5.2
+* update changelog
+* Contributors: Florian Weisshardt
+
+0.5.2 (2014-08-28)
+------------------
+* cleaning up
+* New maintainer
 * no OpenCV required in cob_gazebo
-* Contributors: ipa-fxm
+* Contributors: ipa-fxm, ipa-nhg
 
 0.5.1 (2014-03-21)
 ------------------

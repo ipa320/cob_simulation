@@ -2,8 +2,30 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.5.2 (2014-03-31)
+0.6.2 (2014-12-15)
 ------------------
+* introduce launchfile argument for -J option of spawn_model
+* Contributors: ipa-fxm
+
+0.6.1 (2014-09-22)
+------------------
+
+0.6.0 (2014-09-18)
+------------------
+* remove object script working
+* Merge pull request `#65 <https://github.com/ipa320/cob_simulation/issues/65>`_ from ipa320/hydro_dev
+  bringin updates from hydro_dev
+* Merge pull request `#64 <https://github.com/ipa320/cob_simulation/issues/64>`_ from ipa320/hydro_release_candidate
+  Hydro release candidate
+* 0.5.2
+* update changelog
+* Contributors: Florian Weisshardt, ipa-nhg
+
+0.5.2 (2014-08-28)
+------------------
+* cleaning up
+* New maintainer
+* Contributors: ipa-fxm, ipa-nhg
 
 0.5.1 (2014-03-21)
 ------------------
