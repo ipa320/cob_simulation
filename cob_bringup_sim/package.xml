@@ -1,6 +1,6 @@
 <package>
   <name>cob_bringup_sim</name>
-  <version>0.6.1</version>
+  <version>0.6.2</version>
   <description>This package provides launch files for starting a simulated Care-O-bot.</description>
 
   <license>LGPL</license>
