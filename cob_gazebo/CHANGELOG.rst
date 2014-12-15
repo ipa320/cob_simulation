@@ -2,6 +2,19 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* missing dependencies for control plugins
+* delete desire
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* introduce launchfile argument for -J option of spawn_model
+* Contributors: Florian Weisshardt, ipa-fxm
+
 0.6.1 (2014-09-22)
 ------------------
 

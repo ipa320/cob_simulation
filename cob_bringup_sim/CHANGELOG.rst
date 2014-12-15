@@ -2,6 +2,11 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* introduce launchfile argument for -J option of spawn_model
+* Contributors: ipa-fxm
+
 0.6.1 (2014-09-22)
 ------------------
 

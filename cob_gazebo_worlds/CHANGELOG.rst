@@ -2,6 +2,20 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* build depend roslaunch and rostest
+* add dependency
+* add tests
+* added run_dependency
+* correct remapping
+* add gazebo_ros_control plugin for environment so that real joint_states are published for non-fixed environment joints, i.e. door
+* ipa-kitchen includes a door that can passively be pushed open
+* changes due to renaming
+* fix environment to gazebo world frame + proper interia
+* Contributors: Florian Weisshardt, ipa-fxm
+
 0.6.1 (2014-09-22)
 ------------------
 * 1 = true
