@@ -1,0 +1,6 @@
+## joint_names
+joint_names: [door_joint]
+
+door_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: door_joint

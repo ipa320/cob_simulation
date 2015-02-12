@@ -23,5 +23,8 @@
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
 		<arg name="robot_env" value="$(arg robot_env)"/>
 	</include>
+	
+	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
+	<node ns="world" name="door_joint_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 door_joint_velocity_controller" respawn="true"/>
 
 </launch>
