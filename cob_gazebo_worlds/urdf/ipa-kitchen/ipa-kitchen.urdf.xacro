@@ -339,9 +339,7 @@
 
   <!-- door -->
   <link name="door">
-    <xacro:box_inertial x="0.85" y="0.06" z="2.05" mass="5.0">
-      <origin xyz="0.425 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
+    <xacro:default_inertial/>
     <visual>
       <origin xyz="0.425 0 0" />
       <geometry>
@@ -371,7 +369,7 @@
   <transmission name="door_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="door_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="door_motor">
       <mechanicalReduction>1</mechanicalReduction>
