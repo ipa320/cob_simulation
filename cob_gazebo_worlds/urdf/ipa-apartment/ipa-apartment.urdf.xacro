@@ -49,6 +49,13 @@
 
   <xacro:macro name="ipa-apartment" params="name">
 
+    <gazebo>
+      <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>world</robotNamespace>
+        <robotParam>/world_description</robotParam>
+      </plugin>
+    </gazebo>
+
     <link name="world"/>
 
     <xacro:apartment name="apartment">
