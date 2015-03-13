@@ -10,12 +10,16 @@ find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
 roslaunch_add_file_check(launch/empty.launch)
 
 # ipa-kitchen (urdf model)
-add_rostest(test/urdf_ipa-kitchen.test)
+if(CATKIN_ENABLE_TESTING)
+    add_rostest(test/urdf_ipa-kitchen.test)
+endif(CATKIN_ENABLE_TESTING)
 #roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-kitchen)
 roslaunch_add_file_check(launch/ipa-kitchen.launch)
 
 # ipa-apartment (urdf model)
-add_rostest(test/urdf_ipa-apartment.test)
+if(CATKIN_ENABLE_TESTING)
+    add_rostest(test/urdf_ipa-apartment.test)
+endif(CATKIN_ENABLE_TESTING)
 #roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-apartment)
 roslaunch_add_file_check(launch/ipa-apartment.launch)
 
