@@ -9,5 +9,5 @@ base_to_belt_joint_velocity_controller:
   joint: base_to_belt
 
 
-bmw-assembly/gazebo_ros_control/pid_gains:
+world/gazebo_ros_control/pid_gains:
   base_to_belt: {p: 100.0, i: 10.0, d: 0.0}

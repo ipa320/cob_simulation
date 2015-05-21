@@ -1,27 +1,25 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-	name="bmw_assembly">
+	name="bmw-assembly">
 
   <!-- properties -->
   <xacro:property name="base_width" value="0.1" />
   <xacro:property name="base_length" value="250" />
   <xacro:property name="base_height" value="0.1" />
+  <xacro:property name="base_mass" value="5.0" />
 
   <xacro:property name="belt_width" value="4" />
   <xacro:property name="belt_length" value="250" />
   <xacro:property name="belt_height" value="0.1" />
-
-  <xacro:property name="base_mass" value="5.0" />
   <xacro:property name="belt_mass" value="5.0" />
 
-  <xacro:property name="box_width" value="1.5" />
-  <xacro:property name="box_length" value="3" />
-  <xacro:property name="box_height" value="1" />
-
+  <xacro:property name="box_width" value="2.0" />
+  <xacro:property name="box_length" value="3.8" />
+  <xacro:property name="box_height" value="0.4" />
   <xacro:property name="box_mass" value="0.1" />
-  <xacro:property name="world_to_base_joint_offset_x" value="5" />
 
   <xacro:property name="boxes_distance" value="10"/>
+  <xacro:property name="world_to_base_offset_x" value="5" />
 
   <!-- macros -->
   <xacro:macro name="box_inertial" params="x y z mass *origin">
@@ -49,9 +47,6 @@
         </geometry>
       </collision>
       <xacro:default_inertial/>
-      <!--xacro:box_inertial x="${box_width}" y="${box_length}" z="${box_height}" mass="${box_mass}">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-      </xacro:box_inertial-->
     </link>
     <gazebo reference="box_${new_box_num}">
       <material>Gazebo/Green</material>
@@ -74,7 +69,8 @@
   <!-- gazebo plugin -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>bmw_assembly</robotNamespace>
+      <robotNamespace>world</robotNamespace>
+      <robotParam>/world_description</robotParam>
     </plugin>
   </gazebo>
 
@@ -95,7 +91,6 @@
 	<box size="${base_width} ${base_length} ${base_height}"/>
       </geometry>
     </collision>
-    <!--xacro:default_inertial/-->
     <xacro:box_inertial x="${base_width}" y="${base_length}" z="${base_height}" mass="${base_mass}">
 	<origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:box_inertial>
@@ -104,7 +99,7 @@
 	<material>Gazebo/Black</material>
   </gazebo>
 
-  <!-- assembly belt -->
+  <!-- moving belt -->
   <link name="my_belt">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -118,7 +113,6 @@
         <box size="${belt_width} ${belt_length} ${belt_height}" />
       </geometry>
     </collision>
-    <!--xacro:default_inertial/-->
     <xacro:box_inertial x="${belt_width}" y="${belt_length}" z="${belt_height}" mass="${belt_mass}">
 	<origin xyz="0 0 0" rpy="0 0 0"/>
     </xacro:box_inertial>
@@ -146,10 +140,29 @@
   <xacro:new_box new_box_num="16"/>
   <xacro:new_box new_box_num="17"/>
 
+  <!--world objects-->
+  <model name="net_bin_1" static="true">
+    <link name="net_bin_1_link">
+      <origin pose="0 0 0 0 0 0"/>
+      <collision name="net_bin_1_collision">
+        <geometry>
+          <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae" scale="1 1 1"/>
+        </geometry>
+      </collision>
+      <visual name="net_bin_1_visual" cast_shadows="false">
+        <geometry>
+          <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+
+  <!--joints-->
   <joint name="world_joint" type="fixed">
      <parent link="world"/>
      <child link="belt_base_link"/>
-     <origin xyz = "${world_to_base_joint_offset_x} 0 ${base_height/2}"/>
+     <origin xyz = "${world_to_base_offset_x} 0 ${base_height/2}"/>
   </joint>
 
   <joint name="base_to_belt" type="prismatic">
@@ -157,15 +170,16 @@
     <child link="my_belt"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/> 
-    <origin xyz="${belt_width+0.5} 0 ${base_height/2}"/>
+    <origin xyz="${belt_width/2+0.5} 0 ${base_height/2}"/>
     <limit lower="-100000" upper="100000" velocity="0.5" effort="10"/>
   </joint>
 
   <transmission name="belt_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="base_to_belt"/>
+    <joint name="base_to_belt" />
     <actuator name="belt_motor">
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    <!--  <hardwareInterface>EffortJointInterface</hardwareInterface> -->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>

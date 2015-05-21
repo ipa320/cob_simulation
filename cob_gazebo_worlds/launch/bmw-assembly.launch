@@ -27,10 +27,9 @@
 	</include>
 
 	<!-- Load joint controller configurations from YAML file to parameter server -->
-  	<!--rosparam file="$(find bmw_assembly_control)/config/bmw_assembly_control.yaml" command="load" ns="bmw_assembly"/-->
+	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
+	<node ns="world" name="base_to_belt_controller_spawner" pkg="controller_manager" type="spawner" respawn="true" output="screen" args="base_to_belt_joint_state_controller base_to_belt_joint_velocity_controller"/>
 
-	<rosparam command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
-	<node name="assembly_belt_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="base_to_belt_joint_state_controller base_to_belt_joint_velocity_controller"/>
 
 
 </launch>
