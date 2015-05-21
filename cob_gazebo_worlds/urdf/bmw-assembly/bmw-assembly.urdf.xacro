@@ -58,6 +58,32 @@
     </joint>
   </xacro:macro>
 
+  <xacro:macro name="new_object" params="new_object_num *mesh *origin">
+    <link name="world_object_${new_object_num}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <insert_block name = "mesh"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <insert_block name = "mesh"/>
+        </geometry>
+      </collision>
+      <xacro:default_inertial/>
+    </link>
+    <gazebo reference="world_object_${new_object_num}">
+      <static>true</static>
+    </gazebo>
+    <joint name="bin_joint_${new_object_num}" type="fixed">
+       <insert_block name="origin"/>
+       <parent link="belt_base_link"/>
+       <child link="world_object_${new_object_num}"/>
+    </joint>
+  </xacro:macro>
+
   <xacro:macro name="default_inertial">
     <inertial>
       <mass value="0.01"/>
@@ -98,6 +124,11 @@
   <gazebo reference="belt_base_link">
 	<material>Gazebo/Black</material>
   </gazebo>
+  <joint name="world_joint" type="fixed">
+     <parent link="world"/>
+     <child link="belt_base_link"/>
+     <origin xyz = "${world_to_base_offset_x} 0 ${base_height/2}"/>
+  </joint>
 
   <!-- moving belt -->
   <link name="my_belt">
@@ -120,6 +151,14 @@
   <gazebo reference="my_belt">
     <material>Gazebo/WoodFloor</material>
   </gazebo>
+  <joint name="base_to_belt" type="prismatic">
+    <parent link="belt_base_link"/>
+    <child link="my_belt"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.7"/> 
+    <origin xyz="${belt_width/2+0.5} 0 ${base_height/2}"/>
+    <limit lower="-100000" upper="100000" velocity="0.5" effort="10"/>
+  </joint>
 
   <!--boxes-->
   <xacro:new_box new_box_num="1"/>
@@ -141,38 +180,50 @@
   <xacro:new_box new_box_num="17"/>
 
   <!--world objects-->
-  <model name="net_bin_1" static="true">
-    <link name="net_bin_1_link">
-      <origin pose="0 0 0 0 0 0"/>
-      <collision name="net_bin_1_collision">
-        <geometry>
-          <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae" scale="1 1 1"/>
-        </geometry>
-      </collision>
-      <visual name="net_bin_1_visual" cast_shadows="false">
-        <geometry>
-          <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae" scale="1 1 1"/>
-        </geometry>
-      </visual>
-    </link>
-  </model>
-
-
-  <!--joints-->
-  <joint name="world_joint" type="fixed">
-     <parent link="world"/>
-     <child link="belt_base_link"/>
-     <origin xyz = "${world_to_base_offset_x} 0 ${base_height/2}"/>
-  </joint>
-
-  <joint name="base_to_belt" type="prismatic">
-    <parent link="belt_base_link"/>
-    <child link="my_belt"/>
-    <axis xyz="0 1 0"/>
-    <dynamics damping="0.7"/> 
-    <origin xyz="${belt_width/2+0.5} 0 ${base_height/2}"/>
-    <limit lower="-100000" upper="100000" velocity="0.5" effort="10"/>
-  </joint>
+  <xacro:new_object new_object_num="1" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="-7 -15 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="2" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="-7 -10 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="3" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="-7 -5 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="4" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="-7 0 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="5" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="-7 5 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="6" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="5 -15 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="7" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="5 -10 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="8" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="5 -5 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="9" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="5 0 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="10" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="5 5 0" />
+  </xacro:new_object>
+  <xacro:new_object new_object_num="11" >
+    <mesh filename="package://cob_gazebo_objects/Media/models/cabinet_ikea_galant.dae"/>
+    <origin xyz="-9 0 0" />
+  </xacro:new_object>
 
   <transmission name="belt_trans">
     <type>transmission_interface/SimpleTransmission</type>
