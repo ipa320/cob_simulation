@@ -230,7 +230,6 @@
     <joint name="base_to_belt" />
     <actuator name="belt_motor">
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
-    <!--  <hardwareInterface>EffortJointInterface</hardwareInterface> -->
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>

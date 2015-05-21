@@ -8,6 +8,5 @@ base_to_belt_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: base_to_belt
 
-
 world/gazebo_ros_control/pid_gains:
   base_to_belt: {p: 100.0, i: 10.0, d: 0.0}
