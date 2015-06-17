@@ -2,6 +2,11 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* beautify CMakeLists
+* Contributors: ipa-fxm
+
 0.6.2 (2014-12-15)
 ------------------
 * Merge branch 'indigo_dev' into indigo_release_candidate
