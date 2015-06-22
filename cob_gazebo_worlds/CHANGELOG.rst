@@ -2,6 +2,15 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* beautify CMakeLists
+* catkin_lint
+* fix joint_states for world
+* velocity controller for door
+* catkin_lint'ing
+* Contributors: Florian Weisshardt, ipa-fxm
+
 0.6.2 (2014-12-15)
 ------------------
 * Merge branch 'indigo_dev' into indigo_release_candidate

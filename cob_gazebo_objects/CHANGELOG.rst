@@ -2,6 +2,11 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* beautify CMakeLists
+* Contributors: ipa-fxm
+
 0.6.2 (2014-12-15)
 ------------------
 
