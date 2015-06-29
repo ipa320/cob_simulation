@@ -41,18 +41,14 @@
     <origin xyz="0 1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_left" />
-    
     <axis xyz = "0 1 0"/>
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-    <!--safety_controller k_velocity="10"/-->
   </joint> 
 
   <transmission name="elevator_left_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_left_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_left_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -174,20 +170,17 @@
   </gazebo>
 
   <joint name="elevator_right_joint" type="prismatic">
-    <axis xyz = "0 -1 0"/>
     <origin xyz="0 -1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_right" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <axis xyz = "0 -1 0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-    <safety_controller k_velocity="10"/>
   </joint> 
 
   <transmission name="elevator_right_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_right_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_right_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -303,16 +296,24 @@
       </geometry>
     </collision>
   </link>
-
+  
   <joint name="joint_elevator_button1" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button1" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0" />
-    <safety_controller k_velocity="10"/>
+    <axis xyz = "0 0 1"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.1" />
   </joint> 
+
+  <transmission name="joint_elevator_button1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_elevator_button1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint_elevator_button1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
   <gazebo reference="elevator_button1">
     <gravity>true</gravity>
@@ -355,11 +356,19 @@
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.095}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button2" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0" />
-    <safety_controller k_velocity="10"/>
-  </joint>
+    <axis xyz = "0 0 1"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.1" />
+  </joint> 
+
+  <transmission name="joint_elevator_button2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_elevator_button2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint_elevator_button2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
   <gazebo reference="elevator_button2">
     <gravity>true</gravity>
