@@ -25,8 +25,10 @@
 	</include>
 	
 	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
-	<node ns="world" name="world_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn elevator_left_joint_velocity_controller elevator_right_joint_velocity_controller joint_elevator_button1_velocity_controller joint_elevator_button2_velocity_controller" respawn="false" output="screen"/>
+	<node ns="world" name="world_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn elevator_left_joint_position_controller elevator_right_joint_position_controller" respawn="false" output="screen"/>
 	
-	<!--<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />-->
+	
+	<!-- elevator_button1_joint_position_controller elevator_button2_joint_position_controller-->
+	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
 	
 </launch>

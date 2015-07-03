@@ -279,7 +279,7 @@
 
   <!--elevator buttons-->
   <link name="elevator_button1">
-    <xacro:box_inertial x="0.01" y="0.05" z="0.05" mass="1.0">
+    <xacro:box_inertial x="0.0" y="0.0" z="0.0" mass="0.001">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -297,20 +297,20 @@
     </collision>
   </link>
   
-  <joint name="joint_elevator_button1" type="prismatic">
+  <joint name="elevator_button1_joint" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button1" />
-    <axis xyz = "0 0 1"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0.1" />
+    <axis xyz = "-1 0 0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.005" />
   </joint> 
 
-  <transmission name="joint_elevator_button1_trans">
+  <transmission name="elevator_button1_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_elevator_button1">
+    <joint name="elevator_button1_joint">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="joint_elevator_button1_motor">
+    <actuator name="elevator_button1_joint_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -334,7 +334,7 @@
   </gazebo>
 
   <link name="elevator_button2">
-    <xacro:box_inertial x="0.01" y="0.05" z="0.05" mass="1.0">
+    <xacro:box_inertial x="0.0" y="0.0" z="0.0" mass="0.001">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -352,20 +352,20 @@
     </collision>
   </link>
 
-  <joint name="joint_elevator_button2" type="prismatic">
+  <joint name="elevator_button2_joint" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.095}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button2" />
-    <axis xyz = "0 0 1"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0.1" />
+    <axis xyz = "-1 0 0"/>
+    <limit effort="100" velocity="1.0" lower="0" upper="0.005" />
   </joint> 
 
-  <transmission name="joint_elevator_button2_trans">
+  <transmission name="elevator_button2_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_elevator_button2">
+    <joint name="elevator_button2_joint">
       <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="joint_elevator_button2_motor">
+    <actuator name="elevator_button2_joint_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
