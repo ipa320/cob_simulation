@@ -38,7 +38,7 @@
   </gazebo>
 
   <joint name="elevator_left_joint" type="prismatic">
-    <origin xyz="0 1.085 0" rpy="0 0 0" />
+    <origin xyz="-0.04 1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_left" />
     <axis xyz = "0 1 0"/>
@@ -170,7 +170,7 @@
   </gazebo>
 
   <joint name="elevator_right_joint" type="prismatic">
-    <origin xyz="0 -1.085 0" rpy="0 0 0" />
+    <origin xyz="-0.04 -1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_right" />
     <axis xyz = "0 -1 0"/>
@@ -279,9 +279,7 @@
 
   <!--elevator buttons-->
   <link name="elevator_button1">
-    <xacro:box_inertial x="0.0" y="0.0" z="0.0" mass="0.001">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
+    <xacro:default_inertial/>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -302,7 +300,7 @@
     <parent link="origin_elevator" />
     <child link="elevator_button1" />
     <axis xyz = "-1 0 0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0.005" />
+    <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
   </joint> 
 
   <transmission name="elevator_button1_joint_trans">
@@ -334,9 +332,7 @@
   </gazebo>
 
   <link name="elevator_button2">
-    <xacro:box_inertial x="0.0" y="0.0" z="0.0" mass="0.001">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
+    <xacro:default_inertial/>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -357,7 +353,7 @@
     <parent link="origin_elevator" />
     <child link="elevator_button2" />
     <axis xyz = "-1 0 0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0.005" />
+    <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
   </joint> 
 
   <transmission name="elevator_button2_joint_trans">

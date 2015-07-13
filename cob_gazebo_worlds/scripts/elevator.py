@@ -95,6 +95,7 @@ def move_door(side):
 	door_closed = False
 	topic_name = '/world/elevator_%s_joint_position_controller/command' %side
 	pub = rospy.Publisher(topic_name,Float64,queue_size=10)
+	rospy.sleep(1)
 	pos = 0.87
 	pub.publish(pos)
 
