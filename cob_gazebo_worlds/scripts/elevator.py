@@ -63,8 +63,6 @@ import rospy
 import random
 from math import *
 
-#from gazebo.srv import *
-from gazebo_msgs.srv import *
 from gazebo_msgs.msg import *
 from std_msgs.msg import *
 door_closed = True
