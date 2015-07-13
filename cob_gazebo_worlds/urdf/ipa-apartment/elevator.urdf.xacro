@@ -38,21 +38,17 @@
   </gazebo>
 
   <joint name="elevator_left_joint" type="prismatic">
-    <origin xyz="0 1.085 0" rpy="0 0 0" />
+    <origin xyz="-0.04 1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_left" />
-    
     <axis xyz = "0 1 0"/>
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-    <!--safety_controller k_velocity="10"/-->
   </joint> 
 
   <transmission name="elevator_left_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_left_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_left_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -174,20 +170,17 @@
   </gazebo>
 
   <joint name="elevator_right_joint" type="prismatic">
-    <axis xyz = "0 -1 0"/>
-    <origin xyz="0 -1.085 0" rpy="0 0 0" />
+    <origin xyz="-0.04 -1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_right" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
+    <axis xyz = "0 -1 0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-    <safety_controller k_velocity="10"/>
   </joint> 
 
   <transmission name="elevator_right_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_right_joint">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_right_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -286,9 +279,7 @@
 
   <!--elevator buttons-->
   <link name="elevator_button1">
-    <xacro:box_inertial x="0.01" y="0.05" z="0.05" mass="1.0">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
+    <xacro:default_inertial/>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -303,16 +294,24 @@
       </geometry>
     </collision>
   </link>
-
-  <joint name="joint_elevator_button1" type="prismatic">
+  
+  <joint name="elevator_button1_joint" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button1" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0" />
-    <safety_controller k_velocity="10"/>
+    <axis xyz = "-1 0 0"/>
+    <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
   </joint> 
+
+  <transmission name="elevator_button1_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_button1_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_button1_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
   <gazebo reference="elevator_button1">
     <gravity>true</gravity>
@@ -333,9 +332,7 @@
   </gazebo>
 
   <link name="elevator_button2">
-    <xacro:box_inertial x="0.01" y="0.05" z="0.05" mass="1.0">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
+    <xacro:default_inertial/>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -351,15 +348,23 @@
     </collision>
   </link>
 
-  <joint name="joint_elevator_button2" type="prismatic">
+  <joint name="elevator_button2_joint" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.095}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button2" />
-    <calibration rising="0.0"/>
-    <dynamics damping="0.0" friction="0.0"/>
-    <limit effort="100" velocity="1.0" lower="0" upper="0" />
-    <safety_controller k_velocity="10"/>
-  </joint>
+    <axis xyz = "-1 0 0"/>
+    <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
+  </joint> 
+
+  <transmission name="elevator_button2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elevator_button2_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elevator_button2_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
   <gazebo reference="elevator_button2">
     <gravity>true</gravity>

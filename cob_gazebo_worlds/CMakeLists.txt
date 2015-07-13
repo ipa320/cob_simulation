@@ -48,6 +48,6 @@ install(DIRECTORY test
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS src/elevator.py src/tf_publisher.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
+install(PROGRAMS scripts/elevator.py scripts/tf_publisher.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
 )

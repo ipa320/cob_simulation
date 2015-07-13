@@ -12,7 +12,7 @@
 # \note
 # Project name: Care-O-bot
 # \note
-# ROS stack name: cob_environments
+# ROS stack name: cob_simulation
 # \note
 # ROS package name: cob_gazebo_worlds
 #
@@ -63,15 +63,9 @@ import rospy
 import random
 from math import *
 
-#from gazebo.srv import *
-from gazebo_msgs.srv import *
 from gazebo_msgs.msg import *
-
-
-apply_effort_service = rospy.ServiceProxy('/gazebo/apply_joint_effort', ApplyJointEffort)
+from std_msgs.msg import *
 door_closed = True
-
-
 
 def callback(ContactsState):
 
@@ -88,38 +82,34 @@ def callback(ContactsState):
 	else:
 		rospy.loginfo("Door Opened")
 
-
-
 def listener():
-    
-    rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber("/elevator_button1_bumper/state", ContactsState, callback, queue_size=1)
-    rospy.spin()
+
+	rospy.init_node('listener', anonymous=True)
+	rospy.Subscriber("/elevator_button1_bumper", ContactsState, callback, queue_size=1)
+	rospy.spin()
 
 def move_door(side):
 
 	door_closed = False
-	req = ApplyJointEffortRequest()
-	req.joint_name = 'joint_elevator_'+side
-	req.start_time.secs = 0
-	req.duration.secs = -10
-	req.effort = 500
-	rospy.loginfo("door is opening")
-	res = apply_effort_service(req)
+	topic_name = '/world/elevator_%s_joint_position_controller/command' %side
+	pub = rospy.Publisher(topic_name,Float64,queue_size=10)
+	rospy.sleep(1)
+	pos = 0.87
+	pub.publish(pos)
+
+	rospy.loginfo("%s door is opening" %side)
+
 
 	rospy.sleep(10)
-	req.effort = -1000
-	rospy.loginfo("door is closing")
-	res = apply_effort_service(req)
+	pos = 0
+	rospy.loginfo("%s door is closing" %side)
+	pub.publish(pos)
 
 	rospy.sleep(10)
-	req.effort = 500
-	res = apply_effort_service(req)
 	door_closed = True
 
-
 if __name__ == '__main__':
-    listener()
+	listener()
 
 
 
