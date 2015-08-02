@@ -56,12 +56,11 @@
 # If not, see < http://www.gnu.org/licenses/>.
 #
 #################################################################  
-import roslib
-roslib.load_manifest('cob_gazebo_worlds')
+
+import math
 
 import rospy
 import tf
-import math
 
 if __name__ == '__main__':
     rospy.init_node('my_tf_broadcaster')

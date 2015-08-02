@@ -57,14 +57,13 @@
 
 import time
 import sys
-import roslib
-roslib.load_manifest('cob_gazebo_worlds')
-import rospy
 import random
 from math import *
 
+import rospy
 from gazebo_msgs.msg import *
 from std_msgs.msg import *
+
 door_closed = True
 
 def callback(ContactsState):

@@ -4,12 +4,10 @@ project(cob_gazebo)
 find_package(catkin REQUIRED COMPONENTS)
 
 catkin_package(
-    CATKIN_DEPENDS gazebo_ros gazebo_plugins cob_hardware_config cob_controller_configuration_gazebo rospy rostest cob_script_server trajectory_msgs control_msgs
+    CATKIN_DEPENDS rospy rostest control_msgs trajectory_msgs gazebo_ros gazebo_plugins gazebo_ros_control cob_gazebo_ros_control cob_hardware_config cob_controller_configuration_gazebo cob_script_server
 )
 
 
-
-# rostest for robots
 set(robotlist
     cob3-3
     cob3-6
@@ -22,16 +20,16 @@ set(robotlist
     raw3-6
 )
 
-
+### TESTING ###
 if(CATKIN_ENABLE_TESTING)
     foreach(robot ${robotlist})
-	    message("testing for robot: ${robot}")
-	    #rosbuild_add_roslaunch_check(launch robot:=${robot})
-	    #rosbuild_add_roslaunch_check(launch ROBOT=${robot})
+        message("testing for robot: ${robot}")
+        #rosbuild_add_roslaunch_check(launch robot:=${robot})
+        #rosbuild_add_roslaunch_check(launch ROBOT=${robot})
     endforeach()
 endif()
 
-
+### INSTALL ###
 install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

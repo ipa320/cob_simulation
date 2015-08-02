@@ -57,12 +57,8 @@
 #
 #################################################################
 import sys
-import roslib
-roslib.load_manifest('cob_bringup_sim')
 
 import rospy
-import os
-
 from gazebo_msgs.srv import *
 from geometry_msgs.msg import *
 import tf.transformations as tft
