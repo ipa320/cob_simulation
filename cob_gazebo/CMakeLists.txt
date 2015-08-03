@@ -4,9 +4,8 @@ project(cob_gazebo)
 find_package(catkin REQUIRED COMPONENTS)
 
 catkin_package(
-    CATKIN_DEPENDS rospy rostest control_msgs trajectory_msgs gazebo_ros gazebo_plugins gazebo_ros_control cob_gazebo_ros_control cob_hardware_config cob_controller_configuration_gazebo cob_script_server
+    CATKIN_DEPENDS cob_controller_configuration_gazebo cob_gazebo_ros_control cob_hardware_config cob_script_server control_msgs gazebo_plugins gazebo_ros_control gazebo_ros rospy rostest trajectory_msgs
 )
-
 
 set(robotlist
     cob3-3

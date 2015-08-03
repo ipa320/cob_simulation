@@ -13,14 +13,14 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>geometry_msgs</run_depend>
+  <run_depend>cob_default_env_config</run_depend>
+  <run_depend>cob_default_robot_config</run_depend>
+  <run_depend>cob_gazebo_worlds</run_depend>
+  <run_depend>cob_gazebo</run_depend>
   <run_depend>gazebo_msgs</run_depend>
   <run_depend>gazebo_ros</run_depend>
-  <run_depend>cob_gazebo</run_depend>
-  <run_depend>cob_gazebo_worlds</run_depend>
-  <run_depend>cob_default_robot_config</run_depend>
-  <run_depend>cob_default_env_config</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>rospy</run_depend>
   <run_depend>tf</run_depend>
 
 </package>

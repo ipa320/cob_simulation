@@ -13,16 +13,16 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>rostest</run_depend>
-  <run_depend>control_msgs</run_depend>
-  <run_depend>trajectory_msgs</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>cob_controller_configuration_gazebo</run_depend>
   <run_depend>cob_gazebo_ros_control</run_depend>
   <run_depend>cob_hardware_config</run_depend>
-  <run_depend>cob_controller_configuration_gazebo</run_depend>
   <run_depend>cob_script_server</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>rostest</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
 
 </package>
