@@ -12,16 +12,11 @@
   <url type="website">http://ros.org/wiki/cob_simulation</url>
   <!-- <url type="bugtracker"></url> -->
 
- 
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>cob_gazebo</run_depend>
   <run_depend>cob_bringup_sim</run_depend>
+  <run_depend>cob_gazebo</run_depend>
   <run_depend>cob_gazebo_objects</run_depend>
   <run_depend>cob_gazebo_worlds</run_depend>
-
-
-
-
 
   <export>
     <metapackage/>
