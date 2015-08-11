@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>cob_bringup_sim</name>
   <version>0.6.3</version>
   <description>This package provides launch files for starting a simulated Care-O-bot.</description>
@@ -13,14 +13,14 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>cob_default_env_config</run_depend>
-  <run_depend>cob_default_robot_config</run_depend>
-  <run_depend>cob_gazebo_worlds</run_depend>
-  <run_depend>cob_gazebo</run_depend>
-  <run_depend>gazebo_msgs</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>rospy</run_depend>
-  <run_depend>tf</run_depend>
+  <exec_depend>cob_default_env_config</exec_depend>
+  <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_gazebo_worlds</exec_depend>
+  <exec_depend>cob_gazebo</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>tf</exec_depend>
 
 </package>

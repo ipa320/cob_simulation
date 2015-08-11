@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>cob_gazebo_worlds</name>
   <version>0.6.3</version>
   <description>This package provides some worlds for gazebo simulation.</description>
@@ -13,23 +13,23 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roslaunch</build_depend>
-  <build_depend>rostest</build_depend>
+  <depend>roslaunch</depend>
+  <depend>rostest</depend>
 
-  <run_depend>controller_manager</run_depend>
-  <run_depend>gazebo_msgs</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>joint_state_publisher</run_depend>
-  <run_depend>kdl_parser</run_depend>
-  <run_depend>position_controllers</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>rospy</run_depend>
-  <run_depend>std_msgs</run_depend>
-  <run_depend>tf</run_depend>
-  <run_depend>velocity_controllers</run_depend>
-  <run_depend>xacro</run_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>kdl_parser</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>velocity_controllers</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>

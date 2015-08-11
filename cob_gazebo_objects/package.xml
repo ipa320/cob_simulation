@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>cob_gazebo_objects</name>
   <version>0.6.3</version>
   <description>This package provides some objects and furniture for gazebo simulation.</description>
@@ -13,8 +13,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>cob_description</run_depend>
-  <run_depend>gazebo_ros</run_depend>
+  <exec_depend>cob_description</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
 
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>

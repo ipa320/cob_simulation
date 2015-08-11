@@ -3,9 +3,7 @@ project(cob_bringup_sim)
 
 find_package(catkin REQUIRED COMPONENTS)
 
-catkin_package(
-    CATKIN_DEPENDS cob_default_env_config cob_default_robot_config cob_gazebo_worlds cob_gazebo gazebo_msgs gazebo_ros geometry_msgs rospy tf
-)
+catkin_package()
 
 ### INSTALL ###
 install(DIRECTORY launch
