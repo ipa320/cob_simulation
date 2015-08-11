@@ -70,7 +70,7 @@ def callback(ContactsState):
 
 	if door_closed:
 		if (ContactsState.states != []):
-			rospy.loginfo("button pressed")	
+			rospy.loginfo("button pressed")
 			rand = (random.randint(0,1))
 			if rand == 0:
 				move_door("left")

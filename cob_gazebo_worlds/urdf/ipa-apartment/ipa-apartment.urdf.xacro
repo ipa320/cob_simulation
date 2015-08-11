@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="ipa-apartment">
-  
+
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
-  
+
   <!-- apartment -->
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-apartment/apartment.urdf.xacro" />
 
@@ -29,13 +29,13 @@
 
   <!--Parameters-->
   <property name="dist_axis_x" value="1.969" />
-  <property name="dist_axis_y" value="4.070" /> 
+  <property name="dist_axis_y" value="4.070" />
 
   <property name="size_total_x" value="8.0" />
   <property name="size_total_y" value="11.2" />
 
-  <property name="size_a" value="4.7" /> 
-  <property name="size_b" value="8.2" /> 
+  <property name="size_a" value="4.7" />
+  <property name="size_b" value="8.2" />
   <property name="size_c" value="1.8" />
   <property name="size_d" value="4.16" />
 
@@ -64,7 +64,7 @@
     <xacro:landing name="landing" parent="world">
         <origin xyz="${-13.9+dist_axis_x} ${-dist_axis_y} 0" rpy="0 0 0" />
     </xacro:landing>
-    
+
     <xacro:office name="office">
     </xacro:office>
 
@@ -81,7 +81,7 @@
     </xacro:wall_ipa>
 
   </xacro:macro>
-  
+
   <xacro:ipa-apartment name="ipa-apartment" />
 
 </robot>

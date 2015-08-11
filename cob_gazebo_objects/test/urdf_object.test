@@ -15,4 +15,4 @@
   <test test-name="tomato_soup_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/tomato_soup.urdf"/>
   <test test-name="zwieback_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_objects)/objects/zwieback.urdf"/>
 
-</launch> 
+</launch>

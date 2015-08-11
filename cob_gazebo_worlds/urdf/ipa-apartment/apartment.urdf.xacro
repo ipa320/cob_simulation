@@ -272,7 +272,7 @@
     <parent link="world" />
     <child link="wall_05" />
   </joint>
-  
+
   <!-- wall_06 -->
   <link name="wall_06">
     <xacro:box_inertial x="${size_b}" y="${window_depth}" z="${size_z_wall2}" mass="5.0">
@@ -382,7 +382,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <gazebo reference="door_01">
     <material>IPA/Wall2</material>
   </gazebo>

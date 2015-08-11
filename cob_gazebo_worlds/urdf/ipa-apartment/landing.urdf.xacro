@@ -6,12 +6,12 @@
   <link name="origin_landing">
     <xacro:default_inertial/>
   </link>
-  
+
   <joint name="joint_origin_landing" type="fixed">
     <insert_block name="origin" />
     <parent link="${parent}"/>
     <child link="origin_landing" />
-  </joint> 
+  </joint>
 
   <!-- wall ext -->
   <!--link name="wall_ext1">
@@ -41,7 +41,7 @@
     <origin xyz="8.8 2.565 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext1" />
-  </joint--> 
+  </joint-->
 
   <!-- wall ext -->
   <link name="door_E334">
@@ -71,8 +71,8 @@
     <origin xyz="8.70 -1.565 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="door_E334" />
-  </joint> 
-  
+  </joint>
+
   <!-- wall ext -->
   <link name="wall_ext3">
     <xacro:box_inertial x="${wall_depth}" y="1.73" z="${size_z_wall1}" mass="5.0">
@@ -101,7 +101,7 @@
     <origin xyz="7.6 -1.7 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext3" />
-  </joint> 
+  </joint>
 
   <!-- wall ext -->
   <link name="wall_ext4">
@@ -131,7 +131,7 @@
     <origin xyz="7.58 1.83 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext4" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext5">
     <xacro:box_inertial x="2.24" y="0.04" z="${size_z_wall1}" mass="5.0">
@@ -160,7 +160,7 @@
     <origin xyz="6.55 -0.85 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext5" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext6">
     <xacro:box_inertial x="2.24" y="0.04" z="${size_z_wall1}" mass="5.0">
@@ -189,8 +189,8 @@
     <origin xyz="6.55 0.85 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext6" />
-  </joint> 
-  
+  </joint>
+
   <!--office landing-->
   <!--link name="wall_ext7">
     <xacro:box_inertial x="${wall_depth}" y="2.1" z="${size_z_wall1}" mass="5.0">
@@ -219,7 +219,7 @@
     <origin xyz="2.565 8.8 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext7" />
-  </joint--> 
+  </joint-->
 
   <!-- wall ext -->
   <link name="wall_ext8">
@@ -249,8 +249,8 @@
     <origin xyz="-2.565 8.7 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext8" />
-  </joint> 
-  
+  </joint>
+
   <!-- wall ext -->
   <link name="wall_ext9">
     <xacro:box_inertial x="1.73" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
@@ -279,7 +279,7 @@
     <origin xyz="-1.8 7.50 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext9" />
-  </joint> 
+  </joint>
 
   <!-- wall ext -->
   <link name="wall_ext10">
@@ -309,7 +309,7 @@
     <origin xyz="1.89 7.53 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext10" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext11">
     <xacro:box_inertial x="0.04" y="2.24" z="${size_z_wall1}" mass="5.0">
@@ -338,7 +338,7 @@
     <origin xyz="-0.85 6.55 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext11" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext12">
     <xacro:box_inertial x="0.04" y="2.24" z="${size_z_wall1}" mass="5.0">
@@ -367,7 +367,7 @@
     <origin xyz="0.85 6.55 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext12" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext13">
     <xacro:box_inertial x="0.04" y="6.6" z="${size_z_wall1}" mass="5.0">
@@ -425,7 +425,7 @@
     <origin xyz="-3.15 3.15 ${size_z_wall1/2}" rpy="0 0 -0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext14" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext15">
     <xacro:box_inertial x="0.04" y="6.6" z="${size_z_wall1}" mass="5.0">
@@ -454,8 +454,8 @@
     <origin xyz="-3.15 -3.15 ${size_z_wall1/2}" rpy="0 0 0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext15" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext16">
     <xacro:box_inertial x="0.04" y="1.8" z="${size_z_wall1}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -483,8 +483,8 @@
     <origin xyz="-5.4 0 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext16" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext17">
     <xacro:box_inertial x="1.8" y="0.04" z="${size_z_wall1}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -512,8 +512,8 @@
     <origin xyz="0 -5.4 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext17" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext21">
     <xacro:box_inertial x="${wall_depth}" y="6.75" z="${size_z_wall1}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -541,8 +541,8 @@
     <origin xyz="5.20 5.15 ${size_z_wall1/2}" rpy="0 0 0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext21" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext22">
     <xacro:box_inertial x="0.06" y="6.00" z="${size_z_wall2}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -570,8 +570,8 @@
     <origin xyz="7.65 7.79 ${size_z_wall2/2}" rpy="0 0 0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext22" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext23">
     <xacro:box_inertial x="1.2" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -599,7 +599,7 @@
     <origin xyz="9.22 2.83 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext23" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext24">
     <xacro:box_inertial x="1.99" y="0.06" z="${size_z_wall1}" mass="5.0">
@@ -628,7 +628,7 @@
     <origin xyz="9.058 4.958 ${size_z_wall1/2}" rpy="0 0 0.7854" />
     <parent link="origin_landing" />
     <child link="wall_ext24" />
-  </joint> 
+  </joint>
 
   <!-- wall ext25 -->
   <link name="wall_ext25">
@@ -658,7 +658,7 @@
     <origin xyz="2.81 9.3 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext25" />
-  </joint> 
+  </joint>
 
   <!-- wall ext26 -->
   <link name="wall_ext26">
@@ -688,7 +688,7 @@
     <origin xyz="2.81 7.63 ${size_z_wall1/2}" rpy="0 0 0" />
     <parent link="origin_landing" />
     <child link="wall_ext26" />
-  </joint> 
+  </joint>
 
   <!-- pillar ext01 -->
   <link name="pillar_ext01">

@@ -118,7 +118,7 @@
 	</gazebo>
 
 	<joint name="joint_left_couch_middle" type="fixed">
-		<origin xyz="-0.32 0 0.150" rpy="0 0 0" /> 
+		<origin xyz="-0.32 0 0.150" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="left_couch_middle" />
 	</joint>

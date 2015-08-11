@@ -6,13 +6,13 @@
   <link name="origin_office">
     <xacro:default_inertial/>
   </link>
-  
+
   <joint name="joint_origin_office" type="fixed">
     <origin xyz="0 14 0" rpy="0 0 0" />
           <parent link="origin_landing"/>
     <child link="origin_office" />
-  </joint> 
-  
+  </joint>
+
   <!-- wall_office_00 -->
   <link name="wall_office_00">
     <xacro:box_inertial x="4.65" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
@@ -192,7 +192,7 @@
     <parent link="origin_office" />
     <child link="wall_office_05" />
   </joint>
-  
+
   <!-- wall_06 -->
   <link name="wall_office_06">
     <xacro:box_inertial x="${wall_depth}" y="1.4" z="${size_z_wall1}" mass="5.0">
@@ -252,7 +252,7 @@
     <parent link="origin_office" />
     <child link="wall_office_07" />
   </joint>
-  
+
   <!-- wall_08 -->
   <link name="wall_office_08">
     <xacro:box_inertial x="${wall_depth}" y="1.73" z="${size_z_wall1}" mass="5.0">
@@ -312,7 +312,7 @@
     <parent link="origin_office" />
     <child link="wall_office_09" />
   </joint>
-    
+
   <!-- wall_10 -->
   <link name="wall_office_10">
     <xacro:box_inertial x="4.5" y="${wall_depth}" z="${size_z_wall1}" mass="5.0">
@@ -358,7 +358,7 @@
       <geometry>
         <box size="1.8 0.55 0.22" />
        </geometry>
-    </collision>     
+    </collision>
   </link>
 
   <joint name="joint_boards_before_bedroom" type="fixed">

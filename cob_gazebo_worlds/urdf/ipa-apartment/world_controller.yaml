@@ -8,7 +8,7 @@ elevator_left_joint_position_controller:
 elevator_right_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: elevator_right_joint
-  
+
 elevator_button1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: elevator_button1_joint

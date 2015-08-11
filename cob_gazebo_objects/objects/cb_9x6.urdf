@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="cb_9x6">
   <link name="base_link">
   <inertial>
@@ -18,6 +18,6 @@
      <box size="0.2 0.2 0.005" />
      <!--mesh filename="package://cob_gazebo_objects/Media/models/cb_9x6.dae"/-->>
    </geometry>
-  </collision>     
+  </collision>
   </link>
 </robot>
