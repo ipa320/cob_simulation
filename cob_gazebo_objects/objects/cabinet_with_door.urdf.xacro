@@ -109,7 +109,7 @@
 		<parent link="cabinet_structure" />
 		<child link="cabinet_door" />
 	</joint>
-	
+
 	<!--knob1-->
 	<link name="knob1_link">
 		<inertial>

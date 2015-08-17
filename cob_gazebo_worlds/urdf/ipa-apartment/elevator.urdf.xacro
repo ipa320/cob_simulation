@@ -6,13 +6,13 @@
   <link name="origin_elevator">
     <xacro:default_inertial/>
   </link>
-  
+
   <joint name="joint_origin_elevator" type="fixed">
     <origin xyz="3.15 -3.15 ${size_z_wall1/2}" rpy="0 0 -0.7853981" />
         <parent link="origin_landing"/>
     <child link="origin_elevator" />
-  </joint> 
-    
+  </joint>
+
   <!-- elevator 1 -->
   <link name="elevator_left">
     <xacro:box_inertial x="0.04" y="0.87" z="${size_z_wall1}" mass="5.0">
@@ -43,7 +43,7 @@
     <child link="elevator_left" />
     <axis xyz = "0 1 0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-  </joint> 
+  </joint>
 
   <transmission name="elevator_left_trans">
     <type>transmission_interface/SimpleTransmission</type>
@@ -143,7 +143,7 @@
     <origin xyz="2.4 1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_left2" />
-  </joint> 
+  </joint>
 
   <!-- elevator 2 -->
   <link name="elevator_right">
@@ -175,7 +175,7 @@
     <child link="elevator_right" />
     <axis xyz = "0 -1 0"/>
     <limit effort="100" velocity="1.0" lower="0" upper="0.87" />
-  </joint> 
+  </joint>
 
   <transmission name="elevator_right_trans">
     <type>transmission_interface/SimpleTransmission</type>
@@ -275,7 +275,7 @@
     <origin xyz="2.4 -1.085 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_right2" />
-  </joint> 
+  </joint>
 
   <!--elevator buttons-->
   <link name="elevator_button1">
@@ -294,14 +294,14 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="elevator_button1_joint" type="prismatic">
     <origin xyz="-0.04 0 ${-size_z_wall1/2+1.035}" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="elevator_button1" />
     <axis xyz = "-1 0 0"/>
     <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
-  </joint> 
+  </joint>
 
   <transmission name="elevator_button1_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
@@ -326,7 +326,7 @@
       </contact>
       <plugin name="elevator_button1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
         <frameName>elevator_button1</frameName>
-        <bumperTopicName>elevator_button1_bumper</bumperTopicName>   
+        <bumperTopicName>elevator_button1_bumper</bumperTopicName>
       </plugin>
     </sensor>
   </gazebo>
@@ -354,7 +354,7 @@
     <child link="elevator_button2" />
     <axis xyz = "-1 0 0"/>
     <limit effort="1" velocity="1.0" lower="0" upper="0.005" />
-  </joint> 
+  </joint>
 
   <transmission name="elevator_button2_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
@@ -379,7 +379,7 @@
       </contact>
       <plugin name="elevator_button2_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
         <frameName>elevator_button2</frameName>
-        <bumperTopicName>elevator_button2_bumper</bumperTopicName>   
+        <bumperTopicName>elevator_button2_bumper</bumperTopicName>
       </plugin>
     </sensor>
   </gazebo>
@@ -411,8 +411,8 @@
     <origin xyz="0 2.39 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="wall_ext18" />
-  </joint> 
-  
+  </joint>
+
   <link name="wall_ext19">
     <xacro:box_inertial x="0.04" y="1.74" z="${size_z_wall1}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -440,7 +440,7 @@
     <origin xyz="0 -2.39 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="wall_ext19" />
-  </joint> 
+  </joint>
 
   <link name="wall_ext20">
     <xacro:box_inertial x="0.04" y="1.3" z="${size_z_wall1}" mass="5.0">
@@ -469,8 +469,8 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="origin_elevator" />
     <child link="wall_ext20" />
-  </joint> 
-  
+  </joint>
+
   </xacro:macro>
-  
+
 </robot>

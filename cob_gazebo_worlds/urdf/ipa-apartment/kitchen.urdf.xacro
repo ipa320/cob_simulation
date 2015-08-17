@@ -94,7 +94,7 @@
       <geometry>
         <box size="0.31 1.79 0.04" />
       </geometry>
-    </collision> 
+    </collision>
   </link>
 
   <joint name="joint_planck_link" type="fixed">

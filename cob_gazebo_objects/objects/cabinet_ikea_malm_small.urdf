@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="my_object" static="true">
   <link name="base_link">
   <inertial>
@@ -18,7 +18,7 @@
 	<!-- <box size="0.40 0.46 0.55" /> -->
      <mesh filename="package://cob_gazebo_objects/Media/models/cabinet_ikea_malm_small.dae" />
    </geometry>
-  </collision>     
+  </collision>
   </link>
 
 <gazebo>

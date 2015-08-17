@@ -32,13 +32,13 @@
       <inertia ixx="0" ixy="0"  ixz="0"
                iyy="0" iyz="0"
                izz="0" />
-    </inertial> 
+    </inertial>
     <visual>
       <origin xyz="0.0 0.0 ${chair_z+chair_height-chair_top_thickness/2}" />
       <geometry>
         <box size="${chair_width} ${chair_depth} ${chair_top_thickness}" />
       </geometry>
-    </visual> 
+    </visual>
     <collision>
       <origin xyz="0.0 0.0 ${chair_z+chair_height-chair_top_thickness/2}" />
       <geometry>
@@ -61,13 +61,13 @@
       <inertia ixx="0" ixy="0"  ixz="0"
                iyy="0" iyz="0"
                izz="0" />
-    </inertial> 
+    </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" />
       <geometry>
         <box size="${chair_width} ${chair_top_thickness} ${rest_height}" />
       </geometry>
-    </visual> 
+    </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" />
       <geometry>
@@ -86,11 +86,11 @@
     	<parent link="chair_top_link" />
     	<origin xyz="0.0 ${chair_depth/2} ${chair_z+chair_height+rest_height/2}" rpy="0 0 0" />
         <child link="chair_rest_link" />
-      </joint> 
+      </joint>
 
     <macro name="legs" params="suffix parent pos1 pos2">
 
-        
+
         <link name="leg_${suffix}_link">
             <inertial>
 		<origin xyz="0 0 0" />
@@ -99,14 +99,14 @@
                           iyy="0" iyz="0"
                           izz="0" />
             </inertial>
-            
+
             <visual>
                 <origin xyz="0 0 0" />
                 <geometry>
                     <box size="0.055 0.055 ${chair_height-chair_top_thickness}" />
                 </geometry>
             </visual>
-            
+
             <collision>
                 <origin xyz="0 0 0" />
                 <geometry>
@@ -114,7 +114,7 @@
                 </geometry>
             </collision>
         </link>
-	 
+
 	<gazebo reference="legs">
 		<material>Gazebo/White</material>
 		<turnGravityOff>false</turnGravityOff>
@@ -123,7 +123,7 @@
     	<parent link="chair_top_link" />
     	<origin xyz="${0.0+pos1*(chair_width/2-0.0375)} ${chair_y+pos2*(chair_depth/2-0.0375)} ${chair_z+chair_height/2}" rpy="0 0 0" />
         <child link="leg_${suffix}_link" />
-      </joint> 
+      </joint>
 
 
   </macro>
@@ -134,7 +134,7 @@
 
  <!--macro name="structure_lath" params="suffix parent pos1 pos2 box_size">
 
-        
+
         <link name="lath_${suffix}_link">
             <inertial>
 		<origin xyz="0 0 0" />
@@ -143,14 +143,14 @@
                           iyy="0" iyz="0"
                           izz="0" />
             </inertial>
-            
+
             <visual>
                 <origin xyz="0 0 0" />
                 <geometry>
 		    <box size="${box_size}" />
                 </geometry>
             </visual>
-            
+
             <collision>
                 <origin xyz="0 0 0" />
                 <geometry>
@@ -158,7 +158,7 @@
                 </geometry>
             </collision>
         </link>
-	 
+
 	<gazebo reference="structure_lath">
 		<material>Gazebo/White</material>
 		<turnGravityOff>false</turnGravityOff>
@@ -168,13 +168,13 @@
 
     	<origin xyz="${0.0+pos1*(chair_width/2-0.02)} ${chair_y+pos2*(chair_depth/2-0.02)} ${chair_z+chair_height-chair_top_thickness-0.035}" rpy="0 0 0" />
         <child link="lath_${suffix}_link" />
-      </joint> 
+      </joint>
 
   </macro>
 
         <structure_lath suffix="left_front" parent="chair_top_link"  pos1="1" pos2="0" box_size="0.02 0.77 0.07"/>
 	<structure_lath suffix="left_back" parent="chair_top_link"  pos1="-1" pos2="0" box_size="0.02 0.77 0.07"/>
         <structure_lath suffix="right_front" parent="chair_top_link"  pos1="0" pos2="1" box_size="0.77 0.02 0.07"/>
-	<structure_lath suffix="right_back" parent="chair_top_link"  pos1="0" pos2="-1" box_size="0.77 0.02 0.07"/--> 
+	<structure_lath suffix="right_back" parent="chair_top_link"  pos1="0" pos2="-1" box_size="0.77 0.02 0.07"/-->
 
 </robot>

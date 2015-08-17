@@ -68,7 +68,7 @@ if __name__ == "__main__":
 	if len(sys.argv) < 2:
 		print '[spawn_object.py] Please specify the names of the objects to be loaded'
 		sys.exit()
-	
+
 	rospy.init_node("object_spawner")
 
 	# check for all objects on parameter server
@@ -85,25 +85,25 @@ if __name__ == "__main__":
 		object_names.pop(0) # remove first element of sys.argv which is file name
 
 	rospy.loginfo("Trying to spawn %s",object_names)
-	
+
 	for name in object_names:
 		# check for object on parameter server
 		if not rospy.has_param("/objects/%s" % name):
 			rospy.logerr("No description for " + name + " found at /objects/" + name)
 			continue
-		
+
 		# check for model
 		if not rospy.has_param("/objects/%s/model" % name):
 			rospy.logerr("No model for " + name + " found at /objects/" + name + "/model")
 			continue
 		model = rospy.get_param("/objects/%s/model" % name)
-		
+
 		# check for model_type
 		if not rospy.has_param("/objects/%s/model_type" % name):
 			rospy.logerr("No model_type for " + name + " found at /objects/" + name + "/model_type")
 			continue
 		model_type = rospy.get_param("/objects/%s/model_type" % name)
-		
+
 		# check for position
 		if not rospy.has_param("/objects/%s/position" % name):
 			rospy.logerr("No position for " + name + " found at /objects/" + name + "/position")
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 		req.initial_pose = object_pose
 
 		res = srv_spawn_model(req)
-	
+
 		# evaluate response
 		if res.success == True:
 			rospy.loginfo(res.status_message + " " + name)

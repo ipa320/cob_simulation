@@ -3,9 +3,7 @@ project(cob_gazebo_worlds)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
 
-catkin_package(
-    CATKIN_DEPENDS controller_manager gazebo_msgs gazebo_ros_control gazebo_ros joint_state_controller joint_state_publisher kdl_parser position_controllers robot_state_publisher rospy std_msgs tf velocity_controllers xacro
-)
+catkin_package()
 
 ### TESTING ###
 if(CATKIN_ENABLE_TESTING)

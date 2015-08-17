@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="Bett_Fjellse" static="true">
   <link name="base_link">
   <inertial>
@@ -15,10 +15,10 @@
   <collision>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-      <mesh filename="package://cob_gazebo_objects/Media/models/chair_wicker.dae" /> 
+      <mesh filename="package://cob_gazebo_objects/Media/models/chair_wicker.dae" />
 	<!--<box size="0.60 0.60 0.25" />-->
    </geometry>
-  </collision>     
+  </collision>
   </link>
 
 <gazebo>
