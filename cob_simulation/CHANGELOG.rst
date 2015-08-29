@@ -2,8 +2,8 @@
 Changelog for package cob_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.4 (2015-08-29)
+------------------
 * migration to package format 2
 * remove trailing whitespaces
 * review dependencies
