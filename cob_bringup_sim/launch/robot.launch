@@ -33,11 +33,20 @@
 		<arg name="throttled" value="$(arg throttled)" />
 	</include>
 
-	<!-- startup simulated robot -->
-	<include file="$(find cob_gazebo)/launch/robot.launch" >
+	<!-- startup 1. simulated robot -->
+	<include file="$(find cob_gazebo)/launch/robot_single.launch" >
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="initial_config" value="$(arg initial_config)"/>
+		<arg name="robot_id" value="robot_1" />
+	</include>
+	
+	<!-- startup 2. simulated robot -->
+	<include file="$(find cob_gazebo)/launch/robot_single.launch" >
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="initial_config" value="-x 2"/> 	<!-- depends on environment -->
+		<arg name="robot_id" value="robot_2" />
 	</include>
 
 </launch>
