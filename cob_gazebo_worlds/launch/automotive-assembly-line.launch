@@ -7,7 +7,7 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	<arg name="robot_env" default="bmw-assembly"/>  
+	<arg name="robot_env" default="automotive-assembly-line"/>  
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-	name="bmw-assembly">
+	name="automotive-assembly-line">
 
   <!-- properties -->
   <xacro:property name="base_width" value="0.1" />
@@ -230,7 +230,6 @@
     <joint name="base_to_belt">
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
     </joint>
-
     <actuator name="belt_motor">
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
