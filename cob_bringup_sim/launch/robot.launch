@@ -15,7 +15,7 @@
 
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/launch/world.launch">
-		<arg name="robot_env" value="$(arg robot_env)" />	
+		<arg name="robot_env" value="$(arg robot_env)" />
 		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
