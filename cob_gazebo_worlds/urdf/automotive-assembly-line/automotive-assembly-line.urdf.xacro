@@ -49,7 +49,7 @@
       <xacro:default_inertial/>
     </link>
     <gazebo reference="box_${new_box_num}">
-      <material>Gazebo/Green</material>
+      <material>Gazebo/Grey</material>
     </gazebo>
     <joint name="belt_to_box_${new_box_num}" type="fixed">
        <origin xyz="0 ${new_box_num*(box_length+boxes_distance)-belt_length/2} ${box_height/2}"/>
