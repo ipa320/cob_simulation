@@ -9,6 +9,7 @@
 	<arg name="robot_id" default="/"/>
 
 	<group ns="$(arg robot_id)">
+		<param name="tf_prefix" type="str" value="$(arg robot_id)" />
 		<!-- upload default configuration parameters -->
 		<include file="$(arg pkg_robot_config)/upload_param.launch">
 			<arg name="robot" value="$(arg robot)" />
@@ -26,7 +27,6 @@
 		<!-- start gazebo controllers -->
 		<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="robot_id" value="$(arg robot_id)"/>
 		</include>
 	</group>
 
