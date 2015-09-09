@@ -59,6 +59,7 @@
 import sys
 import os
 
+import roslib
 import rospy
 from gazebo_msgs.srv import *
 from geometry_msgs.msg import *
