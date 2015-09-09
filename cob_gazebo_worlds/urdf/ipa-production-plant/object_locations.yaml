@@ -1,0 +1,362 @@
+##################################
+############ shelfs ##############
+##################################
+#person1:
+#  model:  person.urdf
+#  position: [ -6.5, -1.22, 0]
+#  orientation: [ 0, 0, 0]
+#person2:
+#  model:  person.urdf
+#  position: [ -11, -18, 0]
+#  orientation: [ 0, 0, 1.5708]
+shelf_a1:
+  model: shelf
+  model_type: urdf
+  position: [ -14.6, -28.5, 0]
+  orientation: [ 0, 0, 1.5708]
+  children:
+    palette1:
+      model: palette
+      model_type: urdf
+      position: [ -5.15, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette2:
+      model:  palette
+      model_type: urdf
+      position: [ -4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette3:
+      model:  palette
+      model_type: urdf
+      position: [ -3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette4:
+      model:  palette
+      model_type: urdf
+      position: [ -2.3, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette5:
+      model:  palette
+      model_type: urdf
+      position: [ -1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette6:
+      model:  palette
+      model_type: urdf
+      position: [ -0.5, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette7:
+      model:  palette
+      model_type: urdf
+      position: [ 0.5, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette8:
+      model:  palette
+      model_type: urdf
+      position: [ 1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette9:
+      model:  palette
+      model_type: urdf
+      position: [ 2.3, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette10:
+      model:  palette
+      model_type: urdf
+      position: [ 3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette11:
+      model:  palette
+      model_type: urdf
+      position: [ 4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette12:
+      model:  palette
+      model_type: urdf
+      position: [ 5.15, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model: packet
+          model_type: urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model: packet
+          model_type: urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    shelf_a2:
+      model:  shelf
+      model_type: urdf
+      position: [ 11.18, 0, 0]
+      orientation: [ 0, 0, 0]
+    shelf_a3:
+      model:  shelf
+      model_type: urdf
+      position: [ 22.36, 0, 0]
+      orientation: [ 0, 0, 0]
+    shelf_a4:
+      model:  shelf
+      model_type: urdf
+      position: [ 33.54, 0, 0]
+      orientation: [ 0, 0, 0]
+    shelf_a5:
+      model:  shelf
+      model_type: urdf
+      position: [ 44.72, 0, 0]
+      orientation: [ 0, 0, 0]
+    shelf_a6:
+      model:  shelf
+      model_type: urdf
+      position: [ 55.9, 0, 0]
+      orientation: [ 0, 0, 0]
+    shelf_a7:
+      model:  shelf
+      model_type: urdf
+      position: [ 67.08, 0, 0]
+      orientation: [ 0, 0, 0]
+
+
+
