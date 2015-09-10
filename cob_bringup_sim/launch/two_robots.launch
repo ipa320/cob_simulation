@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- define arguments -->
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
+	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+	<arg name="initial_config_1" default=""/>
+	<arg name="initial_config_2" default="-x 2"/>
+	<arg name="paused" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+	<arg name="throttled" default="false"/>
+	<arg name="robot_id_1" default="robot_1"/>
+	<arg name="robot_id_2" default="robot_2"/>
+
+	<!-- startup simulated environment and first robot -->
+	<include file="$(find cob_bringup_sim)/launch/robot.launch">
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="robot_env" value="$(arg robot_env)" />
+		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
+		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
+		<arg name="initial_config" value="$(arg initial_config_1)"/>
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="use_sim_time" value="$(arg use_sim_time)" />
+		<arg name="gui" value="$(arg gui)" />
+		<arg name="throttled" value="$(arg throttled)" />
+		<arg name="robot_id" value="$(arg robot_id_1)" />
+	</include>
+
+	<!-- startup second robot -->
+	<include file="$(find cob_gazebo)/launch/robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="initial_config" value="$(arg initial_config_2)"/>
+		<arg name="robot_id" value="$(arg robot_id_2)" />
+	</include>
+
+</launch>
