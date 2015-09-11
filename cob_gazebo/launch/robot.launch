@@ -10,6 +10,7 @@
 
 	<group ns="$(arg robot_id)">
 		<param name="tf_prefix" type="str" value="$(arg robot_id)" />
+		
 		<!-- upload default configuration parameters -->
 		<include file="$(arg pkg_robot_config)/upload_param.launch">
 			<arg name="robot" value="$(arg robot)" />
