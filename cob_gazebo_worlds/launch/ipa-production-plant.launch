@@ -29,7 +29,7 @@
 	<rosparam command="load" ns="objects" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/object_locations.yaml"/>
 
   	<!-- spawn all objects -->
-  	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
+  	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object_jungheinrich.py" args="all" output="screen"/>
 
 
 

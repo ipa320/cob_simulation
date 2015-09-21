@@ -14,9 +14,12 @@
 
   <!--properties-->
   <property name="wall_depth" value="0.1" />
-  <property name="wall_length" value="10" />
-  <property name="wall_height" value="2.7" />
+  <property name="wall_length" value="23" />
+  <property name="wall_height" value="5" />
   <property name="gate_size" value="2.5" />
+  <property name="position_offset_x" value="-8" />
+  <property name="position_offset_y" value="-28" />
+  <property name="position_offset_z" value="0" />
 
   <property name="M_PI" value="3.1415926535897931" />
 
@@ -48,7 +51,7 @@
   </gazebo>
 
   <joint name="joint_wall_00" type="fixed">
-    <origin xyz="${-wall_length/2} 0 ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${-wall_length/2+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_00" />
   </joint>
@@ -78,7 +81,7 @@
   </gazebo>
 
   <joint name="joint_wall_01" type="fixed">
-    <origin xyz="0 ${-wall_length/2} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${position_offset_x} ${-wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_01" />
   </joint>
@@ -108,7 +111,7 @@
   </gazebo>
 
   <joint name="joint_wall_02" type="fixed">
-    <origin xyz="${wall_length/2} 0 ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${wall_length/2+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_02" />
   </joint>
@@ -139,7 +142,7 @@
   </gazebo>
 
   <joint name="joint_wall_03" type="fixed">
-    <origin xyz="${gate_size/2} ${wall_length/2} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${gate_size/2+position_offset_x} ${wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_03" />
   </joint>
@@ -170,7 +173,7 @@
   </gazebo>
 
   <joint name="joint_wall_04" type="fixed">
-    <origin xyz="${wall_length} ${-wall_length/2} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${wall_length+position_offset_x} ${-wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_04" />
   </joint>
@@ -200,7 +203,7 @@
   </gazebo>
 
   <joint name="joint_wall_05" type="fixed">
-    <origin xyz="${(wall_length/2)+wall_length} 0 ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${(wall_length/2)+wall_length+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_05" />
   </joint>
@@ -230,7 +233,7 @@
   </gazebo>
 
   <joint name="joint_wall_06" type="fixed">
-    <origin xyz="${wall_length} ${wall_length/2} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${wall_length+position_offset_x} ${wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_06" />
   </joint>
@@ -261,7 +264,7 @@
   </gazebo>
 
   <joint name="joint_wall_07" type="fixed">
-    <origin xyz="${-wall_length/2} ${wall_length} ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${-wall_length/2+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_07" />
   </joint>
@@ -292,7 +295,7 @@
   </gazebo>
 
   <joint name="joint_wall_08" type="fixed">
-    <origin xyz="0 ${(wall_length/2)+wall_length} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${position_offset_x} ${(wall_length/2)+wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_08" />
   </joint>
@@ -323,7 +326,7 @@
   </gazebo>
 
   <joint name="joint_wall_09" type="fixed">
-    <origin xyz="${wall_length/2} ${wall_length} ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${wall_length/2+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_09" />
   </joint>
@@ -353,7 +356,7 @@
   </gazebo>
 
   <joint name="joint_wall_10" type="fixed">
-    <origin xyz="${wall_length} ${(wall_length/2)+wall_length} ${wall_height/2}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${wall_length+position_offset_x} ${(wall_length/2)+wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_10" />
   </joint>
@@ -384,7 +387,7 @@
   </gazebo>
 
   <joint name="joint_wall_11" type="fixed">
-    <origin xyz="${(wall_length/2)+wall_length} ${wall_length} ${wall_height/2}" rpy="0 0 0" />
+    <origin xyz="${(wall_length/2)+wall_length+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_11" />
   </joint>
