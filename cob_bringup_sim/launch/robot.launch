@@ -11,7 +11,7 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	<arg name="robot_id" default="/"/>
+	<arg name="robot_id" default="robot"/>
 
 	<!-- startup simulated world -->
 	<include file="$(find cob_gazebo_worlds)/launch/world.launch">
