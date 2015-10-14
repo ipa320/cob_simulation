@@ -11,7 +11,7 @@
 #  orientation: [ 0, 0, 1.5708]
 shelf_a1:
   model:    cob_gazebo_objects/objects/shelf.urdf
-  position: [ -14.6, -28.5, 0]
+  position: [ -14.6, 0, 0]
   orientation: [ 0, 0, 1.5708]
   children:
     palette1:
@@ -269,7 +269,7 @@ shelf_a1:
 
 shelf_c1:
   model:    cob_gazebo_objects/objects/shelf.urdf
-  position: [ -8.65, -28.4, 0]
+  position: [ -8.65, 0, 0]
   orientation: [ 0, 0, 1.5708]
   children:
     gitterbox2:
@@ -333,7 +333,7 @@ shelf_c1:
 
 shelf_e1:
   model:    cob_gazebo_objects/objects/shelf.urdf
-  position: [ -2.75, -28.4, 0]
+  position: [ -2.75, 0, 0]
   orientation: [ 0, 0, 1.5708]
   children:
     palette1:

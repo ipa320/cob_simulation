@@ -12,66 +12,208 @@
     </inertial>
   </xacro:macro>
 
+  <xacro:macro name="object" params="object_num *mesh *origin">
+    <link name="object_${object_num}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <insert_block name = "mesh"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <insert_block name = "mesh"/>
+        </geometry>
+      </collision>
+      <xacro:default_inertial/>
+    </link>
+    <gazebo reference="object_${object_num}">
+      <static>true</static>
+    </gazebo>
+    <gazebo reference="object_${object_num}">
+	<turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <joint name="joint_object_${object_num}" type="fixed">
+       <insert_block name="origin"/>
+       <parent link="world"/>
+       <child link="object_${object_num}"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="default_inertial">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+    </inertial>
+  </xacro:macro>
+
   <!--properties-->
   <property name="wall_depth" value="0.1" />
-  <property name="wall_length" value="23" />
   <property name="wall_height" value="5" />
-  <property name="gate_size" value="2.5" />
-  <property name="position_offset_x" value="-8" />
-  <property name="position_offset_y" value="-28" />
+  <property name="gate_size" value="3" />
+
+  <property name = "room1_w1" value = "9.5" />
+  <property name = "room1_w2" value = "9.5" />
+  <property name = "room1_w3" value = "24" />
+
+  <property name = "room2_w1" value = "18" />
+  <property name = "room2_w2" value = "21" />
+
+  <property name = "room3_w1" value = "24" />
+  <property name = "room3_w2" value = "22" />
+
+  <property name = "room4_w1" value = "36" />
+  <property name = "room4_w2" value = "24" />
+  <property name = "room4_w3" value = "7.5" />
+  <property name = "room4_w4" value = "7.5" />
+
+  <property name = "room1_room2_w1" value = "24" />
+  <property name = "room1_room3_w1" value = "22" />
+  <property name = "room2_room4_w1" value = "18" />
+  <property name = "room3_room4_w1" value = "21" />
+
+  <property name="position_offset_x" value="-20" />
+  <property name="position_offset_y" value="-35" />
   <property name="position_offset_z" value="0" />
+
 
   <property name="M_PI" value="3.1415926535897931" />
 
   <!-- world link -->
   <link name="world" />
 
-  <!-- wall_00 -->
-  <link name="wall_00">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:box_inertial>
-    <visual>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
-      </geometry>
-      <material name="IPA/Grey"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
-      </geometry>
-    </collision>
-  </link>
 
-  <gazebo reference="wall_00">
-    <material>wall_floor_05</material>
-  </gazebo>
+  <!--world objects-->
+  <xacro:object object_num="1a" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-15 -20 0" />
+  </xacro:object>
 
-  <joint name="joint_wall_00" type="fixed">
-    <origin xyz="${-wall_length/2+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
-    <parent link="world" />
-    <child link="wall_00" />
-  </joint>
+  <xacro:object object_num="1b" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-5 -20 0" />
+  </xacro:object>
 
+  <xacro:object object_num="1c" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-15 -30 0" />
+  </xacro:object>
+
+  <xacro:object object_num="1d" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-5 -30 0" />
+  </xacro:object>
+
+  <xacro:object object_num="2a" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="6 -10 0" />
+  </xacro:object>
+
+  <xacro:object object_num="2b" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="11 -10 0" />
+  </xacro:object>
+
+  <xacro:object object_num="2c" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="16 -10 0" />
+  </xacro:object>
+
+  <xacro:object object_num="2d" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
+    <origin xyz="21 -10 0" />
+  </xacro:object>
+
+  <xacro:object object_num="3a" >
+    <mesh filename="package://cob_gazebo_objects/Media/models/cabinet_ikea_galant.dae"/>
+    <origin xyz="2.2 3 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="3b" >
+    <mesh filename="package://cob_gazebo_objects/Media/models/cabinet_ikea_galant.dae"/>
+    <origin xyz="2.2 0 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="3c" >
+    <mesh filename="package://cob_gazebo_objects/Media/models/cabinet_ikea_galant.dae"/>
+    <origin xyz="2.2 -3 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="4a" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <origin xyz="6 11 0" />
+  </xacro:object>
+
+  <xacro:object object_num="4b" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <origin xyz="11 11 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="4c" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <origin xyz="16 11 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="5a" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <origin xyz="10 0 0"/>
+  </xacro:object>
+
+  <xacro:object object_num="5b" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <origin xyz="13 0 0" />
+  </xacro:object>
+
+  <xacro:object object_num="5c" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <origin xyz="16 0 0" />
+  </xacro:object>
+
+  <xacro:object object_num="5d" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <origin xyz="19 0 0" />
+  </xacro:object>
+
+  <xacro:object object_num="5e" >
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <origin xyz="22 0 0" />
+  </xacro:object>
+
+  <xacro:object object_num="6a" > 
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <origin xyz="28 5 0" />
+  </xacro:object>
+
+  <xacro:object object_num="6b" > 
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <origin xyz="28 0 0" />
+  </xacro:object>
+
+  <xacro:object object_num="6c" > 
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <origin xyz="28 -5 0" />
+  </xacro:object>
+
+
+  <!-- room1_w1 -->
   <!-- wall_01 -->
   <link name="wall_01">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y= "${room1_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -81,27 +223,28 @@
   </gazebo>
 
   <joint name="joint_wall_01" type="fixed">
-    <origin xyz="${position_offset_x} ${-wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${4.75+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_01" />
   </joint>
 
+  <!-- room1_w2 -->
   <!-- wall_02 -->
   <link name="wall_02">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_w2}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_w2} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_w2} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -111,28 +254,61 @@
   </gazebo>
 
   <joint name="joint_wall_02" type="fixed">
-    <origin xyz="${wall_length/2+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${17.25+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_02" />
   </joint>
 
 
-  <!-- wall_03 -->
-  <link name="wall_03">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length-gate_size}" z="${wall_height}" mass="5.0">
+  <!-- room2_w1 -->
+  <!-- wall_02b -->
+  <link name="wall_02b">
+    <xacro:box_inertial x="${wall_depth}" y="${room2_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length-gate_size} ${wall_height}" />
+        <box size="${wall_depth} ${room2_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length-gate_size} ${wall_height}" />
+        <box size="${wall_depth} ${room2_w1} ${wall_height}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_02b">
+    <material>wall_floor_05</material>
+  </gazebo>
+
+  <joint name="joint_wall_02b" type="fixed">
+    <origin xyz="${31+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <parent link="world" />
+    <child link="wall_02b" />
+  </joint>
+
+
+  <!-- room1_w3 -->
+  <!-- wall_03 -->
+  <link name="wall_03">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_w3}" z="${wall_height}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room1_w3} ${wall_height}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room1_w3} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -142,28 +318,29 @@
   </gazebo>
 
   <joint name="joint_wall_03" type="fixed">
-    <origin xyz="${gate_size/2+position_offset_x} ${wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${position_offset_x} ${12+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_03" />
   </joint>
 
 
+  <!-- room1_room2_w1 -->
   <!-- wall_04 -->
   <link name="wall_04">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room2_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_room2_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_room2_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -173,27 +350,29 @@
   </gazebo>
 
   <joint name="joint_wall_04" type="fixed">
-    <origin xyz="${wall_length+position_offset_x} ${-wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${22+position_offset_x} ${12+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_04" />
   </joint>
 
+
+  <!-- room2_w2 -->
   <!-- wall_05 -->
   <link name="wall_05">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room2_w2}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room2_w2} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room2_w2} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -203,27 +382,29 @@
   </gazebo>
 
   <joint name="joint_wall_05" type="fixed">
-    <origin xyz="${(wall_length/2)+wall_length+position_offset_x} ${position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${40+position_offset_x} ${13.5+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_05" />
   </joint>
 
+
+  <!-- room1_room3_w1 -->
   <!-- wall_06 -->
   <link name="wall_06">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room3_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_room3_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room1_room3_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -233,28 +414,29 @@
   </gazebo>
 
   <joint name="joint_wall_06" type="fixed">
-    <origin xyz="${wall_length+position_offset_x} ${wall_length/2+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${11+position_offset_x} ${24+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_06" />
   </joint>
 
 
+  <!-- room2_room4_w1 -->
   <!-- wall_07 -->
   <link name="wall_07">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room2_room4_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room2_room4_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room2_room4_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -264,28 +446,29 @@
   </gazebo>
 
   <joint name="joint_wall_07" type="fixed">
-    <origin xyz="${-wall_length/2+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${31+position_offset_x} ${24+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_07" />
   </joint>
-    
 
+
+  <!-- room4_w3 -->
   <!-- wall_08 -->
   <link name="wall_08">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w3}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room4_w3} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room4_w3} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -295,28 +478,29 @@
   </gazebo>
 
   <joint name="joint_wall_08" type="fixed">
-    <origin xyz="${position_offset_x} ${(wall_length/2)+wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${43.75+position_offset_x} ${24+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_08" />
   </joint>
-    
 
+
+  <!-- room4_w4 -->
   <!-- wall_09 -->
   <link name="wall_09">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w4}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room4_w4} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room4_w4} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -326,27 +510,29 @@
   </gazebo>
 
   <joint name="joint_wall_09" type="fixed">
-    <origin xyz="${wall_length/2+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${54.25+position_offset_x} ${24+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
     <parent link="world" />
     <child link="wall_09" />
   </joint>
 
+
+  <!-- room3_w1 -->
   <!-- wall_10 -->
   <link name="wall_10">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room3_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room3_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -356,28 +542,29 @@
   </gazebo>
 
   <joint name="joint_wall_10" type="fixed">
-    <origin xyz="${wall_length+position_offset_x} ${(wall_length/2)+wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <origin xyz="${position_offset_x} ${36+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_10" />
   </joint>
-    
 
+
+  <!-- room3_room4_w1 -->
   <!-- wall_11 -->
   <link name="wall_11">
-    <xacro:box_inertial x="${wall_depth}" y="${wall_length}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room3_room4_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${wall_length} ${wall_height}" />
+        <box size="${wall_depth} ${room3_room4_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -387,15 +574,105 @@
   </gazebo>
 
   <joint name="joint_wall_11" type="fixed">
-    <origin xyz="${(wall_length/2)+wall_length+position_offset_x} ${wall_length+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${22+position_offset_x} ${36+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_11" />
   </joint>
-    
-    
-    
 
 
+  <!-- room4_w2 -->
+  <!-- wall_12 -->
+  <link name="wall_12">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w2}" z="${wall_height}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room4_w2} ${wall_height}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room4_w2} ${wall_height}" />
+      </geometry>
+    </collision>
+  </link>
 
+  <gazebo reference="wall_12">
+    <material>wall_floor_05</material>
+  </gazebo>
+
+  <joint name="joint_wall_12" type="fixed">
+    <origin xyz="${58+position_offset_x} ${36+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_12" />
+  </joint>
+
+
+  <!-- room3_w2 -->
+  <!-- wall_13 -->
+  <link name="wall_13">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_w2}" z="${wall_height}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room3_w2} ${wall_height}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room3_w2} ${wall_height}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_13">
+    <material>wall_floor_05</material>
+  </gazebo>
+
+  <joint name="joint_wall_13" type="fixed">
+    <origin xyz="${11+position_offset_x} ${48+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <parent link="world" />
+    <child link="wall_13" />
+  </joint>
+
+
+  <!-- room4_w1 -->
+  <!-- wall_14 -->
+  <link name="wall_14">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w1}" z="${wall_height}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room4_w1} ${wall_height}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room4_w1} ${wall_height}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_14">
+    <material>wall_floor_05</material>
+  </gazebo>
+
+  <joint name="joint_wall_14" type="fixed">
+    <origin xyz="${40+position_offset_x} ${48+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 ${90*M_PI/180}" />
+    <parent link="world" />
+    <child link="wall_14" />
+  </joint>
 
 </robot>
