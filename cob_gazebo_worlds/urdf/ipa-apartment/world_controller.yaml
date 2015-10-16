@@ -1,0 +1,18 @@
+## joint_names
+joint_names: [elevator_left_joint, elevator_right_joint, elevator_button1_joint, elevator_button2_joint]
+
+elevator_left_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: elevator_left_joint
+
+elevator_right_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: elevator_right_joint
+
+elevator_button1_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: elevator_button1_joint
+
+elevator_button2_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: elevator_button2_joint

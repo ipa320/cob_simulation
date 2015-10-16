@@ -6,9 +6,9 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	
+
 	<arg name="robot_env" default="ipa-kitchen"/>
-	
+
 	<!-- start gazebo with empty world -->
 	<include file="$(find cob_gazebo_worlds)/launch/empty.launch">
 		<arg name="world_name" value="worlds/empty.world"/>
@@ -19,9 +19,12 @@
 		<arg name="gui" value="$(arg gui)" />
 		<!--arg name="throttled" value="$(arg throttled)" /-->
 	</include>
-	
+
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
 		<arg name="robot_env" value="$(arg robot_env)"/>
 	</include>
+
+	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
+	<node ns="world" name="door_joint_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn door_joint_velocity_controller" respawn="false" output="screen"/>
 
 </launch>

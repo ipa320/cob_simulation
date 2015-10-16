@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="jodsalz">
   <link name="base_link">
   <inertial>
@@ -18,7 +18,7 @@
      <box size="0.061 0.046 0.144" />
      <!--mesh filename="package://cob_gazebo_objects/Media/models/jodsalz.dae"/-->>
    </geometry>
-  </collision>     
+  </collision>
   </link>
 <gazebo>
 	<static>true</static>

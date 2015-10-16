@@ -3,28 +3,26 @@
 ##\file
 #
 # \note
-# Copyright (c) 2010 \n
+# Copyright (c) 2012 \n
 # Fraunhofer Institute for Manufacturing Engineering
 # and Automation (IPA) \n\n
 #
 #################################################################
 #
 # \note
-# Project name: Care-O-bot Research
+# Project name: Care-O-bot
 # \note
-# ROS stack name: cob_environments
+# ROS stack name: cob_simulation
 # \note
 # ROS package name: cob_gazebo_worlds
 #
 # \author
-# Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh-garcia@ipa.fhg.de
+# Author: Nadia Hammoudeh Garcia
 # \author
-# Supervised by: Nadia Hammoudeh Garcia, email:nadia.hammoudeh-garcia@ipa.fhg.de
+# Supervised by: Nadia Hammoudeh Garcia
 #
-# \date Date of creation: Nov 2012
+# \date Date of creation: 26.06.2012
 #
-# \brief
-# 
 #
 #################################################################
 #
@@ -53,25 +51,64 @@
 #
 # You should have received a copy of the GNU Lesser General Public
 # License LGPL along with this program.
-# If not, see < http://www.gnu.org/licenses/>.
+# If not, see <http://www.gnu.org/licenses/>.
 #
-#################################################################  
-import roslib
-roslib.load_manifest('cob_gazebo_worlds')
+#################################################################
+
+import time
+import sys
+import random
+from math import *
 
 import rospy
-import tf
-import math
+from gazebo_msgs.msg import *
+from std_msgs.msg import *
+
+door_closed = True
+
+def callback(ContactsState):
+
+	if door_closed:
+		if (ContactsState.states != []):
+			rospy.loginfo("button pressed")
+			rand = (random.randint(0,1))
+			if rand == 0:
+				move_door("left")
+			else:
+				move_door("right")
+		else:
+			rospy.logdebug("button not pressed")
+	else:
+		rospy.loginfo("Door Opened")
+
+def listener():
+
+	rospy.init_node('listener', anonymous=True)
+	rospy.Subscriber("/elevator_button1_bumper", ContactsState, callback, queue_size=1)
+	rospy.spin()
+
+def move_door(side):
+
+	door_closed = False
+	topic_name = '/world/elevator_%s_joint_position_controller/command' %side
+	pub = rospy.Publisher(topic_name,Float64,queue_size=10)
+	rospy.sleep(1)
+	pos = 0.87
+	pub.publish(pos)
+
+	rospy.loginfo("%s door is opening" %side)
+
+
+	rospy.sleep(10)
+	pos = 0
+	rospy.loginfo("%s door is closing" %side)
+	pub.publish(pos)
+
+	rospy.sleep(10)
+	door_closed = True
 
 if __name__ == '__main__':
-    rospy.init_node('my_tf_broadcaster')
-    br = tf.TransformBroadcaster()
-    rate = rospy.Rate(10.0)
-    while not rospy.is_shutdown():
-        t = rospy.Time.now().to_sec()
-        br.sendTransform((0,0,0.01),
-                         (0.0, 0.0, 0.0, 1.0),
-                         rospy.Time.now(),
-                         "map",
-                         "dummy_link")
-        rate.sleep()
+	listener()
+
+
+

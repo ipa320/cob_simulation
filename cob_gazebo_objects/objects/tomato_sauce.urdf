@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="kraeuter">
   <link name="base_link">
   <inertial>
@@ -18,7 +18,7 @@
      <box size="0.076 0.047 0.11" />
      <!--mesh filename="package://cob_gazebo_objects/Media/models/kraeuter.dae"/-->>
    </geometry>
-  </collision>     
+  </collision>
   </link>
 <gazebo>
 	<static>true</static>

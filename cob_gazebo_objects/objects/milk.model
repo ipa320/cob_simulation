@@ -1,5 +1,5 @@
-<?xml version="1.0"?> 
- 
+<?xml version="1.0"?>
+
   <model:physical name="milk_box"
     xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
     xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"

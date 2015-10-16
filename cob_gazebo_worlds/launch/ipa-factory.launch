@@ -6,9 +6,9 @@
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	
+
 	<arg name="robot_env" default="ipa-factory"/>
-	
+
 	<!-- start gazebo with empty world -->
 	<include file="$(find cob_gazebo_worlds)/launch/empty.launch">
 		<arg name="world_name" value="worlds/ipa-factory.world"/>

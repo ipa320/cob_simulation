@@ -1,8 +1,8 @@
-<package>
+<package format="2">
   <name>cob_gazebo_objects</name>
-  <version>0.5.2</version>
+  <version>0.6.4</version>
   <description>This package provides some objects and furniture for gazebo simulation.</description>
-  
+
   <license>LGPL</license>
 
   <url type="website">http://ros.org/wiki/cob_gazebo_objects</url>
@@ -13,10 +13,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <exec_depend>cob_description</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
 
-  <run_depend>cob_description</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>
   </export>

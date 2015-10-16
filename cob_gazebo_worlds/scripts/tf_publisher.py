@@ -3,25 +3,27 @@
 ##\file
 #
 # \note
-# Copyright (c) 2012 \n
+# Copyright (c) 2010 \n
 # Fraunhofer Institute for Manufacturing Engineering
 # and Automation (IPA) \n\n
 #
 #################################################################
 #
 # \note
-# Project name: Care-O-bot
+# Project name: Care-O-bot Research
 # \note
 # ROS stack name: cob_environments
 # \note
 # ROS package name: cob_gazebo_worlds
 #
 # \author
-# Author: Nadia Hammoudeh Garcia
+# Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh-garcia@ipa.fhg.de
 # \author
-# Supervised by: Nadia Hammoudeh Garcia
+# Supervised by: Nadia Hammoudeh Garcia, email:nadia.hammoudeh-garcia@ipa.fhg.de
 #
-# \date Date of creation: 26.06.2012
+# \date Date of creation: Nov 2012
+#
+# \brief
 #
 #
 #################################################################
@@ -51,75 +53,24 @@
 #
 # You should have received a copy of the GNU Lesser General Public
 # License LGPL along with this program.
-# If not, see <http://www.gnu.org/licenses/>.
+# If not, see < http://www.gnu.org/licenses/>.
 #
 #################################################################
 
-import time
-import sys
-import roslib
-roslib.load_manifest('cob_gazebo_worlds')
+import math
+
 import rospy
-import random
-from math import *
-
-#from gazebo.srv import *
-from gazebo_msgs.srv import *
-from gazebo_msgs.msg import *
-
-
-apply_effort_service = rospy.ServiceProxy('/gazebo/apply_joint_effort', ApplyJointEffort)
-door_closed = True
-
-
-
-def callback(ContactsState):
-
-	if door_closed:
-		if (ContactsState.states != []):
-			rospy.loginfo("button pressed")	
-			rand = (random.randint(0,1))
-			if rand == 0:
-				move_door("left")
-			else:
-				move_door("right")
-		else:
-			rospy.logdebug("button not pressed")
-	else:
-		rospy.loginfo("Door Opened")
-
-
-
-def listener():
-    
-    rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber("/elevator_button1_bumper/state", ContactsState, callback, queue_size=1)
-    rospy.spin()
-
-def move_door(side):
-
-	door_closed = False
-	req = ApplyJointEffortRequest()
-	req.joint_name = 'joint_elevator_'+side
-	req.start_time.secs = 0
-	req.duration.secs = -10
-	req.effort = 500
-	rospy.loginfo("door is opening")
-	res = apply_effort_service(req)
-
-	rospy.sleep(10)
-	req.effort = -1000
-	rospy.loginfo("door is closing")
-	res = apply_effort_service(req)
-
-	rospy.sleep(10)
-	req.effort = 500
-	res = apply_effort_service(req)
-	door_closed = True
-
+import tf
 
 if __name__ == '__main__':
-    listener()
-
-
-
+    rospy.init_node('my_tf_broadcaster')
+    br = tf.TransformBroadcaster()
+    rate = rospy.Rate(10.0)
+    while not rospy.is_shutdown():
+        t = rospy.Time.now().to_sec()
+        br.sendTransform((0,0,0.01),
+                         (0.0, 0.0, 0.0, 1.0),
+                         rospy.Time.now(),
+                         "map",
+                         "world")
+        rate.sleep()

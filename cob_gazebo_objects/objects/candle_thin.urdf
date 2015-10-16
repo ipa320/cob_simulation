@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="my_object" static="true">
   <link name="base_link">
   <inertial>
@@ -17,7 +17,7 @@
    <geometry>
      <box size="0.06 0.06 0.48" />
    </geometry>
-  </collision>     
+  </collision>
   </link>
 
 <gazebo>

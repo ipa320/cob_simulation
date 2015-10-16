@@ -57,12 +57,8 @@
 #
 #################################################################
 import sys
-import roslib
-roslib.load_manifest('cob_bringup_sim')
 
 import rospy
-import os
-
 from gazebo_msgs.srv import *
 from geometry_msgs.msg import *
 import tf.transformations as tft
@@ -71,7 +67,7 @@ if __name__ == "__main__":
 	if len(sys.argv) < 2:
 		print '[remove_object.py] Please specify the names of the objects to be removed'
 		sys.exit()
-	
+
 	rospy.init_node("object_remover")
 
 	# check for all objects on parameter server
@@ -89,7 +85,7 @@ if __name__ == "__main__":
 		object_names.pop(0) # remove first element of sys.argv which is file name
 
 	rospy.loginfo("Trying to remove %s",object_names)
-	
+
 	for name in object_names:
 		# check if object is already spawned
 		srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel)

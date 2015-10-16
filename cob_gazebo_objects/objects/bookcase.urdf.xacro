@@ -108,7 +108,7 @@
 		<origin xyz="0.000 0.000 ${bookcase_thickness_max/2}" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="bookcase_bottom_link" />
-	</joint>  
+	</joint>
 
 	<!-- bookcase_middle -->
 	<link name="bookcase_middle">
@@ -139,7 +139,7 @@
 		<origin xyz="0.000 0.000 ${bookcase_height/2}" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="bookcase_middle" />
-	</joint> 
+	</joint>
 
 
 
@@ -174,7 +174,7 @@
 		<origin xyz="0.0 ${bookcase_depth/2-bookcase_thickness_max/2} ${bookcase_height/2}" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="bookcase_right" />
-	</joint> 
+	</joint>
 
 	<!-- bookcase_left -->
 	<link name="bookcase_left">
@@ -205,13 +205,13 @@
 		<origin xyz="0.0 ${-bookcase_depth/2+bookcase_thickness_max/2} ${bookcase_height/2}" rpy="0 0 0" />
 		<parent link="dummy_link" />
 		<child link="bookcase_left" />
-	</joint> 
+	</joint>
 
 	<!--Separations-->
 
     <macro name="separations" params="suffix parent pos">
 
-        
+
         <link name="separation_${suffix}_link">
             <inertial>
 		<origin xyz="0 0 0" />
@@ -220,14 +220,14 @@
                           iyy="0" iyz="0"
                           izz="0" />
             </inertial>
-            
+
             <visual>
                 <origin xyz="0 0 0" />
                 <geometry>
 			<box size="${bookcase_width} ${bookcase_thickness_min} 0.3375" />
                 </geometry>
             </visual>
-            
+
             <collision>
                 <origin xyz="0 0 0" />
                 <geometry>
@@ -235,7 +235,7 @@
                 </geometry>
             </collision>
         </link>
-	 
+
 	<gazebo reference="separations">
 		<material>Gazebo/White</material>
 		<turnGravityOff>false</turnGravityOff>
@@ -244,7 +244,7 @@
     	<parent link="${parent}" />
     	<origin xyz="${pos}" rpy="0 0 0" />
         <child link="separation_${suffix}_link" />
-      </joint> 
+      </joint>
 
 
   </macro>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <robot name="milk">
   <link name="box_body">
   <inertial>
@@ -18,7 +18,7 @@
      <box size="0.06 0.095 0.2" />
      <!--mesh filename="package://cob_gazebo_objects/Media/models/milk_box.dae"/-->
    </geometry>
-  </collision>     
+  </collision>
   </link>
 <gazebo>
 	<static>true</static>

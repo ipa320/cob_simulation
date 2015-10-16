@@ -9,7 +9,7 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
-    
+
     <model name='environment_model'>
       <static>1</static>
       <link name='environment_model_link'>
