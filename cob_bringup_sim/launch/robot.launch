@@ -7,26 +7,16 @@
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 	<arg name="initial_config" default=""/>
-
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-
-
-	<!-- upload default configuration parameters -->
-	<include file="$(arg pkg_robot_config)/upload_param.launch">
-		<arg name="robot" value="$(arg robot)" />
-	</include>
-	<include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
-		<arg name="robot_env" value="$(arg robot_env)" />
-	</include>
-	<include file="$(arg pkg_env_config)/upload_object_locations.launch">
-		<arg name="robot_env" value="$(arg robot_env)" />
-	</include>
+	<arg name="robot_id" default="/"/>
 
 	<!-- startup simulated world -->
-	<include file="$(find cob_gazebo_worlds)/launch/$(arg robot_env).launch">
+	<include file="$(find cob_gazebo_worlds)/launch/world.launch">
+		<arg name="robot_env" value="$(arg robot_env)" />
+		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="gui" value="$(arg gui)" />
@@ -36,8 +26,10 @@
 	<!-- startup simulated robot -->
 	<include file="$(find cob_gazebo)/launch/robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="initial_config" value="$(arg initial_config)"/>
+		<arg name="robot_id" value="$(arg robot_id)" />
 	</include>
 
 </launch>

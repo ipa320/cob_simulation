@@ -1,21 +1,34 @@
 <?xml version="1.0"?>
 <launch>
 
+	<!-- define arguments -->
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="paused" default="false"/>
 	<arg name="initial_config" default=""/>
+	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
+	<arg name="robot_id" default="/"/>
 
-	<!-- send robot urdf to param server -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
+	<group ns="$(arg robot_id)">
+		<param name="tf_prefix" type="str" value="$(arg robot_id)" />
+		
+		<!-- upload default configuration parameters -->
+		<include file="$(arg pkg_robot_config)/upload_param.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
+		<!-- send robot urdf to param server -->
+		<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot_id" value="$(arg robot_id)"/>
+		</include>
 
-	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 $(arg initial_config)" respawn="false" output="screen" />
+		<!-- push robot_description to factory and spawn robot in gazebo -->
+		<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model model_$(arg robot_id) -z 0.1 $(arg initial_config)" respawn="false" output="screen" />
 
-	<!-- start gazebo controllers -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
+		<!-- start gazebo controllers -->
+		<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
 
 </launch>
