@@ -4,6 +4,7 @@
 	<!-- define arguments -->
 	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
