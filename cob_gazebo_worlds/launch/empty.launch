@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
 	<arg name="world_name" default="worlds/empty.world"/>
 	<arg name="debug" default="false"/>
 	<arg name="headless" default="false"/>
@@ -8,7 +9,7 @@
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
 
-	<env name="GAZEBO_MODEL_PATH" value="$(find cob_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
+	<env name="GAZEBO_MODEL_PATH" value="$(arg pkg_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
