@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-
 	<!-- define arguments -->
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
