@@ -12,9 +12,9 @@
 # \note
 # Project name: Care-O-bot Research
 # \note
-# ROS stack name: sick_simulation
+# ROS stack name: cob_simulation
 # \note
-# ROS package name: sick_simulation
+# ROS package name: cob_simulation
 #
 # \author
 # Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
@@ -216,13 +216,6 @@ class move():
     
         (options, args) = parser.parse_args()
 
-
-        # check for input parameters
-        #if len(args) > 0:
-            # Hannes DEBUG
-        #    print "Leftover arguments: "+str(args)
-            ##############
-        #    parser.error("No arguments supported, please provide options.")
         if options.mode == None:
             parser.error("Please provide a valid mode, see -h option.")
         if options.name == None:

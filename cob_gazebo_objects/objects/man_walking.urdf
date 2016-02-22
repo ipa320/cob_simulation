@@ -9,13 +9,13 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://sick_simulation_objects/Media/models/3D_Man_Walking.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/man_walking.dae"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://sick_simulation_objects/Media/models/3D_Man_Walking.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/man_walking.dae"/>
    </geometry>
   </collision>     
   </link>
