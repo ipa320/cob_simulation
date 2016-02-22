@@ -1,36 +1,27 @@
 <?xml version="1.0"?>
 <launch>
-
 	<!-- define arguments -->
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
+	<arg name="paused" default="false"/>
+	<arg name="initial_config" default=""/>
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
-	<arg name="initial_config" default=""/>
-
-	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
 
-	<!-- startup simulated world -->
-	<include file="$(find cob_gazebo_worlds)/launch/world.launch">
-		<arg name="robot_env" value="$(arg robot_env)" />
-		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
-		<arg name="pkg_gazebo_worlds" value="$(arg pkg_gazebo_worlds)" />
-		<arg name="paused" value="$(arg paused)" />
-		<arg name="use_sim_time" value="$(arg use_sim_time)" />
-		<arg name="gui" value="$(arg gui)" />
-		<arg name="throttled" value="$(arg throttled)" />
-	</include>
-
-	<!-- startup simulated robot -->
-	<include file="$(find cob_gazebo)/launch/robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
-		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
-		<arg name="paused" value="$(arg paused)" />
-		<arg name="initial_config" value="$(arg initial_config)"/>
-	</include>
-
+	<node name="robotlaunch" pkg="cob_bringup_sim" type="delay_robot_spawn.sh" output="screen"
+		args=	"robot:=$(arg robot)
+				 pkg_robot_config:=$(arg pkg_robot_config)
+				 paused:=$(arg paused)
+				 initial_config:=$(arg initial_config)
+				 robot_env:=$(arg robot_env)
+				 pkg_env_config:=$(arg pkg_env_config)
+				 pkg_gazebo_worlds:=$(arg pkg_gazebo_worlds)
+				 use_sim_time:=$(arg use_sim_time)
+				 gui:=$(arg gui)
+				 throttled:=$(arg throttled)"
+	/>
 </launch>

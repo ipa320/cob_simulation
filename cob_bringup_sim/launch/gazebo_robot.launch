@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- define arguments -->
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
+	<arg name="paused" default="false"/>
+	<arg name="initial_config" default=""/>
+
+	<!-- startup simulated robot -->
+	<include file="$(find cob_gazebo)/launch/robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="initial_config" value="$(arg initial_config)"/>
+	</include>
+
+</launch>
