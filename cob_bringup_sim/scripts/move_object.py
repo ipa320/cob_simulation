@@ -81,11 +81,16 @@ _usage = """usage: %prog [options]
 
 class move():
     def __init__(self):
-        self.vel = 0.0
+        self.parse_options()
+        # start node
+        self.vel = float(self.options.velocity)
+        self.name = self.options.name
+        rospy.init_node('move' + self.name)
         self.model = ""
-        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState)
+        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
         #self.srv_set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
-        self.rate = 100.0 # hz
+        self.node_frequency = 100.0 # hz
+        self.rate = rospy.Rate(self.node_frequency) # hz
 
     def move_on_line(self, start, goal):
         dx = goal[0] - start[0]
@@ -94,12 +99,11 @@ class move():
         segment_time = segment_length/self.vel
         yaw = math.atan2(dy, dx)
 
-        segment_step_count = int(segment_time*self.rate)
+        segment_step_count = int(segment_time*self.node_frequency)
         
         if segment_step_count == 0:
             return
         segment_time = segment_length/self.vel/segment_step_count
-        segment_rate = rospy.Rate(self.rate)
     
         for step in numpy.linspace(0, segment_length, segment_step_count):
             step_x = start[0] + step * math.cos(yaw)
@@ -108,7 +112,7 @@ class move():
             object_new_pose = Pose()
             object_new_pose.position.x = step_x
             object_new_pose.position.y = step_y
-            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw + 1.5708)
+            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
             object_new_pose.orientation.x = quat[0]
             object_new_pose.orientation.y = quat[1]
             object_new_pose.orientation.z = quat[2]
@@ -131,7 +135,7 @@ class move():
             #    print "something went wrong in service call"
         
             # sleep until next step
-            segment_rate.sleep()
+            self.rate.sleep()
 
     def move_polygon(self, polygon_in):
         # move on all parts of the polygon
@@ -152,17 +156,16 @@ class move():
 
     def move_circle(self, center, radius):
         # move on all parts of the polygon
-        rate = rospy.Rate(self.rate)
-        yaw_step = math.asin(1.0/self.rate*self.vel/radius)
+        yaw_step = math.asin(1.0/self.node_frequency*self.vel/radius)
         yaw = 0.0
         while not rospy.is_shutdown():
-            if yaw >= 2*3.1415926:
+            if yaw >= 2*math.pi:
                 rospy.loginfo("starting new round")
                 yaw = 0.0
             object_new_pose = Pose()
             object_new_pose.position.x = center[0] + radius * math.sin(yaw)
             object_new_pose.position.y = center[1] + radius * math.cos(yaw)
-            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, -yaw+1.5708)
+            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, -yaw)
             object_new_pose.orientation.x = quat[0]
             object_new_pose.orientation.y = quat[1]
             object_new_pose.orientation.z = quat[2]
@@ -184,10 +187,9 @@ class move():
             #if not res.success:
             #    print "something went wrong in service call"
             yaw += yaw_step
-            rate.sleep()
+            self.rate.sleep()
 
-    def run(self):
-
+    def parse_options(self):
         parser = OptionParser(usage=_usage, prog=os.path.basename(sys.argv[0]))
 
         parser.add_option("-m", "--mode",
@@ -214,28 +216,25 @@ class move():
             dest="radius", default=None,
             help="Radius, only used for circular movement. Default: None")
     
-        (options, args) = parser.parse_args()
+        (self.options, args) = parser.parse_args()
 
-        if options.mode == None:
+        if self.options.mode == None:
             parser.error("Please provide a valid mode, see -h option.")
-        if options.name == None:
+        if self.options.name == None:
             parser.error("Please provide a valid model name, see -h option.")
 
-        # start node
-        self.vel = float(options.velocity)
-        self.name = options.name
-        rospy.init_node('move' + self.name)
-            
-        if options.mode == "polygon":
-            if (options.polygon == None) or (type(eval(options.polygon)) is not list):
-                parser.error("Please provide a valid polygon, see -h option. polygon = " + str(options.polygon))
-            self.move_polygon(eval(options.polygon))
-        if options.mode == "circle":
-            if options.radius == None:
-                parser.error("Please provide a valid radius. radius = " + str(options.radius))
-            if options.center == None:
-                parser.error("Please provide a valid center. center = " + str(options.center))
-            self.move_circle(eval(options.center),float(options.radius))
+
+    def run(self):            
+        if self.options.mode == "polygon":
+            if (self.options.polygon == None) or (type(eval(self.options.polygon)) is not list):
+                parser.error("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))
+            self.move_polygon(eval(self.options.polygon))
+        if self.options.mode == "circle":
+            if self.options.radius == None:
+                parser.error("Please provide a valid radius. radius = " + str(self.options.radius))
+            if self.options.center == None:
+                parser.error("Please provide a valid center. center = " + str(self.options.center))
+            self.move_circle(eval(self.options.center),float(self.options.radius))
 
 
 if __name__ == "__main__":
