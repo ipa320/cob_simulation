@@ -14,7 +14,7 @@
 # \note
 # ROS stack name: cob_simulation
 # \note
-# ROS package name: cob_simulation
+# ROS package name: cob_bringup_sim
 #
 # \author
 # Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
@@ -24,7 +24,7 @@
 # \date Date of creation: Oct 2013
 #
 # \brief
-# Implements script server functionalities.
+# Implements move object functionalities.
 #
 #################################################################
 #
