@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="object"/>
+	<arg name="file_path_urdf" default="$(find cob_gazebo_objects)/objects/$(arg object).urdf"/>
+	<arg name="object_origin" default=""/>
+
+	<param name="object_description" textfile="$(arg file_path_urdf)" />
+
+	<node name="spawn_object_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param object_description -model $(arg object) ${arg object_origin}" respawn="false" output="screen" />
+
+</launch>
