@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * fix dependency
 * remove robot_id
 * better default robot_id

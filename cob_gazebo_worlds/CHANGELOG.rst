@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * enable other gazebo worlds packages
 * remove robot_id
 * changed color of boxes on the belt to grey

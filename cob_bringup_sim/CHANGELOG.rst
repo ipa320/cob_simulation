@@ -2,8 +2,8 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * fix install tags and dependencies
 * fix move_object script
 * Update move.py

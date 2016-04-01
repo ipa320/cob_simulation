@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * add launch file
 * add urdf and stl
 * add ikea kallax mesh
