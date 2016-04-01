@@ -2,6 +2,18 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add launch file
+* add urdf and stl
+* add ikea kallax mesh
+* fix man urdfs
+* fix meshes
+* old objects deleted
+* added people, move.py and changed model names
+* added people and the possibility to move objects
+* Contributors: Florian Weisshardt, hannes, ipa-fxm
+
 0.6.4 (2015-08-29)
 ------------------
 * migration to package format 2

@@ -2,6 +2,28 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix install tags and dependencies
+* fix move_object script
+* Update move.py
+* added people, move.py and changed model names
+* added people and the possibility to move objects
+* enable other gazebo worlds packages
+* remove robot_id
+* better default robot_id
+* delete two_robots.launch
+* Merge pull request `#91 <https://github.com/ipa320/cob_simulation/issues/91>`_ from ipa-mig-mc/fix/issue_number_90_missing_import_roslib
+  added import roslib to spawn_object.py and did corresponding addition…
+* launch file for spawning two robots
+* added import roslib to spawn_object.py and did corresponding addition to packages.xml
+* space
+* nicer structure
+* Revert "spawn two robots"
+  This reverts commit b66aa13d920824a052d398dd8b49cb52c2c4a155.
+* spawn two robots
+* Contributors: Felix Gruber, Felix Messmer, Florian Weisshardt, hannes, ipa-fmw, ipa-fxm, ipa-mig-mc
+
 0.6.4 (2015-08-29)
 ------------------
 * migration to package format 2

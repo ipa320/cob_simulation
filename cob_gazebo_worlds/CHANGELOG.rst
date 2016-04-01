@@ -2,6 +2,21 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* enable other gazebo worlds packages
+* remove robot_id
+* changed color of boxes on the belt to grey
+* nicer structure
+* changed name of the environment to automotive-assembly-line
+* added hardwareInterface tag in Joint section of belt_trans transmission description
+* minor code cleanup
+* added model files which were left out in previous commit
+* added objects to the environment
+* successful integration of bmw-assembly into cob_simulation
+* error state: problem with loading joint controller
+* Contributors: Felix Gruber, ipa-fmw, ipa-fxm, ipa-mig-mc
+
 0.6.4 (2015-08-29)
 ------------------
 * cleanup
