@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-
 	<arg name="debug" default="false"/>
 	<arg name="headless" default="false"/>
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	<arg name="robot_env" default="ipa-production-plant"/>  
+
+	<arg name="robot_env" default="ipa-production-plant"/>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -22,15 +22,14 @@
 
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
 		<arg name="robot_env" value="$(arg robot_env)"/>
+		<arg name="publish_world_state" value="false"/>
 	</include>
 
-  	<!-- send objects locations to parameter server -->
+	<!-- send objects locations to parameter server -->
 	<rosparam command="delete" param="/objects"/>
-	<rosparam command="load" ns="objects" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/object_locations.yaml"/>
+	<rosparam ns="objects" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/object_locations.yaml"/>
 
-  	<!-- spawn all objects -->
-  	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
-
-
+	<!-- spawn all objects -->
+	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
 
 </launch>

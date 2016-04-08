@@ -7,7 +7,13 @@
 
   <!--macros-->
   <xacro:macro name="object" params="object_num *mesh *origin">
+    <joint name="joint_object_${object_num}" type="fixed">
+       <insert_block name="origin"/>
+       <parent link="world"/>
+       <child link="object_${object_num}"/>
+    </joint>
     <link name="object_${object_num}">
+      <xacro:default_inertial/>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -20,24 +26,19 @@
           <insert_block name = "mesh"/>
         </geometry>
       </collision>
-      <xacro:default_inertial/>
     </link>
     <gazebo reference="object_${object_num}">
       <static>true</static>
     </gazebo>
     <gazebo reference="object_${object_num}">
-	<turnGravityOff>false</turnGravityOff>
+      <turnGravityOff>false</turnGravityOff>
     </gazebo>
-    <joint name="joint_object_${object_num}" type="fixed">
-       <insert_block name="origin"/>
-       <parent link="world"/>
-       <child link="object_${object_num}"/>
-    </joint>
   </xacro:macro>
+
+
 
   <!-- world link -->
   <link name="world" />
-
 
   <!--world objects-->
   <xacro:object object_num="1a" >
