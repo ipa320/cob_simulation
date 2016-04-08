@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--properties-->
+  <property name="wall_depth" value="0.1" />
+  <property name="wall_height" value="5" />
+  <property name="gate_size" value="3" />
+
+  <property name="room1_w1" value="9.5" />
+  <property name="room1_w2" value="9.5" />
+  <property name="room1_w3" value="24" />
+
+  <property name="room2_w1" value="18" />
+  <property name="room2_w2" value="21" />
+
+  <property name="room3_w1" value="24" />
+  <property name="room3_w2" value="22" />
+
+  <property name="room4_w1" value="36" />
+  <property name="room4_w2" value="24" />
+  <property name="room4_w3" value="7.5" />
+  <property name="room4_w4" value="7.5" />
+
+  <property name="room1_room2_w1" value="24" />
+  <property name="room1_room3_w1" value="22" />
+  <property name="room2_room4_w1" value="18" />
+  <property name="room3_room4_w1" value="21" />
+
+  <property name="position_offset_x" value="-20" />
+  <property name="position_offset_y" value="-35" />
+  <property name="position_offset_z" value="0" />
+
+</robot>
