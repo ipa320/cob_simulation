@@ -2,6 +2,20 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2016-04-01)
+------------------
+* fix dependency
+* remove robot_id
+* better default robot_id
+* new line
+* tf_prefix in higher level
+* better diff
+* nicer structure
+* Revert "spawn two robots"
+  This reverts commit b66aa13d920824a052d398dd8b49cb52c2c4a155.
+* spawn two robots
+* Contributors: Felix Gruber, Florian Weisshardt, ipa-fxm
+
 0.6.4 (2015-08-29)
 ------------------
 * migration to package format 2

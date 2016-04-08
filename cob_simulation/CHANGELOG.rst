@@ -2,6 +2,9 @@
 Changelog for package cob_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2016-04-01)
+------------------
+
 0.6.4 (2015-08-29)
 ------------------
 * migration to package format 2
