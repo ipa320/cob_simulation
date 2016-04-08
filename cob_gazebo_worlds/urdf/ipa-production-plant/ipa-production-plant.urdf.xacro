@@ -41,22 +41,22 @@
 
   <!--world objects-->
   <xacro:object object_num="1a" >
-    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
     <origin xyz="-15 -20 0" />
   </xacro:object>
 
   <xacro:object object_num="1b" >
-    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
     <origin xyz="-5 -20 0" />
   </xacro:object>
 
   <xacro:object object_num="1c" >
-    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
     <origin xyz="-15 -30 0" />
   </xacro:object>
 
   <xacro:object object_num="1d" >
-    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/untitled.dae" scale = "2.5 2.5 2.5"/>
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
     <origin xyz="-5 -30 0" />
   </xacro:object>
 
@@ -96,57 +96,57 @@
   </xacro:object>
 
   <xacro:object object_num="4a" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/back_workbench.dae"/>
     <origin xyz="6 11 0" />
   </xacro:object>
 
   <xacro:object object_num="4b" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/back_workbench.dae"/>
     <origin xyz="11 11 0"/>
   </xacro:object>
 
   <xacro:object object_num="4c" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/back_workbench/models/back_workbench.dae"/>
     <origin xyz="16 11 0"/>
   </xacro:object>
 
   <xacro:object object_num="5a" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/granite_assembly_bench.dae"/>
     <origin xyz="10 0 0"/>
   </xacro:object>
 
   <xacro:object object_num="5b" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/granite_assembly_bench.dae"/>
     <origin xyz="13 0 0" />
   </xacro:object>
 
   <xacro:object object_num="5c" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/granite_assembly_bench.dae"/>
     <origin xyz="16 0 0" />
   </xacro:object>
 
   <xacro:object object_num="5d" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/granite_assembly_bench.dae"/>
     <origin xyz="19 0 0" />
   </xacro:object>
 
   <xacro:object object_num="5e" >
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/untitled.dae"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/granite_assembly_bench/models/granite_assembly_bench.dae"/>
     <origin xyz="22 0 0" />
   </xacro:object>
 
   <xacro:object object_num="6a" > 
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/focus_stacking_platform.dae" scale = "8 8 8"/>
     <origin xyz="28 5 0" />
   </xacro:object>
 
   <xacro:object object_num="6b" > 
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/focus_stacking_platform.dae" scale = "8 8 8"/>
     <origin xyz="28 0 0" />
   </xacro:object>
 
   <xacro:object object_num="6c" > 
-    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/untitled.dae" scale = "8 8 8"/>
+    <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/focus_stacking_platform/models/focus_stacking_platform.dae" scale = "8 8 8"/>
     <origin xyz="28 -5 0" />
   </xacro:object>
 
