@@ -26,8 +26,9 @@
 	</include>
 
 	<!-- send objects locations to parameter server -->
-	<rosparam command="delete" param="/objects"/>
-	<rosparam ns="objects" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/object_locations.yaml"/>
+	<include file="$(find cob_default_env_config)/upload_object_locations.launch">
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include>
 
 	<!-- spawn all objects -->
 	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
