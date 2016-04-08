@@ -9,21 +9,18 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/cage_box.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/cage_box.stl"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/cage_box.dae"/>
+     <mesh filename="package://cob_gazebo_objects/Media/models/cage_box.stl"/>
    </geometry>
   </collision>     
   </link>
   <gazebo>
-	  <static>true</static>
-  </gazebo>
-  <gazebo reference="base_link">
-	  <turnGravityOff>false</turnGravityOff>
+    <static>true</static>
   </gazebo>
 </robot>
 
