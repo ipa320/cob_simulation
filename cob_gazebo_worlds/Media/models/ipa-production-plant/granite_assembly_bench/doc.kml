@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Folder>
+    <name>model</name>
+    <description>Created with &lt;a href=&quot;http://sketchup.com&quot;&gt;SketchUp&lt;/a&gt;</description>
+    <visibility>1</visibility>
+    <LookAt>
+      <heading>211.4060824599</heading>
+      <tilt>87.3743816441</tilt>
+      <latitude>40.01700521507</latitude>
+      <longitude>-105.2829849837</longitude>
+      <range>2.741952915197</range>
+      <altitude>0.4602199247606</altitude>
+    </LookAt>
+    <Folder>
+      <name>Tour</name>
+      <Placemark>
+        <name>Scene 1</name>
+        <visibility>1</visibility>
+        <LookAt>
+          <heading>211.4060824599</heading>
+          <tilt>87.3743816441</tilt>
+          <latitude>40.01700521507</latitude>
+          <longitude>-105.2829849837</longitude>
+          <range>2.741952915197</range>
+          <altitude>0.4602199247606</altitude>
+        </LookAt>
+      </Placemark>
+    </Folder>
+    <Placemark>
+      <name>Model</name>
+      <description></description>
+      <Style id="default" />
+      <Model>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <Location>
+          <latitude>40.017</latitude>
+          <longitude>-105.283</longitude>
+          <altitude>0</altitude>
+        </Location>
+        <Orientation>
+          <heading>-0</heading>
+          <tilt>0</tilt>
+          <roll>0</roll>
+        </Orientation>
+        <Scale>
+          <x>1</x>
+          <y>1</y>
+          <z>1</z>
+        </Scale>
+        <Link>
+          <href>models/granite_assembly_bench.dae</href>
+        </Link>
+      </Model>
+    </Placemark>
+  </Folder>
+</kml>

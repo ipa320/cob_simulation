@@ -1,0 +1,590 @@
+##################################
+############ shelfs ##############
+##################################
+#person1:
+#  model:    cob_gazebo_objects/objects/person.urdf
+#  position: [ -6.5, -1.22, 0]
+#  orientation: [ 0, 0, 0]
+#person2:
+#  model:    cob_gazebo_objects/objects/person.urdf
+#  position: [ -11, -18, 0]
+#  orientation: [ 0, 0, 1.5708]
+shelf_a1:
+  model:    cob_gazebo_objects/objects/shelf.urdf
+  position: [ -14.6, 0, 0]
+  orientation: [ 0, 0, 1.5708]
+  children:
+    palette1:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -5.15, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette2:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette3:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette4:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -2.3, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette5:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette6:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -0.5, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette7:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 0.5, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette8:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette9:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 2.3, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette10:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette11:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette12:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 5.15, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+
+shelf_c1:
+  model:    cob_gazebo_objects/objects/shelf.urdf
+  position: [ -8.65, 0, 0]
+  orientation: [ 0, 0, 1.5708]
+  children:
+    gitterbox2:
+      model:    cob_gazebo_objects/objects/gitterbox.urdf
+      position: [ -5.15, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+    gitterbox4:
+      model:    cob_gazebo_objects/objects/gitterbox.urdf
+      position: [ -3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+    gitterbox5:
+      model:    cob_gazebo_objects/objects/gitterbox.urdf
+      position: [ -1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+    gitterbox6:
+      model:    cob_gazebo_objects/objects/gitterbox.urdf
+      position: [ -0.51, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+    palette11:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 3.3, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette12:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 4.3, 0, 0]
+      orientation: [ 0, 0, 1.5]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+
+shelf_e1:
+  model:    cob_gazebo_objects/objects/shelf.urdf
+  position: [ -2.75, 0, 0]
+  orientation: [ 0, 0, 1.5708]
+  children:
+    palette1:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette2:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -3.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette3:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -2.35, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette4:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette5:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ -0.52, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette6:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 0.52, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette7:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 1.4, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette8:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 2.32, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette9:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 3.34, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette10:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 2.34, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette11:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 4.25, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+    palette12:
+      model:    cob_gazebo_objects/objects/palette.urdf
+      position: [ 5.2, 0, 0]
+      orientation: [ 0, 0, 1.5708]
+      children:
+        packet1:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet2:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, -0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet3:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ 0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
+        packet4:
+          model:   cob_gazebo_objects/objects/packet.urdf
+          position: [ -0.3, 0.2, 0.15]
+          orientation: [ 0, 0, 0]
