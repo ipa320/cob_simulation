@@ -1,17 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!--macros-->
-  <xacro:macro name="box_inertial" params="x y z mass *origin">
-    <inertial>
-      <mass value="${mass}" />
-      <insert_block name="origin" />
-      <inertia ixx="${0.0833333 * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
-        iyy="${0.0833333 * mass * (x*x + z*z)}" iyz="0.0"
-        izz="${0.0833333 * mass * (x*x + y*y)}" />
-    </inertial>
-  </xacro:macro>
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/ipa-production-plant.property.xacro" />
+  
 
+  <!--macros-->
   <xacro:macro name="object" params="object_num *mesh *origin">
     <link name="object_${object_num}">
       <visual>
@@ -40,46 +34,6 @@
        <child link="object_${object_num}"/>
     </joint>
   </xacro:macro>
-
-  <xacro:macro name="default_inertial">
-    <inertial>
-      <mass value="0.01"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
-    </inertial>
-  </xacro:macro>
-
-  <!--properties-->
-  <property name="wall_depth" value="0.1" />
-  <property name="wall_height" value="5" />
-  <property name="gate_size" value="3" />
-
-  <property name = "room1_w1" value = "9.5" />
-  <property name = "room1_w2" value = "9.5" />
-  <property name = "room1_w3" value = "24" />
-
-  <property name = "room2_w1" value = "18" />
-  <property name = "room2_w2" value = "21" />
-
-  <property name = "room3_w1" value = "24" />
-  <property name = "room3_w2" value = "22" />
-
-  <property name = "room4_w1" value = "36" />
-  <property name = "room4_w2" value = "24" />
-  <property name = "room4_w3" value = "7.5" />
-  <property name = "room4_w4" value = "7.5" />
-
-  <property name = "room1_room2_w1" value = "24" />
-  <property name = "room1_room3_w1" value = "22" />
-  <property name = "room2_room4_w1" value = "18" />
-  <property name = "room3_room4_w1" value = "21" />
-
-  <property name="position_offset_x" value="-20" />
-  <property name="position_offset_y" value="-35" />
-  <property name="position_offset_z" value="0" />
-
-
-  <property name="M_PI" value="3.1415926535897931" />
 
   <!-- world link -->
   <link name="world" />
