@@ -1,5 +1,5 @@
 <?xml version="1.0" ?> 
-<robot name="shelf" static="true">
+<robot name="cage_box" static="true">
   <link name="base_link">
   <inertial>
     <mass value="0.01"/>
@@ -9,17 +9,22 @@
   <visual>
    <origin xyz="0 0 0.0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/shelf.dae"/>
+     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/cage_box.dae"/>
    </geometry>
   </visual>
   <collision>
    <origin xyz="0 0 0" rpy="0 0 0" />
    <geometry>
-     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/shelf.dae"/>
+     <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-production-plant/cage_box.dae"/>
    </geometry>
   </collision>     
   </link>
   <gazebo>
 	  <static>true</static>
   </gazebo>
+  <gazebo reference="base_link">
+	  <turnGravityOff>false</turnGravityOff>
+  </gazebo>
 </robot>
+
+

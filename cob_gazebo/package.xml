@@ -1,6 +1,6 @@
 <package format="2">
   <name>cob_gazebo</name>
-  <version>0.6.3</version>
+  <version>0.6.4</version>
   <description>Launch files and tools for 3D simulation of Care-O-bot in gazebo simulator.</description>
 
   <license>LGPL</license>
@@ -14,6 +14,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <exec_depend>cob_controller_configuration_gazebo</exec_depend>
+  <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_gazebo_ros_control</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
   <exec_depend>cob_script_server</exec_depend>
