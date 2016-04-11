@@ -7,7 +7,7 @@
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
 
-	<arg name="robot_env" default="automotive-assembly-line"/>
+	<arg name="robot_env" default="ipa-production-plant"/>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -22,10 +22,15 @@
 
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
 		<arg name="robot_env" value="$(arg robot_env)"/>
+		<arg name="publish_world_state" value="false"/>
 	</include>
 
-	<!-- Load joint controller configurations from YAML file to parameter server -->
-	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
-	<node ns="world" name="base_to_belt_controller_spawner" pkg="controller_manager" type="spawner" respawn="true" output="screen" args="base_to_belt_joint_state_controller base_to_belt_joint_velocity_controller"/>
+	<!-- send objects locations to parameter server -->
+	<include file="$(find cob_default_env_config)/upload_object_locations.launch">
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include>
+
+	<!-- spawn all objects -->
+	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
 
 </launch>
