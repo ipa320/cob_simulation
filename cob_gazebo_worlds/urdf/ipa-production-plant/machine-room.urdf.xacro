@@ -3,11 +3,6 @@
 
   <xacro:macro name="machine-room" params="name">
 
-  <xacro:object object_num="10" >
-    <mesh filename="package://cob_gazebo_objects/Media/models/ramp.dae"/>
-    <origin xyz="4 -12 0" />
-  </xacro:object>
-
   <xacro:object object_num="2a" >
     <mesh filename="package://cob_gazebo_worlds/Media/models/dump-bin-retail/model.dae"/>
     <origin xyz="6 -10 0" />
