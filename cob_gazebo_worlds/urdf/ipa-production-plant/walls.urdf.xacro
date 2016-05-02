@@ -325,20 +325,20 @@
   <!-- room3_room4_w1 -->
   <!-- wall_11 -->
   <link name="wall_11">
-    <xacro:box_inertial x="${wall_depth}" y="${room3_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w1}" z="${wall_height}" mass="5.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${room3_w1} ${wall_height}" />
+        <box size="${wall_depth} ${room3_room4_w1} ${wall_height}" />
       </geometry>
       <material name="IPA/Grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <box size="${wall_depth} ${room3_w1} ${wall_height}" />
+        <box size="${wall_depth} ${room3_room4_w1} ${wall_height}" />
       </geometry>
     </collision>
   </link>
@@ -348,7 +348,7 @@
   </gazebo>
 
   <joint name="joint_wall_11" type="fixed">
-    <origin xyz="${22+position_offset_x} ${36+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <origin xyz="${22+position_offset_x} ${32.5+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_11" />
   </joint>
@@ -575,6 +575,38 @@
     <origin xyz="${position_offset_x} ${-2.5+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
     <parent link="world" />
     <child link="wall_18" />
+  </joint>
+
+
+  <!-- room3_room4_w2 -->
+  <!-- wall_19 -->
+  <link name="wall_19">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w2}" z="${wall_height}" mass="5.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room3_room4_w2} ${wall_height}" />
+      </geometry>
+      <material name="IPA/Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="${wall_depth} ${room3_room4_w2} ${wall_height}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_19">
+    <material>wall_floor_05</material>
+  </gazebo>
+
+  <joint name="joint_wall_19" type="fixed">
+    <origin xyz="${22+position_offset_x} ${46+position_offset_y} ${wall_height/2+position_offset_z}" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_19" />
   </joint>
 
 

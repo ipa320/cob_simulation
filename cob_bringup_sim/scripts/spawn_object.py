@@ -62,7 +62,6 @@ import copy
 import math
 
 from spawn_model import SpawnModel
-#from gazebo_msgs.srv import SpawnModel, SpawnModelRequest, DeleteModel, DeleteModelRequest
 from geometry_msgs.msg import Pose
 import tf.transformations as tft
 
@@ -137,7 +136,7 @@ if __name__ == "__main__":
         objects = {sys.argv[1]:flat_objects[sys.argv[1]]}
 
     rospy.loginfo("Trying to spawn %s", objects.keys())
-    
+
     for key, value in objects.iteritems():
         # check for model
         if not "model" in value:
@@ -170,15 +169,17 @@ if __name__ == "__main__":
             newModel.urdf_format = True
             newModel.file_name = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
 
-        elif model_type == "urdf.xacro":
-            p = os.popen("rosrun xacro xacro.py " + file_location)
+        # ToDo: Implement same for urdf.xacro
+        # elif model_type == "urdf.xacro":
+        #     p = os.popen("rosrun xacro xacro.py " + file_location)
 
         elif model_type == "sdf":
             newModel.sdf_format = True
             newModel.file_name = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
 
         elif model_type == "database":
-            newModel.database_name = ""
+            newModel.sdf_format = True
+            newModel.database_name = model_string
 
         else:
             rospy.logerr('Model type not know. model_type = ' + model_type)

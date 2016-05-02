@@ -24,7 +24,9 @@
   <property name="room1_room2_w1" value="24" />
   <property name="room1_room3_w1" value="22" />
   <property name="room2_room4_w1" value="18" />
-  <property name="room3_room4_w1" value="21" />
+  <property name="room3_room4_w1" value="17" />
+  <property name="room3_room4_w2" value="4" />
+  
 
   <property name="hallway_w1" value="26" />
   <property name="hallway_w2" value="58" />
