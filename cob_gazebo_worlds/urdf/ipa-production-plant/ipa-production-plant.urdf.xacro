@@ -12,13 +12,13 @@
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/warehouse.urdf.xacro" />
 
   <!-- machine-room -->
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/machine-room.urdf.xacro" />
+  <!-- <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/machine-room.urdf.xacro" /> -->
 
   <!-- super-market -->
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/super-market.urdf.xacro" />
 
   <!-- work-area -->
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/work-area.urdf.xacro" />
+  <!-- <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/work-area.urdf.xacro" /> -->
 
 
 

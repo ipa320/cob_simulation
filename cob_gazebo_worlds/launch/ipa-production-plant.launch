@@ -33,4 +33,6 @@
 	<!-- spawn all objects -->
 	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
 
+	<node name="moving_object_r2d2" pkg="cob_bringup_sim" type="move_object.py" args="--mode=polygon --name=moving_object --velocity=0.8 --polygon='[[6.5,7.5],[19.5,7.5],[19.5,-8],[6.5,-8]]'" output="screen"/>
+
 </launch>
