@@ -9,7 +9,7 @@
 
 	<arg name="robot_env" default="ipa-production-plant"/>
 	<arg name="moving_object_bool" default="$(optenv ROBOT_MOVING_OBJECT_BOOL false)"/>
-	<arg name="moving_object_name" default="$(optenv ROBOT_MOVING_OBJECT_NAME r2d2)"/>
+	<arg name="moving_object_name" default="$(optenv ROBOT_MOVING_OBJECT_NAME forklift)"/>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">

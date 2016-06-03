@@ -7,19 +7,38 @@
     <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
   </inertial>
   <visual>
-   <origin xyz="0 0 0.0" rpy="0 0 1.5708" />
+   <origin xyz="0 0 0.5" rpy="0 0 1.5708" />
    <geometry>
      <mesh filename="package://cob_gazebo_objects/Media/models/robot_arm.dae" scale="0.15 0.15 0.15"/>
    </geometry>
   </visual>
   <collision>
-   <origin xyz="0 0 0.0" rpy="0 0 1.5708" />
+   <origin xyz="0 0 0.5" rpy="0 0 1.5708" />
    <geometry>
       <mesh filename="package://cob_gazebo_objects/Media/models/robot_arm.dae" scale="0.15 0.15 0.15"/>
    </geometry>
   </collision>
-  </link>
+  
+    <inertial>
+      <mass value="10" />
+      <origin xyz="0 0 0.0" />
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="1 1 0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <box size="1 1 0.5"/>
+      </geometry>
+    </collision>
 
+
+  </link>
 <gazebo>
   <static>true</static>
 </gazebo>

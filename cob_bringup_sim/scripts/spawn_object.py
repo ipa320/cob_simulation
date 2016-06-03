@@ -187,5 +187,3 @@ if __name__ == "__main__":
 
         # spawn new model
         newModel.callSpawnService()
-
-        print 'Object spawned!'
