@@ -15,7 +15,7 @@
   <collision>
    <origin xyz="0 0 0" rpy="0 0 1.57" />
    <geometry>
-      <mesh filename="package://cob_gazebo_objects/Media/models/conveyor.dae" scale="1 1 1"/>
+      <mesh filename="package://cob_gazebo_objects/Media/models/conveyor.dae" scale="0.75 0.75 0.75"/>
    </geometry>
   </collision>
   </link>
