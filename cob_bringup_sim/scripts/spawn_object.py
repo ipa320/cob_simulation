@@ -152,9 +152,9 @@ if __name__ == "__main__":
             continue
         
         # check for room in visualized-rooms
-        # if "room" in value:
-        #     if not value["room"] in visualizedRooms:
-        #         continue
+        if "room" in value:
+            if not value["room"] in visualizedRooms:
+                continue
 
         model_string = value["model"]
         model_type = value["model_type"]
