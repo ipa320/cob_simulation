@@ -66,13 +66,20 @@ from geometry_msgs.msg import Pose
 import tf.transformations as tft
 
 parents = {}
-compound_keys={}
+compound_keys = {}
+visualizedRooms = {}
 
 def get_flat_dict(objects, parent_name):
     """expands all objects to a flat dictionary"""
     flat_objects = {}
     for key, value in objects.iteritems():
         # check if we have an atomic object
+
+        # save visualized-rooms
+        if "visualized-rooms" in key:
+            global visualizedRooms
+            visualizedRooms = value
+            continue
 
         if(parent_name!=None):
             
@@ -124,7 +131,7 @@ if __name__ == "__main__":
         sys.exit()
     objects = rospy.get_param("/objects")
     flat_objects = get_flat_dict(objects,None)
-    print flat_objects.keys()
+    # print flat_objects.keys()
 
     # if keyword all is in list of object names we'll load all models uploaded to parameter server
     if "all" in sys.argv:
@@ -138,11 +145,17 @@ if __name__ == "__main__":
     rospy.loginfo("Trying to spawn %s", objects.keys())
 
     for key, value in objects.iteritems():
+
         # check for model
         if not "model" in value:
             rospy.logerr("No model for " + key + " found.")
             continue
         
+        # check for room in visualized-rooms
+        # if "room" in value:
+        #     if not value["room"] in visualizedRooms:
+        #         continue
+
         model_string = value["model"]
         model_type = value["model_type"]
         newModel = SpawnModel()
