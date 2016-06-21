@@ -28,6 +28,7 @@
 	<!-- startup simulated robot -->
 	<include file="$(find cob_gazebo)/launch/robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="robot_env" value="$(arg robot_env)" />
 		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="initial_config" value="$(arg initial_config)"/>
