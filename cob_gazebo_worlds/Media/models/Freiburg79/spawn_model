@@ -1,0 +1,23 @@
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_meeting_table.urdf -urdf -x 31 -y 2.1 -model meeting_table
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_working_desk_for_2persons.urdf -urdf -x 18 -y 1.7 -model two_persons_tables
+
+ rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_kitchen.urdf -urdf -x 30.9 -y 10.9 -model kitchen
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_single_working_desk.urdf -urdf -x 7.5 -y 11 -model single_desk_1
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_single_working_desk.urdf -urdf -x 18.5 -y 11.4 -model single_desk_2
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_single_working_desk.urdf -urdf -x 7.7 -y 2.5 -Y 1.57 -model single_desk_3
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_single_working_desk.urdf -urdf -x 12.2 -y 2.5 -Y 1.57 -model single_desk_4
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_mans_room.urdf -urdf -x 0.5 -y 0 -model mans_room
+
+rosrun gazebo_ros spawn_model -file /home/rmb-lw/Desktop/Freiburg79_ladies_room.urdf -urdf -x 3 -y 0 -model ladies_room
+
+rosrun gazebo_ros spawn_model -file /home/damon/Desktop/Freiburg79/Freiburg79_sofa.urdf -urdf -x 11.8 -y 11.3 -z 0.3 -model sofa
+
+
+
+

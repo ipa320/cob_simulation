@@ -1,0 +1,42 @@
+<launch>
+  <!-- send table urdf to param server -->
+  <!--param name="Freiburg79_working_desk_for_2persons_description" command="$(find xacro)/xacro.py $(find gazebo_worlds)/objects/table.urdf.xacro" /-->
+
+  <!-- push table_description to factory and spawn robot in gazebo -->
+
+  <node name="spawn_two_persons_tables" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_working_desk_for_2persons.urdf -urdf -x 18 -y 2.1 -model two_persons_tables" respawn="false" output="screen" />
+
+  <node name="spawn_single_desk_1" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_single_working_desk.urdf -urdf -x 10.2 -y 9.0 -model single_desk_1" respawn="false" output="screen" />
+
+  <node name="spawn_single_desk_2" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_single_working_desk.urdf -urdf -x 21.5 -y 9.0 -model single_desk_2
+" respawn="false" output="screen" />
+
+  <node name="spawn_single_desk_3" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_single_working_desk.urdf -urdf -x 9.6 -y 5.0 -Y 1.57 -model single_desk_3" respawn="false" output="screen" />
+
+  <node name="spawn_single_desk_4" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_single_working_desk.urdf -urdf -x 14 -y 5.0 -Y 1.57 -model single_desk_4" respawn="false" output="screen" />
+
+  <node name="spawn_meeting_table" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_meeting_table.urdf -urdf -x 31 -y 2.15 -model meeting_table" respawn="false" output="screen" />
+
+  <node name="spawn_kitchen" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_kitchen.urdf -urdf -x 30.9 -y 10.9 -z 0.95 -model kitchen" respawn="false" output="screen" />
+
+  <node name="spawn_mans_room" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_mans_room.urdf -urdf -x 0.5 -y 0 -model mans_room" respawn="false" output="screen" />
+
+  <node name="spawn_ladies_room" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_ladies_room.urdf -urdf -x 3 -y 0 -model ladies_room" respawn="false" output="screen" />
+
+  <node name="spawn_sofa" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_sofa.urdf -urdf -x 11.8 -y 11.3 -z 0.3 -model sofa" respawn="false" output="screen" />
+
+  <node name="spawn_workshop" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_workshop.urdf -urdf -x 21.6 -y 8.7 -model workshop" respawn="false" output="screen" />
+
+  <node name="spawn_fussball" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_fussball.urdf -urdf -x 14.4 -y 9.7 -model fussball" respawn="false" output="screen" />
+
+  <node name="spawn_simple_table_and_chair_1" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_simple_table_and_chair.urdf -urdf -x 23.2 -y 1.5 -model simple_table_and_chair_1" respawn="false" output="screen" />
+
+  <node name="spawn_simple_table_and_chair_2" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/Freiburg79_simple_table_and_chair_2.urdf -urdf -x 25.95 -y 1.5 -model simple_table_and_chair_2
+" respawn="false" output="screen" />
+
+  <node name="spawn_indoor_plant_1" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/indoor_plant_1.urdf -urdf -x 20.5 -y 5 -model indoor_plant_1" respawn="false" output="screen" />
+
+  <node name="spawn_indoor_plant_1_1" pkg="gazebo_ros" type="spawn_model" args="-file /home/rmb-lw/Desktop/Freiburg79/indoor_plant_1.urdf -urdf -x 10.5 -y 9 -model indoor_plant_1_1" respawn="false" output="screen" />
+
+
+</launch>
