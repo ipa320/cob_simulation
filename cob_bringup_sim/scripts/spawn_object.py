@@ -61,7 +61,7 @@ import rospy
 import copy
 import math
 
-from gazebo_msgs.srv import SpawnModel, SpawnModelRequest, DeleteModel, DeleteModelRequest
+from gazebo_msgs.srv import SpawnModel, SpawnModelRequest, DeleteModel, DeleteModelRequest, GetWorldProperties
 from geometry_msgs.msg import Pose
 import tf.transformations as tft
 
@@ -124,15 +124,13 @@ if __name__ == "__main__":
         sys.exit()
     objects = rospy.get_param("/objects")
     flat_objects = get_flat_dict(objects,None)
-    print flat_objects.keys()
+    # print flat_objects.keys()
 
     # check for all object groups on parameter server
     if rospy.has_param("/groups"):
         groups = rospy.get_param("/groups")
     else:
         print 'No object-groups uploaded to /groups'
-    
-
 
     # if keyword all is in list of object names we'll load all models uploaded to parameter server
     if "all" in sys.argv:
@@ -156,7 +154,30 @@ if __name__ == "__main__":
         objects = {sys.argv[1]:flat_objects[sys.argv[1]]}
 
     rospy.loginfo("Trying to spawn %s", objects.keys())
-    
+
+    # get all current models from gazebo
+    # check if object is already spawned
+    try:
+        rospy.wait_for_service('/gazebo/get_world_properties', 30)
+    except rospy.exceptions.ROSException:
+        rospy.logerr("Service /gazebo/get_world_properties not available.")
+        sys.exit()
+
+    srv_get_world_properties = rospy.ServiceProxy('/gazebo/get_world_properties', GetWorldProperties)
+
+    try:
+        print "getting world prop"
+        world_properties = srv_get_world_properties()
+    except rospy.ServiceException as exc:
+        rospy.logerr("Service did not process request: " + str(exc))
+        print "error"
+
+    if world_properties.success:
+        existing_models = world_properties.model_names
+    else:
+        existing_models = []
+
+    # Iterate through all objects
     for key, value in objects.iteritems():
         # check for model
         if not "model" in value:
@@ -228,24 +249,28 @@ if __name__ == "__main__":
                 sys.exit()
             srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_gazebo_model', SpawnModel)
             xml_string = f.read()
+
+        elif model_type == "sdf":
+            try:
+                rospy.wait_for_service('/gazebo/spawn_sdf_model',30)
+            except rospy.exceptions.ROSException:
+                rospy.logerr("Service /gazebo/spawn_sdf_model not available.")
+                sys.exit()
+            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+            xml_string = f.read()
+
         else:
             rospy.logerr('Model type not know. model_type = ' + model_type)
             continue
 
-
-        # check if object is already spawned
-        srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel) # TODO this service causes gazebo (current groovy version) to crash
-        req = DeleteModelRequest()
-        req.model_name = key
-        exists = True
-        try:
-            res = srv_delete_model(key)
-        except rospy.ServiceException, e:
-            exists = False
-            #rospy.logdebug("Model %s does not exist in gazebo.", key)
-
-        if exists:
-            rospy.loginfo("Model %s already exists in gazebo. Model will be updated.", key)
+        # delete model if it already exists
+        if key in existing_models:
+            srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel) # TODO this service causes gazebo (current groovy version) to crash
+            try:
+                res = srv_delete_model(key)
+            except rospy.ServiceException, e:
+                rospy.logdebug("Error while trying to call Service /gazebo/get_world_properties.")
+            rospy.loginfo("Model %s already exists in gazebo. Model will be deleted and newly added.", key)
 
         # spawn new model
         req = SpawnModelRequest()
