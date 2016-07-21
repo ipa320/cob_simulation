@@ -126,9 +126,29 @@ if __name__ == "__main__":
     flat_objects = get_flat_dict(objects,None)
     print flat_objects.keys()
 
+    # check for all object groups on parameter server
+    if rospy.has_param("/groups"):
+        groups = rospy.get_param("/groups")
+    else:
+        print 'No object-groups uploaded to /groups'
+    
+
+
     # if keyword all is in list of object names we'll load all models uploaded to parameter server
     if "all" in sys.argv:
         objects = flat_objects
+    elif not set(groups.keys()).isdisjoint(sys.argv):
+        # get all key that are in both, the dictionary and argv
+        found_groups = set(groups.keys()) & set(sys.argv)
+        # get all object_names from keys that are in argv
+        object_names = [groups[k] for k in found_groups]
+        # flatten list of lists 'object_names' to a list
+        object_names = [item for sublist in object_names for item in sublist]
+        # save all dict-objects with names in 'object_names' in 'objects'
+        objects = {}
+        for object_name in object_names:
+            if object_name in flat_objects.keys():
+                objects.update({object_name:flat_objects[object_name]})
     elif sys.argv[1] not in flat_objects.keys():
         rospy.logerr("Object %s not found", sys.argv[1])
         sys.exit()
