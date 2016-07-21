@@ -61,18 +61,25 @@ import rospy
 import copy
 import math
 
-from gazebo_msgs.srv import SpawnModel, SpawnModelRequest, DeleteModel, DeleteModelRequest
+from spawn_model import SpawnModel
 from geometry_msgs.msg import Pose
 import tf.transformations as tft
 
 parents = {}
-compound_keys={}
+compound_keys = {}
+visualizedRooms = {}
 
 def get_flat_dict(objects, parent_name):
     """expands all objects to a flat dictionary"""
     flat_objects = {}
     for key, value in objects.iteritems():
         # check if we have an atomic object
+
+        # save visualized-rooms
+        if "visualized-rooms" in key:
+            global visualizedRooms
+            visualizedRooms = value
+            continue
 
         if(parent_name!=None):
             
@@ -116,7 +123,7 @@ if __name__ == "__main__":
         print '[spawn_object.py] Please specify the names of the objects to be loaded'
         sys.exit()
     
-    rospy.init_node("object_spawner")
+    #rospy.init_node("object_spawner")
 
     # check for all objects on parameter server
     if not rospy.has_param("/objects"):
@@ -124,7 +131,7 @@ if __name__ == "__main__":
         sys.exit()
     objects = rospy.get_param("/objects")
     flat_objects = get_flat_dict(objects,None)
-    print flat_objects.keys()
+    # print flat_objects.keys()
 
     # if keyword all is in list of object names we'll load all models uploaded to parameter server
     if "all" in sys.argv:
@@ -136,14 +143,23 @@ if __name__ == "__main__":
         objects = {sys.argv[1]:flat_objects[sys.argv[1]]}
 
     rospy.loginfo("Trying to spawn %s", objects.keys())
-    
+
     for key, value in objects.iteritems():
+
         # check for model
         if not "model" in value:
             rospy.logerr("No model for " + key + " found.")
             continue
+        
+        # check for room in visualized-rooms
+        if "room" in value:
+            if not value["room"] in visualizedRooms:
+                continue
+
         model_string = value["model"]
         model_type = value["model_type"]
+        newModel = SpawnModel()
+        newModel.model_name = key
         
         # check for position
         if not "position" in value:
@@ -155,89 +171,32 @@ if __name__ == "__main__":
         if not "orientation" in value:
             rospy.logerr("No orientation for " + key + " found.")
             continue
-        # convert rpy to quaternion for Pose message
         orientation = value["orientation"]
-        quaternion = tft.quaternion_from_euler(orientation[0], orientation[1], orientation[2])
         
         # compose pose of object
-        object_pose = Pose()
-        object_pose.position.x = float(position[0])
-        object_pose.position.y = float(position[1])
-        object_pose.position.z = float(position[2])
-        object_pose.orientation.x = quaternion[0]
-        object_pose.orientation.y = quaternion[1]
-        object_pose.orientation.z = quaternion[2]
-        object_pose.orientation.w = quaternion[3]
-
-        try:
-            file_location = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
-            f = open(file_location)
-        except roslib.packages.InvalidROSPkgException:
-            rospy.logerr("No model package found for " + key + ": " + cob_gazebo_objects + " does not exist in ROS_PACKAGE_PATH")
-            continue
-        except:
-            rospy.logerr("No model file found for " + key + " at " + file_location)
-            continue
+        newModel.initial_xyz = [float(position[0]), float(position[1]), float(position[2])]
+        newModel.initial_rpy = [orientation[0], orientation[1], orientation[2]] 
 
         # call gazebo service to spawn model (see http://ros.org/wiki/gazebo)
         if model_type == "urdf":
-            try:
-                rospy.wait_for_service('/gazebo/spawn_urdf_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_urdf_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
-            xml_string = f.read()
+            newModel.urdf_format = True
+            newModel.file_name = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
 
-        elif model_type == "urdf.xacro":
-            p = os.popen("rosrun xacro xacro.py " + file_location)
-            xml_string = p.read()
-            p.close()
-            try:
-                rospy.wait_for_service('/gazebo/spawn_urdf_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_urdf_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
+        # ToDo: Implement same for urdf.xacro
+        # elif model_type == "urdf.xacro":
+        #     p = os.popen("rosrun xacro xacro.py " + file_location)
 
-        elif model_type == "model":
-            try:
-                rospy.wait_for_service('/gazebo/spawn_gazebo_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_gazebo_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_gazebo_model', SpawnModel)
-            xml_string = f.read()
+        elif model_type == "sdf":
+            newModel.sdf_format = True
+            newModel.file_name = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
+
+        elif model_type == "database":
+            newModel.sdf_format = True
+            newModel.database_name = model_string
+
         else:
             rospy.logerr('Model type not know. model_type = ' + model_type)
             continue
 
-
-        # check if object is already spawned
-        srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel) # TODO this service causes gazebo (current groovy version) to crash
-        req = DeleteModelRequest()
-        req.model_name = key
-        exists = True
-        try:
-            res = srv_delete_model(key)
-        except rospy.ServiceException, e:
-            exists = False
-            #rospy.logdebug("Model %s does not exist in gazebo.", key)
-
-        if exists:
-            rospy.loginfo("Model %s already exists in gazebo. Model will be updated.", key)
-
         # spawn new model
-        req = SpawnModelRequest()
-        req.model_name = key # model name from command line input
-        req.model_xml = xml_string
-        req.initial_pose = object_pose
-
-        res = srv_spawn_model(req)
-
-        # evaluate response
-        if res.success == True:
-            rospy.loginfo(res.status_message + " " + key)
-        else:
-            print "Error: model %s not spawn. error message = "% key + res.status_message
-
+        newModel.callSpawnService()

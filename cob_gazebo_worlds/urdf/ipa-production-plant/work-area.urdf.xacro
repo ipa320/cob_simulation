@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="work-area" params="name">
+
+  <xacro:object object_num="1a" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-15 -20 0" />
+  </xacro:object>
+
+  <xacro:object object_num="1b" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-5 -20 0" />
+  </xacro:object>
+
+  <xacro:object object_num="1c" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-15 -30 0" />
+  </xacro:object>
+
+  <xacro:object object_num="1d" >
+    <mesh filename = "package://cob_gazebo_worlds/Media/models/ipa-production-plant/wooden_container/wooden_container.dae" scale = "2.5 2.5 2.5"/>
+    <origin xyz="-5 -30 0" />
+  </xacro:object>
+
+  </xacro:macro>
+
+</robot>

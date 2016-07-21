@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="shelf_super_market2" static="true">
+  <link name="base_link">
+  <inertial>
+    <mass value="1.0" />
+    <origin xyz="0 0 0.0" />
+    <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+  </inertial>
+  <visual>
+   <origin xyz="0.5 -5.5 0.0" rpy="0 0 1.5708" />
+   <geometry>
+     <mesh filename="package://cob_gazebo_objects/Media/models/shelf_super_market2.dae" scale="1 1 1"/>
+   </geometry>
+  </visual>
+  <collision>
+   <origin xyz="0.5 -5.5 0.0" rpy="0 0 1.5708" />
+   <geometry>
+      <mesh filename="package://cob_gazebo_objects/Media/models/shelf_super_market2.dae" scale="1 1 1"/>
+   </geometry>
+  </collision>
+  </link>
+
+<gazebo>
+  <static>true</static>
+</gazebo>
+</robot>
