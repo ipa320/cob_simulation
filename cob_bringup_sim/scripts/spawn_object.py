@@ -210,58 +210,42 @@ if __name__ == "__main__":
         object_pose.orientation.z = quaternion[2]
         object_pose.orientation.w = quaternion[3]
 
+        # get file location
         try:
             file_location = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
-            f = open(file_location)
         except roslib.packages.InvalidROSPkgException:
             rospy.logerr("No model package found for " + key + ": " + cob_gazebo_objects + " does not exist in ROS_PACKAGE_PATH")
             continue
-        except:
-            rospy.logerr("No model file found for " + key + " at " + file_location)
-            continue
 
-        # call gazebo service to spawn model (see http://ros.org/wiki/gazebo)
-        if model_type == "urdf":
+        # open file for urdf.xacro or urdf/sdf/model
+        if model_type == "urdf.xacro":
             try:
-                rospy.wait_for_service('/gazebo/spawn_urdf_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_urdf_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
-            xml_string = f.read()
-
-        elif model_type == "urdf.xacro":
-            p = os.popen("rosrun xacro xacro.py " + file_location)
-            xml_string = p.read()
-            p.close()
+                f = os.popen("rosrun xacro xacro.py " + file_location)
+            except:
+                rospy.logerr("No xacro file found for " + key + " at " + file_location)
+                continue
+            model_type = "urdf"
+        elif model_type in ['urdf', 'sdf', 'model']:
             try:
-                rospy.wait_for_service('/gazebo/spawn_urdf_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_urdf_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_urdf_model', SpawnModel)
-
-        elif model_type == "model":
-            try:
-                rospy.wait_for_service('/gazebo/spawn_gazebo_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_gazebo_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_gazebo_model', SpawnModel)
-            xml_string = f.read()
-
-        elif model_type == "sdf":
-            try:
-                rospy.wait_for_service('/gazebo/spawn_sdf_model',30)
-            except rospy.exceptions.ROSException:
-                rospy.logerr("Service /gazebo/spawn_sdf_model not available.")
-                sys.exit()
-            srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-            xml_string = f.read()
-
+                f = open(file_location)
+            except:
+                rospy.logerr("No model file found for " + key + " at " + file_location)
+                continue 
         else:
-            rospy.logerr('Model type not know. model_type = ' + model_type)
+            rospy.logerr('Model type not known. model_type = ' + model_type)
             continue
+
+        # read and close file
+        xml_string = f.read()
+        f.close()
+
+        # open spawn service
+        try:
+            rospy.wait_for_service('/gazebo/spawn_'+model_type+'_model',30)
+        except rospy.exceptions.ROSException:
+            rospy.logerr("Service /gazebo/spawn_"+model_type+"_model not available.")
+            sys.exit()
+        srv_spawn_model = rospy.ServiceProxy('/gazebo/spawn_'+model_type+'_model', SpawnModel)
 
         # delete model if it already exists
         if key in existing_models:
