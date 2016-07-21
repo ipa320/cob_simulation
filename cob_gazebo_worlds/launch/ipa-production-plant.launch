@@ -47,6 +47,6 @@
 
 	<!-- spawn & move 'moving object' around (r2d2/forkllift -> depends on environment variable ROBOT_MOVING_OBJECT) -->
 	<node if="$(arg moving_object_bool)" name="spawn_moving_object" pkg="gazebo_ros" type="spawn_model" args="-urdf -file $(find cob_gazebo_objects)/objects/$(arg moving_object_name).urdf -x 6.5 -y 7.5 -model $(arg moving_object_name)" output="screen" />
-	<node if="$(arg moving_object_bool)" name="moving_object" pkg="cob_bringup_sim" type="move_object.py" args="--mode=polygon --name=$(arg moving_object_name) --velocity=0.8 --polygon='[[6.5,7.5],[19.5,7.5],[19.5,-8],[6.5,-8]]'" output="screen"/>
+	<node if="$(arg moving_object_bool)" name="moving_object" pkg="cob_bringup_sim" type="move_object.py" args="--mode=polygon --name=$(arg moving_object_name) --velocity=0.8 --polygon='[[17.5,7.5],[25.0,7.5],[25.0,-7.0],[32.5,-7.0],[32.5,7.5],[25.0,7.5],[25.0,-7.0],[17.5,-7.0]]'" output="screen"/>
 
 </launch>
