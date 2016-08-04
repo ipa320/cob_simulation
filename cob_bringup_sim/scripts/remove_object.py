@@ -59,6 +59,7 @@
 import sys
 
 import rospy
+from sets import Set
 from gazebo_msgs.srv import *
 from geometry_msgs.msg import *
 import tf.transformations as tft
@@ -77,9 +78,25 @@ if __name__ == "__main__":
 	else:
 		all_object_names = rospy.get_param("/objects").keys()
 
+  # check for all object groups on parameter server
+	if rospy.has_param("/groups"):
+		groups = rospy.get_param("/groups")
+	else:
+		groups = {}
+		print 'No object-groups uploaded to /groups'
+
 	# if keyword all is in list of object names we'll load all models uploaded to parameter server
 	if "all" in sys.argv:
 		object_names = all_object_names
+	elif not set(groups.keys()).isdisjoint(sys.argv):
+		# get all key that are in both, the dictionary and argv
+		found_groups = set(groups.keys()) & set(sys.argv)
+		# get all group_object_names from keys that are in argv
+		group_object_names = [groups[k] for k in found_groups]
+		# flatten list of lists 'group_object_names' to a list
+		group_object_names = [item for sublist in group_object_names for item in sublist]
+		# save all dict-objects with names in 'group_object_names' in 'objects'
+		object_names = list(set(group_object_names).intersection(all_object_names))
 	else:
 		object_names = sys.argv
 		object_names.pop(0) # remove first element of sys.argv which is file name
