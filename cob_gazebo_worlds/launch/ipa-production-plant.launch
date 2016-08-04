@@ -25,4 +25,13 @@
 		<arg name="publish_world_state" value="false"/>
 	</include>
 
+	<arg name="static_laser_topic" default="/static_laser/scan_raw"/>
+
+	<!-- static tf for two sick sensors -->
+	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_01" args="19.08 -1.5 0.1 3.14 0 0 map static_laser_01_link 100" />
+	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_02" args="27.08 -1.5 0.1 3.14 0 0 map static_laser_02_link 100" />
+
+	<remap from="/static_laser_01/scan_raw" to="$(arg static_laser_topic)"/>
+	<remap from="/static_laser_02/scan_raw" to="$(arg static_laser_topic)"/>
+
 </launch>
