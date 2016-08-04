@@ -124,13 +124,13 @@ if __name__ == "__main__":
         sys.exit()
     objects = rospy.get_param("/objects")
     flat_objects = get_flat_dict(objects,None)
-    # print flat_objects.keys()
 
     # check for all object groups on parameter server
-    if rospy.has_param("/groups"):
-        groups = rospy.get_param("/groups")
+    if rospy.has_param("/object_groups"):
+        groups = rospy.get_param("/object_groups")
     else:
-        print 'No object-groups uploaded to /groups'
+        groups = {}
+        rospy.loginfo('No object-groups uploaded to /object_groups')
 
     # if keyword all is in list of object names we'll load all models uploaded to parameter server
     if "all" in sys.argv:
@@ -166,11 +166,9 @@ if __name__ == "__main__":
     srv_get_world_properties = rospy.ServiceProxy('/gazebo/get_world_properties', GetWorldProperties)
 
     try:
-        print "getting world prop"
         world_properties = srv_get_world_properties()
     except rospy.ServiceException as exc:
         rospy.logerr("Service did not process request: " + str(exc))
-        print "error"
 
     if world_properties.success:
         existing_models = world_properties.model_names
@@ -254,7 +252,7 @@ if __name__ == "__main__":
                 res = srv_delete_model(key)
             except rospy.ServiceException, e:
                 rospy.logdebug("Error while trying to call Service /gazebo/get_world_properties.")
-            rospy.loginfo("Model %s already exists in gazebo. Model will be deleted and newly added.", key)
+            rospy.loginfo("Model %s already exists in gazebo. Model will be deleted and added again.", key)
 
         # spawn new model
         req = SpawnModelRequest()
@@ -268,5 +266,5 @@ if __name__ == "__main__":
         if res.success == True:
             rospy.loginfo(res.status_message + " " + key)
         else:
-            print "Error: model %s not spawn. error message = "% key + res.status_message
+            rospy.logerr("Error: model %s not spawn. error message = "% key + res.status_message)
 
