@@ -33,6 +33,4 @@
 	<!-- spawn all objects -->
 	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
 
-	<!--<node name="spawn_office_walls" pkg="gazebo_ros" type="spawn_model" args="-urdf $(find cob_gazebo_objects)/objects/ipa-office_walls.urdf -model walls" respawn="false" output="screen" />
-	-->
 </launch>
