@@ -7,14 +7,15 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0.0" rpy="0 0 0" />
+      <origin xyz="9 3 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://cob_gazebo_objects/Media/models/ipa-office_walls.dae"/>
+        <mesh filename="package://cob_gazebo_objects/Media/models/ipa-office_walls.dae" scale="0.97 0.97 0.97"/>
       </geometry>
     </visual>
     <collision>
+      <origin xyz="9 3 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://cob_gazebo_objects/Media/models/ipa-office_walls.dae"/>
+        <mesh filename="package://cob_gazebo_objects/Media/models/ipa-office_walls.dae" scale="0.97 0.97 0.97"/>
       </geometry>
     </collision>
   </link>
