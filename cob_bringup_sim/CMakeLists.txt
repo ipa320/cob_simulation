@@ -29,7 +29,7 @@ set(envlist
   empty
   ipa-apartment
   ipa-kitchen
-  ipa-office  
+#  ipa-office  
   ipa-production-plant
 )
 
@@ -39,7 +39,7 @@ if(CATKIN_ENABLE_TESTING)
     foreach(env ${envlist})
       message("testing for robot: ${robot} in env: ${env}")
       roslaunch_add_file_check(launch robot:=${robot} robot_env:=${env})
-      roslaunch_add_file_check(launch ROBOT=${robot} ROBOT_ENV=${env})
+      #roslaunch_add_file_check(launch ROBOT=${robot} ROBOT_ENV=${env})
     endforeach()
   endforeach()
 endif()
