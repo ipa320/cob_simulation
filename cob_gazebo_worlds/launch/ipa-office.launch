@@ -10,7 +10,7 @@
 	<arg name="robot_env" default="ipa-office"/>
 
 	<!-- start gazebo with empty world -->
-	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<include file="$(find cob_gazebo_worlds)/launch/empty.launch">
 		<arg name="world_name" value="worlds/empty.world"/>
 		<arg name="debug" value="$(arg debug)" />
 		<arg name="headless" value="$(arg headless)"/>
@@ -24,13 +24,5 @@
 		<arg name="robot_env" value="$(arg robot_env)"/>
 		<arg name="publish_world_state" value="false"/>
 	</include>
-
-	<!-- send objects locations to parameter server -->
-	<include file="$(find cob_default_env_config)/upload_object_locations.launch">
-		<arg name="robot_env" value="$(arg robot_env)" />
-	</include>
-
-	<!-- spawn all objects -->
-	<node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="all" output="screen"/>
 
 </launch>
