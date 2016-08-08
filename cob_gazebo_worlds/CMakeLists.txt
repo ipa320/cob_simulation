@@ -1,26 +1,29 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_worlds)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
+find_package(catkin REQUIRED COMPONENTS
+  roslaunch
+  rostest
+)
 
 catkin_package()
 
-### TESTING ###
+set(envlist
+  automotive-assembly-line
+  empty
+  ipa-apartment
+  ipa-kitchen
+#  ipa-office
+  ipa-production-plant
+)
+
+### TEST ###
 if(CATKIN_ENABLE_TESTING)
-  roslaunch_add_file_check(launch/empty.launch)
-
-  # ipa-kitchen (urdf model)
-  add_rostest(test/urdf_ipa-kitchen.test)
-  #roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-kitchen)
-  roslaunch_add_file_check(launch/ipa-kitchen.launch)
-
-  # ipa-apartment (urdf model)
-  add_rostest(test/urdf_ipa-apartment.test)
-  #roslaunch_add_file_check(launch/world_urdf.launch robot_env:=ipa-apartment)
-  roslaunch_add_file_check(launch/ipa-apartment.launch)
-
-  # ipa-factory (world model)
-  roslaunch_add_file_check(launch/ipa-factory.launch)
+  foreach(env ${envlist})
+    message("testing for env: ${env}")
+    #roslaunch_add_file_check(launch/world.launch robot_env:=${env})
+    roslaunch_add_file_check(launch/world.launch ROBOT_ENV=${env})
+  endforeach()
 endif()
 
 ### INSTALL ###
