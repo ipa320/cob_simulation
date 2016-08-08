@@ -9,12 +9,11 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package()
 
 set(envlist
-#  automotive-assembly-line
+  automotive-assembly-line
   empty
   ipa-apartment
-  ipa-factory
   ipa-kitchen
-#  ipa-office
+  ipa-office
   ipa-production-plant
 )
 
