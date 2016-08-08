@@ -21,8 +21,8 @@ set(envlist
 if(CATKIN_ENABLE_TESTING)
   foreach(env ${envlist})
     message("testing for env: ${env}")
-    roslaunch_add_file_check(launch/world.launch robot_env:=${env})
-    #roslaunch_add_file_check(launch/world.launch ROBOT_ENV=${env})
+    #roslaunch_add_file_check(launch/world.launch robot_env:=${env})
+    roslaunch_add_file_check(launch/world.launch ROBOT_ENV=${env})
   endforeach()
 endif()
 
