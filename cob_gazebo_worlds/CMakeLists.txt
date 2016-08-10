@@ -13,12 +13,13 @@ set(envlist
   empty
   ipa-apartment
   ipa-kitchen
-#  ipa-office
+  ipa-office
   ipa-production-plant
 )
 
 ### TEST ###
 if(CATKIN_ENABLE_TESTING)
+  add_rostest(test/urdf_worlds.test)
   foreach(env ${envlist})
     message("testing for env: ${env}")
     #roslaunch_add_file_check(launch/world.launch robot_env:=${env})

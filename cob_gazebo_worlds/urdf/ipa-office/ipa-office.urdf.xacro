@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="ipa-office">
+
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
+
+  <xacro:macro name="ipa-office" params="name">
+
+    <gazebo>
+      <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>world</robotNamespace>
+        <robotParam>/world_description</robotParam>
+      </plugin>
+    </gazebo>
+
+    <link name="world"/>
+
+    <link name="walls">
+      <inertial>
+        <mass value="1.37" />
+        <origin xyz="0 0 0.0" />
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="6.75 0.25 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-office_walls.dae" scale="0.97 0.97 0.97"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="6.75 0.25 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://cob_gazebo_worlds/Media/models/ipa-office_walls.dae" scale="0.97 0.97 0.97"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <gazebo>
+      <static>true</static>
+    </gazebo>
+
+    <joint name="joint_walls" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="world" />
+      <child link="walls" />
+    </joint>
+
+  </xacro:macro>
+
+  <xacro:ipa-office name="ipa-office" />
+
+</robot>
+
