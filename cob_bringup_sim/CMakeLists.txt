@@ -29,7 +29,7 @@ set(envlist
   empty
   ipa-apartment
   ipa-kitchen
-#  ipa-office  
+  ipa-office  
   ipa-production-plant
 )
 
