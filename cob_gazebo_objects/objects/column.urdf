@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<robot name="column" static="true">
+  <link name='link'>
+    <inertial>
+      <mass value="10" />
+      <origin xyz="0 0 0.0" />
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 2.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="5.0" radius="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 2.5" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="5.0" radius="0.5"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo>
+    <static>true</static>
+  </gazebo>     
+</robot>

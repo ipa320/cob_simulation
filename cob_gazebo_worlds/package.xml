@@ -16,6 +16,7 @@
   <depend>roslaunch</depend>
   <depend>rostest</depend>
 
+  <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>gazebo_msgs</exec_depend>
   <exec_depend>gazebo_ros_control</exec_depend>
