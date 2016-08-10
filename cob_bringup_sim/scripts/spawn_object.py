@@ -115,7 +115,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print '[spawn_object.py] Please specify the names of the objects to be loaded'
         sys.exit()
-    
+
     rospy.init_node("object_spawner")
 
     # check for all objects on parameter server
