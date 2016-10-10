@@ -12,6 +12,17 @@ Changelog for package cob_simulation
 * review dependencies
 * Contributors: ipa-fxm
 
+Forthcoming
+-----------
+* 0.6.5
+* update changelog
+* 0.6.4
+* update changelog
+* migration to package format 2
+* remove trailing whitespaces
+* review dependencies
+* Contributors: ipa-fxm
+
 0.6.3 (2015-06-17)
 ------------------
 
