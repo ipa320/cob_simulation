@@ -22,8 +22,8 @@ Changelog for package cob_gazebo_objects
 * review dependencies
 * Contributors: ipa-fxm
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * Moved ipa-office walls to cob gazebo worlds
 * Set correct origin/scale for ipa-office_walls and added walls for stairway
 * Updated model of ipa-office_walls

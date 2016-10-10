@@ -33,8 +33,8 @@ Changelog for package cob_bringup_sim
 * review dependencies
 * Contributors: ipa-fxm
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * enable tests for ipa-office
 * fix roslaunch tests
 * fix roslaunch tests
