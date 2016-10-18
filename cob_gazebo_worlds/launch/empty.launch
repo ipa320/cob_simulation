@@ -9,6 +9,7 @@
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
 	<arg name="robot_env" default="empty"/>
+	<arg name="publish_world_state" default="true"/>
 
 	<env name="GAZEBO_MODEL_PATH" value="$(arg pkg_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -23,7 +24,9 @@
 		<!--arg name="throttled" value="$(arg throttled)" /-->
 	</include>
 
-	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
-		<arg name="robot_env" value="$(arg robot_env)"/>
-	</include>
+		<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
+			<arg name="robot_env" value="$(arg robot_env)"/>
+			<arg name="publish_world_state" value="$(arg publish_world_state)"/>
+		</include>
+
 </launch>

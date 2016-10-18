@@ -2,13 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="empty">
 
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
-  <!--Parameters-->
-  <property name="dist_axis_x" value="1.969" />
-  <property name="dist_axis_y" value="4.070" />
-
-
   <xacro:macro name="empty" params="name">
 
     <gazebo>
@@ -19,14 +12,6 @@
     </gazebo>
 
     <link name="world"/>
-
-
-
-    <xacro:landing name="landing" parent="world">
-        <origin xyz="${-13.9+dist_axis_x} ${-dist_axis_y} 0" rpy="0 0 0" />
-    </xacro:landing>
-
-
 
   </xacro:macro>
 
