@@ -12,6 +12,9 @@ Changelog for package cob_simulation
 * review dependencies
 * Contributors: ipa-fxm
 
+Forthcoming
+-----------
+
 0.6.6 (2016-10-10)
 ------------------
 * 0.6.5

@@ -34,6 +34,9 @@ Changelog for package cob_gazebo_worlds
 * use controller_manager spawn
 * Contributors: ipa-fxm, ipa-nhg
 
+Forthcoming
+-----------
+
 0.6.6 (2016-10-10)
 ------------------
 * enable tests for ipa-office

@@ -33,6 +33,12 @@ Changelog for package cob_bringup_sim
 * review dependencies
 * Contributors: ipa-fxm
 
+Forthcoming
+-----------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* make roslaunch a denend (was only exec_depend)
+* Contributors: Florian Weisshardt
+
 0.6.6 (2016-10-10)
 ------------------
 * enable tests for ipa-office

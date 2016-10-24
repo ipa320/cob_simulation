@@ -25,6 +25,9 @@ Changelog for package cob_gazebo
 * review dependencies
 * Contributors: ipa-fxm
 
+Forthcoming
+-----------
+
 0.6.6 (2016-10-10)
 ------------------
 * generic wait for environment before spawn robot
