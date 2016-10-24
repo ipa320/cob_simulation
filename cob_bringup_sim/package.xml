@@ -13,6 +13,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>roslaunch</depend>
+
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_gazebo_worlds</exec_depend>
@@ -21,7 +23,6 @@
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>python-numpy</exec_depend>
-  <exec_depend>roslaunch</exec_depend>
   <exec_depend>roslib</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>tf</exec_depend>
