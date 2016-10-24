@@ -22,8 +22,8 @@ Changelog for package cob_gazebo_objects
 * review dependencies
 * Contributors: ipa-fxm
 
-Forthcoming
------------
+0.6.7 (2016-10-24)
+------------------
 
 0.6.6 (2016-10-10)
 ------------------
