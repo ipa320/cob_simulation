@@ -66,7 +66,7 @@ import numpy
 
 from optparse import OptionParser
 
-from gazebo_msgs.srv import SetModelState, SetModelStateRequest
+from gazebo_msgs.srv import SetModelState, SetModelStateRequest, GetModelState, GetModelStateRequest
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Pose
 import tf
@@ -92,6 +92,21 @@ class move():
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
 
+
+
+    def get_model_dist(self, x, y):
+        if self.options.model != None:
+            req = GetModelStateRequest()
+            req.model_name = self.options.model
+            rospy.wait_for_service('/gazebo/get_model_state')
+            client = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
+            res = client(req)
+            model_dist = math.sqrt(math.pow(res.pose.position.x-x,2) + math.pow(res.pose.position.y-y,2))
+        else:
+            model_dist = 5;
+
+        return model_dist
+
     def move_on_line(self, start, goal):
         dx = goal[0] - start[0]
         dy = goal[1] - start[1]
@@ -106,35 +121,38 @@ class move():
         segment_time = segment_length/self.vel/segment_step_count
     
         for step in numpy.linspace(0, segment_length, segment_step_count):
+
             step_x = start[0] + step * math.cos(yaw)
             step_y = start[1] + step * math.sin(yaw)
 
-            object_new_pose = Pose()
-            object_new_pose.position.x = step_x
-            object_new_pose.position.y = step_y
-            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
-            object_new_pose.orientation.x = quat[0]
-            object_new_pose.orientation.y = quat[1]
-            object_new_pose.orientation.z = quat[2]
-            object_new_pose.orientation.w = quat[3]
+            model_dist = self.get_model_dist(step_x, step_y)
+            if(model_dist > 2):
+                object_new_pose = Pose()
+                object_new_pose.position.x = step_x
+                object_new_pose.position.y = step_y
+                quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
+                object_new_pose.orientation.x = quat[0]
+                object_new_pose.orientation.y = quat[1]
+                object_new_pose.orientation.z = quat[2]
+                object_new_pose.orientation.w = quat[3]
 
-            # spawn new model
-            model_state = ModelState()
-            model_state.model_name = self.name
-            model_state.pose = object_new_pose
-            model_state.reference_frame = 'world'
-        
-            # publish message
-            self.pub.publish(model_state)
-        
-            # call service
-            req = SetModelStateRequest()
-            req.model_state = model_state
-            #res = self.srv_set_model_state(req)
-            #if not res.success:
-            #    print "something went wrong in service call"
-        
-            # sleep until next step
+                # spawn new model
+                model_state = ModelState()
+                model_state.model_name = self.name
+                model_state.pose = object_new_pose
+                model_state.reference_frame = 'world'
+
+                # publish message
+                self.pub.publish(model_state)
+
+                # call service
+                req = SetModelStateRequest()
+                req.model_state = model_state
+                #res = self.srv_set_model_state(req)
+                #if not res.success:
+                #    print "something went wrong in service call"
+
+                # sleep until next step
             self.rate.sleep()
 
     def move_polygon(self, polygon_in):
@@ -215,6 +233,11 @@ class move():
         parser.add_option("-r", "--radius",
             dest="radius", default=None,
             help="Radius, only used for circular movement. Default: None")
+            
+        parser.add_option("-o", "--object",
+            dest="model", default=None,
+            help="Model-Name of object that is being avoided. Default: None")
+            
     
         (self.options, args) = parser.parse_args()
 
