@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-
 	<arg name="debug" default="false"/>
 	<arg name="headless" default="false"/>
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
 	<arg name="gui" default="true"/>
 	<arg name="throttled" default="false"/>
-	<arg name="robot_env" default="automotive-assembly-line"/>  
+
+	<arg name="robot_env" default="automotive-assembly-line"/>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">

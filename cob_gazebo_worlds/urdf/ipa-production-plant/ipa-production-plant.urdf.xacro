@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+        name="ipa-production-plant">
+
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/ipa-production-plant.property.xacro" />
+  
+  <!-- walls -->
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/walls.urdf.xacro" />
+
+  <!-- Include Sensor file -->
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/sensors.urdf.xacro" />
+
+
+  <!-- world link -->
+  <link name="world" />
+
+
+  <!-- Spawn Walls -->
+  <xacro:sensors name="sensors">
+    </xacro:sensors>
+
+  <!-- Spawn Walls -->
+  <xacro:walls name="walls">
+    </xacro:walls>
+
+</robot>
