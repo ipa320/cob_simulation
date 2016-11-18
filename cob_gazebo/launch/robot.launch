@@ -9,9 +9,9 @@
 	<arg name="initial_config" default=""/>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(arg pkg_robot_config)/upload_param.launch">
+	<!--include file="$(arg pkg_robot_config)/upload_param.launch">
 		<arg name="robot" value="$(arg robot)" />
-	</include>
+	</include-->
 
 	<!-- send robot urdf to param server -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >

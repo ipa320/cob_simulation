@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- geometry macros -->	
+	<xacro:macro name="workcell_geometry" params="length width height">
+			<geometry>
+				<box size="${length} ${width} ${height}"/>
+			</geometry>			
+	</xacro:macro>	
+	<xacro:macro name="workcell_element" params="name parent length width height offset_x offset_y offset_z">
+		<link name="${name}">
+			    <xacro:box_inertial x="${length}" y="${width}" z="${height}" mass="5.0">
+					<origin xyz="0 0 0" rpy="0 0 0" />
+				</xacro:box_inertial>
+			<visual>
+				<origin xyz="0 0 0" />
+				<xacro:workcell_geometry length="${length}" width="${width}" height="${height}">
+					
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 0 0" />
+				<xacro:workcell_geometry length="${length}" width="${width}" height="${height}">
+					
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<gazebo reference="${name}">
+			<material>IPA/Green</material>
+		</gazebo>
+		<joint name="${parent}_to_${name}" type="fixed">
+			<parent link="${parent}"/>
+			<child link="${name}"/>
+			<origin xyz="${offset_x} ${offset_y} ${offset_z}" rpy="0 0 0"/>
+		</joint>		
+	</xacro:macro>
+	<!-- end of geometry macros -->
+	
+
+
+</robot>
