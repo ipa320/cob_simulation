@@ -1,29 +1,17 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="debug" default="false"/>
-	<arg name="headless" default="false"/>
-	<arg name="paused" default="false"/>
-	<arg name="use_sim_time" default="true"/>
-	<arg name="gui" default="true"/>
-	<arg name="throttled" default="false"/>
 
 	<arg name="robot_env" default="ipa-apartment"/>
+	<arg name="publish_world_state" value="true"/>
 
-	<!-- start gazebo with empty world -->
-	<include file="$(find cob_gazebo_worlds)/launch/empty.launch">
-		<arg name="world_name" value="worlds/empty_apartment.world"/>
-		<arg name="debug" value="$(arg debug)" />
-		<arg name="headless" value="$(arg headless)"/>
-		<arg name="paused" value="$(arg paused)" />
-		<arg name="use_sim_time" value="$(arg use_sim_time)" />
-		<arg name="gui" value="$(arg gui)" />
-		<arg name="robot_env" value="$(arg robot_env)" />
-		<!--arg name="throttled" value="$(arg throttled)" /-->
+	<!-- spawn environment -->
+	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
+		<arg name="robot_env" value="$(arg robot_env)"/>
+		<arg name="publish_world_state" value="$(arg publish_world_state)"/>
 	</include>
 
 	<rosparam ns="world" command="load" file="$(find cob_gazebo_worlds)/urdf/$(arg robot_env)/world_controller.yaml"/>
 	<node ns="world" name="world_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn elevator_left_joint_position_controller elevator_right_joint_position_controller elevator_button1_joint_position_controller elevator_button2_joint_position_controller" respawn="false" output="screen"/>
-
 
 	<!-- elevator_button1_joint_position_controller elevator_button2_joint_position_controller-->
 	<node name="elevator" pkg="cob_gazebo_worlds" type="elevator.py"  respawn="false" output="screen" />
