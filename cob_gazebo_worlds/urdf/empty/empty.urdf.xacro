@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="empty">
+
+  <xacro:macro name="empty" params="name">
+
+    <gazebo>
+      <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>world</robotNamespace>
+        <robotParam>/world_description</robotParam>
+      </plugin>
+    </gazebo>
+
+    <link name="world"/>
+
+  </xacro:macro>
+
+  <xacro:empty name="empty" />
+
+</robot>
+
