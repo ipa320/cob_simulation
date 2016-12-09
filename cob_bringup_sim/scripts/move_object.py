@@ -94,7 +94,8 @@ class move():
 
     def get_model_dist(self, x, y):
         model_dist = float('inf')
-        for model in self.options.stop_objects:
+        models = self.options.stop_objects.split()
+        for model in models:
             req = GetModelStateRequest()
             req.model_name = model
             rospy.wait_for_service('/gazebo/get_model_state')
@@ -117,16 +118,19 @@ class move():
         if segment_step_count == 0:
             return
         segment_time = segment_length/self.vel/segment_step_count
-    
-        for step in numpy.linspace(0, segment_length, segment_step_count):
+        path = numpy.linspace(0, segment_length, segment_step_count)
+
+        idx = 0
+        while idx < segment_step_count:
+            step = path[idx]
 
             step_x = start[0] + step * math.cos(yaw)
             step_y = start[1] + step * math.sin(yaw)
 
             # model to close to object?
             model_dist = self.get_model_dist(step_x, step_y)
-            if(model_dist <= self.options.stop_distance):
-                rospy.loginfo("Model too close to object. Stopping!")
+            if(model_dist <= float(self.options.stop_distance)):
+                rospy.logdebug("Model too close to object. Stopping!")
             else:
                 object_new_pose = Pose()
                 object_new_pose.position.x = step_x
@@ -152,6 +156,7 @@ class move():
                 #res = self.srv_set_model_state(req)
                 #if not res.success:
                 #    print "something went wrong in service call"
+                idx += 1
 
             # sleep until next step
             self.rate.sleep()
@@ -187,8 +192,8 @@ class move():
             
             # model to close to object?
             model_dist = self.get_model_dist(step_x, step_y)
-            if(model_dist <= self.options.stop_distance):
-                rospy.loginfo("Model too close to object. Stopping!")
+            if(model_dist <= float(self.options.stop_distance)):
+                rospy.logdebug("Model too close to object. Stopping!")
             else:
                 object_new_pose = Pose()
                 object_new_pose.position.x = step_x
@@ -247,8 +252,8 @@ class move():
             help="Radius, only used for circular movement. Default: None")
             
         parser.add_option("--stop-objects",
-            dest="stop_objects", metavar="List of objects ['object_1','object_2, ...]", default=[],
-            help="List of Model-Name of objects that are to be avoided. Default: []")
+            dest="stop_objects", metavar="List of objects 'object_1 object_2 ...'", default='',
+            help="List of Model-Name of objects that are to be avoided. Default: ''")
 
         parser.add_option("--stop-distance",
             dest="stop_distance", metavar="Float", default=2.0,
