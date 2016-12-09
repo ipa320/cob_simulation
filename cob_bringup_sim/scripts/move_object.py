@@ -243,15 +243,15 @@ class move():
             help="Center point, only used for circular movement. Default: None")
         
         parser.add_option("-r", "--radius",
-            dest="radius", default=None,
+            dest="radius", metavar="Float", default=None,
             help="Radius, only used for circular movement. Default: None")
             
         parser.add_option("--stop-objects",
-            dest="stop_objects", default=[],
+            dest="stop_objects", metavar="List of objects ['object_1','object_2, ...]", default=[],
             help="List of Model-Name of objects that are to be avoided. Default: []")
 
         parser.add_option("--stop-distance",
-            dest="stop_distance", default=2.0,
+            dest="stop_distance", metavar="Float", default=2.0,
             help="Allowed distance to objects before stopping. Default: 2.0")
     
         (self.options, args) = parser.parse_args()
