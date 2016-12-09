@@ -127,32 +127,31 @@ class move():
             model_dist = self.get_model_dist(step_x, step_y)
             if(model_dist <= self.options.stop_distance):
                 rospy.loginfo("Model too close to object. Stopping!")
-                return
+            else:
+                object_new_pose = Pose()
+                object_new_pose.position.x = step_x
+                object_new_pose.position.y = step_y
+                quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
+                object_new_pose.orientation.x = quat[0]
+                object_new_pose.orientation.y = quat[1]
+                object_new_pose.orientation.z = quat[2]
+                object_new_pose.orientation.w = quat[3]
 
-            object_new_pose = Pose()
-            object_new_pose.position.x = step_x
-            object_new_pose.position.y = step_y
-            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
-            object_new_pose.orientation.x = quat[0]
-            object_new_pose.orientation.y = quat[1]
-            object_new_pose.orientation.z = quat[2]
-            object_new_pose.orientation.w = quat[3]
+                # spawn new model
+                model_state = ModelState()
+                model_state.model_name = self.name
+                model_state.pose = object_new_pose
+                model_state.reference_frame = 'world'
 
-            # spawn new model
-            model_state = ModelState()
-            model_state.model_name = self.name
-            model_state.pose = object_new_pose
-            model_state.reference_frame = 'world'
+                # publish message
+                self.pub.publish(model_state)
 
-            # publish message
-            self.pub.publish(model_state)
-
-            # call service
-            req = SetModelStateRequest()
-            req.model_state = model_state
-            #res = self.srv_set_model_state(req)
-            #if not res.success:
-            #    print "something went wrong in service call"
+                # call service
+                req = SetModelStateRequest()
+                req.model_state = model_state
+                #res = self.srv_set_model_state(req)
+                #if not res.success:
+                #    print "something went wrong in service call"
 
             # sleep until next step
             self.rate.sleep()
@@ -190,33 +189,34 @@ class move():
             model_dist = self.get_model_dist(step_x, step_y)
             if(model_dist <= self.options.stop_distance):
                 rospy.loginfo("Model too close to object. Stopping!")
-                return
-            
-            object_new_pose = Pose()
-            object_new_pose.position.x = step_x
-            object_new_pose.position.y = step_y
-            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, -yaw)
-            object_new_pose.orientation.x = quat[0]
-            object_new_pose.orientation.y = quat[1]
-            object_new_pose.orientation.z = quat[2]
-            object_new_pose.orientation.w = quat[3]
+            else:
+                object_new_pose = Pose()
+                object_new_pose.position.x = step_x
+                object_new_pose.position.y = step_y
+                quat = tf.transformations.quaternion_from_euler(0.0, 0.0, -yaw)
+                object_new_pose.orientation.x = quat[0]
+                object_new_pose.orientation.y = quat[1]
+                object_new_pose.orientation.z = quat[2]
+                object_new_pose.orientation.w = quat[3]
 
-            # spawn new model
-            model_state = ModelState()
-            model_state.model_name = self.name
-            model_state.pose = object_new_pose
-            model_state.reference_frame = 'world'
-        
-            # publish message
-            self.pub.publish(model_state)
-        
-            # call service
-            req = SetModelStateRequest()
-            req.model_state = model_state
-            #res = self.srv_set_model_state(req)
-            #if not res.success:
-            #    print "something went wrong in service call"
-            yaw += yaw_step
+                # spawn new model
+                model_state = ModelState()
+                model_state.model_name = self.name
+                model_state.pose = object_new_pose
+                model_state.reference_frame = 'world'
+            
+                # publish message
+                self.pub.publish(model_state)
+            
+                # call service
+                req = SetModelStateRequest()
+                req.model_state = model_state
+                #res = self.srv_set_model_state(req)
+                #if not res.success:
+                #    print "something went wrong in service call"
+                yaw += yaw_step
+            
+            # sleep until next step
             self.rate.sleep()
 
     def parse_options(self):
