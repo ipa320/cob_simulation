@@ -92,18 +92,16 @@ class move():
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
 
-
-
     def get_model_dist(self, x, y):
-        if self.options.model != None:
+        model_dist = float('inf')
+        for model in self.options.stop_objects:
             req = GetModelStateRequest()
-            req.model_name = self.options.model
+            req.model_name = model
             rospy.wait_for_service('/gazebo/get_model_state')
             client = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
             res = client(req)
-            model_dist = math.sqrt(math.pow(res.pose.position.x-x,2) + math.pow(res.pose.position.y-y,2))
-        else:
-            model_dist = 5;
+            object_dist = math.sqrt(math.pow(res.pose.position.x-x,2) + math.pow(res.pose.position.y-y,2))
+            model_dist = min(object_dist, model_dist)
 
         return model_dist
 
@@ -125,34 +123,38 @@ class move():
             step_x = start[0] + step * math.cos(yaw)
             step_y = start[1] + step * math.sin(yaw)
 
+            # model to close to object?
             model_dist = self.get_model_dist(step_x, step_y)
-            if(model_dist > 2):
-                object_new_pose = Pose()
-                object_new_pose.position.x = step_x
-                object_new_pose.position.y = step_y
-                quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
-                object_new_pose.orientation.x = quat[0]
-                object_new_pose.orientation.y = quat[1]
-                object_new_pose.orientation.z = quat[2]
-                object_new_pose.orientation.w = quat[3]
+            if(model_dist <= self.options.stop_distance):
+                rospy.loginfo("Model too close to object. Stopping!")
+                return
 
-                # spawn new model
-                model_state = ModelState()
-                model_state.model_name = self.name
-                model_state.pose = object_new_pose
-                model_state.reference_frame = 'world'
+            object_new_pose = Pose()
+            object_new_pose.position.x = step_x
+            object_new_pose.position.y = step_y
+            quat = tf.transformations.quaternion_from_euler(0.0, 0.0, yaw)
+            object_new_pose.orientation.x = quat[0]
+            object_new_pose.orientation.y = quat[1]
+            object_new_pose.orientation.z = quat[2]
+            object_new_pose.orientation.w = quat[3]
 
-                # publish message
-                self.pub.publish(model_state)
+            # spawn new model
+            model_state = ModelState()
+            model_state.model_name = self.name
+            model_state.pose = object_new_pose
+            model_state.reference_frame = 'world'
 
-                # call service
-                req = SetModelStateRequest()
-                req.model_state = model_state
-                #res = self.srv_set_model_state(req)
-                #if not res.success:
-                #    print "something went wrong in service call"
+            # publish message
+            self.pub.publish(model_state)
 
-                # sleep until next step
+            # call service
+            req = SetModelStateRequest()
+            req.model_state = model_state
+            #res = self.srv_set_model_state(req)
+            #if not res.success:
+            #    print "something went wrong in service call"
+
+            # sleep until next step
             self.rate.sleep()
 
     def move_polygon(self, polygon_in):
@@ -180,9 +182,19 @@ class move():
             if yaw >= 2*math.pi:
                 rospy.loginfo("starting new round")
                 yaw = 0.0
+
+            step_x = center[0] + radius * math.sin(yaw)
+            step_y = center[1] + radius * math.cos(yaw)
+            
+            # model to close to object?
+            model_dist = self.get_model_dist(step_x, step_y)
+            if(model_dist <= self.options.stop_distance):
+                rospy.loginfo("Model too close to object. Stopping!")
+                return
+            
             object_new_pose = Pose()
-            object_new_pose.position.x = center[0] + radius * math.sin(yaw)
-            object_new_pose.position.y = center[1] + radius * math.cos(yaw)
+            object_new_pose.position.x = step_x
+            object_new_pose.position.y = step_y
             quat = tf.transformations.quaternion_from_euler(0.0, 0.0, -yaw)
             object_new_pose.orientation.x = quat[0]
             object_new_pose.orientation.y = quat[1]
@@ -234,10 +246,13 @@ class move():
             dest="radius", default=None,
             help="Radius, only used for circular movement. Default: None")
             
-        parser.add_option("-o", "--object",
-            dest="model", default=None,
-            help="Model-Name of object that is being avoided. Default: None")
-            
+        parser.add_option("--stop-objects",
+            dest="stop_objects", default=[],
+            help="List of Model-Name of objects that are to be avoided. Default: []")
+
+        parser.add_option("--stop-distance",
+            dest="stop_distance", default=2.0,
+            help="Allowed distance to objects before stopping. Default: 2.0")
     
         (self.options, args) = parser.parse_args()
 
