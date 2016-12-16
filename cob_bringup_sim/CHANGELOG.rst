@@ -2,6 +2,30 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2016-10-24)
+------------------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* make roslaunch a denend (was only exec_depend)
+* Contributors: Florian Weisshardt
+
+0.6.6 (2016-10-10)
+------------------
+* enable tests for ipa-office
+* fix roslaunch tests
+* fix roslaunch tests
+* delete ipa-factory
+* support relative defined objects in remove_objects.py and tabs vs spaces
+* Added feature of deleting multiple objects included in a group to script remove_object.py
+* enable roslaunch checks
+* remove prints and rename groups namespace
+* Updated structure of spawn_object.py to reduce code redundance
+* Added the functionality to spawn sdf's using spawn_object and a check if object is there before deleting it
+* Updated spawn objects script so that it takes object groups into account
+* generic wait for environment before spawn robot
+* spawn_object supports children objects
+* added script file to spawn racks and other objects
+* Contributors: Benjamin Maidel, Florian Weisshardt, ipa-fmw, ipa-fxm, ipa-mig-mc, ipa-nhg, ipa-srd-rd
+
 0.6.5 (2016-04-01)
 ------------------
 * fix install tags and dependencies

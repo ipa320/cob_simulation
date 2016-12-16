@@ -2,6 +2,15 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2016-10-24)
+------------------
+
+0.6.6 (2016-10-10)
+------------------
+* generic wait for environment before spawn robot
+* inserted wait for model, hopefully fixes max range bug
+* Contributors: Benjamin Maidel, ipa-srd
+
 0.6.5 (2016-04-01)
 ------------------
 * fix dependency
