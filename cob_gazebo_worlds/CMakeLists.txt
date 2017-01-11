@@ -1,26 +1,17 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_worlds)
 
-find_package(catkin REQUIRED COMPONENTS
-  roslaunch
-  rostest
-)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
-set(envlist
-  automotive-assembly-line
-  empty
-  ipa-apartment
-  ipa-kitchen
-  ipa-office
-  ipa-production-plant
-)
-
 ### TEST ###
 if(CATKIN_ENABLE_TESTING)
+  find_package(cob_default_env_config REQUIRED)
+  find_package(roslaunch REQUIRED)
+  find_package(rostest REQUIRED)
   add_rostest(test/urdf_worlds.test)
-  foreach(env ${envlist})
+  foreach(env ${cob_default_env_config_ENVLIST})
     message("testing for env: ${env}")
     #roslaunch_add_file_check(launch/world.launch robot_env:=${env})
     roslaunch_add_file_check(launch/world.launch ROBOT_ENV=${env})

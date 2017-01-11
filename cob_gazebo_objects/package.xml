@@ -13,6 +13,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>roslaunch</depend>
+
   <exec_depend>cob_description</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
 
