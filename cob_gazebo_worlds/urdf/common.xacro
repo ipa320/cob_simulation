@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <!-- see https://secure.wikimedia.org/wikipedia/en/wiki/List_of_moment_of_inertia_tensors -->
   <xacro:macro name="sphere_inertial" params="radius mass *origin">
     <inertial>
       <mass value="${mass}" />
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <inertia ixx="${0.4 * mass * radius * radius}" ixy="0.0" ixz="0.0"
         iyy="${0.4 * mass * radius * radius}" iyz="0.0"
         izz="${0.4 * mass * radius * radius}" />
@@ -17,7 +17,7 @@
   <xacro:macro name="cylinder_inertial" params="radius length mass *origin">
     <inertial>
       <mass value="${mass}" />
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <inertia ixx="${0.0833333 * mass * (3 * radius * radius + length * length)}" ixy="0.0" ixz="0.0"
         iyy="${0.0833333 * mass * (3 * radius * radius + length * length)}" iyz="0.0"
         izz="${0.5 * mass * radius * radius}" />
@@ -27,7 +27,7 @@
   <xacro:macro name="box_inertial" params="x y z mass *origin">
     <inertial>
       <mass value="${mass}" />
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <inertia ixx="${0.0833333 * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
         iyy="${0.0833333 * mass * (x*x + z*z)}" iyz="0.0"
         izz="${0.0833333 * mass * (x*x + y*y)}" />

@@ -25,7 +25,7 @@
   <xacro:macro name="box_inertial" params="x y z mass *origin">
     <inertial>
       <mass value="${mass}" />
-      <insert_block name="origin" />
+      <xacro:insert_block name="origin" />
       <inertia ixx="${0.0833333 * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
           iyy="${0.0833333 * mass * (x*x + z*z)}" iyz="0.0"
           izz="${0.0833333 * mass * (x*x + y*y)}" />
@@ -63,13 +63,13 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <insert_block name = "mesh"/>
+          <xacro:insert_block name = "mesh"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <insert_block name = "mesh"/>
+          <xacro:insert_block name = "mesh"/>
         </geometry>
       </collision>
       <xacro:default_inertial/>
@@ -78,7 +78,7 @@
       <static>true</static>
     </gazebo>
     <joint name="bin_joint_${new_object_num}" type="fixed">
-       <insert_block name="origin"/>
+       <xacro:insert_block name="origin"/>
        <parent link="belt_base_link"/>
        <child link="world_object_${new_object_num}"/>
     </joint>
