@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="bookcase"
+	xmlns:xacro="http://www.ros.org/wiki/xacro"
 	xmlns:xi="http://www.w3.org/2001/XInclude"
 	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
 	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
@@ -14,15 +15,15 @@
 	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
 >
 
-  <property name="bookcase_height" value="0.79" />
-  <property name="bookcase_width" value="0.39" />
-  <property name="bookcase_depth" value="1.49" />
-  <property name="bookcase_x" value="0.98" />
-  <property name="bookcase_y" value="0.0" />
-  <property name="bookcase_z" value="0.0" />
+  <xacro:property name="bookcase_height" value="0.79" />
+  <xacro:property name="bookcase_width" value="0.39" />
+  <xacro:property name="bookcase_depth" value="1.49" />
+  <xacro:property name="bookcase_x" value="0.98" />
+  <xacro:property name="bookcase_y" value="0.0" />
+  <xacro:property name="bookcase_z" value="0.0" />
 
-  <property name="bookcase_thickness_min" value="0.015"/>
-  <property name="bookcase_thickness_max" value="0.05"/>
+  <xacro:property name="bookcase_thickness_min" value="0.015"/>
+  <xacro:property name="bookcase_thickness_max" value="0.05"/>
 
 <!-- dummy_link -->
 	<link name="dummy_link">
@@ -209,7 +210,7 @@
 
 	<!--Separations-->
 
-    <macro name="separations" params="suffix parent pos">
+    <xacro:macro name="separations" params="suffix parent pos">
 
 
         <link name="separation_${suffix}_link">
@@ -247,7 +248,7 @@
       </joint>
 
 
-  </macro>
+  </xacro:macro>
 	<separations suffix="1" parent="bookcase_top_link" pos="0 -${bookcase_thickness_min/2+0.3375} -${bookcase_thickness_max/2+0.3375/2}"/>
 	<separations suffix="2" parent="bookcase_top_link" pos="0 0 -${bookcase_thickness_max/2+0.3375/2}"/>
 	<separations suffix="3" parent="bookcase_top_link" pos="0 ${bookcase_thickness_min/2+0.3375} -${bookcase_thickness_max/2+0.3375/2}"/>
