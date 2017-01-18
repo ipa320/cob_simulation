@@ -19,7 +19,7 @@ if(CATKIN_ENABLE_TESTING)
 endif()
 
 ### INSTALL ###
-install(DIRECTORY Media launch test urdf worlds
+install(DIRECTORY Media launch test urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

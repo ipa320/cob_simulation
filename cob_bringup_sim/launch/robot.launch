@@ -7,6 +7,7 @@
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
+	<arg name="world_name" default="worlds/empty.world"/>
 	<arg name="initial_config" default=""/>
 
 	<arg name="paused" default="false"/>
@@ -18,6 +19,7 @@
 		<arg name="robot_env" value="$(arg robot_env)" />
 		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
 		<arg name="pkg_gazebo_worlds" value="$(arg pkg_gazebo_worlds)" />
+		<arg name="world_name" value="$(arg world_name)"/>
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="use_sim_time" value="$(arg use_sim_time)" />
 		<arg name="gui" value="$(arg gui)" />
