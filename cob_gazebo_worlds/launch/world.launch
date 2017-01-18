@@ -5,6 +5,7 @@
 	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
+	<arg name="world_name" default="worlds/empty.world"/>
 
 	<arg name="debug" default="false" />
 	<arg name="headless" default="false" />
@@ -24,7 +25,7 @@
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="worlds/empty.world"/>
+		<arg name="world_name" value="$(arg world_name)"/>
 		<arg name="debug" value="$(arg debug)" />
 		<arg name="headless" value="$(arg headless)"/>
 		<arg name="paused" value="$(arg paused)" />
