@@ -9,19 +9,14 @@
 	<arg name="initial_config" default=""/>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(arg pkg_robot_config)/upload_param.launch">
-		<arg name="robot" value="$(arg robot)" />
-	</include>
-
-	<!-- send robot urdf to param server -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_bringup)/robots/$(arg robot).xml" >
+		<arg name="sim" value="true" />
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
 	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 $(arg initial_config) -wait $(arg robot_env)" respawn="false" output="screen" />
 
-	<!-- start gazebo controllers -->
+	<!-- start additional gazebo stuff -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
