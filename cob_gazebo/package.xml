@@ -13,6 +13,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>roslaunch</depend>
+
   <exec_depend>cob_controller_configuration_gazebo</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_gazebo_ros_control</exec_depend>
@@ -25,5 +27,7 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>rostest</exec_depend>
   <exec_depend>trajectory_msgs</exec_depend>
+
+  <test_depend>cob_supported_robots</test_depend>
 
 </package>
