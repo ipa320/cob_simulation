@@ -66,7 +66,7 @@ import numpy
 
 from optparse import OptionParser
 
-from gazebo_msgs.srv import SetModelState, SetModelStateRequest, GetModelState, GetModelStateRequest
+from gazebo_msgs.srv import GetModelState, GetModelStateRequest, GetModelStateResponse
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Pose
 import tf
@@ -86,24 +86,47 @@ class move():
         self.vel = float(self.options.velocity)
         self.name = self.options.name
         rospy.init_node('move' + self.name)
-        self.model = ""
+        self.models = self.options.stop_objects.split()
+        rospy.wait_for_service('/gazebo/get_model_state')
+        self.srv_get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
         self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
-        #self.srv_set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
 
+        # wait for all models to be available
+        while not rospy.is_shutdown():
+            rospy.sleep(1.0)    # give gazebo some time to start
+            res = self.get_model_state(self.name)
+            if not res.success:
+                continue
+            else:
+                success = True
+                for model in self.models:
+                    res = self.get_model_state(model)
+                    if not res.success:
+                        success = False
+                        break   # for-loop
+                if success:
+                    break   # while-loop
+            rospy.logerr("Not all models available yet")
+        rospy.loginfo("Ready to move object %s", self.name)
+
+    def get_model_state(self, model_name):
+        req = GetModelStateRequest()
+        res = GetModelStateResponse()
+        req.model_name = model_name
+        try:
+            res = self.srv_get_model_state(req)
+        except rospy.service.ServiceException:
+            pass
+        return res
+
     def get_model_dist(self, x, y):
         model_dist = float('inf')
-        models = self.options.stop_objects.split()
-        for model in models:
-            req = GetModelStateRequest()
-            req.model_name = model
-            rospy.wait_for_service('/gazebo/get_model_state')
-            client = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
-            res = client(req)
+        for model in self.models:
+            res = self.get_model_state(model)
             object_dist = math.sqrt(math.pow(res.pose.position.x-x,2) + math.pow(res.pose.position.y-y,2))
             model_dist = min(object_dist, model_dist)
-
         return model_dist
 
     def move_on_line(self, start, goal):
@@ -114,7 +137,7 @@ class move():
         yaw = math.atan2(dy, dx)
 
         segment_step_count = int(segment_time*self.node_frequency)
-        
+
         if segment_step_count == 0:
             return
         segment_time = segment_length/self.vel/segment_step_count
@@ -150,12 +173,6 @@ class move():
                 # publish message
                 self.pub.publish(model_state)
 
-                # call service
-                req = SetModelStateRequest()
-                req.model_state = model_state
-                #res = self.srv_set_model_state(req)
-                #if not res.success:
-                #    print "something went wrong in service call"
                 idx += 1
 
             # sleep until next step
@@ -189,7 +206,7 @@ class move():
 
             step_x = center[0] + radius * math.sin(yaw)
             step_y = center[1] + radius * math.cos(yaw)
-            
+
             # model to close to object?
             model_dist = self.get_model_dist(step_x, step_y)
             if(model_dist <= float(self.options.stop_distance)):
@@ -209,18 +226,12 @@ class move():
                 model_state.model_name = self.name
                 model_state.pose = object_new_pose
                 model_state.reference_frame = 'world'
-            
+
                 # publish message
                 self.pub.publish(model_state)
-            
-                # call service
-                req = SetModelStateRequest()
-                req.model_state = model_state
-                #res = self.srv_set_model_state(req)
-                #if not res.success:
-                #    print "something went wrong in service call"
+
                 yaw += yaw_step
-            
+
             # sleep until next step
             self.rate.sleep()
 
@@ -246,11 +257,11 @@ class move():
         parser.add_option("-c", "--center",
             dest="center", metavar="Point [x1,y1]", default=None,
             help="Center point, only used for circular movement. Default: None")
-        
+
         parser.add_option("-r", "--radius",
             dest="radius", metavar="Float", default=None,
             help="Radius, only used for circular movement. Default: None")
-            
+
         parser.add_option("--stop-objects",
             dest="stop_objects", metavar="List of objects 'object_1 object_2 ...'", default='',
             help="List of Model-Name of objects that are to be avoided. Default: ''")
@@ -258,7 +269,7 @@ class move():
         parser.add_option("--stop-distance",
             dest="stop_distance", metavar="Float", default=2.0,
             help="Allowed distance to objects before stopping. Default: 2.0")
-    
+
         (self.options, args) = parser.parse_args()
 
         if self.options.mode == None:
@@ -286,5 +297,3 @@ if __name__ == "__main__":
         m.run()
     except rospy.ROSInterruptException:
         pass
-
-
