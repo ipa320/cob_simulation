@@ -75,3 +75,5 @@ if __name__ == '__main__':
             rate.sleep()
         except rospy.ROSTimeMovedBackwardsException, e:
             rospy.logwarn("ROSTimeMovedBackwardsException during sleep(). Continue anyway...")
+        except rospy.exceptions.ROSInterruptException as e:
+            pass
