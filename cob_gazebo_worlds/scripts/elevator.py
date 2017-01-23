@@ -98,13 +98,20 @@ def move_door(side):
 
 	rospy.loginfo("%s door is opening" %side)
 
+	try:
+		rospy.sleep(10)
+	except rospy.exceptions.ROSInterruptException as e:
+		return
 
-	rospy.sleep(10)
 	pos = 0
 	rospy.loginfo("%s door is closing" %side)
 	pub.publish(pos)
 
-	rospy.sleep(10)
+	try:
+		rospy.sleep(10)
+	except rospy.exceptions.ROSInterruptException as e:
+		return
+
 	door_closed = True
 
 if __name__ == '__main__':
