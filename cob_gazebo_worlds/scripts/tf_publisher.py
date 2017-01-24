@@ -57,8 +57,6 @@
 #
 #################################################################
 
-import math
-
 import rospy
 import tf
 
@@ -67,10 +65,15 @@ if __name__ == '__main__':
     br = tf.TransformBroadcaster()
     rate = rospy.Rate(10.0)
     while not rospy.is_shutdown():
-        t = rospy.Time.now().to_sec()
         br.sendTransform((0,0,0.01),
                          (0.0, 0.0, 0.0, 1.0),
                          rospy.Time.now(),
                          "map",
                          "world")
-        rate.sleep()
+        
+        try:
+            rate.sleep()
+        except rospy.ROSTimeMovedBackwardsException, e:
+            rospy.logwarn("ROSTimeMovedBackwardsException during sleep(). Continue anyway...")
+        except rospy.exceptions.ROSInterruptException as e:
+            pass

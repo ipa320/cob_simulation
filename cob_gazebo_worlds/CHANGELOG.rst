@@ -2,6 +2,41 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2016-10-24)
+------------------
+
+0.6.6 (2016-10-10)
+------------------
+* enable tests for ipa-office
+* fix roslaunch tests
+* Moved ipa-office walls to cob gazebo worlds
+* fix roslaunch tests
+* delete ipa-factory
+* use empty world from cob_gazebo_world and do not spawn objects by default
+* Removed unneeded commented part from ipa-office.launch
+* Added urdf.xacro and launch file for ipa-office
+* Added transforms for sick lasers in ipa-production-plant again
+* enable roslaunch checks
+* remove static laser, remove movable object, remove duplicted upload, remove spawn all
+* Updated urdf structure of ipa-produtcion-plant and the trajectory of the moving object.
+* Merged branch 'feature/ipa_production_plant_improvement' and updated the structure.
+* final beautification
+* move object_locations.yaml to cob_default_env_config
+* fix ipa-production-plant environment
+* working on meshes
+* Updated some untitled namings
+* Removed reflMarker model from another branch
+* Added additional files for outsourced content
+* Changes made based on PR review by fxm
+* Merge of branch feature/ipa_production_plant_simulation with current indigo_dev
+* re-structured the floor map and added objects
+* Populated environment with objects
+* children objects now also spawned
+* added more storage racks - note: storage rack objects not getting loaded
+* added files to spawn storage racks - note: spawning is not working yet
+* initial draft of ipa_production_plant
+* Contributors: Florian Weisshardt, ipa-fmw, ipa-fxm, ipa-mig-mc, ipa-nhg, ipa-srd-rd
+
 0.6.5 (2016-04-01)
 ------------------
 * enable other gazebo worlds packages

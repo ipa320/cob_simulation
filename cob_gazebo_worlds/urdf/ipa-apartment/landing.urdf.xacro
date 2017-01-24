@@ -8,7 +8,7 @@
   </link>
 
   <joint name="joint_origin_landing" type="fixed">
-    <insert_block name="origin" />
+    <xacro:insert_block name="origin" />
     <parent link="${parent}"/>
     <child link="origin_landing" />
   </joint>

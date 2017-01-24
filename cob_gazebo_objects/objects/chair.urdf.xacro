@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="chair"
+       xmlns:xacro="http://www.ros.org/wiki/xacro"
        xmlns:xi="http://www.w3.org/2001/XInclude"
        xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
        xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
@@ -13,16 +14,16 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics">
 
-  <property name="chair_height" value="0.45" />
-  <property name="chair_width" value="0.4" />
-  <property name="chair_depth" value="0.4" />
-  <property name="chair_y" value="0.0" />
-  <property name="chair_z" value="0.0" />
-  <property name="rest_height" value="0.5" />
+  <xacro:property name="chair_height" value="0.45" />
+  <xacro:property name="chair_width" value="0.4" />
+  <xacro:property name="chair_depth" value="0.4" />
+  <xacro:property name="chair_y" value="0.0" />
+  <xacro:property name="chair_z" value="0.0" />
+  <xacro:property name="rest_height" value="0.5" />
 
-  <property name="chair_top_thickness" value="0.02"/>
+  <xacro:property name="chair_top_thickness" value="0.02"/>
 
-  <property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="M_PI" value="3.1415926535897931" />
 
 
   <link name="chair_top_link">
@@ -88,7 +89,7 @@
         <child link="chair_rest_link" />
       </joint>
 
-    <macro name="legs" params="suffix parent pos1 pos2">
+    <xacro:macro name="legs" params="suffix parent pos1 pos2">
 
 
         <link name="leg_${suffix}_link">
@@ -126,7 +127,7 @@
       </joint>
 
 
-  </macro>
+  </xacro:macro>
         <legs suffix="left_front" parent="chair_top_link"  pos1="1" pos2="1"/>
 	<legs suffix="left_back" parent="chair_top_link"  pos1="-1" pos2="1"/>
         <legs suffix="right_front" parent="chair_top_link"  pos1="1" pos2="-1"/>
@@ -170,7 +171,7 @@
         <child link="lath_${suffix}_link" />
       </joint>
 
-  </macro>
+  </xacro:macro>
 
         <structure_lath suffix="left_front" parent="chair_top_link"  pos1="1" pos2="0" box_size="0.02 0.77 0.07"/>
 	<structure_lath suffix="left_back" parent="chair_top_link"  pos1="-1" pos2="0" box_size="0.02 0.77 0.07"/>

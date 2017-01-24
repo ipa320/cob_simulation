@@ -260,7 +260,10 @@ if __name__ == "__main__":
         req.model_xml = xml_string
         req.initial_pose = object_pose
 
-        res = srv_spawn_model(req)
+        try:
+            res = srv_spawn_model(req)
+        except rospy.service.ServiceException:
+            break
 
         # evaluate response
         if res.success == True:

@@ -28,23 +28,23 @@
 
 
   <!--Parameters-->
-  <property name="dist_axis_x" value="1.969" />
-  <property name="dist_axis_y" value="4.070" />
+  <xacro:property name="dist_axis_x" value="1.969" />
+  <xacro:property name="dist_axis_y" value="4.070" />
 
-  <property name="size_total_x" value="8.0" />
-  <property name="size_total_y" value="11.2" />
+  <xacro:property name="size_total_x" value="8.0" />
+  <xacro:property name="size_total_y" value="11.2" />
 
-  <property name="size_a" value="4.7" />
-  <property name="size_b" value="8.2" />
-  <property name="size_c" value="1.8" />
-  <property name="size_d" value="4.16" />
+  <xacro:property name="size_a" value="4.7" />
+  <xacro:property name="size_b" value="8.2" />
+  <xacro:property name="size_c" value="1.8" />
+  <xacro:property name="size_d" value="4.16" />
 
-  <property name="wall_depth" value="0.1" />
-  <property name="window_depth" value="0.15" />
+  <xacro:property name="wall_depth" value="0.1" />
+  <xacro:property name="window_depth" value="0.15" />
 
-  <property name="size_z_wall1" value="2.7" />
-  <property name="size_z_wall2" value="2.7" />
-  <property name="size_z_wall3" value="2.7" />
+  <xacro:property name="size_z_wall1" value="2.7" />
+  <xacro:property name="size_z_wall2" value="2.7" />
+  <xacro:property name="size_z_wall3" value="2.7" />
 
 
   <xacro:macro name="ipa-apartment" params="name">

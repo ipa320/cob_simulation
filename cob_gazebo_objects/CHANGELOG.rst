@@ -2,6 +2,22 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2016-10-24)
+------------------
+
+0.6.6 (2016-10-10)
+------------------
+* Moved ipa-office walls to cob gazebo worlds
+* Set correct origin/scale for ipa-office_walls and added walls for stairway
+* Updated model of ipa-office_walls
+* Added object for ipa-office walls
+* Merged branch 'feature/ipa_production_plant_improvement' and updated the structure.
+* working on meshes
+* Added additional files for outsourced content
+* Changes made based on PR review by fxm
+* added files to spawn storage racks - note: spawning is not working yet
+* Contributors: Florian Weisshardt, ipa-fxm, ipa-mig-mc, ipa-srd-rd
+
 0.6.5 (2016-04-01)
 ------------------
 * add launch file

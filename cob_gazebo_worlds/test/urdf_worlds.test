@@ -2,6 +2,7 @@
 <launch>
 
   <test test-name="automotive-assembly-line_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/automotive-assembly-line/automotive-assembly-line.urdf.xacro"/>
+  <test test-name="empty_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/empty/empty.urdf.xacro"/>
   <test test-name="ipa-apartment_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-apartment/ipa-apartment.urdf.xacro"/>
   <test test-name="ipa-kitchen_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-kitchen/ipa-kitchen.urdf.xacro"/>
   <test test-name="ipa-office_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_gazebo_worlds)/urdf/ipa-office/ipa-office.urdf.xacro"/>
