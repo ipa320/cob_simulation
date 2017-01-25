@@ -218,7 +218,7 @@ if __name__ == "__main__":
         # open file for urdf.xacro or urdf/sdf/model
         if model_type == "urdf.xacro":
             try:
-                f = os.popen("rosrun xacro xacro.py " + file_location)
+                f = os.popen("rosrun xacro xacro --inorder " + file_location)
             except:
                 rospy.logerr("No xacro file found for " + key + " at " + file_location)
                 continue
