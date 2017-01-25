@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot_env" default="ipa-office"/>
+	<arg name="robot_env" default="empty"/>
 	<arg name="publish_world_state" value="false"/>
 
 	<!-- spawn environment -->
-	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.launch">
+	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.xml">
 		<arg name="robot_env" value="$(arg robot_env)"/>
 		<arg name="publish_world_state" value="$(arg publish_world_state)"/>
 	</include>

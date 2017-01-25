@@ -262,11 +262,11 @@ class move():
             dest="radius", metavar="Float", default=None,
             help="Radius, only used for circular movement. Default: None")
 
-        parser.add_option("--stop-objects",
+        parser.add_option("-o", "--stop-objects",
             dest="stop_objects", metavar="List of objects 'object_1 object_2 ...'", default='',
             help="List of Model-Name of objects that are to be avoided. Default: ''")
 
-        parser.add_option("--stop-distance",
+        parser.add_option("-d", "--stop-distance",
             dest="stop_distance", metavar="Float", default=2.0,
             help="Allowed distance to objects before stopping. Default: 2.0")
 
