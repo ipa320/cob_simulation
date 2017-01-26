@@ -16,12 +16,12 @@
 	<env name="GAZEBO_MODEL_PATH" value="$(arg pkg_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
 	<!-- upload default configuration parameters -->
-	<!--include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
+	<!--include file="$(arg pkg_env_config)/upload_navigation_goals.launch"-->
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
 	<include file="$(arg pkg_env_config)/upload_object_locations.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
-	</include-->
+	</include>
 
 	<!-- start gazebo with empty world -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">

@@ -9,18 +9,8 @@
 	<arg name="initial_config" default=""/>
 
 	<!-- upload default configuration parameters -->
-<<<<<<< HEAD
-	<!--include file="$(arg pkg_robot_config)/upload_param.launch">
-		<arg name="robot" value="$(arg robot)" />
-	</include-->
-
-	<!-- send robot urdf to param server -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
-=======
 	<include file="$(find cob_bringup)/robots/$(arg robot).xml" >
 		<arg name="sim" value="true" />
->>>>>>> 2e81fde5f80dbdadf8ac75fe03bda5bb9308e5f5
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
