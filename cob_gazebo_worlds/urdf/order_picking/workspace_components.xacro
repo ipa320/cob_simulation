@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<!-- property list -->
+	<xacro:property name="workcell_height" value="0.023"/>
+	<xacro:property name="workcell_length" value="0.995"/>
+	<xacro:property name="workcell_width" value="0.29"/>
+	<xacro:property name="workcell_totalheight" value="1.865"/>	
+	<xacro:property name="workcell_thickness" value="0.01"/>
+
+	<!-- color macros -->
+	<xacro:macro name="material_yellow_transparent">
+		<material name="yellow_transparent">
+			<color rgba="0 1 1 0.4"/>
+		</material>
+	</xacro:macro>
+	<xacro:macro name="material_orange_transparent">
+		<material name="orange_transparent">
+			<color rgba="1 0.5 0 0.4"/>
+		</material>
+	</xacro:macro>
+	<xacro:macro name="material_gray_transparent">
+		<material name="gray_transparent">
+			<color rgba="0.6 0.6 0.6 0.4"/>
+		</material>
+	</xacro:macro>
+	<xacro:macro name="material_blue_transparent">
+		<material name="blue_transparent">
+			<color rgba="0 0.8 1 0.4"/>
+		</material>
+	</xacro:macro>
+	<xacro:material_yellow_transparent />
+	<xacro:material_orange_transparent />
+	<xacro:material_gray_transparent />
+	<xacro:material_blue_transparent />
+	<!-- end of color macros -->
+
+	<!-- geometry macros -->	
+	<xacro:macro name="workcell_geometry" params="length width height *color_block">
+			<geometry>
+				<box size="${length} ${width} ${height}"/>
+			</geometry>			
+			<xacro:insert_block name="color_block"/>
+	</xacro:macro>	
+	<xacro:macro name="workcell_element" params="name parent length width height offset_x offset_y offset_z">
+		<link name="${name}">
+			<visual>
+				<xacro:workcell_geometry length="${length}" width="${width}" height="${height}">
+					<material name="gray_transparent"/>
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<xacro:workcell_geometry length="${length}" width="${width}" height="${height}">
+					<material name="blue_transparent"/>
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<joint name="${parent}_to_${name}" type="fixed">
+			<parent link="${parent}"/>
+			<child link="${name}"/>
+			<origin xyz="${offset_x} ${offset_y} ${offset_z}" rpy="0 0 0"/>
+		</joint>		
+	</xacro:macro>
+	<!-- end of geometry macros -->
+
+	<!-- workcell definitions -->
+	<link name="world_frame"/>
+
+
+	<!-- workcell part3 components macro -->
+		<xacro:macro name="shelfs" params="name">
+		
+		<link name="back_wall">
+			<visual>
+				<origin xyz="0 0 ${workcell_totalheight * 0.5}" rpy="0 0 0"/>
+				<xacro:workcell_geometry length="${workcell_length}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="orange_transparent"/>
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 0 ${workcell_totalheight * 0.5}" rpy="0 0 0"/>
+				<xacro:workcell_geometry length="${workcell_length}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="blue_transparent"/>
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<joint name="workcell_to_backwall" type="fixed">
+			<parent link="world_frame"/>
+			<child link="back_wall"/>
+			<origin xyz="-0.5 2 0" rpy="0 0 0"/>
+		</joint>
+		<link name="left_wall">
+			<visual>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="orange_transparent"/>
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="blue_transparent"/>
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<joint name="workcell_to_leftwall" type="fixed">
+			<parent link="world_frame"/>
+			<child link="left_wall"/>
+			<origin xyz="-1 2 0" rpy="0 0 0"/>
+		</joint>
+		
+		<link name="right_wall">
+			<visual>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="orange_transparent"/>
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+					<material name="blue_transparent"/>
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<joint name="workcell_to_rightwall" type="fixed">
+			<parent link="world_frame"/>
+			<child link="right_wall"/>
+			<origin xyz="0 2 0" rpy="0 0 0"/>
+		</joint>
+		
+	<xacro:workcell_element name="shelf1" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight}"/>
+	<xacro:workcell_element name="shelf2" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 0.42}"/>
+	<xacro:workcell_element name="shelf3" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 0.95}"/>
+	<xacro:workcell_element name="shelf4" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 1.455}"/>
+	<xacro:workcell_element name="shelf5" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="0"/>
+	</xacro:macro>
+	<!-- end of workcell part3 components macro shelf-->
+</robot>

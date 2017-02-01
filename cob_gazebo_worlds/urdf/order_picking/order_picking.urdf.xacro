@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="order_picking">
+       
+       
+ <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/order_picking/common1.xacro" />
+  
+ 	<!-- property list -->
+	<property name="workcell_height" value="0.023"/>
+	<property name="workcell_length" value="0.995"/>
+	<property name="workcell_width" value="0.29"/>
+	<property name="workcell_totalheight" value="1.865"/>	
+	<property name="workcell_thickness" value="0.01"/>
+
+
+
+
+	
+	
+	
+	
+	
+ <xacro:macro name="order_picking" params="name">
+    
+    <gazebo>
+      <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>world</robotNamespace>
+        <robotParam>/world_description</robotParam>
+      </plugin>
+    </gazebo>
+
+    <link name="world"/>
+
+		
+		<link name="back_wall">
+			<xacro:box_inertial x="${workcell_length}" y="${workcell_thickness}" z="${workcell_totalheight}" mass="5.0">
+				<origin xyz="0 0 0" rpy="0 0 0" />
+			</xacro:box_inertial>
+			<visual>
+				<origin xyz="0 0 ${workcell_totalheight * 0.5}" rpy="0 0 0"/>
+				<xacro:workcell_geometry length="${workcell_length}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 0 ${workcell_totalheight * 0.5}" rpy="0 0 0"/>
+				<xacro:workcell_geometry length="${workcell_length}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<gazebo reference="back_wall">
+			<material>IPA/Red</material>
+		</gazebo>
+		
+		<joint name="workcell_to_backwall" type="fixed">
+			<origin xyz="-0.5 2 0" rpy="0 0 0"/>
+			<parent link="world"/>
+			<child link="back_wall"/>
+		</joint>
+		<link name="left_wall">
+			<xacro:box_inertial x="${workcell_width}" y="${workcell_thickness}" z="${workcell_totalheight}" mass="5.0">
+				<origin xyz="0 0 0" rpy="0 0 0" />
+			</xacro:box_inertial>
+			<visual>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<gazebo reference="left_wall">
+			<material>IPA/Red</material>
+		</gazebo>
+		
+		<joint name="workcell_to_leftwall" type="fixed">
+			<parent link="world"/>
+			<child link="left_wall"/>
+			<origin xyz="-1 2 0" rpy="0 0 0"/>
+		</joint>
+		
+		<link name="right_wall">
+			<xacro:box_inertial x="${workcell_width}" y="${workcell_thickness}" z="${workcell_totalheight}" mass="5.0">
+				<origin xyz="0 0 0" rpy="0 0 0" />
+			</xacro:box_inertial>
+			<visual>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}" 
+					width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 ${workcell_width * -0.5} ${workcell_totalheight * 0.5}" rpy="0 0 1.5708"/>
+				<xacro:workcell_geometry length="${workcell_width}"
+					 width="${workcell_thickness}" height="${workcell_totalheight}">
+				</xacro:workcell_geometry>
+			</collision>
+		</link>
+		<gazebo reference="right_wall">
+			<material>IPA/Red</material>
+		</gazebo>
+		
+		<joint name="workcell_to_rightwall" type="fixed">
+			<origin xyz="0 2 0" rpy="0 0 0"/>
+			<parent link="world"/>
+			<child link="right_wall"/>
+		</joint>
+		
+	<xacro:workcell_element name="shelf1" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight}"/>
+	<xacro:workcell_element name="shelf2" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 0.42}"/>
+	<xacro:workcell_element name="shelf3" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 0.95}"/>
+	<xacro:workcell_element name="shelf4" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="${workcell_totalheight - 1.455}"/>
+	<xacro:workcell_element name="shelf5" parent="back_wall"
+			 length="${workcell_length}" width="${workcell_width}" height="0.023" offset_x="0" offset_y="${workcell_width * -0.5}" offset_z="0"/>
+
+
+
+
+ </xacro:macro>
+ 
+  <xacro:order_picking name="order_picking" />
+
+
+
+</robot>
+
