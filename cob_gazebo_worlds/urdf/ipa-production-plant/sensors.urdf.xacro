@@ -4,30 +4,23 @@
 
   <xacro:macro name="sensors" params="name">
 
+    <!-- sensor link -->
+    <link name="sensors_link" />
+    
+    <!-- connect links -->
+    <joint name="static_sensors_joint" type="fixed">
+      <parent link="world"/>
+      <child link="sensors_link"/>
+    </joint>
 
-  <!-- sensor link -->
-  <link name="sensors_link" />
-  
-  <!-- connect links -->
-  <joint name="static_sensors_joint" type="fixed">
-    <parent link="world"/>
-    <child link="sensors_link"/>
-  </joint>
+    <!-- Spawn Sensors -->  
+    <xacro:sick_s300_laser_v0 name="static_laser_01" parent="sensors_link">
+      <origin xyz="19.08 -1.50 0.1" rpy="0 0 3.14" />
+    </xacro:sick_s300_laser_v0>
 
-  <!-- Spawn Sensors -->  
-  <xacro:sick_s300_laser_v0 name="static_laser_01" parent="sensors">
-    <origin xyz="19.08 -1.50 0.1" rpy="0 0 3.14" />
-    <gazebo>
-      <static>true</static>
-    </gazebo>
-  </xacro:sick_s300_laser_v0>
-
-  <xacro:sick_s300_laser_v0 name="static_laser_02" parent="sensors">
-    <origin xyz="27.08 -1.50 0.1" rpy="0 0 3.14" />
-    <gazebo>
-      <static>true</static>
-    </gazebo>
-  </xacro:sick_s300_laser_v0>
+    <xacro:sick_s300_laser_v0 name="static_laser_02" parent="sensors_link">
+      <origin xyz="27.08 -1.50 0.1" rpy="0 0 3.14" />
+    </xacro:sick_s300_laser_v0>
 
   </xacro:macro>
 
