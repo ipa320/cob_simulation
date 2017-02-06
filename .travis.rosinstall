@@ -1,0 +1,16 @@
+- git:
+    uri: 'https://github.com/ipa320/cob_environments.git'
+    local-name: cob_environments
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_robots.git'
+    local-name: cob_robots
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_command_tools.git'
+    local-name: cob_command_tools
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_common.git'
+    local-name: cob_common
+    version: kinetic_dev
