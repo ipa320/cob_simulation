@@ -14,3 +14,67 @@
     uri: 'https://github.com/ipa320/cob_common.git'
     local-name: cob_common
     version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_driver.git'
+    local-name: cob_driver
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_gazebo_plugins.git'
+    local-name: cob_gazebo_plugins
+    version: fix/c++11
+- git:
+    uri: 'https://github.com/ros-industrial/universal_robot'
+    local-name: universal_robot
+    version: kinetic-devel
+- git:
+    uri: 'https://github.com/ipa320/cob_extern'
+    local-name: cob_extern
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/bosch-ros-pkg/usb_cam.git'
+    local-name: usb_cam
+    version: develop
+- git:
+    uri: 'https://github.com/ipa320/schunk_modular_robotics'
+    local-name: schunk_modular_robotics
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_perception_common.git'
+    local-name: cob_perception_common
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_control.git'
+    local-name: cob_control
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/SICKAG/sick_visionary_t.git'
+    local-name: sick_visionary_t
+    version: indigo-devel
+- git:
+    uri: 'https://github.com/ipa320/cob_substitute'
+    local-name: cob_substitute
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_calibration_data'
+    local-name: cob_calibration_data
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_navigation'
+    local-name: cob_navigation
+    version: kinetic_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_hand.git'
+    local-name: cob_hand
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/utexas-bwi/eband_local_planner.git'
+    local-name: eband_local_planner
+    version: master
+- git:
+    uri: 'https://github.com/ipa320/cob_manipulation.git'
+    local-name: cob_manipulation
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_android.git'
+    local-name: cob_android
+    version: kinetic_dev
