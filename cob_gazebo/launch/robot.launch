@@ -16,9 +16,4 @@
 	<!-- push robot_description to factory and spawn robot in gazebo -->
 	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 $(arg initial_config) -wait $(arg robot_env)" respawn="false" output="screen" />
 
-	<!-- start additional gazebo stuff -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/robots/default_controllers_$(arg robot).launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
-
 </launch>
