@@ -1,4 +1,8 @@
 - git:
+    uri: 'https://github.com/ipa320/cob_calibration_data.git'
+    local-name: cob_calibration_data
+    version: indigo_dev
+- git:
     uri: 'https://github.com/ipa320/cob_command_tools.git'
     local-name: cob_command_tools
     version: indigo_dev
@@ -11,8 +15,16 @@
     local-name: cob_driver
     version: indigo_dev
 - git:
+    uri: 'https://github.com/ipa320/cob_substitute.git'
+    local-name: cob_substitute
+    version: indigo_dev
+- git:
     uri: 'https://github.com/ipa320/cob_supported_robots.git'
     local-name: cob_supported_robots
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/schunk_modular_robotics.git'
+    local-name: schunk_modular_robotics
     version: indigo_dev
 - git:
     uri: 'https://github.com/ros-industrial/ros_canopen.git'

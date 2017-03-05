@@ -39,6 +39,10 @@
     local-name: cob-hand
     version: indigo_dev
 - git:
+    uri: 'https://github.com/ipa320/cob_manipulation.git'
+    local-name: cob_manipulation
+    version: kinetic_dev
+- git:
     uri: 'https://github.com/ipa320/cob_navigation.git'
     local-name: cob_navigation
     version: indigo_dev
@@ -55,7 +59,7 @@
     local-name: cob_substitute
     version: indigo_dev
 - git:
-    uri: https://github.com/ipa320/cob_supported_robots.git'
+    uri: 'https://github.com/ipa320/cob_supported_robots.git'
     local-name: cob_supported_robots
     version: indigo_dev
 - git:
