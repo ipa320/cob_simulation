@@ -1,0 +1,20 @@
+- git:
+    uri: 'https://github.com/ipa320/cob_command_tools.git'
+    local-name: cob_command_tools
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_common.git'
+    local-name: cob_common
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_driver.git'
+    local-name: cob_driver
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_supported_robots.git'
+    local-name: cob_supported_robots
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ros-industrial/ros_canopen.git'
+    local-name: ros_canopen
+    version: indigo-devel
