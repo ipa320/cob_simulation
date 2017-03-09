@@ -19,9 +19,10 @@
         <pose>0 0 0.010000 0 0 0</pose>
         <laser_retro>2000</laser_retro>
         <geometry>
-          <box>
-            <size>0.050000 0.050000 0.300000</size>
-          </box>
+          <cylinder>
+            <radius>0.050000</radius>
+            <length>0.300000</length>
+          </cylinder>
         </geometry>
       </collision>
 
@@ -29,9 +30,10 @@
         <pose>0 0 0.010000 0 0 0</pose>
         <laser_retro>2000</laser_retro>
         <geometry>
-          <box>
-            <size>0.050000 0.050000 0.300000</size>
-          </box>
+          <cylinder>
+            <radius>0.050000</radius>
+            <length>0.300000</length>
+          </cylinder>
         </geometry>
 
         <material>
