@@ -1,0 +1,112 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="reflector_marker">
+    <static>true</static>
+    <link name='body'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>0.67705625</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.033332</iyy>
+          <iyz>0</iyz>
+          <izz>0.67705625</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh><uri>file://station_charger.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0.010000 0 0 0</pose>
+        <geometry>
+          <mesh><uri>file://station_charger.dae</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='reflector_left'>
+      <pose>-0.01 -0.135 0.22 0 0 0</pose>
+      <inertial>
+        <mass>0.390</mass>
+        <inertia>
+          <ixx>0.00058</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00058</iyy>
+          <iyz>0</iyz>
+          <izz>0.00019</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <laser_retro>2000</laser_retro>
+        <geometry>
+          <cylinder>
+            <radius>0.022000</radius>
+            <length>0.100000</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <laser_retro>2000</laser_retro>
+        <geometry>
+          <cylinder>
+            <radius>0.022000</radius>
+            <length>0.100000</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>ReflMarker/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name='reflector_right'>
+      <pose>-0.01 0.135 0.22 0 0 0</pose>
+      <inertial>
+        <mass>0.390</mass>
+        <inertia>
+          <ixx>0.00058</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00058</iyy>
+          <iyz>0</iyz>
+          <izz>0.00019</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <laser_retro>2000</laser_retro>
+        <geometry>
+          <cylinder>
+            <radius>0.022000</radius>
+            <length>0.100000</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <laser_retro>2000</laser_retro>
+        <geometry>
+          <cylinder>
+            <radius>0.022000</radius>
+            <length>0.100000</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>ReflMarker/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
