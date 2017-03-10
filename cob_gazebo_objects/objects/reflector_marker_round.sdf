@@ -20,7 +20,7 @@
         <laser_retro>2000</laser_retro>
         <geometry>
           <cylinder>
-            <radius>0.050000</radius>
+            <radius>0.025000</radius>
             <length>0.300000</length>
           </cylinder>
         </geometry>
@@ -31,7 +31,7 @@
         <laser_retro>2000</laser_retro>
         <geometry>
           <cylinder>
-            <radius>0.050000</radius>
+            <radius>0.025000</radius>
             <length>0.300000</length>
           </cylinder>
         </geometry>
