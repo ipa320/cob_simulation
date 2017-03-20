@@ -81,6 +81,10 @@
     local-name: universal_robot
     version: kinetic-devel
 - git:
+    uri: 'https://github.com/intel-ros/realsense.git'
+    local-name: realsense
+    version: indigo-devel
+- git:
     uri: 'https://github.com/bosch-ros-pkg/usb_cam.git'
     local-name: usb_cam
     version: develop
