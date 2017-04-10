@@ -92,6 +92,8 @@ class move():
         self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
+        self.road_block = False
+        self.timeout_respawn = rospy.Duration(60)
 
         # wait for all models to be available
         while not rospy.is_shutdown():
@@ -144,6 +146,7 @@ class move():
         path = numpy.linspace(0, segment_length, segment_step_count)
 
         idx = 0
+        last_time_in_motion = rospy.Time.now()
         while idx < segment_step_count:
             step = path[idx]
 
@@ -154,6 +157,10 @@ class move():
             model_dist = self.get_model_dist(step_x, step_y)
             if(model_dist <= float(self.options.stop_distance)):
                 rospy.logdebug("Model too close to object. Stopping!")
+                if (rospy.Time.now() - last_time_in_motion) > self.timeout_respawn:
+                    rospy.logdebug("Model move to last waypoint!")
+                    self.road_block = True
+                    return
             else:
                 object_new_pose = Pose()
                 object_new_pose.position.x = step_x
@@ -175,6 +182,9 @@ class move():
 
                 idx += 1
 
+                # update last time when the model moved, before coming to halt 
+                last_time_in_motion = rospy.Time.now()
+
             # sleep until next step
             self.rate.sleep()
 
@@ -190,15 +200,19 @@ class move():
 
             start = polygon[0]
             goal = polygon[1]
-            polygon.pop(0)
 
             #rospy.loginfo("moving on new segment from " + str(start) + " to " + str(goal) + ".")
             self.move_on_line(start, goal)
+            if self.road_block:
+                self.road_block = False
+                continue
+            polygon.pop(0)
 
     def move_circle(self, center, radius):
         # move on all parts of the polygon
         yaw_step = math.asin(1.0/self.node_frequency*self.vel/radius)
         yaw = 0.0
+        last_time_in_motion = rospy.Time.now()
         while not rospy.is_shutdown():
             if yaw >= 2*math.pi:
                 rospy.loginfo("starting new round")
@@ -211,6 +225,10 @@ class move():
             model_dist = self.get_model_dist(step_x, step_y)
             if(model_dist <= float(self.options.stop_distance)):
                 rospy.logdebug("Model too close to object. Stopping!")
+                if (rospy.Time.now() - last_time_in_motion) > self.timeout_respawn:
+                    rospy.logdebug("Model move to start waypont of the polygone!")
+                    yaw = 2*math.pi
+                    continue
             else:
                 object_new_pose = Pose()
                 object_new_pose.position.x = step_x
@@ -231,6 +249,9 @@ class move():
                 self.pub.publish(model_state)
 
                 yaw += yaw_step
+
+                # update last time when the model moved, before coming to halt 
+                last_time_in_motion = rospy.Time.now()
 
             # sleep until next step
             self.rate.sleep()
