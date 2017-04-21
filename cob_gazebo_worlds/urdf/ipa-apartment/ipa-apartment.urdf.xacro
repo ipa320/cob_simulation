@@ -74,8 +74,8 @@
     <xacro:cabinets name="cabinets">
     </xacro:cabinets>
 
-    <xacro:kitchen name="kitchen">
-    </xacro:kitchen>
+    <!--xacro:kitchen name="kitchen">
+    </xacro:kitchen-->
 
     <xacro:wall_ipa name="wall_ipa">
     </xacro:wall_ipa>
