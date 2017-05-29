@@ -3,6 +3,7 @@
 
 	<arg name="robot_env" default="empty"/>
 	<arg name="publish_world_state" value="false"/>
+    <arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
 
 	<!-- spawn environment -->
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.xml">
