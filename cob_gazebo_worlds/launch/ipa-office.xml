@@ -2,7 +2,7 @@
 <launch>
 
 	<arg name="robot_env" default="ipa-office"/>
-    <arg name="publish_world_state" value="false"/>
+	<arg name="publish_world_state" value="false"/>
 	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
 	
 	<!-- spawn environment -->
