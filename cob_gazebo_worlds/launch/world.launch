@@ -16,10 +16,13 @@
 	<env name="GAZEBO_MODEL_PATH" value="$(arg pkg_gazebo_worlds)/Media/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
+	<include file="$(find cob_default_env_config)/upload_navigation_goals.launch">
+		<arg name="pkg_env_config" value="$(arg pkg_env_config)"/>
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
-	<include file="$(arg pkg_env_config)/upload_object_locations.launch">
+	
+	<include file="$(find cob_default_env_config)/upload_object_locations.launch">
+		<arg name="pkg_env_config" value="$(arg pkg_env_config)"/>
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
 
@@ -34,6 +37,8 @@
 	</include>
 
 	<!-- spawn environment and start environment-specific nodes -->
-	<include file="$(arg pkg_gazebo_worlds)/launch/$(arg robot_env).xml"/>
+	<include file="$(arg pkg_gazebo_worlds)/launch/$(arg robot_env).xml">
+		<arg name="pkg_gazebo_worlds" value="$(arg pkg_gazebo_worlds)"/>
+	</include>
 
 </launch>
