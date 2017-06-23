@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="IZS-carpark-top">
+       name="izs-carpark-top">
 
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
 
 
-  <xacro:macro name="IZS-carpark-top" params="name">
+  <xacro:macro name="izs-carpark-top" params="name">
   </xacro:macro>
-  <xacro:macro name="IZS-carpark-top" params="name">
+  <xacro:macro name="izs-carpark-top" params="name">
 
   <gazebo>
     <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -341,6 +341,6 @@
   </joint>
 
   </xacro:macro>
-  <xacro:IZS-carpark-top name="IZS-carpark-top" />
+  <xacro:izs-carpark-top name="izs-carpark-top" />
 
 </robot>

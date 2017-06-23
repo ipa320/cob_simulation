@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot_env" default="IZS-carpark-top"/>
+	<arg name="robot_env" default="izs-carpark-top"/>
 	<arg name="publish_world_state" value="true"/>
 
 	<!-- spawn environment -->
