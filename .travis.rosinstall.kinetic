@@ -36,7 +36,7 @@
     version: kinetic_dev
 - git:
     uri: 'https://github.com/ipa320/cob_hand.git'
-    local-name: cob-hand
+    local-name: cob_hand
     version: indigo_dev
 - git:
     uri: 'https://github.com/ipa320/cob_manipulation.git'
