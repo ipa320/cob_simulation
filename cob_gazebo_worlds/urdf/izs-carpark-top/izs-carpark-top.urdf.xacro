@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="izs-carpark-top">
+
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/materials.urdf.xacro" />
+
+
+  <xacro:macro name="izs-carpark-top" params="name">
+  </xacro:macro>
+  <xacro:macro name="izs-carpark-top" params="name">
+
+  <gazebo>
+    <plugin name="environment_gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>world</robotNamespace>
+      <robotParam>/world_description</robotParam>
+    </plugin>
+  </gazebo>
+
+  <!-- world -->
+  <link name="world"/>
+
+  <!-- walls -->
+  <!-- wall_00 -->
+  <link name="wall_00">
+    <xacro:box_inertial x="48" y="0.4" z="2" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="48 0.4 2" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="48 0.4 2" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_00">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_wall_00" type="fixed">
+    <origin xyz="24 0.0 1" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_00" />
+  </joint>
+
+
+  <!-- wall_01 -->
+  <link name="wall_01">
+    <xacro:box_inertial x="0.4" y="66.55" z="2" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.4 66.5 2" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.4 66.5 2" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_01">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_wall_01" type="fixed">
+    <origin xyz="48.4 33.25 1" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_01" />
+  </joint>
+  <!-- wall_02 -->
+  <link name="wall_02">
+    <xacro:box_inertial x="48" y="0.4" z="2" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="48 0.4 2" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="48 0.4 2" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_02">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_wall_02" type="fixed">
+    <origin xyz="24 66.95 1" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_02" />
+  </joint>
+  <!-- wall_03 -->
+  <link name="wall_03">
+    <xacro:box_inertial x="0.4" y="66.55" z="2" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.4 66.5 2" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.4 66.5 2" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="wall_03">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_wall_03" type="fixed">
+    <origin xyz="0 33.25 1" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="wall_03" />
+  </joint>
+
+  <!-- ramp_00 -->
+  <link name="ramp_00">
+    <xacro:box_inertial x="17.89" y="0.2" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="17.89 0.2 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="17.89 0.2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_00">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_00" type="fixed">
+    <origin xyz="22.15 10.95 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_00" />
+  </joint>
+
+  <!-- ramp_01 -->
+  <link name="ramp_01">
+    <xacro:box_inertial x="0.2" y="4.4" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.2 4.4 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.2 4.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_01">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_01" type="fixed">
+    <origin xyz="31.1 13.15 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_01" />
+  </joint>
+
+  <!-- ramp_02 -->
+  <link name="ramp_02">
+    <xacro:box_inertial x="17.89" y="0.2" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="17.89 0.2 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="17.89 0.2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_02">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_02" type="fixed">
+    <origin xyz="22.15 15.35 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_02" />
+  </joint>
+  <!-- ramp_03 -->
+  <link name="ramp_03">
+    <xacro:box_inertial x="20.3" y="0.2" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="20.3 0.2 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="20.3 0.2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_03">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_03" type="fixed">
+    <origin xyz="25.85 52.95 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_03" />
+  </joint>
+
+  <!-- ramp_04 -->
+  <link name="ramp_04">
+    <xacro:box_inertial x="0.2" y="4.4" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.2 4.4 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.2 4.4 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_04">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_04" type="fixed">
+    <origin xyz="15.7 55.15 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_04" />
+  </joint>
+
+
+  <!-- ramp_05 -->
+  <link name="ramp_05">
+    <xacro:box_inertial x="20.3" y="0.2" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="20.3 0.2 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="20.3 0.2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="ramp_05">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_ramp_05" type="fixed">
+    <origin xyz="25.85 57.35 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="ramp_05" />
+  </joint>
+
+
+  <!-- staircase_00 -->
+  <link name="staircase_00">
+    <xacro:box_inertial x="4.8" y="2.92" z="1" mass="5000.0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:box_inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="4.8 2.92 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="4.8 2.92 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="staircase_00">
+    <material>IPA/Wall2</material>
+  </gazebo>
+
+  <joint name="joint_staircase_00" type="fixed">
+    <origin xyz="2.6 65.29 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="staircase_00" />
+  </joint>
+
+  </xacro:macro>
+  <xacro:izs-carpark-top name="izs-carpark-top" />
+
+</robot>
