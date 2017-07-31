@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.8 (2017-07-31)
+------------------
 * add station_charger
 * correct marker radius
 * add reflector_marker_round

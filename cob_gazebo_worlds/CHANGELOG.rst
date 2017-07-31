@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.8 (2017-07-31)
+------------------
 * rename IZS-carpark-top to izs-carpark-top
 * add simulation for izs-carpark-top to cob_gazebo_worlds
 * remove kitchen unit

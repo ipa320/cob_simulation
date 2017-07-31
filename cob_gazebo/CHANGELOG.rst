@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.8 (2017-07-31)
+------------------
 * remove cob_controller_configuration_gazebo
 * use exported robotlist and envlist
 * use cob_bringup robot.xml in simulation

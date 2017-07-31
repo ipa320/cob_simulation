@@ -2,8 +2,8 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.8 (2017-07-31)
+------------------
 * refactored the code and added retreating model while on circular motion
 * provision for re-spawning the person object to the start, due to presence of obstacle
 * use xacro --inorder
