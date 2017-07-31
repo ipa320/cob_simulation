@@ -2,6 +2,26 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* refactored the code and added retreating model while on circular motion
+* provision for re-spawning the person object to the start, due to presence of obstacle
+* use xacro --inorder
+* allow single letter option for move_object
+* rospy.sleep exception handling
+* wait for models and cleanup
+* launch argument world_name
+* use exported robotlist and envlist
+* manually fix changelog
+* debug functionality
+* continue motion if object is far away enough
+* metavars for parser options
+* introduce stop_objects list and stop_distance
+* remove throttled
+* add missing robots to robotlist
+* added stopping of objects
+* Contributors: fmw-ss, hannes, ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 * Merge branch 'indigo_dev' into indigo_release_candidate

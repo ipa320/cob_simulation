@@ -2,6 +2,17 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add station_charger
+* correct marker radius
+* add reflector_marker_round
+* make reflector marker static
+* use exported robotlist and envlist
+* use latest xacro syntax
+* manually fix changelog
+* Contributors: ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 
