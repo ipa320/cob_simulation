@@ -31,8 +31,8 @@
     local-name: cob_extern
     version: indigo_dev
 - git:
-    local-name: cob_gazebo_plugins
     uri: 'https://github.com/ipa320/cob_gazebo_plugins.git'
+    local-name: cob_gazebo_plugins
     version: kinetic_dev
 - git:
     uri: 'https://github.com/ipa320/cob_hand.git'
@@ -51,8 +51,8 @@
     local-name: cob_perception_common
     version: indigo_dev
 - git:
-    local-name: cob_robots
     uri: 'https://github.com/ipa320/cob_robots.git'
+    local-name: cob_robots
     version: indigo_dev
 - git:
     uri: 'https://github.com/ipa320/cob_substitute.git'
@@ -73,14 +73,6 @@
     local-name: sick_visionary_t
     version: indigo-devel
 - git:
-    uri: 'https://github.com/ros-industrial/ros_canopen.git'
-    local-name: ros_canopen
-    version: jade-devel
-- git:
     uri: 'https://github.com/ros-industrial/universal_robot.git'
     local-name: universal_robot
     version: kinetic-devel
-- git:
-    uri: 'https://github.com/bosch-ros-pkg/usb_cam.git'
-    local-name: usb_cam
-    version: develop
