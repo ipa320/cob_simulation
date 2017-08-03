@@ -3,8 +3,7 @@
   <version>0.6.7</version>
   <description>The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.</description>
 
-  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="richard.bormann@ipa.fraunhofer.de">Richard Bormann</maintainer>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <license>LGPL</license>
