@@ -8,7 +8,7 @@
   <url type="website">http://ros.org/wiki/cob_gazebo_objects</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="richard.bormann@ipa.fraunhofer.de">Richard Bormann</maintainer>
   <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
 
   <buildtool_depend>catkin</buildtool_depend>
