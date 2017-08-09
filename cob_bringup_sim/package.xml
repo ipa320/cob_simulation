@@ -8,7 +8,9 @@
   <url type="website">http://ros.org/wiki/cob_bringup_sim</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="fxm@ipa.fhg.de">Felx Messmer</maintainer>
+  <author email="fxm@ipa.fhg.de">Felx Messmer</author>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
