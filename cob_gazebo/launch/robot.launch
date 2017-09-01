@@ -4,6 +4,7 @@
 	<!-- define arguments -->
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
 	<arg name="paused" default="false"/>
 	<arg name="initial_config" default=""/>
@@ -11,6 +12,7 @@
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_bringup)/robots/$(arg robot).xml" >
 		<arg name="sim" value="true" />
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
