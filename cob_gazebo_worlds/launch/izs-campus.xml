@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot_env" default="izs-campus"/>
+	<arg name="publish_world_state" value="true"/>
+
+	<!-- spawn environment -->
+	<!--include file="$(find cob_gazebo_worlds)/launch/world_urdf.xml">
+		<arg name="robot_env" value="$(arg robot_env)"/>
+		<arg name="publish_world_state" value="$(arg publish_world_state)"/>
+	</include-->
+
+
+</launch>
