@@ -14,12 +14,12 @@
     </joint>
 
     <!-- Spawn Sensors -->  
-    <xacro:sick_s300_laser_v0 name="static_laser_01" parent="sensors_link">
-      <origin xyz="19.08 -1.50 0.1" rpy="0 0 3.14" />
+    <xacro:sick_s300_laser_v0 name="static_laser_01" parent="sensors">
+      <origin xyz="19.08 -1.50 0.2" rpy="0 0 3.14" />
     </xacro:sick_s300_laser_v0>
 
-    <xacro:sick_s300_laser_v0 name="static_laser_02" parent="sensors_link">
-      <origin xyz="27.08 -1.50 0.1" rpy="0 0 3.14" />
+    <xacro:sick_s300_laser_v0 name="static_laser_02" parent="sensors">
+      <origin xyz="27.08 -1.50 0.2" rpy="0 0 3.14" />
     </xacro:sick_s300_laser_v0>
 
   </xacro:macro>
