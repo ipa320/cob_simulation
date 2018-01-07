@@ -1,14 +1,16 @@
 <package format="2">
   <name>cob_gazebo_worlds</name>
-  <version>0.6.8</version>
+  <version>0.6.9</version>
   <description>This package provides some worlds for gazebo simulation.</description>
 
-  <license>LGPL</license>
+  <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/cob_gazebo_worlds</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="jba@ipa.fhg.de">Jannik Abbenseth</maintainer>
+  <author email="fxm@ipa.fhg.de">Felix Messmer</author>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>

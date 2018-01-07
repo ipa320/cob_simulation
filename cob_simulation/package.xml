@@ -1,13 +1,11 @@
 <package format="2">
   <name>cob_simulation</name>
-  <version>0.6.8</version>
+  <version>0.6.9</version>
   <description>The cob_simulation stack includes packages to work with Care-O-bot within simulation environments, e.g. gazebo.</description>
 
-  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
-  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+  <maintainer email="richard.bormann@ipa.fraunhofer.de">Richard Bormann</maintainer>
 
-  <license>LGPL</license>
+  <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/cob_simulation</url>
   <!-- <url type="bugtracker"></url> -->

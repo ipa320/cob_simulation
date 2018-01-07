@@ -1,61 +1,20 @@
-#!/usr/bin/python
-#################################################################
-##\file
+#!/usr/bin/env python
 #
-# \note
-# Copyright (c) 2010 \n
-# Fraunhofer Institute for Manufacturing Engineering
-# and Automation (IPA) \n\n
+# Copyright 2017 Fraunhofer Institute for Manufacturing Engineering and Automation (IPA)
 #
-#################################################################
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
-# \note
-# Project name: Care-O-bot Research
-# \note
-# ROS stack name: cob_simulation
-# \note
-# ROS package name: cob_bringup_sim
+#   http://www.apache.org/licenses/LICENSE-2.0
 #
-# \author
-# Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
-# \author
-# Supervised by: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
-#
-# \date Date of creation: Oct 2013
-#
-# \brief
-# Implements move object functionalities.
-#
-#################################################################
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# - Redistributions of source code must retain the above copyright
-# notice, this list of conditions and the following disclaimer. \n
-# - Redistributions in binary form must reproduce the above copyright
-# notice, this list of conditions and the following disclaimer in the
-# documentation and/or other materials provided with the distribution. \n
-# - Neither the name of the Fraunhofer Institute for Manufacturing
-# Engineering and Automation (IPA) nor the names of its
-# contributors may be used to endorse or promote products derived from
-# this software without specific prior written permission. \n
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Lesser General Public License LGPL as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Lesser General Public License LGPL for more details.
-#
-# You should have received a copy of the GNU Lesser General Public
-# License LGPL along with this program.
-# If not, see < http://www.gnu.org/licenses/>.
-#
-#################################################################
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 import sys
 
 
@@ -188,6 +147,26 @@ class move():
             # sleep until next step
             self.rate.sleep()
 
+    def move_initialpose(self, initialpose):
+        object_new_pose = Pose()
+        object_new_pose.position.x = initialpose[0]
+        object_new_pose.position.y = initialpose[1]
+        object_new_pose.position.z = initialpose[2]
+        quat = tf.transformations.quaternion_from_euler(initialpose[3], initialpose[4], initialpose[5])
+        object_new_pose.orientation.x = quat[0]
+        object_new_pose.orientation.y = quat[1]
+        object_new_pose.orientation.z = quat[2]
+        object_new_pose.orientation.w = quat[3]
+
+        # spawn new model
+        model_state = ModelState()
+        model_state.model_name = self.name
+        model_state.pose = object_new_pose
+        model_state.reference_frame = 'world'
+
+        # publish message
+        self.pub.publish(model_state)
+
     def move_polygon(self, polygon_in):
         # move on all parts of the polygon
         polygon = copy.deepcopy(polygon_in)
@@ -260,12 +239,16 @@ class move():
         parser = OptionParser(usage=_usage, prog=os.path.basename(sys.argv[0]))
 
         parser.add_option("-m", "--mode",
-            dest="mode", choices=["polygon", "circle"], default=None,
-            help="Name of model to be moved. Required.")
+            dest="mode", choices=["initialpose", "polygon", "circle"], default=None,
+            help="Mode to move model. Required.")
 
         parser.add_option("-n", "--name",
             dest="name", metavar="STRING", default=None,
             help="Name of model to be moved. Required.")
+
+        parser.add_option("-i", "--initialpose",
+            dest="initialpose", metavar="Initialpose [x, y, z, R, P, Y]", default=None,
+            help="Cartesian Pose, only used for initialpose. Default: None")
 
         parser.add_option("-v", "--velocity",
             dest="velocity", metavar="Float", default=0.5,
@@ -299,7 +282,11 @@ class move():
             parser.error("Please provide a valid model name, see -h option.")
 
 
-    def run(self):            
+    def run(self):
+        if self.options.mode == "initialpose":
+            if (self.options.initialpose == None):
+                parser.error("Please provide a valid initialpose, see -h option. initialpose = " + str(self.options.initialpose))
+            self.move_initialpose(eval(self.options.initialpose))
         if self.options.mode == "polygon":
             if (self.options.polygon == None) or (type(eval(self.options.polygon)) is not list):
                 parser.error("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))

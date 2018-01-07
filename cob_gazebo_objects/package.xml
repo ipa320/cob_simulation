@@ -1,14 +1,14 @@
 <package format="2">
   <name>cob_gazebo_objects</name>
-  <version>0.6.8</version>
+  <version>0.6.9</version>
   <description>This package provides some objects and furniture for gazebo simulation.</description>
 
-  <license>LGPL</license>
+  <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/cob_gazebo_objects</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="richard.bormann@ipa.fraunhofer.de">Richard Bormann</maintainer>
   <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
 
   <buildtool_depend>catkin</buildtool_depend>
