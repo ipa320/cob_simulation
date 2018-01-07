@@ -2,6 +2,18 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-01-07)
+------------------
+* Merge pull request `#160 <https://github.com/ipa320/cob_simulation/issues/160>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#151 <https://github.com/ipa320/cob_simulation/issues/151>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* Merge pull request `#153 <https://github.com/ipa320/cob_simulation/issues/153>`_ from ipa-rmb/ipa-rmb-changed-maintainers
+  Changed maintainers
+* changed maintainers
+* use license apache 2.0
+* Contributors: Felix Messmer, Richard Bormann, ipa-uhr-mk
+
 0.6.8 (2017-07-31)
 ------------------
 * add station_charger
