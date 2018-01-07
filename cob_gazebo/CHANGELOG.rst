@@ -2,6 +2,16 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2017-07-31)
+------------------
+* remove cob_controller_configuration_gazebo
+* use exported robotlist and envlist
+* use cob_bringup robot.xml in simulation
+* manually fix changelog
+* Empty launch file changed and empty urdf created
+* wait parameter removed. it was not working when launching a empty world
+* Contributors: Bruno Brito, ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 

@@ -2,6 +2,27 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2017-07-31)
+------------------
+* rename IZS-carpark-top to izs-carpark-top
+* add simulation for izs-carpark-top to cob_gazebo_worlds
+* remove kitchen unit
+* fix ipa-production-plant
+* use xacro --inorder
+* use xml suffix for non-standalone launch files
+* rospy.sleep exception handling
+* launch argument world_name
+* use exported robotlist and envlist
+* use latest xacro syntax
+* handle ROSTimeMovedBackwardsException
+* manually fix changelog
+* add test for empty.urdf.xacro
+* remove throttled
+* simplify launch files
+* conflict between empty launch files and other scenarios solved
+* Empty launch file changed and empty urdf created
+* Contributors: Bruno Brito, Jannik Abbenseth, ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 

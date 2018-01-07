@@ -2,6 +2,11 @@
 Changelog for package cob_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2017-07-31)
+------------------
+* manually fix changelog
+* Contributors: ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 
