@@ -1,0 +1,16 @@
+<launch>
+	<arg name="sensor_id" default="1"/>
+	<arg name="x" default="0.0"/>
+	<arg name="y" default="0.0"/>
+	<arg name="z" default="0.0"/>
+	<arg name="yaw" default="3.14"/>
+
+	<!-- Convert xacro and put on parameter server -->
+	<param name="sensor_description_$(arg sensor_id)" command="$(find xacro)/xacro --inorder '$(find cob_gazebo_objects)/objects/static_sensor_s300.urdf.xacro' id:=$(arg sensor_id) x:=$(arg x) y:=$(arg y) z:=$(arg z) yaw:=$(arg yaw)" />
+
+	<!-- Spawn sensor into Gazebo -->
+	<node name="spawn_sensor_$(arg sensor_id)" pkg="gazebo_ros" type="spawn_model" args="-param sensor_description_$(arg sensor_id) -urdf -model static_sensor_$(arg sensor_id) " />
+
+	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_$(arg sensor_id)" args="$(arg x) $(arg y) $(arg z) $(arg yaw) 0 0 map static_laser_$(arg sensor_id)_link 100" />
+
+</launch>

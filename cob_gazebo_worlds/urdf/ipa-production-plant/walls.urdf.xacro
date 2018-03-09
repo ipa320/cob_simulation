@@ -6,7 +6,7 @@
   <!-- room1_w1 -->
   <!-- wall_01 -->
   <link name="wall_01">
-    <xacro:box_inertial x="${wall_depth}" y= "${room1_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y= "${room1_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -37,7 +37,7 @@
   <!-- room1_w2 -->
   <!-- wall_02 -->
   <link name="wall_02">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -69,7 +69,7 @@
   <!-- room2_w1 -->
   <!-- wall_02b -->
   <link name="wall_02b">
-    <xacro:box_inertial x="${wall_depth}" y="${room2_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room2_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -101,7 +101,7 @@
   <!-- room1_w3 -->
   <!-- wall_03 -->
   <link name="wall_03">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_w3}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_w3}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -133,7 +133,7 @@
   <!-- room1_room2_w1 -->
   <!-- wall_04a -->
   <link name="wall_04a">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_room2_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room2_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -164,7 +164,7 @@
     <!-- room1_room2_w1 -->
   <!-- wall_04b -->
   <link name="wall_04b">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_room2_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room2_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -196,7 +196,7 @@
   <!-- room1_room3_w1 -->
   <!-- wall_06a -->
   <link name="wall_06a">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_room3_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room3_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -229,7 +229,7 @@
   <!-- room1_room3_w1 -->
   <!-- wall_06b -->
   <link name="wall_06b">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_room3_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_room3_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -261,7 +261,7 @@
   <!-- room2_room4_w1 -->
   <!-- wall_07 -->
   <link name="wall_07">
-    <xacro:box_inertial x="${wall_depth}" y="${room2_room4_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room2_room4_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -293,7 +293,7 @@
   <!-- room4_w3 -->
   <!-- wall_08 -->
   <link name="wall_08">
-    <xacro:box_inertial x="${wall_depth}" y="${room4_w3}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w3}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -325,7 +325,7 @@
   <!-- room4_w4 -->
   <!-- wall_09 -->
   <link name="wall_09">
-    <xacro:box_inertial x="${wall_depth}" y="${room4_w4}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w4}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -357,7 +357,7 @@
   <!-- room3_w1 -->
   <!-- wall_10 -->
   <link name="wall_10">
-    <xacro:box_inertial x="${wall_depth}" y="${room3_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -389,7 +389,7 @@
   <!-- room3_room4_w1 -->
   <!-- wall_11 -->
   <link name="wall_11">
-    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -421,7 +421,7 @@
   <!-- room4_w2 -->
   <!-- wall_12 -->
   <link name="wall_12">
-    <xacro:box_inertial x="${wall_depth}" y="${room4_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -453,7 +453,7 @@
   <!-- room3_w2 -->
   <!-- wall_13 -->
   <link name="wall_13">
-    <xacro:box_inertial x="${wall_depth}" y="${room3_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -485,7 +485,7 @@
   <!-- room4_w1 -->
   <!-- wall_14 -->
   <link name="wall_14">
-    <xacro:box_inertial x="${wall_depth}" y="${room4_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room4_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -517,7 +517,7 @@
   <!-- hallway -->
   <!-- wall_15 -->
   <link name="wall_15">
-    <xacro:box_inertial x="${wall_depth}" y="${room1_w3}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room1_w3}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -549,7 +549,7 @@
   <!-- hallway -->
   <!-- wall_16 -->
   <link name="wall_16">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -581,7 +581,7 @@
   <!-- hallway -->
   <!-- wall_17 -->
   <link name="wall_17">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -613,7 +613,7 @@
   <!-- hallway -->
   <!-- wall_18 -->
   <link name="wall_18">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway_w3}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway_w3}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -645,7 +645,7 @@
   <!-- room3_room4_w2 -->
   <!-- wall_19 -->
   <link name="wall_19">
-    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${room3_room4_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -677,7 +677,7 @@
   <!-- hallway2 -->
   <!-- wall_20 -->
   <link name="wall_20">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -709,7 +709,7 @@
   <!-- hallway2 -->
   <!-- wall_21 -->
   <link name="wall_21">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w2}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w2}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
@@ -741,7 +741,7 @@
   <!-- hallway2 -->
   <!-- wall_22 -->
   <link name="wall_22">
-    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w1}" z="${wall_height}" mass="5.0">
+    <xacro:box_inertial x="${wall_depth}" y="${hallway2_w1}" z="${wall_height}" mass="500.0">
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:box_inertial>
     <visual>
