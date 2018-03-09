@@ -2,6 +2,41 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-01-07)
+------------------
+* Merge pull request `#160 <https://github.com/ipa320/cob_simulation/issues/160>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#156 <https://github.com/ipa320/cob_simulation/issues/156>`_ from ipa-fxm/add_move_initialpose_mode
+  add move_initialpose mode
+* add move_initialpose mode
+* Merge pull request `#154 <https://github.com/ipa320/cob_simulation/issues/154>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* update maintainer
+* Merge pull request `#151 <https://github.com/ipa320/cob_simulation/issues/151>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* use license apache 2.0
+* Contributors: Felix Messmer, ipa-fxm, ipa-uhr-mk
+
+0.6.8 (2017-07-31)
+------------------
+* refactored the code and added retreating model while on circular motion
+* provision for re-spawning the person object to the start, due to presence of obstacle
+* use xacro --inorder
+* allow single letter option for move_object
+* rospy.sleep exception handling
+* wait for models and cleanup
+* launch argument world_name
+* use exported robotlist and envlist
+* manually fix changelog
+* debug functionality
+* continue motion if object is far away enough
+* metavars for parser options
+* introduce stop_objects list and stop_distance
+* remove throttled
+* add missing robots to robotlist
+* added stopping of objects
+* Contributors: fmw-ss, hannes, ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 * Merge branch 'indigo_dev' into indigo_release_candidate

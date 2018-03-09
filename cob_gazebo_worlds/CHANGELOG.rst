@@ -2,6 +2,42 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-01-07)
+------------------
+* Merge pull request `#160 <https://github.com/ipa320/cob_simulation/issues/160>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#157 <https://github.com/ipa320/cob_simulation/issues/157>`_ from ipa-fxm/fix_tests_izs_campus
+  add launch file for izs-campus
+* add launch file for izs-campus
+* Merge pull request `#154 <https://github.com/ipa320/cob_simulation/issues/154>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* update maintainer
+* Merge pull request `#151 <https://github.com/ipa320/cob_simulation/issues/151>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* use license apache 2.0
+* Contributors: Felix Messmer, ipa-fxm, ipa-uhr-mk
+
+0.6.8 (2017-07-31)
+------------------
+* rename IZS-carpark-top to izs-carpark-top
+* add simulation for izs-carpark-top to cob_gazebo_worlds
+* remove kitchen unit
+* fix ipa-production-plant
+* use xacro --inorder
+* use xml suffix for non-standalone launch files
+* rospy.sleep exception handling
+* launch argument world_name
+* use exported robotlist and envlist
+* use latest xacro syntax
+* handle ROSTimeMovedBackwardsException
+* manually fix changelog
+* add test for empty.urdf.xacro
+* remove throttled
+* simplify launch files
+* conflict between empty launch files and other scenarios solved
+* Empty launch file changed and empty urdf created
+* Contributors: Bruno Brito, Jannik Abbenseth, ipa-fxm
+
 0.6.7 (2016-10-24)
 ------------------
 
