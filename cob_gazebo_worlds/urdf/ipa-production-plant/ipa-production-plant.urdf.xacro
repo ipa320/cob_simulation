@@ -9,14 +9,14 @@
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/walls.urdf.xacro" />
 
   <!-- Include Sensor file -->
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/sensors.urdf.xacro" />
+  <!-- <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/sensors.urdf.xacro" /> -->
 
 
   <!-- world link -->
   <link name="world" />
 
   <!-- Spawn Walls -->
-  <xacro:sensors name="sensors"/>
+  <!-- <xacro:sensors name="sensors"/> -->
 
   <!-- Spawn Walls -->
   <xacro:walls name="walls"/>
