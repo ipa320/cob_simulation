@@ -33,9 +33,10 @@ class CONFIG:
     inflation_radius = None
     room_number = None
     max_num_objects = None
-    spawn_object_rate = None
+    move_object_rate = None
     num_changed_objects = None
     spawn_moving_objects = None
+    spawn_object_rate = None
 
     models = None
     room_boundaries = None
@@ -57,9 +58,10 @@ class CONFIG:
         cls.inflation_radius = data['inflation_radius']
         cls.room_number = data['room_number']
         cls.max_num_objects = data['max_num_objects']
-        cls.spawn_object_rate = data['spawn_object_rate']
+        cls.move_object_rate = data['move_object_rate']
         cls.num_changed_objects = data['num_changed_objects']
         cls.spawn_moving_objects = data['spawn_moving_objects']
+        cls.spawn_object_rate = data['spawn_object_rate']
 
         cls.models = data['models']
         cls.room_boundaries = data['boundaries']
@@ -169,7 +171,7 @@ def spawn_object_loop(radius, type=None):
 
             objects_[type][obj_id] = np.copy(obj_pos)
 
-        rospy.sleep(CONFIG.spawn_object_rate)
+        rospy.sleep(CONFIG.move_object_rate)
 
 
 def get_new_coordinates(room_id, radius, threshold=1000):
@@ -203,6 +205,8 @@ def spawn_object(type, room_id, radius, name=None):
     :return:
     :rtype: None
     """
+    start_time = rospy.get_rostime()
+
     global objects_
 
     obj_pos = get_new_coordinates(room_id, radius)
@@ -219,6 +223,12 @@ def spawn_object(type, room_id, radius, name=None):
     objects_[type][obj_id] = obj_pos
 
     spawn_model(model_name, CONFIG.models[type]['path'], obj_pos)
+
+    # Control spawn rate
+    dur = rospy.get_rostime() - start_time
+    delta = dur - rospy.Duration.from_sec(1/CONFIG.spawn_object_rate)
+    if delta.to_sec() > 0:
+        rospy.sleep(delta)
 
 
 def check_coordinates(new_obj_pos, room_id, radius):

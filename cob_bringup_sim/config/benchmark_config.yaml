@@ -3,9 +3,11 @@ inflation_radius: 1.0
 # The number of rooms [int]
 room_number: 4
 # The maximum number of objects to be spawned [float]
-max_num_objects: 300
-# The rate at which objects should be changed in hz [float]
+max_num_objects: 10
+# The rate at which objects are spawned initially in hz [float]
 spawn_object_rate: 1
+# The rate at which objects are moved during runtime in hz [float]
+move_object_rate: 1
 # The number of objects that is supposed to be changed per time-step [int]
 num_changed_objects: 20
 # Specifies in which rooms moving objects will be spawned [list, int]
@@ -50,6 +52,21 @@ moving_objects:
     velocity: 0.8
     path_type: polygon
     path: [[-13.5, 4.5], [-4.5, 4.5], [-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, 4.5], [-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5], [-4.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5], [-4.5, 4.5], [-4.5, -4.5]]
   - room_id: 1
     type: column
     velocity: 0.8
@@ -59,22 +76,57 @@ moving_objects:
     type: column
     velocity: 0.8
     path_type: polygon
-    path: [[21.0, -4.5], [8.5, -4.5], [8.5, 0.0], [21.0, 0.0], [21.0, -4.5]]
+    path: [[21.0, 4.5], [21.0, -4.5], [8.5, -4.5], [8.5, 4.5], [21.0, 4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, -4.5], [8.5, -4.5], [8.5, 4.5], [21.0, 4.5], [21.0, 4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -4.5], [8.5, 4.5], [21.0, 4.5], [21.0, 4.5], [21.0, -4.5]]
   - room_id: 2
     type: column
     velocity: 0.8
     path_type: polygon
     path: [[21.0, -28.5], [8.5, -28.5], [8.5, -17.5], [21.0, -17.5], [21.0, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -28.5], [8.5, -17.5], [21.0, -17.5], [21.0, -28.5], [21.0, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -17.5], [21.0, -17.5], [21.0, -28.5], [21.0, -28.5], [8.5, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, -17.5], [21.0, -28.5], [21.0, -28.5], [8.5, -28.5], [8.5, -17.5]]
   - room_id: 3
     type: column
     velocity: 0.8
     path_type: polygon
-    path: [[-4.5, -17.5], [-4.5, -23.0], [-13.5, -23.0], [-13.5, -17.5], [-4.5, -17.5]]
+    path: [[-4.5, -17.5], [-4.5, -28.5], [-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5]]
   - room_id: 3
     type: column
     velocity: 0.8
     path_type: polygon
-    path: [[-13.5, -28.5], [-13.5, -23.0], [-4.5, -23.0], [-4.5, -28.5], [-13.5, -28.5]]
+    path: [[-4.5, -28.5], [-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5], [-4.5, -28.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5], [-4.5, -28.5], [-13.5, -28.5]]
 
 # The paths the robot will travel on sorted by room
 paths:
