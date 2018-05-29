@@ -31,6 +31,6 @@
 
 	<!-- spawn all objects -->
 	<!-- if you want to spawn objects from specific groups use args="group_name1 group_name2" machine-room, super-market_1 static-obstacles -->
-    <node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="machine-room hallway super-market-2" output="screen"/>
+    <node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="warehouse" output="screen"/>
 
 </launch>
