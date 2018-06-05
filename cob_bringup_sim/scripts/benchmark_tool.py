@@ -31,6 +31,7 @@ class CONFIG:
     Contains the configuration parameters for the benchmark-tool node.
     """
     inflation_radius = None
+    rooms = None
     room_number = None
     max_num_objects = None
     move_object_rate = None
@@ -56,7 +57,8 @@ class CONFIG:
             data = yaml.safe_load(f)
 
         cls.inflation_radius = data['inflation_radius']
-        cls.room_number = data['room_number']
+        cls.rooms = data['rooms']
+        cls.room_number = len(cls.rooms)
         cls.max_num_objects = data['max_num_objects']
         cls.move_object_rate = data['move_object_rate']
         cls.num_changed_objects = data['num_changed_objects']
@@ -162,7 +164,7 @@ def spawn_object_loop(radius, type=None):
             # # Spawn a new object
             # spawn_object(type, np.random.randint(CONFIG.room_number), radius)
 
-            room_id = np.random.randint(CONFIG.room_number)
+            room_id = CONFIG.rooms[np.random.randint(CONFIG.room_number)]
             obj_pos = get_new_coordinates(room_id, radius)
             if len(obj_pos) <= 0:
                 continue
@@ -226,7 +228,7 @@ def spawn_object(type, room_id, radius, name=None):
 
     # Control spawn rate
     dur = rospy.get_rostime() - start_time
-    delta = dur - rospy.Duration.from_sec(1/CONFIG.spawn_object_rate)
+    delta = rospy.Duration.from_sec(1/CONFIG.spawn_object_rate) - dur
     if delta.to_sec() > 0:
         rospy.sleep(delta)
 
@@ -327,7 +329,7 @@ def spawn_init_objects(type, radius):
     """
     log.debug('Spawning {} initial objects'.format(CONFIG.max_num_objects))
     for i in range(CONFIG.max_num_objects):
-        spawn_object(type, np.random.randint(CONFIG.room_number), radius)
+        spawn_object(type, CONFIG.rooms[np.random.randint(CONFIG.room_number)], radius)
 
     log.info('Spawned {} initial objects'.format(CONFIG.max_num_objects))
 
