@@ -2,7 +2,7 @@
 	<arg name="sensor_id" default="1"/>
 	<arg name="x" default="0.0"/>
 	<arg name="y" default="0.0"/>
-	<arg name="z" default="0.0"/>
+	<arg name="z" default="0.188"/>
 	<arg name="yaw" default="3.14"/>
 
 	<!-- Convert xacro and put on parameter server -->
