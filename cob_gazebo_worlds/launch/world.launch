@@ -34,6 +34,8 @@
 	</include>
 
 	<!-- spawn environment and start environment-specific nodes -->
-	<include file="$(arg pkg_gazebo_worlds)/launch/$(arg robot_env).xml"/>
+	<include file="$(arg pkg_gazebo_worlds)/launch/$(arg robot_env).xml">
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include>
 
 </launch>
