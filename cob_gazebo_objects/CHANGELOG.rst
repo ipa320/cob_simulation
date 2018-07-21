@@ -2,6 +2,9 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.6.9 (2018-01-07)
 ------------------
 * Merge pull request `#160 <https://github.com/ipa320/cob_simulation/issues/160>`_ from ipa320/indigo_release_candidate

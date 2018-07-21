@@ -2,6 +2,11 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update maintainer
+* Contributors: fmessmer
+
 0.6.9 (2018-01-07)
 ------------------
 * Merge pull request `#160 <https://github.com/ipa320/cob_simulation/issues/160>`_ from ipa320/indigo_release_candidate
