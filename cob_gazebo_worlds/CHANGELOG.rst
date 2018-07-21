@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.10 (2018-07-21)
+-------------------
 * Merge pull request `#162 <https://github.com/ipa320/cob_simulation/issues/162>`_ from ipa320/pass_missing_arg
   pass missing robot_env argument
 * pass missing robot_env argument

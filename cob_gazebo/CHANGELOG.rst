@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.10 (2018-07-21)
+-------------------
 * update maintainer
 * Contributors: fmessmer
 
