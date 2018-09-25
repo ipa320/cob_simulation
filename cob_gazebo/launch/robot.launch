@@ -16,6 +16,6 @@
 	</include>
 
 	<!-- push robot_description to factory and spawn robot in gazebo -->
-	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 13.5 -y 2.5 -z 0.1 $(arg initial_config) -wait $(arg robot_env)" respawn="false" output="screen" />
+	<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 $(arg initial_config) -wait $(arg robot_env)" respawn="false" output="screen" />
 
 </launch>

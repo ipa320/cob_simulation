@@ -4,40 +4,19 @@
 	<arg name="robot_env" default="ipa-production-plant"/>
 	<arg name="publish_world_state" value="false"/>
 
-	<arg name="moving_object_bool" default="$(optenv ROBOT_MOVING_OBJECT_BOOL false)"/>
-	<arg name="moving_object_name" default="$(optenv ROBOT_MOVING_OBJECT_NAME forklift)"/>
-
 	<!-- spawn environment -->
 	<include file="$(find cob_gazebo_worlds)/launch/world_urdf.xml">
 		<arg name="robot_env" value="$(arg robot_env)"/>
 		<arg name="publish_world_state" value="$(arg publish_world_state)"/>
 	</include>
 
-	<!-- <arg name="static_laser_topic" default="/static_laser/scan_raw"/> -->
+	<arg name="static_laser_topic" default="/static_laser/scan_raw"/>
 
 	<!-- static tf for two sick sensors -->
-	<!-- <node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_01" args="19.08 -1.50 0.2 3.14 0 0 map static_laser_01_link 100" />
-	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_02" args="27.08 -1.50 0.2 3.14 0 0 map static_laser_02_link 100" />
+	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_01" args="19.08 -1.5 0.1 3.14 0 0 map static_laser_01_link 100" />
+	<node pkg="tf" type="static_transform_publisher" name="static_laser_broadcaster_02" args="27.08 -1.5 0.1 3.14 0 0 map static_laser_02_link 100" />
 
 	<remap from="/static_laser_01/scan_raw" to="$(arg static_laser_topic)"/>
-	<remap from="/static_laser_02/scan_raw" to="$(arg static_laser_topic)"/> -->
-
-	<!-- spawn & move 'moving object' around (r2d2/forkllift -> depends on environment variable ROBOT_MOVING_OBJECT) -->
-	<!--<node if="$(arg moving_object_bool)" name="spawn_moving_object" pkg="gazebo_ros" type="spawn_model" args="-urdf -file $(find cob_gazebo_objects)/objects/$(arg moving_object_name).urdf -x 6.5 -y 7.5 -model $(arg moving_object_name)" output="screen" /> -->
-
-	<node if="$(arg moving_object_bool)" name="spawn_moving_object_forklift" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find ipa_robot_detection)/models/forklift.sdf -x 16.5 -y 7.5 -model moving_forklift" output="screen" />
-	<node if="$(arg moving_object_bool)" name="spawn_moving_object_r2d2" pkg="gazebo_ros" type="spawn_model" args="-sdf -file $(find ipa_robot_detection)/models/r2d2.sdf -x 4.0 -y -7.0 -model moving_r2d2" output="screen" />
-
-	<!--Machine-Room-->
-	<node if="$(arg moving_object_bool)" name="moving_object_forklift" pkg="cob_bringup_sim" type="move_object.py" args="--mode=polygon --name=moving_forklift --velocity=0.8 --polygon='[[16.5,7.5],[25.0,7.5],[25.0,-7.0],[16.5,-7.0]]'" output="screen"/>
-	<node if="$(arg moving_object_bool)" name="moving_object_r2d2" pkg="cob_bringup_sim" type="move_object.py" args="--mode=polygon --name=moving_r2d2 --velocity=1.2 --polygon='[[4.0,-7.0],[14.0,-7.0],[14.0,-10.0],[4.0,-10.0]]'" output="screen"/>
-
-	<!--Warehouse-->
-	<!--<node if="$(arg moving_object_bool)" name="moving_object_forklift" pkg="cob_bringup_sim" type="move_object.py" args="&#45;&#45;mode=polygon &#45;&#45;name=moving_forklift &#45;&#45;velocity=0.8 &#45;&#45;polygon='[[-17.0,11.5],[-7.0,11.5]]'" output="screen"/>-->
-	<!--<node if="$(arg moving_object_bool)" name="moving_object_r2d2" pkg="cob_bringup_sim" type="move_object.py" args="&#45;&#45;mode=polygon &#45;&#45;name=moving_r2d2 &#45;&#45;velocity=1.2 &#45;&#45;polygon='[[-6.5,1.5],[-6.5,8.0],[-10.5,8.0],[-10.5,1.5]]'" output="screen"/>-->
-
-	<!-- spawn all objects -->
-	<!-- if you want to spawn objects from specific groups use args="group_name1 group_name2" machine-room, super-market_1 static-obstacles -->
-    <node name="spawn_object" pkg="cob_bringup_sim" type="spawn_object.py" args="static-obstacles hallway" output="screen"/>
+	<remap from="/static_laser_02/scan_raw" to="$(arg static_laser_topic)"/>
 
 </launch>
