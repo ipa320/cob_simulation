@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--properties-->
+  <xacro:property name="wall_depth" value="0.1" />
+  <xacro:property name="wall_height" value="5" />
+  <xacro:property name="gate_size" value="3" />
+
+  <xacro:property name="room1_w1" value="9.5" />
+  <xacro:property name="room1_w2" value="9.5" />
+  <xacro:property name="room1_w3" value="24" />
+
+  <xacro:property name="room2_w1" value="22.5" />
+  <xacro:property name="room2_w2" value="21" />
+
+  <xacro:property name="room3_w1" value="24" />
+  <xacro:property name="room3_w2" value="22" />
+
+  <xacro:property name="room4_w1" value="36" />
+  <xacro:property name="room4_w2" value="21" /> 24
+  <xacro:property name="room4_w3" value="11.25" />
+  <xacro:property name="room4_w4" value="7.5" />
+
+  <xacro:property name="room1_room2_w1" value="10.5" />
+  <xacro:property name="room1_room3_w1" value="9.5" />
+  <xacro:property name="room2_room4_w1" value="11.25" />
+  <xacro:property name="room3_room4_w1" value="17" />
+  <xacro:property name="room3_room4_w2" value="4" />
+  
+
+  <xacro:property name="hallway_w1" value="26" />
+  <xacro:property name="hallway_w2" value="58" />
+  <xacro:property name="hallway_w3" value="5" />
+
+  <xacro:property name="hallway2_w1" value="3" />
+  <xacro:property name="hallway2_w2" value="53" />
+
+  <xacro:property name="position_offset_x" value="-20" />
+  <xacro:property name="position_offset_y" value="-35" />
+  <xacro:property name="position_offset_z" value="0" />
+
+</robot>

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="ipa-production-plant">
+       name="ipa-benchmark">
 
   <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/ipa-production-plant.property.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-benchmark/ipa-benchmark.property.xacro" />
   
   <!-- walls -->
-  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/walls.urdf.xacro" />
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-benchmark/walls.urdf.xacro" />
 
   <!-- Include Sensor file -->
-  <!-- <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-production-plant/sensors.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(find cob_gazebo_worlds)/urdf/ipa-benchmark/sensors.urdf.xacro" /> -->
 
 
   <!-- world link -->

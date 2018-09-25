@@ -1,0 +1,232 @@
+# The inflation radius of the paths [float]
+inflation_radius: 1.0
+# The number of rooms [int]
+room_number: 4
+# The maximum number of objects to be spawned [float]
+max_num_objects: 10
+# The rate at which objects are spawned initially in hz [float]
+spawn_object_rate: 1
+# The rate at which objects are moved during runtime in hz [float]
+move_object_rate: 1
+# The number of objects that is supposed to be changed per time-step [int]
+num_changed_objects: 20
+# Specifies in which rooms moving objects will be spawned [list, int]
+spawn_moving_objects: [0, 1, 2, 3]
+
+# The paths to the urdf files for the models
+models:
+  box:
+    package: cob_gazebo_objects
+    path: objects/box.urdf
+  column:
+    package: cob_gazebo_objects
+    path: objects/column.urdf
+
+# The boundaries of each room
+boundaries:
+  - room: 0
+    start_x: -19.95
+    start_y: -10.95
+    end_x: 1.95
+    end_y: 12.95
+  - room: 1
+    start_x: 2.05
+    start_y: -10.95
+    end_x: 27.45
+    end_y: 12.95
+  - room: 2
+    start_x: 2.05
+    start_y: -34.95
+    end_x: 27.45
+    end_y: -11.05
+  - room: 3
+    start_x: -19.95
+    start_y: -34.95
+    end_x: 1.95
+    end_y: -11.05
+
+# The dynamic objects and their respective paths
+moving_objects:
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, 4.5], [-4.5, 4.5], [-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, 4.5], [-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, -4.5], [-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5], [-4.5, 4.5]]
+  - room_id: 0
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -4.5], [-13.5, 4.5], [-13.5, 4.5], [-4.5, 4.5], [-4.5, -4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, 4.5], [21.0, 4.5], [21.0, 0.0], [8.5, 0.0], [8.5, 4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, 4.5], [21.0, -4.5], [8.5, -4.5], [8.5, 4.5], [21.0, 4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, -4.5], [8.5, -4.5], [8.5, 4.5], [21.0, 4.5], [21.0, 4.5]]
+  - room_id: 1
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -4.5], [8.5, 4.5], [21.0, 4.5], [21.0, 4.5], [21.0, -4.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, -28.5], [8.5, -28.5], [8.5, -17.5], [21.0, -17.5], [21.0, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -28.5], [8.5, -17.5], [21.0, -17.5], [21.0, -28.5], [21.0, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[8.5, -17.5], [21.0, -17.5], [21.0, -28.5], [21.0, -28.5], [8.5, -28.5]]
+  - room_id: 2
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[21.0, -17.5], [21.0, -28.5], [21.0, -28.5], [8.5, -28.5], [8.5, -17.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, -17.5], [-4.5, -28.5], [-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-4.5, -28.5], [-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -28.5], [-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5], [-4.5, -28.5]]
+  - room_id: 3
+    type: column
+    velocity: 0.8
+    path_type: polygon
+    path: [[-13.5, -17.5], [-4.5, -17.5],[-4.5, -17.5], [-4.5, -28.5], [-13.5, -28.5]]
+
+# The paths the robot will travel on sorted by room
+paths:
+  room_0:
+    - start_x: -9.00
+      start_y: -14.50
+      end_x: -9.00
+      end_y: -7.50
+    - start_x: -16.5
+      start_y: -7.50
+      end_x: -1.50
+      end_y: -7.50
+    - start_x: -16.5
+      start_y: -7.5
+      end_x: -16.5
+      end_y: 7.5
+    - start_x: -16.5
+      start_y: 7.5
+      end_x: -1.5
+      end_y: 7.5
+    - start_x: -1.5
+      start_y: -7.5
+      end_x: -1.5
+      end_y: 7.5
+    - start_x: -1.5
+      start_y: 7.5
+      end_x: 5.5
+      end_y: 7.5
+  room_1:
+    - start_x: -1.5
+      start_y: 7.5
+      end_x: 5.5
+      end_y: 7.5
+    - start_x: 5.50
+      start_y: 7.50
+      end_x: 24.00
+      end_y: 7.50
+    - start_x: 24.00
+      start_y: -7.5
+      end_x: 24.00
+      end_y: 7.5
+    - start_x: 5.50
+      start_y: -7.50
+      end_x: 24.00
+      end_y: -7.50
+    - start_x: 5.50
+      start_y: -7.50
+      end_x: 5.50
+      end_y: 7.50
+    - start_x: 14.75
+      start_y: -14.50
+      end_x: 14.75
+      end_y: -7.50
+  room_2:
+    - start_x: 14.75
+      start_y: -14.50
+      end_x: 14.75
+      end_y: -7.50
+    - start_x: 5.50
+      start_y: -14.50
+      end_x: 24.00
+      end_y: -14.50
+    - start_x: 24.00
+      start_y: -31.50
+      end_x: 24.00
+      end_y: -14.50
+    - start_x: 5.50
+      start_y: -31.50
+      end_x: 24.00
+      end_y: -31.50
+    - start_x: 5.50
+      start_y: -31.50
+      end_x: 5.50
+      end_y: -14.50
+    - start_x: -1.50
+      start_y: -23.00
+      end_x: 5.50
+      end_y: -23.00
+  room_3:
+    - start_x: -1.50
+      start_y: -23.00
+      end_x: 5.50
+      end_y: -23.00
+    - start_x: -1.50
+      start_y: -31.50
+      end_x: -1.50
+      end_y: -14.50
+    - start_x: -16.50
+      start_y: -31.50
+      end_x: -1.50
+      end_y: -31.50
+    - start_x: -16.50
+      start_y: -31.50
+      end_x: -16.50
+      end_y: -14.50
+    - start_x: -16.50
+      start_y: -14.50
+      end_x: -1.50
+      end_y: -14.50
+    - start_x: -9.00
+      start_y: -14.50
+      end_x: -9.00
+      end_y: -7.50

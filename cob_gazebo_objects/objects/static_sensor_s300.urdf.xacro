@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="sensor">
+
+  <xacro:include filename="$(find cob_gazebo_worlds)/urdf/common.xacro" />
+  <!-- Include Sensor file -->
+  <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
+
+  <xacro:arg name="id" default="1" />
+  <xacro:arg name="x" default="0.0"/>
+  <xacro:arg name="y" default="0.0"/>
+  <xacro:arg name="z" default="0.0"/>
+  <xacro:arg name="yaw" default="0.0"/>
+
+  <!-- world link -->
+  <link name="world" />
+
+  <!-- Spawn Sensors -->
+  <!-- sensor link -->
+  <link name="sensor_$(arg id)_link" />
+  
+  <!-- connect links -->
+  <joint name="static_sensor_$(arg id)_joint" type="fixed">
+    <parent link="world"/>
+    <child link="sensor_$(arg id)_link"/>
+  </joint>
+
+  <!-- Spawn Sensors - d=0.45 -->  
+  <xacro:sick_s300_laser_v0 name="static_laser_$(arg id)" parent="sensor_$(arg id)">
+    <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="0 0 $(arg yaw)" />
+  </xacro:sick_s300_laser_v0>
+
+  <gazebo reference="sensor_$(arg id)_link">
+    <gravity>false</gravity>
+  </gazebo>
+
+</robot>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot_env" default="ipa-production-plant"/>
+	<arg name="robot_env" default="ipa-benchmark"/>
 	<arg name="publish_world_state" value="false"/>
 
 	<!-- spawn environment -->

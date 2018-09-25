@@ -9,6 +9,7 @@
 	<arg name="pkg_gazebo_worlds" default="$(find cob_gazebo_worlds)"/>
 	<arg name="world_name" default="worlds/empty.world"/>
 	<arg name="initial_config" default=""/>
+	<arg name="multi_robot" default="false"/>
 
 	<arg name="paused" default="false"/>
 	<arg name="use_sim_time" default="true"/>
@@ -26,12 +27,13 @@
 	</include>
 
 	<!-- startup simulated robot -->
-	<include file="$(find cob_gazebo)/launch/robot.launch" >
+	<include unless="$(arg multi_robot)" file="$(find cob_gazebo)/launch/robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="robot_env" value="$(arg robot_env)" />
 		<arg name="pkg_robot_config" value="$(arg pkg_robot_config)" />
 		<arg name="paused" value="$(arg paused)" />
 		<arg name="initial_config" value="$(arg initial_config)"/>
+		<arg name="multi_robot" value="$(arg multi_robot)"/>
 	</include>
 
 </launch>

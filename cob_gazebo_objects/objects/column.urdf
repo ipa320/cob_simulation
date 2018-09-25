@@ -7,19 +7,19 @@
       <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 2.5" rpy="0 0 0" />
+      <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="5.0" radius="0.5"/>
+        <cylinder length="1.0" radius="0.5"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 2.5" rpy="0 0 0" />
+      <origin xyz="0 0 0.5" rpy="0 0 0" />
       <geometry>
-        <cylinder length="5.0" radius="0.5"/>
+        <cylinder length="1.0" radius="0.5"/>
       </geometry>
     </collision>
   </link>
   <gazebo>
-    <static>true</static>
+    <static>false</static>
   </gazebo>     
 </robot>
