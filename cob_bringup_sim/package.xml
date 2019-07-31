@@ -19,6 +19,7 @@
 
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_gazebo_objects</exec_depend>
   <exec_depend>cob_gazebo_worlds</exec_depend>
   <exec_depend>cob_gazebo</exec_depend>
   <exec_depend>gazebo_msgs</exec_depend>
