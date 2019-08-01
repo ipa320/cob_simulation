@@ -369,7 +369,7 @@
   <transmission name="door_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="door_joint">
-      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="door_motor">
       <mechanicalReduction>1</mechanicalReduction>

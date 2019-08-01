@@ -48,7 +48,7 @@
   <transmission name="elevator_left_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_left_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_left_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -180,7 +180,7 @@
   <transmission name="elevator_right_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_right_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_right_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -306,7 +306,7 @@
   <transmission name="elevator_button1_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_button1_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_button1_joint_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -359,7 +359,7 @@
   <transmission name="elevator_button2_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="elevator_button2_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="elevator_button2_joint_motor">
       <mechanicalReduction>1</mechanicalReduction>
