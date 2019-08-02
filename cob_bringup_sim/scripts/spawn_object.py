@@ -180,7 +180,7 @@ if __name__ == "__main__":
             continue
 
         # open file for urdf.xacro or urdf/sdf/model
-        if model_type == "urdf.xacro":
+        if model_type == "xacro":
             try:
                 f = os.popen("rosrun xacro xacro --inorder " + file_location)
             except:
