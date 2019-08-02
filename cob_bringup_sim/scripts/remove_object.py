@@ -39,7 +39,7 @@ def get_flat_dict(objects, parent_name):
 
                 compound_keys[parent_name] = parent_name
 
-            compound_keys[key] = key+'_'+compound_keys[parent_name]
+            compound_keys[key] = compound_keys[parent_name] + '_' + key
 
         else:
             compound_keys[key] = key
