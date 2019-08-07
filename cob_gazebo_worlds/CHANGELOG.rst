@@ -2,6 +2,9 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.7.0 (2019-08-07)
 ------------------
 * Merge pull request `#168 <https://github.com/ipa320/cob_simulation/issues/168>`_ from fmessmer/melodic_checks

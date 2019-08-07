@@ -2,6 +2,18 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#167 <https://github.com/ipa320/cob_simulation/issues/167>`_ from floweisshardt/feature/spawn_with_explicit_package_and_type
+  allow explicit definition of package and type for spawn object
+* fix xacro file type
+* fix naming of objects
+* allow explicit definition of package and type for spawn object
+* Merge pull request `#166 <https://github.com/ipa320/cob_simulation/issues/166>`_ from floweisshardt/fix/add_dependency_to_cob_gazebo_objects
+  add dependency to cob_gazebo_objects which is used in spawn_object.py
+* add dependency to cob_gazebo_objects which is used in spawn_object.py
+* Contributors: Felix Messmer, floweisshardt
+
 0.7.0 (2019-08-07)
 ------------------
 
