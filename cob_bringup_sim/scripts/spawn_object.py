@@ -43,7 +43,7 @@ def get_flat_dict(objects, parent_name):
 
                 compound_keys[parent_name] = parent_name
 
-            compound_keys[key] = key+'_'+compound_keys[parent_name]
+            compound_keys[key] = compound_keys[parent_name] + '_' + key
 
         else:
             compound_keys[key] = key
@@ -144,7 +144,9 @@ if __name__ == "__main__":
             rospy.logerr("No model for " + key + " found.")
             continue
         model_string = value["model"]
-        model_type = value["model_type"]
+        model_package = model_string.split("/")[0]
+        model_path = model_string.replace(model_package + "/", "")
+        model_type = model_string.split(".").pop()
         
         # check for position
         if not "position" in value:
@@ -172,13 +174,13 @@ if __name__ == "__main__":
 
         # get file location
         try:
-            file_location = roslib.packages.get_pkg_dir('cob_gazebo_objects') + '/objects/' + model_string+ '.' + model_type
+            file_location = roslib.packages.get_pkg_dir(model_package) + "/" + model_path
         except roslib.packages.InvalidROSPkgException:
-            rospy.logerr("No model package found for " + key + ": " + cob_gazebo_objects + " does not exist in ROS_PACKAGE_PATH")
+            rospy.logerr("No model package found for " + key + ": " + model_package + " does not exist in ROS_PACKAGE_PATH")
             continue
 
         # open file for urdf.xacro or urdf/sdf/model
-        if model_type == "urdf.xacro":
+        if model_type == "xacro":
             try:
                 f = os.popen("rosrun xacro xacro --inorder " + file_location)
             except:
