@@ -2,6 +2,9 @@
 Changelog for package cob_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.7.1 (2019-08-07)
 ------------------
 

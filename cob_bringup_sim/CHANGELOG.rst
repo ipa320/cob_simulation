@@ -2,6 +2,9 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.7.1 (2019-08-07)
 ------------------
 * Merge pull request `#167 <https://github.com/ipa320/cob_simulation/issues/167>`_ from floweisshardt/feature/spawn_with_explicit_package_and_type
