@@ -14,6 +14,7 @@
   <exec_depend>cob_bringup_sim</exec_depend>
   <exec_depend>cob_gazebo</exec_depend>
   <exec_depend>cob_gazebo_objects</exec_depend>
+  <exec_depend>cob_gazebo_tools</exec_depend>
   <exec_depend>cob_gazebo_worlds</exec_depend>
 
   <export>
