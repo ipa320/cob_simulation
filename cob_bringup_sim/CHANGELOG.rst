@@ -2,8 +2,8 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.3 (2019-11-07)
+------------------
 * Merge pull request `#172 <https://github.com/ipa320/cob_simulation/issues/172>`_ from fmessmer/cob_gazebo_tools
   new package cob_gazebo_tools
 * move scripts to cob_gazebo_tools
