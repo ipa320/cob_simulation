@@ -4,6 +4,7 @@ Changelog for package cob_gazebo_tools
 
 Forthcoming
 -----------
+* add CHANGELOG for cob_gazebo_tools
 * Merge pull request `#172 <https://github.com/ipa320/cob_simulation/issues/172>`_ from fmessmer/cob_gazebo_tools
   new package cob_gazebo_tools
 * move scripts to cob_gazebo_tools
