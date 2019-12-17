@@ -291,7 +291,7 @@ class move():
             dest="stop_distance", metavar="Float", default=2.0,
             help="Allowed distance to objects before stopping. Default: 2.0")
 
-        (self.options, args) = parser.parse_args()
+        (self.options, _) = parser.parse_args()
 
         if self.options.mode == None:
             parser.error("Please provide a valid mode, see -h option.")
@@ -302,17 +302,21 @@ class move():
     def run(self):
         if self.options.mode == "initialpose":
             if (self.options.initialpose == None):
-                parser.error("Please provide a valid initialpose, see -h option. initialpose = " + str(self.options.initialpose))
+                rospy.logerr("Please provide a valid initialpose, see -h option. initialpose = " + str(self.options.initialpose))
+                return
             self.move_initialpose(eval(self.options.initialpose))
         if self.options.mode == "polygon":
             if (self.options.polygon == None) or (type(eval(self.options.polygon)) is not list):
-                parser.error("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))
+                rospy.logerr("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))
+                return
             self.move_polygon(eval(self.options.polygon))
         if self.options.mode == "circle":
             if self.options.radius == None:
-                parser.error("Please provide a valid radius. radius = " + str(self.options.radius))
+                rospy.logerr("Please provide a valid radius. radius = " + str(self.options.radius))
+                return
             if self.options.center == None:
-                parser.error("Please provide a valid center. center = " + str(self.options.center))
+                rospy.logerr("Please provide a valid center. center = " + str(self.options.center))
+                return
             self.move_circle(eval(self.options.center),float(self.options.radius))
 
 
