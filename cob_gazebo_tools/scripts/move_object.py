@@ -28,6 +28,7 @@ import rospy
 import tf
 from tf.transformations import euler_from_quaternion
 from gazebo_msgs.srv import GetModelState, GetModelStateRequest, GetModelStateResponse
+from gazebo_msgs.srv import SetModelState, SetModelStateRequest, SetModelStateResponse
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Pose
 
@@ -48,7 +49,9 @@ class move():
         self.models = self.options.stop_objects.split()
         rospy.wait_for_service('/gazebo/get_model_state')
         self.srv_get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
-        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
+        rospy.wait_for_service('/gazebo/set_model_state')
+        self.srv_set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
+        self.pub_set_model_state = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
         self.road_block = False
@@ -137,7 +140,7 @@ class move():
                 model_state.reference_frame = 'world'
 
                 # publish message
-                self.pub.publish(model_state)
+                self.pub_set_model_state.publish(model_state)
 
                 idx += 1
 
@@ -166,20 +169,31 @@ class move():
 
         # publish message
         while not rospy.is_shutdown():
-            self.pub.publish(model_state)
             res = self.get_model_state(self.name)
+            rospy.logdebug("desired model_state: {}".format(model_state))
+            rospy.logdebug("current model_state: {}".format(res))
+            if not numpy.any([res.twist.linear.x,res.twist.linear.y,res.twist.linear.z,res.twist.angular.x,res.twist.angular.y,res.twist.angular.z]):
+                rospy.logwarn("gazebo physics not yet started")
+            else:
+                desired_pos = object_new_pose.position
+                current_pos = res.pose.position
+                desired_ori = euler_from_quaternion([object_new_pose.orientation.x,object_new_pose.orientation.y,object_new_pose.orientation.z,object_new_pose.orientation.w])
+                current_ori = euler_from_quaternion([res.pose.orientation.x,res.pose.orientation.y,res.pose.orientation.z,res.pose.orientation.w])
 
-            # rospy.logwarn("desired model_state: {}".format(model_state))
-            # rospy.logwarn("current model_state: {}".format(res))
-            desired_pos = object_new_pose.position
-            current_pos = res.pose.position
-            desired_ori = euler_from_quaternion([object_new_pose.orientation.x,object_new_pose.orientation.y,object_new_pose.orientation.z,object_new_pose.orientation.z])
-            current_ori = euler_from_quaternion([res.pose.orientation.x,res.pose.orientation.y,res.pose.orientation.z,res.pose.orientation.w])
-
-            if (numpy.allclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z]) and
-                numpy.allclose(desired_ori, current_ori)):
-                rospy.logerr("move_initialpose reached")
-                break
+                rospy.logdebug(numpy.isclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z], atol=0.01))
+                rospy.logdebug(numpy.isclose(desired_ori, current_ori, atol=0.01))
+                if (numpy.allclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z], atol=0.01) and
+                    numpy.allclose(desired_ori, current_ori, atol=0.01)):
+                    rospy.loginfo("move_initialpose reached")
+                    break
+                else:
+                    rospy.loginfo("publish initialpose")
+                    self.pub_set_model_state.publish(model_state)
+                    # try:
+                    #     res = self.srv_set_model_state(SetModelStateRequest(model_state=model_state))
+                    #     rospy.loginfo("result: {}".format(res))
+                    # except rospy.service.ServiceException:
+                    #     pass
 
             # sleep until next step
             self.rate.sleep()
@@ -242,7 +256,7 @@ class move():
                 model_state.reference_frame = 'world'
 
                 # publish message
-                self.pub.publish(model_state)
+                self.pub_set_model_state.publish(model_state)
 
                 yaw += yaw_step
 
