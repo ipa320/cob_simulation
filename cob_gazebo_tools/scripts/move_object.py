@@ -16,20 +16,20 @@
 
 
 import sys
+import math
 
-
-import rospy
 import os
 import copy
 import numpy
 
 from optparse import OptionParser
 
+import rospy
+import tf
+from tf.transformations import euler_from_quaternion
 from gazebo_msgs.srv import GetModelState, GetModelStateRequest, GetModelStateResponse
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Pose
-import tf
-import math
 
 _usage = """usage: %prog [options]
 %prog: Moves a model in gazebo
@@ -165,7 +165,24 @@ class move():
         model_state.reference_frame = 'world'
 
         # publish message
-        self.pub.publish(model_state)
+        while not rospy.is_shutdown():
+            self.pub.publish(model_state)
+            res = self.get_model_state(self.name)
+
+            # rospy.logwarn("desired model_state: {}".format(model_state))
+            # rospy.logwarn("current model_state: {}".format(res))
+            desired_pos = object_new_pose.position
+            current_pos = res.pose.position
+            desired_ori = euler_from_quaternion([object_new_pose.orientation.x,object_new_pose.orientation.y,object_new_pose.orientation.z,object_new_pose.orientation.z])
+            current_ori = euler_from_quaternion([res.pose.orientation.x,res.pose.orientation.y,res.pose.orientation.z,res.pose.orientation.w])
+
+            if (numpy.allclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z]) and
+                numpy.allclose(desired_ori, current_ori)):
+                rospy.logerr("move_initialpose reached")
+                break
+
+            # sleep until next step
+            self.rate.sleep()
 
     def move_polygon(self, polygon_in):
         # move on all parts of the polygon
