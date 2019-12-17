@@ -106,7 +106,7 @@ class move():
 
         idx = 0
         last_time_in_motion = rospy.Time.now()
-        while idx < segment_step_count:
+        while idx < segment_step_count and not rospy.is_shutdown():
             step = path[idx]
 
             step_x = start[0] + step * math.cos(yaw)
