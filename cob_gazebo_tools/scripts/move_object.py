@@ -16,20 +16,21 @@
 
 
 import sys
+import math
 
-
-import rospy
 import os
 import copy
 import numpy
 
 from optparse import OptionParser
 
+import rospy
+import tf
+from tf.transformations import euler_from_quaternion
 from gazebo_msgs.srv import GetModelState, GetModelStateRequest, GetModelStateResponse
+from gazebo_msgs.srv import SetModelState, SetModelStateRequest, SetModelStateResponse
 from gazebo_msgs.msg import ModelState
 from geometry_msgs.msg import Pose
-import tf
-import math
 
 _usage = """usage: %prog [options]
 %prog: Moves a model in gazebo
@@ -48,7 +49,9 @@ class move():
         self.models = self.options.stop_objects.split()
         rospy.wait_for_service('/gazebo/get_model_state')
         self.srv_get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
-        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
+        rospy.wait_for_service('/gazebo/set_model_state')
+        self.srv_set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
+        self.pub_set_model_state = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size = 1)
         self.node_frequency = 100.0 # hz
         self.rate = rospy.Rate(self.node_frequency) # hz
         self.road_block = False
@@ -106,7 +109,7 @@ class move():
 
         idx = 0
         last_time_in_motion = rospy.Time.now()
-        while idx < segment_step_count:
+        while idx < segment_step_count and not rospy.is_shutdown():
             step = path[idx]
 
             step_x = start[0] + step * math.cos(yaw)
@@ -137,7 +140,7 @@ class move():
                 model_state.reference_frame = 'world'
 
                 # publish message
-                self.pub.publish(model_state)
+                self.pub_set_model_state.publish(model_state)
 
                 idx += 1
 
@@ -165,7 +168,35 @@ class move():
         model_state.reference_frame = 'world'
 
         # publish message
-        self.pub.publish(model_state)
+        while not rospy.is_shutdown():
+            res = self.get_model_state(self.name)
+            rospy.logdebug("desired model_state: {}".format(model_state))
+            rospy.logdebug("current model_state: {}".format(res))
+            if not numpy.any([res.twist.linear.x,res.twist.linear.y,res.twist.linear.z,res.twist.angular.x,res.twist.angular.y,res.twist.angular.z]):
+                rospy.logwarn("gazebo physics not yet started")
+            else:
+                desired_pos = object_new_pose.position
+                current_pos = res.pose.position
+                desired_ori = euler_from_quaternion([object_new_pose.orientation.x,object_new_pose.orientation.y,object_new_pose.orientation.z,object_new_pose.orientation.w])
+                current_ori = euler_from_quaternion([res.pose.orientation.x,res.pose.orientation.y,res.pose.orientation.z,res.pose.orientation.w])
+
+                rospy.logdebug(numpy.isclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z], atol=0.01))
+                rospy.logdebug(numpy.isclose(desired_ori, current_ori, atol=0.01))
+                if (numpy.allclose([desired_pos.x,desired_pos.y,desired_pos.z], [current_pos.x,current_pos.y,current_pos.z], atol=0.01) and
+                    numpy.allclose(desired_ori, current_ori, atol=0.01)):
+                    rospy.loginfo("move_initialpose reached")
+                    break
+                else:
+                    rospy.loginfo("publish initialpose")
+                    self.pub_set_model_state.publish(model_state)
+                    # try:
+                    #     res = self.srv_set_model_state(SetModelStateRequest(model_state=model_state))
+                    #     rospy.loginfo("result: {}".format(res))
+                    # except rospy.service.ServiceException:
+                    #     pass
+
+            # sleep until next step
+            self.rate.sleep()
 
     def move_polygon(self, polygon_in):
         # move on all parts of the polygon
@@ -225,7 +256,7 @@ class move():
                 model_state.reference_frame = 'world'
 
                 # publish message
-                self.pub.publish(model_state)
+                self.pub_set_model_state.publish(model_state)
 
                 yaw += yaw_step
 
@@ -274,7 +305,7 @@ class move():
             dest="stop_distance", metavar="Float", default=2.0,
             help="Allowed distance to objects before stopping. Default: 2.0")
 
-        (self.options, args) = parser.parse_args()
+        (self.options, _) = parser.parse_args()
 
         if self.options.mode == None:
             parser.error("Please provide a valid mode, see -h option.")
@@ -285,17 +316,21 @@ class move():
     def run(self):
         if self.options.mode == "initialpose":
             if (self.options.initialpose == None):
-                parser.error("Please provide a valid initialpose, see -h option. initialpose = " + str(self.options.initialpose))
+                rospy.logerr("Please provide a valid initialpose, see -h option. initialpose = " + str(self.options.initialpose))
+                return
             self.move_initialpose(eval(self.options.initialpose))
         if self.options.mode == "polygon":
             if (self.options.polygon == None) or (type(eval(self.options.polygon)) is not list):
-                parser.error("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))
+                rospy.logerr("Please provide a valid polygon, see -h option. polygon = " + str(self.options.polygon))
+                return
             self.move_polygon(eval(self.options.polygon))
         if self.options.mode == "circle":
             if self.options.radius == None:
-                parser.error("Please provide a valid radius. radius = " + str(self.options.radius))
+                rospy.logerr("Please provide a valid radius. radius = " + str(self.options.radius))
+                return
             if self.options.center == None:
-                parser.error("Please provide a valid center. center = " + str(self.options.center))
+                rospy.logerr("Please provide a valid center. center = " + str(self.options.center))
+                return
             self.move_circle(eval(self.options.center),float(self.options.radius))
 
 
