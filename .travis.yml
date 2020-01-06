@@ -14,6 +14,8 @@ env:
     - NOT_TEST_DOWNSTREAM=true
     - CMAKE_ARGS=-DCMAKE_BUILD_TYPE=Release
     - ADDITIONAL_DEBS='wget'
+    - CATKIN_LINT=pedantic
+    - CATKIN_LINT_ARGS='--ignore description_boilerplate'
   matrix:
     - ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=file AFTER_SETUP_TARGET_WORKSPACE='wget -O - https://raw.githubusercontent.com/mojin-robotics/realsense/realsense_substitute/realsense_camera/patch/patch_docker.sh | bash'
     - ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=debian AFTER_SETUP_TARGET_WORKSPACE='wget -O - https://raw.githubusercontent.com/mojin-robotics/realsense/realsense_substitute/realsense_camera/patch/patch_docker.sh | bash'
