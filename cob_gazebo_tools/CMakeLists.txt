@@ -5,7 +5,7 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 
-install(PROGRAMS
+catkin_install_python(PROGRAMS
   scripts/move_object.py
   scripts/remove_object.py
   scripts/spawn_object.py
