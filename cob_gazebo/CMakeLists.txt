@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
 ### TESTING ###
 if(CATKIN_ENABLE_TESTING)
   find_package(cob_supported_robots REQUIRED)
+  find_package(roslaunch REQUIRED)
   foreach(robot ${cob_supported_robots_ROBOTLIST})
     message("testing for robot: ${robot}")
     #rosbuild_add_roslaunch_check(launch robot:=${robot})

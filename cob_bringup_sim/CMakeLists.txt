@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_bringup_sim)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
@@ -9,6 +9,7 @@ catkin_package()
 if(CATKIN_ENABLE_TESTING)
   find_package(cob_default_env_config REQUIRED)
   find_package(cob_supported_robots REQUIRED)
+  find_package(roslaunch REQUIRED)
   foreach(robot ${cob_supported_robots_ROBOTLIST})
     foreach(env ${cob_default_env_config_ENVLIST})
       message("testing for robot: ${robot} in env: ${env}")

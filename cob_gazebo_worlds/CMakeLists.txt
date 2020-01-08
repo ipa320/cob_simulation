@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_gazebo_worlds)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
 ### TEST ###
 if(CATKIN_ENABLE_TESTING)
   find_package(cob_default_env_config REQUIRED)
-  find_package(rostest REQUIRED)
+  find_package(roslaunch REQUIRED)
   add_rostest(test/urdf_worlds.test)
   foreach(env ${cob_default_env_config_ENVLIST})
     message("testing for env: ${env}")

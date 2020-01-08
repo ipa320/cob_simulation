@@ -15,8 +15,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>roslaunch</depend>
-
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_gazebo_worlds</exec_depend>
@@ -25,5 +23,6 @@
 
   <test_depend>cob_default_env_config</test_depend>
   <test_depend>cob_supported_robots</test_depend>
+  <test_depend>roslaunch</test_depend>
 
 </package>
