@@ -33,7 +33,7 @@ compound_keys={}
 def get_flat_dict(objects, parent_name):
     """expands all objects to a flat dictionary"""
     flat_objects = {}
-    for key, value in objects.iteritems():
+    for key, value in objects.items():
         # check if we have an atomic object
 
         if(parent_name!=None):
@@ -54,7 +54,7 @@ def get_flat_dict(objects, parent_name):
             to_process = tmp_value["children"]
 
             # add position and orientation of parent to all children
-            for child_key, child_value in tmp_value["children"].iteritems():
+            for child_key, child_value in tmp_value["children"].items():
                 yaw = objects[key]["orientation"][2]
                 x = objects[key]["position"][0] + math.cos(yaw) * child_value["position"][0] - math.sin(yaw) * child_value["position"][1]
                 y = objects[key]["position"][1] + math.sin(yaw) * child_value["position"][0] + math.cos(yaw) * child_value["position"][1]
@@ -75,7 +75,7 @@ def get_flat_dict(objects, parent_name):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print '[spawn_object.py] Please specify the names of the objects to be loaded'
+        print('[spawn_object.py] Please specify the names of the objects to be loaded')
         sys.exit()
 
     rospy.init_node("object_spawner")
@@ -107,15 +107,15 @@ if __name__ == "__main__":
         # save all dict-objects with names in 'object_names' in 'objects'
         objects = {}
         for object_name in object_names:
-            if object_name in flat_objects.keys():
+            if object_name in list(flat_objects.keys()):
                 objects.update({object_name:flat_objects[object_name]})
-    elif sys.argv[1] not in flat_objects.keys():
+    elif sys.argv[1] not in list(flat_objects.keys()):
         rospy.logerr("Object %s not found", sys.argv[1])
         sys.exit()
     else:
         objects = {sys.argv[1]:flat_objects[sys.argv[1]]}
 
-    rospy.loginfo("Trying to spawn %s", objects.keys())
+    rospy.loginfo("Trying to spawn %s", list(objects.keys()))
 
     # get all current models from gazebo
     # check if object is already spawned
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         existing_models = []
 
     # Iterate through all objects
-    for key, value in objects.iteritems():
+    for key, value in objects.items():
         # check for model
         if not "model" in value:
             rospy.logerr("No model for " + key + " found.")
@@ -215,7 +215,7 @@ if __name__ == "__main__":
             srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel) # TODO this service causes gazebo (current groovy version) to crash
             try:
                 res = srv_delete_model(key)
-            except rospy.ServiceException, e:
+            except rospy.ServiceException as e:
                 rospy.logdebug("Error while trying to call Service /gazebo/get_world_properties.")
             rospy.loginfo("Model %s already exists in gazebo. Model will be deleted and added again.", key)
 
