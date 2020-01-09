@@ -23,6 +23,6 @@ install(DIRECTORY Media launch test urdf
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS scripts/elevator.py scripts/tf_publisher.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
+catkin_install_python(PROGRAMS scripts/elevator.py scripts/tf_publisher.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

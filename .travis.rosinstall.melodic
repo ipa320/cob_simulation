@@ -1,69 +1,37 @@
 - git:
-    uri: 'https://github.com/ipa320/cob_android.git'
-    local-name: cob_android
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_calibration_data.git'
     local-name: cob_calibration_data
+    uri: https://github.com/ipa320/cob_calibration_data.git
     version: indigo_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_command_tools.git'
     local-name: cob_command_tools
+    uri: https://github.com/ipa320/cob_command_tools.git
     version: indigo_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_common.git'
     local-name: cob_common
+    uri: https://github.com/ipa320/cob_common.git
     version: kinetic_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_control.git'
     local-name: cob_control
-    version: kinetic_dev
+    uri: https://github.com/ipa320/cob_control.git
+    version: melodic_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_driver.git'
     local-name: cob_driver
+    uri: https://github.com/ipa320/cob_driver.git
     version: kinetic_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_environments.git'
-    local-name: cob_environments
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_extern.git'
-    local-name: cob_extern
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_gazebo_plugins.git'
-    local-name: cob_gazebo_plugins
-    version: kinetic_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_hand.git'
-    local-name: cob_hand
-    version: indigo_dev
-- git:
-    local-name: cob_navigation
-    uri: https://github.com/ipa320/cob_navigation
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_perception_common.git'
-    local-name: cob_perception_common
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_robots.git'
     local-name: cob_robots
+    uri: https://github.com/ipa320/cob_robots.git
     version: kinetic_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_substitute.git'
-    local-name: cob_substitute
-    version: indigo_dev
-- git:
-    uri: 'https://github.com/ipa320/cob_supported_robots.git'
     local-name: cob_supported_robots
+    uri: https://github.com/ipa320/cob_supported_robots.git
     version: indigo_dev
 
 - git:
-    uri: 'https://github.com/ipa320/realsense.git'
     local-name: realsense_substitute
+    uri: https://github.com/ipa320/realsense.git
     version: realsense_substitute
 - git:
-    uri: 'https://github.com/ipa320/realsense.git'
     local-name: realsense2_substitute
+    uri: https://github.com/ipa320/realsense.git
     version: realsense2_substitute

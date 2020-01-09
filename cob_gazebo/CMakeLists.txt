@@ -21,8 +21,8 @@ install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS ros/test/component_test.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/ros/test
+catkin_install_python(PROGRAMS ros/test/component_test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(FILES ros/test/param_arm_test.yaml ros/test/param_tray_test.yaml
