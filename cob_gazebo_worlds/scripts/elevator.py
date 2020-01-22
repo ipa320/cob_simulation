@@ -15,14 +15,12 @@
 # limitations under the License.
 
 
-import time
 import sys
 import random
-from math import *
 
 import rospy
-from gazebo_msgs.msg import *
-from std_msgs.msg import *
+from gazebo_msgs.msg import ContactsState
+from std_msgs.msg import Float64
 
 door_closed = True
 
@@ -60,7 +58,7 @@ def move_door(side):
 
 	try:
 		rospy.sleep(10)
-	except rospy.exceptions.ROSInterruptException as e:
+	except rospy.exceptions.ROSInterruptException:
 		return
 
 	pos = 0
@@ -69,7 +67,7 @@ def move_door(side):
 
 	try:
 		rospy.sleep(10)
-	except rospy.exceptions.ROSInterruptException as e:
+	except rospy.exceptions.ROSInterruptException:
 		return
 
 	door_closed = True

@@ -215,7 +215,7 @@ if __name__ == "__main__":
             srv_delete_model = rospy.ServiceProxy('gazebo/delete_model', DeleteModel) # TODO this service causes gazebo (current groovy version) to crash
             try:
                 res = srv_delete_model(key)
-            except rospy.ServiceException as e:
+            except rospy.ServiceException:
                 rospy.logdebug("Error while trying to call Service /gazebo/get_world_properties.")
             rospy.loginfo("Model %s already exists in gazebo. Model will be deleted and added again.", key)
 

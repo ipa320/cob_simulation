@@ -122,7 +122,7 @@ if __name__ == "__main__":
         try:
             rospy.wait_for_service('/gazebo/delete_model')
             res = srv_delete_model(name)
-        except rospy.ServiceException as e:
+        except rospy.ServiceException:
             exists = False
             rospy.logdebug("Model %s does not exist in gazebo.", name)
 
