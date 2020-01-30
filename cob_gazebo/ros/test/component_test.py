@@ -21,9 +21,9 @@ import unittest
 
 import rospy
 import rostest
-from trajectory_msgs.msg import *
+from trajectory_msgs.msg import JointTrajectory
+from control_msgs.msg import JointTrajectoryControllerState
 from simple_script_server import *
-from control_msgs.msg import *
 
 class UnitTest(unittest.TestCase):
     def __init__(self, *args):
@@ -56,14 +56,14 @@ class UnitTest(unittest.TestCase):
                 self.fail('Parameter error_range does not exist on ROS Parameter Server')
             error_range = rospy.get_param('~error_range')
 
-        except KeyError, e:
+        except KeyError:
             self.fail('Parameters not set properly')
 
-        print """
+        print("""
               Component: %s
               Target: %s
               Wait Time: %s
-              Error Range: %s"""%(component, target, wait_time, error_range)
+              Error Range: %s"""%(component, target, wait_time, error_range))
 
         # check parameters
         # \todo do more parameter tests
@@ -77,8 +77,8 @@ class UnitTest(unittest.TestCase):
         # init subscribers
         command_topic = "/" + component + "_controller/command"
         state_topic = "/" + component + "_controller/state"
-        sub_command_topic = rospy.Subscriber(command_topic, JointTrajectory, self.cb_command)
-        sub_state_topic = rospy.Subscriber(state_topic, JointTrajectoryControllerState, self.cb_state)
+        rospy.Subscriber(command_topic, JointTrajectory, self.cb_command)
+        rospy.Subscriber(state_topic, JointTrajectoryControllerState, self.cb_state)
 
         # init component
         init_handle = self.sss.init(component)
@@ -87,7 +87,7 @@ class UnitTest(unittest.TestCase):
             self.fail(error_msg)
 
         # start actual test
-        print "Waiting for messages"
+        print("Waiting for messages")
         # give the topics some seconds to receive messages
         wallclock_timeout_t = time.time() + wait_time
         while not self.message_received and time.time() < wallclock_timeout_t:
@@ -109,7 +109,7 @@ class UnitTest(unittest.TestCase):
         # Start evaluation
         timeout_t = traj_endpoint.time_from_start.to_sec()*0.5 # movement should already be finished, but let wait with an additional buffer of 50% times the desired time
         rospy.sleep(timeout_t)
-        print "Done waiting, validating results"
+        print("Done waiting, validating results")
         actual_pos = self.actual_pos # fix current position configuration for later evaluation
 
         # checking if target position is realy reached
@@ -126,7 +126,7 @@ class UnitTest(unittest.TestCase):
 if __name__ == '__main__':
     try:
         rostest.run('rostest', 'component_test', UnitTest, sys.argv)
-    except KeyboardInterrupt, e:
+    except KeyboardInterrupt:
         pass
-    print "exiting"
+    print("exiting")
 

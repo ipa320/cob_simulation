@@ -29,7 +29,7 @@ compound_keys={}
 def get_flat_dict(objects, parent_name):
     """expands all objects to a flat dictionary"""
     flat_objects = {}
-    for key, value in objects.iteritems():
+    for key, value in objects.items():
         # check if we have an atomic object
 
         if(parent_name!=None):
@@ -50,7 +50,7 @@ def get_flat_dict(objects, parent_name):
             to_process = tmp_value["children"]
 
             # add position and orientation of parent to all children
-            for child_key, child_value in tmp_value["children"].iteritems():
+            for child_key, child_value in tmp_value["children"].items():
                 yaw = objects[key]["orientation"][2]
                 x = objects[key]["position"][0] + math.cos(yaw) * child_value["position"][0] - math.sin(yaw) * child_value["position"][1]
                 y = objects[key]["position"][1] + math.sin(yaw) * child_value["position"][0] + math.cos(yaw) * child_value["position"][1]
@@ -71,7 +71,7 @@ def get_flat_dict(objects, parent_name):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print '[remove_object.py] Please specify the names of the objects to be removed'
+        print('[remove_object.py] Please specify the names of the objects to be removed')
         sys.exit()
 
     rospy.init_node("object_remover")
@@ -103,15 +103,15 @@ if __name__ == "__main__":
         # save all dict-objects with names in 'object_names' in 'objects'
         objects = {}
         for object_name in object_names:
-            if object_name in flat_objects.keys():
+            if object_name in list(flat_objects.keys()):
                 objects.update({object_name:flat_objects[object_name]})
-    elif sys.argv[1] not in flat_objects.keys():
+    elif sys.argv[1] not in list(flat_objects.keys()):
         rospy.logerr("Object %s not found", sys.argv[1])
         sys.exit()
     else:
         objects = {sys.argv[1]:flat_objects[sys.argv[1]]}
 
-    rospy.loginfo("Trying to remove %s", objects.keys())
+    rospy.loginfo("Trying to remove %s", list(objects.keys()))
 
     for name in objects:
         # check if object is already spawned
@@ -122,7 +122,7 @@ if __name__ == "__main__":
         try:
             rospy.wait_for_service('/gazebo/delete_model')
             res = srv_delete_model(name)
-        except rospy.ServiceException, e:
+        except rospy.ServiceException:
             exists = False
             rospy.logdebug("Model %s does not exist in gazebo.", name)
 
