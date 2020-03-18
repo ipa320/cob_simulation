@@ -2,6 +2,14 @@
 Changelog for package cob_bringup_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#174 <https://github.com/ipa320/cob_simulation/issues/174>`_ from fmessmer/ci_updates
+  [travis] ci updates
+* fix test dependendies
+* catkin_lint fixes
+* Contributors: Felix Messmer, fmessmer
+
 0.7.3 (2019-11-07)
 ------------------
 * Merge pull request `#172 <https://github.com/ipa320/cob_simulation/issues/172>`_ from fmessmer/cob_gazebo_tools

@@ -2,6 +2,27 @@
 Changelog for package cob_gazebo_tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#175 <https://github.com/ipa320/cob_simulation/issues/175>`_ from LoyVanBeek/feature/python3_compatibility
+  [ci_updates] pylint + Python3 compatibility
+* fix pylint error
+* python3 compatibility via 2to3
+* Merge pull request `#176 <https://github.com/ipa320/cob_simulation/issues/176>`_ from fmessmer/conditional_inorder
+  add ROS_DISTRO condition for --inorder
+* add ROS_DISTRO condition for --inorder
+* Merge pull request `#174 <https://github.com/ipa320/cob_simulation/issues/174>`_ from fmessmer/ci_updates
+  [travis] ci updates
+* use catkin_install_python
+* catkin_lint fixes
+* Merge pull request `#173 <https://github.com/ipa320/cob_simulation/issues/173>`_ from fmessmer/fix_move_initialpose
+  improve move initialpose + fix python warnings
+* better condition for move_initialpose
+* fix python warnings
+* fix endless loop
+* add retry condition for move_initialpose
+* Contributors: Felix Messmer, Loy van Beek, fmessmer
+
 0.7.3 (2019-11-07)
 ------------------
 * add CHANGELOG for cob_gazebo_tools

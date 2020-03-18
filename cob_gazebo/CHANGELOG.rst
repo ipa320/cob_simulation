@@ -2,6 +2,18 @@
 Changelog for package cob_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#175 <https://github.com/ipa320/cob_simulation/issues/175>`_ from LoyVanBeek/feature/python3_compatibility
+  [ci_updates] pylint + Python3 compatibility
+* fix pylint error
+* Merge pull request `#174 <https://github.com/ipa320/cob_simulation/issues/174>`_ from fmessmer/ci_updates
+  [travis] ci updates
+* fix test dependendies
+* use catkin_install_python
+* catkin_lint fixes
+* Contributors: Felix Messmer, fmessmer
+
 0.7.3 (2019-11-07)
 ------------------
 
