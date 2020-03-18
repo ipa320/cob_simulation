@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.4 (2020-03-18)
+------------------
 * Merge pull request `#175 <https://github.com/ipa320/cob_simulation/issues/175>`_ from LoyVanBeek/feature/python3_compatibility
   [ci_updates] pylint + Python3 compatibility
 * fix pylint error

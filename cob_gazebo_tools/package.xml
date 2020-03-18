@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>cob_gazebo_tools</name>
-  <version>0.7.3</version>
+  <version>0.7.4</version>
   <description>The cob_gazebo_tools package provides helper tools for the gazebo simulation</description>
 
   <license>Apache 2.0</license>

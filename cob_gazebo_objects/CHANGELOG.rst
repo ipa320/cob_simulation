@@ -2,8 +2,8 @@
 Changelog for package cob_gazebo_objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.4 (2020-03-18)
+------------------
 * Merge pull request `#174 <https://github.com/ipa320/cob_simulation/issues/174>`_ from fmessmer/ci_updates
   [travis] ci updates
 * catkin_lint fixes
