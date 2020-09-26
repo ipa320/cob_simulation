@@ -23,6 +23,7 @@ env:
   matrix:
     - ROS_DISTRO=kinetic AFTER_SETUP_TARGET_WORKSPACE='wget -O - https://raw.githubusercontent.com/mojin-robotics/realsense/realsense_substitute/realsense_camera/patch/patch_docker.sh | bash'
     - ROS_DISTRO=melodic
+    - ROS_DISTRO=noetic
 install:
   - git clone --quiet --depth 1 https://github.com/fmessmer/industrial_ci.git .industrial_ci -b master_pylint
 script:
