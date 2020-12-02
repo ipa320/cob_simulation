@@ -23,6 +23,7 @@ env:
   matrix:
     - ROS_DISTRO=kinetic AFTER_SETUP_TARGET_WORKSPACE='wget -O - https://raw.githubusercontent.com/mojin-robotics/realsense/realsense_substitute/realsense_camera/patch/patch_docker.sh | bash'
     - ROS_DISTRO=melodic
+    - ROS_DISTRO=noetic TARGET_WORKSPACE='. -cob_simulation/cob_gazebo -cob_simulation/cob_bringup_sim -cob_simulation/cob_simulation' UPSTREAM_WORKSPACE='.travis.rosinstall.noetic -cob_robots/cob_bringup -cob_robots/cob_robots' PYLINT2_CHECK=true PYLINT3_CHECK=false  # noetic is python3 only, i.e. only pylint command exists which is used as executable in PYLINT2_CHECK
 install:
   - git clone --quiet --depth 1 https://github.com/fmessmer/industrial_ci.git .industrial_ci -b master_pylint
 script:
