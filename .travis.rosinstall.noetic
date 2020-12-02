@@ -20,8 +20,8 @@
     version: kinetic_dev
 - git:
     local-name: cob_robots
-    uri: https://github.com/fmessmer/cob_robots.git
-    version: test_noetic
+    uri: https://github.com/ipa320/cob_robots.git
+    version: kinetic_dev
 - git:
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
