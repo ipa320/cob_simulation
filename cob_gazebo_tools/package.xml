@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>cob_gazebo_tools</name>
-  <version>0.7.4</version>
+  <version>0.7.5</version>
   <description>The cob_gazebo_tools package provides helper tools for the gazebo simulation</description>
 
   <license>Apache 2.0</license>
@@ -18,7 +21,8 @@
 
   <exec_depend>gazebo_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>python-numpy</exec_depend>
+  <exec_depend condition="$ROS_PYTHON_VERSION == 2">python-numpy</exec_depend>
+  <exec_depend condition="$ROS_PYTHON_VERSION == 3">python3-numpy</exec_depend>
   <exec_depend>roslib</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>tf</exec_depend>

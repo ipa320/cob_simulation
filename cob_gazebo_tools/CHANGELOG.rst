@@ -2,6 +2,14 @@
 Changelog for package cob_gazebo_tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.5 (2020-12-02)
+------------------
+* Merge pull request `#178 <https://github.com/ipa320/cob_simulation/issues/178>`_ from fmessmer/test_noetic
+  test noetic
+* ROS_PYTHON_VERSION conditional dependency
+* Bump CMake version to avoid CMP0048 warning
+* Contributors: Felix Messmer, fmessmer
+
 0.7.4 (2020-03-18)
 ------------------
 * Merge pull request `#175 <https://github.com/ipa320/cob_simulation/issues/175>`_ from LoyVanBeek/feature/python3_compatibility

@@ -2,6 +2,13 @@
 Changelog for package cob_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.5 (2020-12-02)
+------------------
+* Merge pull request `#178 <https://github.com/ipa320/cob_simulation/issues/178>`_ from fmessmer/test_noetic
+  test noetic
+* Bump CMake version to avoid CMP0048 warning
+* Contributors: Felix Messmer, fmessmer
+
 0.7.4 (2020-03-18)
 ------------------
 
