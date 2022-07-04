@@ -27,7 +27,7 @@
 		 a gazebo_ros_control_plugin needs to be added ogether with an additional joint_state_controller -->
 		<include ns="world" file="$(find cob_gazebo_worlds)/launch/world_joint_state_publisher.launch"/>
 
-		<node name="world_tf_publisher" pkg="cob_gazebo_worlds" type="tf_publisher.py"  respawn="false" output="screen" />
+		<node pkg="tf2_ros" type="static_transform_publisher" name="world_tf_publisher" args="0 0 0 0 0 0 1 map world" />
 	</group>
 
 </launch>
