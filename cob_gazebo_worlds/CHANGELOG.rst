@@ -2,6 +2,13 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#184 <https://github.com/ipa320/cob_simulation/issues/184>`_ from fmessmer/fix/TF_REPEATED_DATA
+  replace world_tf_publisher
+* replace world_tf_publisher
+* Contributors: Felix Messmer, fmessmer
+
 0.7.5 (2020-12-02)
 ------------------
 * Merge pull request `#178 <https://github.com/ipa320/cob_simulation/issues/178>`_ from fmessmer/test_noetic
