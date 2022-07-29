@@ -4,7 +4,7 @@
   schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>cob_gazebo_tools</name>
-  <version>0.7.5</version>
+  <version>0.7.6</version>
   <description>The cob_gazebo_tools package provides helper tools for the gazebo simulation</description>
 
   <license>Apache 2.0</license>
