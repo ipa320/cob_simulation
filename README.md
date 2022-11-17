@@ -11,7 +11,7 @@ cob_simulation
 
 ## Travis - Continuous Integration
 
-Status: [![Build Status](https://travis-ci.com/ipa320/cob_simulation.svg?branch=kinetic_dev)](https://travis-ci.com/ipa320/cob_simulation)
+Status: [![Build Status](https://app.travis-ci.com/ipa320/cob_simulation.svg?branch=kinetic_dev)](https://app.travis-ci.com/ipa320/cob_simulation)
 
 ## ROS Buildfarm
 
