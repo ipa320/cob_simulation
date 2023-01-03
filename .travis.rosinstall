@@ -13,7 +13,7 @@
 - git:
     local-name: cob_control
     uri: https://github.com/ipa320/cob_control.git
-    version: kinetic_dev
+    version: melodic_dev
 - git:
     local-name: cob_driver
     uri: https://github.com/ipa320/cob_driver.git
