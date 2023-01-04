@@ -2,6 +2,9 @@
 Changelog for package cob_gazebo_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.7.6 (2022-07-29)
 ------------------
 * Merge pull request `#184 <https://github.com/ipa320/cob_simulation/issues/184>`_ from fmessmer/fix/TF_REPEATED_DATA
